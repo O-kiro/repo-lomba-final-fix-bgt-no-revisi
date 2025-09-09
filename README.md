@@ -37,8 +37,8 @@ Clone repository dan jalankan perintah berikut:
 
 ```bash
 # Clone repo
-git clone https://github.com/username/tikma-upgrade.git
-cd tikma-upgrade
+git clone https://github.com/O-kiro/repo-lomba-final-fix-bgt-no-revisi.git
+cd repo-lomba-final-fix-bgt-no-revisi
 
 # Install dependencies
 composer install

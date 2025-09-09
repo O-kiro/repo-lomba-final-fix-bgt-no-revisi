@@ -1,23 +1,26 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="id" class="scroll-smooth">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Madrasah Aliyah Negeri Kota Batu</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+  />
 </head>
 <body class="bg-gray-50 font-sans">
 
- <!-- Navbar -->
+  <!-- Navbar -->
   <header class="bg-blue-900 text-white shadow">
     <div class="container mx-auto flex justify-between items-center px-4 py-3">
       <div class="flex items-center gap-3">
-        <img src="logo.png" alt="Logo" class="w-10 h-10" />
+        <img src="img/mannbg.png" alt="Logo" class="w-10 h-10" />
         <h1 class="text-lg font-bold">MAN Kota Batu</h1>
       </div>
       <nav class="space-x-6 hidden md:block">
-        <a href="home.html" class="hover:text-yellow-400">Home</a>
+        <a href="#" class="hover:text-yellow-400">Home</a>
         <a href="#" class="hover:text-yellow-400">Profil</a>
         <a href="#" class="hover:text-yellow-400">Prestasi</a>
         <a href="#" class="hover:text-yellow-400">Pengumuman</a>
@@ -36,168 +39,134 @@
     </div>
   </section>
 
-  <!-- Layanan -->
-<section class="bg-white py-8">
-  <div class="w-full max-w-7xl mx-auto px-6">
-    <!-- Judul -->
-    <div class="flex items-center gap-2 mb-6">
-      <i class="fas fa-tools text-yellow-400 text-2xl"></i>
-      <h2 class="text-2xl font-bold text-blue-900">Layanan</h2>
-    </div>
+<!-- Icon Menu -->
+<section class="bg-white py-6 shadow">
+  <div class="max-w-4xl mx-auto px-4">
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 justify-center text-center">
 
-    <!-- Grid 2 Kolom -->
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 w-full">
 
-      <!-- Menu Layanan -->
-      <div class="flex flex-col gap-4">
-        <!-- CBT -->
-        <a href="#"
-          class="flex items-center gap-3 bg-blue-800 text-white p-4 rounded-lg shadow hover:bg-blue-700 transition w-full">
-          <div class="bg-yellow-300 text-blue-900 w-14 h-14 flex items-center justify-center rounded-md">
-            <i class="fas fa-file-alt text-2xl"></i>
-          </div>
-          <span class="text-xl font-semibold">CBT</span>
-        </a>
 
-        <!-- Absensi -->
-        <a href="#"
-          class="flex items-center gap-3 bg-blue-800 text-white p-4 rounded-lg shadow hover:bg-blue-700 transition w-full">
-          <div class="bg-yellow-300 text-blue-900 w-14 h-14 flex items-center justify-center rounded-md">
-            <i class="fas fa-clipboard-list text-2xl"></i>
-          </div>
-          <span class="text-xl font-semibold">Absensi</span>
-        </a>
+         <!-- Siswa -->
+      <a href="siswa.html" class="group cursor-pointer hover:scale-105 transition">
+        <div class="bg-blue-800 text-yellow-300 w-20 h-20 mx-auto flex items-center justify-center rounded-lg shadow group-hover:bg-yellow-300 group-hover:text-blue-800 transition">
+          <i class="fas fa-user-graduate text-3xl"></i>
+        </div>
+        <p class="mt-3 text-base font-semibold text-gray-700 group-hover:text-blue-800">Siswa</p>
+      </a>
+      <!-- Guru -->
+      <a href="guru.html" class="group cursor-pointer hover:scale-105 transition">
+        <div class="bg-blue-800 text-yellow-300 w-20 h-20 mx-auto flex items-center justify-center rounded-lg shadow group-hover:bg-yellow-300 group-hover:text-blue-800 transition">
+          <i class="fas fa-chalkboard-teacher text-3xl"></i>
+        </div>
+        <p class="mt-3 text-base font-semibold text-gray-700 group-hover:text-blue-800">Guru</p>
+      </a>
 
-        <!-- Perpus -->
-        <a href="#"
-          class="flex items-center gap-3 bg-blue-800 text-white p-4 rounded-lg shadow hover:bg-blue-700 transition w-full">
-          <div class="bg-yellow-300 text-blue-900 w-14 h-14 flex items-center justify-center rounded-md">
-            <i class="fas fa-book text-2xl"></i>
-          </div>
-          <span class="text-xl font-semibold">Perpus</span>
-        </a>
-      </div>
+     
 
-      <!-- Form Login -->
-      <div class="bg-blue-100 p-6 rounded-lg shadow w-full">
-        <h3 class="bg-blue-800 text-white text-lg font-bold py-3 px-4 rounded-t-lg -mt-6 mb-6 w-fit">Login</h3>
-        <form action="#" class="space-y-4">
-          <!-- Username -->
-          <div>
-            <label for="username" class="block text-sm font-semibold text-gray-700">User</label>
-            <input id="username" type="text" placeholder="Masukkan user"
-              class="w-full px-3 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500">
-          </div>
+      <!-- Alumni -->
+      <a href="alumni.html" class="group cursor-pointer hover:scale-105 transition">
+        <div class="bg-blue-800 text-yellow-300 w-20 h-20 mx-auto flex items-center justify-center rounded-lg shadow group-hover:bg-yellow-300 group-hover:text-blue-800 transition">
+          <i class="fas fa-users text-3xl"></i>
+        </div>
+        <p class="mt-3 text-base font-semibold text-gray-700 group-hover:text-blue-800">Alumni</p>
+      </a>
 
-          <!-- Password -->
-          <div>
-            <label for="password" class="block text-sm font-semibold text-gray-700">Pass</label>
-            <input id="password" type="password" placeholder="Masukkan password"
-              class="w-full px-3 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500">
-          </div>
-
-          <!-- Tombol Login -->
-          <button type="submit"
-            class="w-full bg-blue-700 text-white font-semibold py-3 rounded-lg hover:bg-blue-800 transition">
-            Log in
-          </button>
-        </form>
-      </div>
     </div>
   </div>
 </section>
 
+<!-- Font Awesome CDN -->
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 
 
-  <!-- Daftar Ekskul -->
-  <section class="mt-8 mx-4 md:mx-8">
-    <div class="bg-blue-900 text-white px-4 py-2 rounded-t-lg flex items-center gap-2">
-      <i class="fa-solid fa-calendar-days text-yellow-400"></i>
-      <h3 class="font-bold text-lg">DAFTAR EKSKUL</h3>
+  <!-- Pengumuman & Info -->
+  <section class="grid md:grid-cols-2 gap-6 p-4">
+    <div class="bg-white rounded-lg shadow p-4">
+      <h3 class="font-bold text-blue-900 mb-2 flex items-center gap-2">
+        <span class="text-yellow-400">📢</span> Pengumuman
+      </h3>
+      <ul class="list-disc ml-5 text-gray-700">
+        <li>Pengumuman 1</li>
+        <li>Pengumuman 2</li>
+        <li>Pengumuman 3</li>
+      </ul>
     </div>
-    <div class="grid grid-cols-3 md:grid-cols-5 gap-6 bg-white p-6 shadow rounded-b-lg text-center">
-      
-      <!-- List Ekskul -->
-      <div class="bg-blue-900 p-3 rounded-lg shadow hover:bg-blue-800 transition">
-        <i class="fa-solid fa-drum text-3xl text-yellow-400"></i>
-        <p class="mt-2 text-white text-sm font-semibold">Banjari</p>
+    <div class="bg-white rounded-lg shadow p-4">
+      <h3 class="font-bold text-blue-900 mb-2 flex items-center gap-2">
+        <span class="text-yellow-400">ℹ</span> Info Madrasah
+      </h3>
+      <ul class="list-disc ml-5 text-gray-700">
+        <li>Informasi 1</li>
+        <li>Informasi 2</li>
+        <li>Informasi 3</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Program Unggulan -->
+  <section class="p-4">
+    <div class="bg-blue-900 text-white p-4 rounded-lg">
+      <h3 class="font-bold mb-4">Program Unggulan</h3>
+      <select class="w-full p-2 rounded text-gray-900">
+        <option>Pilih Program</option>
+        <option>OLIMPIADE</option>
+        <option>RISET</option>
+      </select>
+    </div>
+  </section>
+
+  <!-- Prestasi -->
+  <section class="p-4">
+    <h3 class="font-bold text-blue-900 mb-4">Prestasi</h3>
+    <div class="grid md:grid-cols-3 gap-4">
+      <div class="bg-gray-200 h-32 rounded-lg"></div>
+      <div class="bg-gray-200 h-32 rounded-lg"></div>
+      <div class="bg-gray-200 h-32 rounded-lg"></div>
+    </div>
+  </section>
+
+  <!-- Berita -->
+  <section class="p-4">
+    <h3 class="font-bold text-blue-900 mb-4">Berita</h3>
+    <div class="grid md:grid-cols-2 gap-4">
+      <div class="bg-gray-200 h-40 rounded-lg"></div>
+      <div class="bg-gray-200 h-40 rounded-lg"></div>
+    </div>
+  </section>
+
+  <!-- Data Sekolah -->
+  <section class="bg-yellow-400 text-blue-900 text-center py-6">
+    <div class="grid grid-cols-4 gap-4 max-w-3xl mx-auto">
+      <div>
+        <p class="text-3xl font-bold">79</p>
+        <p>Guru & Karyawan</p>
       </div>
-      <div class="bg-blue-900 p-3 rounded-lg shadow hover:bg-blue-800 transition">
-        <i class="fa-solid fa-basketball text-3xl text-yellow-400"></i>
-        <p class="mt-2 text-white text-sm font-semibold">Bola Basket</p>
+      <div>
+        <p class="text-3xl font-bold">1290</p>
+        <p>Siswa</p>
       </div>
-      <div class="bg-blue-900 p-3 rounded-lg shadow hover:bg-blue-800 transition">
-        <i class="fa-solid fa-volleyball text-3xl text-yellow-400"></i>
-        <p class="mt-2 text-white text-sm font-semibold">Bola Voli</p>
+      <div>
+        <p class="text-3xl font-bold">38</p>
+        <p>Kelas</p>
       </div>
-      <div class="bg-blue-900 p-3 rounded-lg shadow hover:bg-blue-800 transition">
-        <i class="fa-solid fa-table-tennis-paddle-ball text-3xl text-yellow-400"></i>
-        <p class="mt-2 text-white text-sm font-semibold">Bulu Tangkis</p>
-      </div>
-      <div class="bg-blue-900 p-3 rounded-lg shadow hover:bg-blue-800 transition">
-        <i class="fa-solid fa-palette text-3xl text-yellow-400"></i>
-        <p class="mt-2 text-white text-sm font-semibold">Desain Grafis</p>
-      </div>
-      <div class="bg-blue-900 p-3 rounded-lg shadow hover:bg-blue-800 transition">
-        <i class="fa-solid fa-language text-3xl text-yellow-400"></i>
-        <p class="mt-2 text-white text-sm font-semibold">English Club</p>
-      </div>
-      <div class="bg-blue-900 p-3 rounded-lg shadow hover:bg-blue-800 transition">
-        <i class="fa-solid fa-futbol text-3xl text-yellow-400"></i>
-        <p class="mt-2 text-white text-sm font-semibold">Futsal</p>
-      </div>
-      <div class="bg-blue-900 p-3 rounded-lg shadow hover:bg-blue-800 transition">
-        <i class="fa-solid fa-newspaper text-3xl text-yellow-400"></i>
-        <p class="mt-2 text-white text-sm font-semibold">Jurnalis</p>
-      </div>
-      <div class="bg-blue-900 p-3 rounded-lg shadow hover:bg-blue-800 transition">
-        <i class="fa-solid fa-microphone text-3xl text-yellow-400"></i>
-        <p class="mt-2 text-white text-sm font-semibold">MC</p>
-      </div>
-      <div class="bg-blue-900 p-3 rounded-lg shadow hover:bg-blue-800 transition">
-        <i class="fa-solid fa-music text-3xl text-yellow-400"></i>
-        <p class="mt-2 text-white text-sm font-semibold">Nyanyi</p>
-      </div>
-      <div class="bg-blue-900 p-3 rounded-lg shadow hover:bg-blue-800 transition">
-        <i class="fa-solid fa-person-running text-3xl text-yellow-400"></i>
-        <p class="mt-2 text-white text-sm font-semibold">Pencak Silat</p>
-      </div>
-      <div class="bg-blue-900 p-3 rounded-lg shadow hover:bg-blue-800 transition">
-        <i class="fa-solid fa-campground text-3xl text-yellow-400"></i>
-        <p class="mt-2 text-white text-sm font-semibold">Pramuka</p>
-      </div>
-      <div class="bg-blue-900 p-3 rounded-lg shadow hover:bg-blue-800 transition">
-        <i class="fa-solid fa-kit-medical text-3xl text-yellow-400"></i>
-        <p class="mt-2 text-white text-sm font-semibold">PMR</p>
-      </div>
-      <div class="bg-blue-900 p-3 rounded-lg shadow hover:bg-blue-800 transition">
-        <i class="fa-solid fa-people-group text-3xl text-yellow-400"></i>
-        <p class="mt-2 text-white text-sm font-semibold">Paduan Suara</p>
-      </div>
-      <div class="bg-blue-900 p-3 rounded-lg shadow hover:bg-blue-800 transition">
-        <i class="fa-solid fa-flag text-3xl text-yellow-400"></i>
-        <p class="mt-2 text-white text-sm font-semibold">Paskibra</p>
-      </div>
-      <div class="bg-blue-900 p-3 rounded-lg shadow hover:bg-blue-800 transition">
-        <i class="fa-solid fa-drum-steelpan text-3xl text-yellow-400"></i>
-        <p class="mt-2 text-white text-sm font-semibold">Perkusi</p>
-      </div>
-      <div class="bg-blue-900 p-3 rounded-lg shadow hover:bg-blue-800 transition">
-        <i class="fa-solid fa-robot text-3xl text-yellow-400"></i>
-        <p class="mt-2 text-white text-sm font-semibold">Robotik</p>
-      </div>
-      <div class="bg-blue-900 p-3 rounded-lg shadow hover:bg-blue-800 transition">
-        <i class="fa-solid fa-utensils text-3xl text-yellow-400"></i>
-        <p class="mt-2 text-white text-sm font-semibold">Tata Boga</p>
-      </div>
-      <div class="bg-blue-900 p-3 rounded-lg shadow hover:bg-blue-800 transition">
-        <i class="fa-solid fa-person-dress text-3xl text-yellow-400"></i>
-        <p class="mt-2 text-white text-sm font-semibold">Tari</p>
+      <div>
+        <p class="text-3xl font-bold">12</p>
+        <p>Mapel</p>
       </div>
     </div>
   </section>
 
-   <!-- Footer -->
+  <!-- Fasilitas -->
+  <section class="p-4">
+    <h3 class="font-bold text-blue-900 mb-4">Fasilitas</h3>
+    <div class="grid md:grid-cols-3 gap-4">
+      <div class="bg-gray-200 h-32 rounded-lg"></div>
+      <div class="bg-gray-200 h-32 rounded-lg"></div>
+      <div class="bg-gray-200 h-32 rounded-lg"></div>
+    </div>
+  </section>
+
+  <!-- Footer -->
   <footer class="bg-blue-900 text-white">
     <div class="container mx-auto px-6 py-8 grid grid-cols-1 md:grid-cols-3 gap-8">
 
@@ -290,6 +259,5 @@
       © 2025 Madrasah Aliyah Negeri Kota Batu. All rights reserved.
     </div>
   </footer>
-
 </body>
 </html>

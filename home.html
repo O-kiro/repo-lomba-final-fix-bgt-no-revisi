@@ -1,26 +1,27 @@
 <!DOCTYPE html>
 <html lang="id" class="scroll-smooth">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Madrasah Aliyah Negeri Kota Batu</title>
   <script src="https://cdn.tailwindcss.com"></script>
-    <link
+  <link
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
   />
 </head>
 <body class="bg-gray-50 font-sans">
+
   <!-- Navbar -->
-  <header class="bg-blue-900 text-white">
+  <header class="bg-blue-900 text-white shadow">
     <div class="container mx-auto flex justify-between items-center px-4 py-3">
       <div class="flex items-center gap-3">
-        <img src="logo.png" alt="Logo" class="w-10 h-10">
+        <img src="img/mannbg.png" alt="Logo" class="w-10 h-10" />
         <h1 class="text-lg font-bold">MAN Kota Batu</h1>
       </div>
       <nav class="space-x-6 hidden md:block">
         <a href="#" class="hover:text-yellow-400">Home</a>
-        <a href="#" class="hover:text-yellow-400">Profil</a>
+        <a href="profil.html" class="hover:text-yellow-400">Profil</a>
         <a href="#" class="hover:text-yellow-400">Prestasi</a>
         <a href="#" class="hover:text-yellow-400">Pengumuman</a>
         <a href="#" class="hover:text-yellow-400">Layanan</a>
@@ -30,9 +31,11 @@
 
   <!-- Hero Section -->
   <section class="relative">
-    <img src="hero.jpg" alt="Hero" class="w-full h-64 object-cover">
+    <img src="hero.jpg" alt="Hero" class="w-full h-64 object-cover" />
     <div class="absolute inset-0 bg-black/40 flex items-center justify-center">
-      <h2 class="text-white text-2xl md:text-4xl font-bold text-center">SELAMAT DATANG DI ZONA INTEGRITAS MADRASAH ALIYAH NEGERI KOTA BATU</h2>
+      <h2 class="text-white text-2xl md:text-4xl font-bold text-center px-4">
+        SELAMAT DATANG DI ZONA INTEGRITAS MADRASAH ALIYAH NEGERI KOTA BATU
+      </h2>
     </div>
   </section>
 
@@ -79,7 +82,9 @@
   <!-- Pengumuman & Info -->
   <section class="grid md:grid-cols-2 gap-6 p-4">
     <div class="bg-white rounded-lg shadow p-4">
-      <h3 class="font-bold text-blue-900 mb-2 flex items-center gap-2"><span class="text-yellow-400">📢</span> Pengumuman</h3>
+      <h3 class="font-bold text-blue-900 mb-2 flex items-center gap-2">
+        <span class="text-yellow-400">📢</span> Pengumuman
+      </h3>
       <ul class="list-disc ml-5 text-gray-700">
         <li>Pengumuman 1</li>
         <li>Pengumuman 2</li>
@@ -87,7 +92,9 @@
       </ul>
     </div>
     <div class="bg-white rounded-lg shadow p-4">
-      <h3 class="font-bold text-blue-900 mb-2 flex items-center gap-2"><span class="text-yellow-400">ℹ</span> Info Madrasah</h3>
+      <h3 class="font-bold text-blue-900 mb-2 flex items-center gap-2">
+        <span class="text-yellow-400">ℹ</span> Info Madrasah
+      </h3>
       <ul class="list-disc ml-5 text-gray-700">
         <li>Informasi 1</li>
         <li>Informasi 2</li>
@@ -96,50 +103,15 @@
     </div>
   </section>
 
-   <!-- Program Unggulan -->
+  <!-- Program Unggulan -->
   <section class="p-4">
     <div class="bg-blue-900 text-white p-4 rounded-lg">
-      <h3 class="font-bold mb-6 font-bold flex items-center justify-center h-20 text-4xl">Program Unggulan</h3>
-    <main class="flex w-[90%] max-w-6xl mx-auto mt-8">
-    <aside class="flex flex-col space-y-4 mr-6">
-      <button class="bg-blue-700 hover:bg-yellow-400 text-white hover:text-blue-900 font-semibold px-6 py-2 rounded-full border-2 border-blue-900">
-        Olimpiade
-      </button>
-      <button class="bg-blue-700 hover:bg-yellow-400 text-white hover:text-blue-900 text-white font-semibold px-6 py-2 rounded-full">
-        Riset
-      </button>
-      <button class="bg-blue-700 hover:bg-yellow-400 text-white hover:text-blue-900 text-white font-semibold px-6 py-2 rounded-full">
-        Percepatan
-      </button>
-      <button class="bg-blue-700 hover:bg-yellow-400 text-white hover:text-blue-900 text-white font-semibold px-6 py-2 rounded-full">
-        Tahfidz
-      </button>
-    </aside>
-    <section class="bg-blue-700 rounded-2xl flex-1 p-6">
-      <h2 class="text-white-400 text-xl font-bold mb-4">Olimpiade</h2>
-      <div class="relative w-full mb-4">
-        <select class="appearance-none w-full bg-yellow-400 text-blue-900 font-semibold py-2 px-4 rounded-lg cursor-pointer">
-          <option>Astronomi</option>
-          <option>Biologi</option>
-          <option>Ekonomi</option>
-          <option>Fisika</option>
-          <option>Geografi</option>
-          <option>Kebumian</option>
-          <option>Kimia</option>
-          <option>Matematika</option>
-          <option>TI</option>
-        </select>
-        <div class="absolute right-3 top-1/2 transform -translate-y-1/2 text-blue-900 pointer-events-none">
-          ▼
-        </div>
-      </div>
-      <div class="bg-blue-200 text-blue-800 h-40 flex items-center justify-center rounded-lg mb-4">
-        // FOTO
-      </div>
-      <div class="bg-blue-200 rounded-lg p-4">
-        <h3 class="text-blue-800 font-bold border-b-2 border-yellow-400 mb-2 text-center">DESKRIPSI</h3>
-        <p class="text-blue-800 text-sm">DESKRIPSI</p>
-      </div>
+      <h3 class="font-bold mb-4">Program Unggulan</h3>
+      <select class="w-full p-2 rounded text-gray-900">
+        <option>Pilih Program</option>
+        <option>OLIMPIADE</option>
+        <option>RISET</option>
+      </select>
     </div>
   </section>
 
@@ -288,6 +260,4 @@
     </div>
   </footer>
 </body>
-
 </html>
-

@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Madrasah Aliyah Negeri Kota Batu</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+</head>
+<body class="bg-gray-50 font-sans">
+
+ <!-- Navbar -->
+  <header class="bg-blue-900 text-white shadow">
+    <div class="container mx-auto flex justify-between items-center px-4 py-3">
+      <div class="flex items-center gap-3">
+        <img src="logo.png" alt="Logo" class="w-10 h-10" />
+        <h1 class="text-lg font-bold">MAN Kota Batu</h1>
+      </div>
+      <nav class="space-x-6 hidden md:block">
+        <a href="home.html" class="hover:text-yellow-400">Home</a>
+        <a href="#" class="hover:text-yellow-400">Profil</a>
+        <a href="#" class="hover:text-yellow-400">Prestasi</a>
+        <a href="#" class="hover:text-yellow-400">Pengumuman</a>
+        <a href="#" class="hover:text-yellow-400">Layanan</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="relative">
+    <img src="hero.jpg" alt="Hero" class="w-full h-64 object-cover" />
+    <div class="absolute inset-0 bg-black/40 flex items-center justify-center">
+      <h2 class="text-white text-2xl md:text-4xl font-bold text-center px-4">
+        SELAMAT DATANG DI ZONA INTEGRITAS MADRASAH ALIYAH NEGERI KOTA BATU
+      </h2>
+    </div>
+  </section>
+
+  <!-- Layanan -->
+<section class="bg-white py-8">
+  <div class="w-full max-w-7xl mx-auto px-6">
+    <!-- Judul -->
+    <div class="flex items-center gap-2 mb-6">
+      <i class="fas fa-tools text-yellow-400 text-2xl"></i>
+      <h2 class="text-2xl font-bold text-blue-900">Layanan</h2>
+    </div>
+
+    <!-- Grid 2 Kolom -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 w-full">
+
+      <!-- Menu Layanan -->
+      <div class="flex flex-col gap-4">
+        <!-- CBT -->
+        <a href="#"
+          class="flex items-center gap-3 bg-blue-800 text-white p-4 rounded-lg shadow hover:bg-blue-700 transition w-full">
+          <div class="bg-yellow-300 text-blue-900 w-14 h-14 flex items-center justify-center rounded-md">
+            <i class="fas fa-file-alt text-2xl"></i>
+          </div>
+          <span class="text-xl font-semibold">CBT</span>
+        </a>
+
+        <!-- Absensi -->
+        <a href="#"
+          class="flex items-center gap-3 bg-blue-800 text-white p-4 rounded-lg shadow hover:bg-blue-700 transition w-full">
+          <div class="bg-yellow-300 text-blue-900 w-14 h-14 flex items-center justify-center rounded-md">
+            <i class="fas fa-clipboard-list text-2xl"></i>
+          </div>
+          <span class="text-xl font-semibold">Absensi</span>
+        </a>
+
+        <!-- Perpus -->
+        <a href="#"
+          class="flex items-center gap-3 bg-blue-800 text-white p-4 rounded-lg shadow hover:bg-blue-700 transition w-full">
+          <div class="bg-yellow-300 text-blue-900 w-14 h-14 flex items-center justify-center rounded-md">
+            <i class="fas fa-book text-2xl"></i>
+          </div>
+          <span class="text-xl font-semibold">Perpus</span>
+        </a>
+      </div>
+
+      <!-- Form Login -->
+      <div class="bg-blue-100 p-6 rounded-lg shadow w-full">
+        <h3 class="bg-blue-800 text-white text-lg font-bold py-3 px-4 rounded-t-lg -mt-6 mb-6 w-fit">Login</h3>
+        <form action="#" class="space-y-4">
+          <!-- Username -->
+          <div>
+            <label for="username" class="block text-sm font-semibold text-gray-700">User</label>
+            <input id="username" type="text" placeholder="Masukkan user"
+              class="w-full px-3 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500">
+          </div>
+
+          <!-- Password -->
+          <div>
+            <label for="password" class="block text-sm font-semibold text-gray-700">Pass</label>
+            <input id="password" type="password" placeholder="Masukkan password"
+              class="w-full px-3 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500">
+          </div>
+
+          <!-- Tombol Login -->
+          <button type="submit"
+            class="w-full bg-blue-700 text-white font-semibold py-3 rounded-lg hover:bg-blue-800 transition">
+            Log in
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+  <!-- Daftar Ekskul -->
+  <section class="mt-8 mx-4 md:mx-8">
+    <div class="bg-blue-900 text-white px-4 py-2 rounded-t-lg flex items-center gap-2">
+      <i class="fa-solid fa-calendar-days text-yellow-400"></i>
+      <h3 class="font-bold text-lg">DAFTAR EKSKUL</h3>
+    </div>
+    <div class="grid grid-cols-3 md:grid-cols-5 gap-6 bg-white p-6 shadow rounded-b-lg text-center">
+      
+      <!-- List Ekskul -->
+      <div class="bg-blue-900 p-3 rounded-lg shadow hover:bg-blue-800 transition">
+        <i class="fa-solid fa-drum text-3xl text-yellow-400"></i>
+        <p class="mt-2 text-white text-sm font-semibold">Banjari</p>
+      </div>
+      <div class="bg-blue-900 p-3 rounded-lg shadow hover:bg-blue-800 transition">
+        <i class="fa-solid fa-basketball text-3xl text-yellow-400"></i>
+        <p class="mt-2 text-white text-sm font-semibold">Bola Basket</p>
+      </div>
+      <div class="bg-blue-900 p-3 rounded-lg shadow hover:bg-blue-800 transition">
+        <i class="fa-solid fa-volleyball text-3xl text-yellow-400"></i>
+        <p class="mt-2 text-white text-sm font-semibold">Bola Voli</p>
+      </div>
+      <div class="bg-blue-900 p-3 rounded-lg shadow hover:bg-blue-800 transition">
+        <i class="fa-solid fa-table-tennis-paddle-ball text-3xl text-yellow-400"></i>
+        <p class="mt-2 text-white text-sm font-semibold">Bulu Tangkis</p>
+      </div>
+      <div class="bg-blue-900 p-3 rounded-lg shadow hover:bg-blue-800 transition">
+        <i class="fa-solid fa-palette text-3xl text-yellow-400"></i>
+        <p class="mt-2 text-white text-sm font-semibold">Desain Grafis</p>
+      </div>
+      <div class="bg-blue-900 p-3 rounded-lg shadow hover:bg-blue-800 transition">
+        <i class="fa-solid fa-language text-3xl text-yellow-400"></i>
+        <p class="mt-2 text-white text-sm font-semibold">English Club</p>
+      </div>
+      <div class="bg-blue-900 p-3 rounded-lg shadow hover:bg-blue-800 transition">
+        <i class="fa-solid fa-futbol text-3xl text-yellow-400"></i>
+        <p class="mt-2 text-white text-sm font-semibold">Futsal</p>
+      </div>
+      <div class="bg-blue-900 p-3 rounded-lg shadow hover:bg-blue-800 transition">
+        <i class="fa-solid fa-newspaper text-3xl text-yellow-400"></i>
+        <p class="mt-2 text-white text-sm font-semibold">Jurnalis</p>
+      </div>
+      <div class="bg-blue-900 p-3 rounded-lg shadow hover:bg-blue-800 transition">
+        <i class="fa-solid fa-microphone text-3xl text-yellow-400"></i>
+        <p class="mt-2 text-white text-sm font-semibold">MC</p>
+      </div>
+      <div class="bg-blue-900 p-3 rounded-lg shadow hover:bg-blue-800 transition">
+        <i class="fa-solid fa-music text-3xl text-yellow-400"></i>
+        <p class="mt-2 text-white text-sm font-semibold">Nyanyi</p>
+      </div>
+      <div class="bg-blue-900 p-3 rounded-lg shadow hover:bg-blue-800 transition">
+        <i class="fa-solid fa-person-running text-3xl text-yellow-400"></i>
+        <p class="mt-2 text-white text-sm font-semibold">Pencak Silat</p>
+      </div>
+      <div class="bg-blue-900 p-3 rounded-lg shadow hover:bg-blue-800 transition">
+        <i class="fa-solid fa-campground text-3xl text-yellow-400"></i>
+        <p class="mt-2 text-white text-sm font-semibold">Pramuka</p>
+      </div>
+      <div class="bg-blue-900 p-3 rounded-lg shadow hover:bg-blue-800 transition">
+        <i class="fa-solid fa-kit-medical text-3xl text-yellow-400"></i>
+        <p class="mt-2 text-white text-sm font-semibold">PMR</p>
+      </div>
+      <div class="bg-blue-900 p-3 rounded-lg shadow hover:bg-blue-800 transition">
+        <i class="fa-solid fa-people-group text-3xl text-yellow-400"></i>
+        <p class="mt-2 text-white text-sm font-semibold">Paduan Suara</p>
+      </div>
+      <div class="bg-blue-900 p-3 rounded-lg shadow hover:bg-blue-800 transition">
+        <i class="fa-solid fa-flag text-3xl text-yellow-400"></i>
+        <p class="mt-2 text-white text-sm font-semibold">Paskibra</p>
+      </div>
+      <div class="bg-blue-900 p-3 rounded-lg shadow hover:bg-blue-800 transition">
+        <i class="fa-solid fa-drum-steelpan text-3xl text-yellow-400"></i>
+        <p class="mt-2 text-white text-sm font-semibold">Perkusi</p>
+      </div>
+      <div class="bg-blue-900 p-3 rounded-lg shadow hover:bg-blue-800 transition">
+        <i class="fa-solid fa-robot text-3xl text-yellow-400"></i>
+        <p class="mt-2 text-white text-sm font-semibold">Robotik</p>
+      </div>
+      <div class="bg-blue-900 p-3 rounded-lg shadow hover:bg-blue-800 transition">
+        <i class="fa-solid fa-utensils text-3xl text-yellow-400"></i>
+        <p class="mt-2 text-white text-sm font-semibold">Tata Boga</p>
+      </div>
+      <div class="bg-blue-900 p-3 rounded-lg shadow hover:bg-blue-800 transition">
+        <i class="fa-solid fa-person-dress text-3xl text-yellow-400"></i>
+        <p class="mt-2 text-white text-sm font-semibold">Tari</p>
+      </div>
+    </div>
+  </section>
+
+   <!-- Footer -->
+  <footer class="bg-blue-900 text-white">
+    <div class="container mx-auto px-6 py-8 grid grid-cols-1 md:grid-cols-3 gap-8">
+
+      <!-- Kolom Kiri -->
+      <div>
+        <!-- Logo Sekolah -->
+        <img src="logo.png" alt="Logo MAN Kota Batu" class="w-20 h-20 mb-3" />
+
+        <h2 class="text-xl font-bold border-b-2 border-yellow-400 pb-2 mb-3">
+          MADRASAH ALIYAH NEGERI KOTA BATU
+        </h2>
+        <p class="text-gray-300 mb-4 text-sm">
+          Jl. Patimura No.25, Temas, Kec. Batu, Kota Batu, Jawa Timur 65315
+        </p>
+        <ul class="space-y-3 text-sm">
+          <li>
+            <a href="tel:+62341592185" class="flex items-center gap-2 hover:text-yellow-400">
+              <i class="fa-solid fa-phone bg-yellow-400 text-blue-900 w-6 h-6 flex items-center justify-center rounded"></i>
+              (0341) 592185
+            </a>
+          </li>
+          <li>
+            <a href="https://www.instagram.com/mankotabatuofficial" target="_blank" class="flex items-center gap-2 hover:text-yellow-400">
+              <i class="fa-brands fa-instagram bg-yellow-400 text-blue-900 w-6 h-6 flex items-center justify-center rounded"></i>
+              Instagram MAN KOTA BATU
+            </a>
+          </li>
+          <li>
+            <a href="https://www.facebook.com/mankotabatuofficial" target="_blank" class="flex items-center gap-2 hover:text-yellow-400">
+              <i class="fa-brands fa-facebook bg-yellow-400 text-blue-900 w-6 h-6 flex items-center justify-center rounded"></i>
+              Facebook
+            </a>
+          </li>
+          <li>
+            <a href="https://www.tiktok.com/@mankotabatuofficial" target="_blank" class="flex items-center gap-2 hover:text-yellow-400">
+              <i class="fa-brands fa-tiktok bg-yellow-400 text-blue-900 w-6 h-6 flex items-center justify-center rounded"></i>
+              TikTok
+            </a>
+          </li>
+          <li>
+            <a href="https://x.com/mankotabatu" target="_blank" class="flex items-center gap-2 hover:text-yellow-400">
+              <i class="fa-brands fa-x-twitter bg-yellow-400 text-blue-900 w-6 h-6 flex items-center justify-center rounded"></i>
+              Twitter
+            </a>
+          </li>
+          <li>
+            <a href="https://www.linkedin.com/company/man-kota-batu/" target="_blank" class="flex items-center gap-2 hover:text-yellow-400">
+              <i class="fa-brands fa-linkedin bg-yellow-400 text-blue-900 w-6 h-6 flex items-center justify-center rounded"></i>
+              LinkedIn
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Kolom Tengah -->
+      <div class="flex justify-center">
+        <iframe 
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3955.348255398158!2d112.51514857502354!3d-7.870332192156792!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e789ef6d0edfdcd%3A0x6f1d4c0a36cb8a3e!2sMAN%20Kota%20Batu!5e0!3m2!1sid!2sid!4v1694164040000!5m2!1sid!2sid" 
+          width="300" height="250" 
+          style="border:2px solid #ffd700; border-radius:8px;" 
+          allowfullscreen="" 
+          loading="lazy">
+        </iframe>
+      </div>
+
+      <!-- Kolom Kanan -->
+      <div>
+        <h3 class="text-yellow-400 text-lg font-bold mb-3">TAUTAN PENTING</h3>
+        <div class="mb-4">
+          <h4 class="font-semibold">GURU</h4>
+          <ul class="text-sm space-y-2 mt-2">
+            <li><a href="https://rdm.mankotabatu.sch.id/" class="hover:text-yellow-400">Raport Digital Madrasah (RDM)</a></li>
+            <li><a href="https://emisgtk.kemenag.go.id/" class="hover:text-yellow-400">EMIS GTK</a></li>
+            <li><a href="#" class="hover:text-yellow-400">Absensi</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-semibold">SISWA</h4>
+          <ul class="text-sm space-y-2 mt-2">
+            <li><a href="https://uam.mankotabatu.sch.id/" class="hover:text-yellow-400">Computer Based Test (CBT)</a></li>
+            <li><a href="#" class="hover:text-yellow-400">Absensi</a></li>
+            <li><a href="#" class="hover:text-yellow-400">Ekstrakurikuler</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Copyright -->
+    <div class="bg-blue-950 text-center text-gray-300 text-sm py-3 mt-6 border-t border-gray-700">
+      © 2025 Madrasah Aliyah Negeri Kota Batu. All rights reserved.
+    </div>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Berita</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+/>
+</head>
+<body class="bg-gray-50 font-sans">
+
+<!-- Navbar -->
+<header class="bg-blue-900 text-white shadow">
+  <div class="container mx-auto flex justify-between items-center px-4 py-3">
+    <div class="flex items-center gap-3">
+      <img src="img/mannbg.png" alt="Logo" class="w-10 h-10" />
+      <h1 class="text-lg font-bold">MAN Kota Batu</h1>
+    </div>
+    <nav class="space-x-6 hidden md:block">
+      <a href="#" class="hover:text-yellow-400">Home</a>
+      <a href="profil.html" class="hover:text-yellow-400">Profil</a>
+      <a href="#" class="hover:text-yellow-400">Prestasi</a>
+      <a href="#" class="hover:text-yellow-400">Pengumuman</a>
+      <a href="#" class="hover:text-yellow-400">Layanan</a>
+    </nav>
+  </div>
+</header>
+
+  <!-- Judul -->
+  <section class="bg-blue-800 text-center py-6 text-white">
+    <h1 class="font-bold text-5xl">BERITA</h1>
+    <p class="text-bold text-xl">TERBARU</p>
+  </section>
+
+  <!-- Berita Terbaru -->
+  <div class="container mx-auto px-4 mt-6">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <!-- Berita Utama 1 -->
+      <div class="bg-white shadow-md rounded-lg overflow-hidden">
+        <div class="bg-gray-300 h-40 flex items-center justify-center">FOTO</div>
+        <div class="p-4">
+          <h2 class="font-bold">JUDUL</h2>
+          <p class="text-gray-600 text-sm mt-1">Deskripsi...</p>
+        </div>
+      </div>
+      <!-- Berita Utama 2 -->
+      <div class="bg-white shadow-md rounded-lg overflow-hidden">
+        <div class="bg-gray-300 h-40 flex items-center justify-center">FOTO</div>
+        <div class="p-4">
+          <h2 class="font-bold">JUDUL</h2>
+          <p class="text-gray-600 text-sm mt-1">Deskripsi...</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Berita Sebelumnya -->
+  <div class="container mx-auto px-4 mt-8">
+    <h3 class="bg-blue-800 text-white text-center py-2 px-6 font-bold">Berita sebelumnya</h3>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-4">
+      <div class="bg-white shadow-md rounded-lg overflow-hidden">
+        <div class="bg-gray-300 h-28 flex items-center justify-center">FOTO</div>
+        <div class="p-3">
+          <h4 class="font-bold text-sm">JUDUL</h4>
+          <p class="text-gray-600 text-xs">Deskripsi...</p>
+        </div>
+      </div>
+      <div class="bg-white shadow-md rounded-lg overflow-hidden">
+        <div class="bg-gray-300 h-28 flex items-center justify-center">FOTO</div>
+        <div class="p-3">
+          <h4 class="font-bold text-sm">JUDUL</h4>
+          <p class="text-gray-600 text-xs">Deskripsi...</p>
+        </div>
+      </div>
+      <div class="bg-white shadow-md rounded-lg overflow-hidden">
+        <div class="bg-gray-300 h-28 flex items-center justify-center">FOTO</div>
+        <div class="p-3">
+          <h4 class="font-bold text-sm">JUDUL</h4>
+          <p class="text-gray-600 text-xs">Deskripsi...</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Pagination -->
+  <div class="flex justify-center items-center space-x-2 my-6">
+    <button class="px-3 py-1 bg-gray-300 rounded hover:bg-blue-600 hover:text-white">‹</button>
+    <button class="px-3 py-1 bg-blue-600 text-white rounded">1</button>
+    <button class="px-3 py-1 bg-gray-300 rounded hover:bg-blue-600 hover:text-white">2</button>
+    <button class="px-3 py-1 bg-gray-300 rounded hover:bg-blue-600 hover:text-white">3</button>
+    <button class="px-3 py-1 bg-gray-300 rounded hover:bg-blue-600 hover:text-white">›</button>
+  </div>
+
+  <!-- Footer -->
+  <footer class="bg-blue-900 text-white">
+    <div class="container mx-auto px-6 py-8 grid grid-cols-1 md:grid-cols-3 gap-8">
+
+      <!-- Kolom Kiri -->
+      <div>
+        <!-- Logo Sekolah -->
+        <h2 class="text-xl font-bold border-b-2 border-yellow-400 pb-2 mb-3">
+          MADRASAH ALIYAH NEGERI KOTA BATU
+        </h2>
+        <p class="text-gray-300 mb-4 text-sm">
+          Jl. Patimura No.25, Temas, Kec. Batu, Kota Batu, Jawa Timur 65315
+        </p>
+        <ul class="space-y-3 text-sm">
+          <li>
+            <a href="tel:+62341592185" class="flex items-center gap-2 hover:text-yellow-400">
+              <i class="fa-solid fa-phone bg-yellow-400 text-blue-900 w-6 h-6 flex items-center justify-center rounded"></i>
+              (0341) 592185
+            </a>
+          </li>
+          <li>
+            <a href="https://www.instagram.com/mankotabatuofficial" target="_blank" class="flex items-center gap-2 hover:text-yellow-400">
+              <i class="fa-brands fa-instagram bg-yellow-400 text-blue-900 w-6 h-6 flex items-center justify-center rounded"></i>
+              Instagram MAN KOTA BATU
+            </a>
+          </li>
+          <li>
+            <a href="https://www.facebook.com/mankotabatuofficial" target="_blank" class="flex items-center gap-2 hover:text-yellow-400">
+              <i class="fa-brands fa-facebook bg-yellow-400 text-blue-900 w-6 h-6 flex items-center justify-center rounded"></i>
+              Facebook
+            </a>
+          </li>
+          <li>
+            <a href="https://www.tiktok.com/@mankotabatuofficial" target="_blank" class="flex items-center gap-2 hover:text-yellow-400">
+              <i class="fa-brands fa-tiktok bg-yellow-400 text-blue-900 w-6 h-6 flex items-center justify-center rounded"></i>
+              TikTok
+            </a>
+          </li>
+          <li>
+            <a href="https://x.com/mankotabatu" target="_blank" class="flex items-center gap-2 hover:text-yellow-400">
+              <i class="fa-brands fa-x-twitter bg-yellow-400 text-blue-900 w-6 h-6 flex items-center justify-center rounded"></i>
+              Twitter
+            </a>
+          </li>
+          <li>
+            <a href="https://www.linkedin.com/company/man-kota-batu/" target="_blank" class="flex items-center gap-2 hover:text-yellow-400">
+              <i class="fa-brands fa-linkedin bg-yellow-400 text-blue-900 w-6 h-6 flex items-center justify-center rounded"></i>
+              LinkedIn
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Kolom Tengah -->
+      <div class="flex justify-center">
+        <iframe 
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3955.348255398158!2d112.51514857502354!3d-7.870332192156792!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e789ef6d0edfdcd%3A0x6f1d4c0a36cb8a3e!2sMAN%20Kota%20Batu!5e0!3m2!1sid!2sid!4v1694164040000!5m2!1sid!2sid" 
+          width="300" height="250" 
+          style="border:2px solid #ffd700; border-radius:8px;" 
+          allowfullscreen="" 
+          loading="lazy">
+        </iframe>
+      </div>
+
+      <!-- Kolom Kanan -->
+      <div>
+        <h3 class="text-yellow-400 text-lg font-bold mb-3">TAUTAN PENTING</h3>
+        <div class="mb-4">
+          <h4 class="font-semibold">GURU</h4>
+          <ul class="text-sm space-y-2 mt-2">
+            <li><a href="https://rdm.mankotabatu.sch.id/" class="hover:text-yellow-400">Raport Digital Madrasah (RDM)</a></li>
+            <li><a href="https://emisgtk.kemenag.go.id/" class="hover:text-yellow-400">EMIS GTK</a></li>
+            <li><a href="#" class="hover:text-yellow-400">Absensi</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-semibold">SISWA</h4>
+          <ul class="text-sm space-y-2 mt-2">
+            <li><a href="https://uam.mankotabatu.sch.id/" class="hover:text-yellow-400">Computer Based Test (CBT)</a></li>
+            <li><a href="#" class="hover:text-yellow-400">Absensi</a></li>
+            <li><a href="#" class="hover:text-yellow-400">Ekstrakurikuler</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Copyright -->
+    <div class="bg-blue-950 text-center text-gray-300 text-sm py-3 mt-6 border-t border-gray-700">
+      © 2025 Madrasah Aliyah Negeri Kota Batu. All rights reserved.
+    </div>
+  </footer>
+
+</body>
+</html>

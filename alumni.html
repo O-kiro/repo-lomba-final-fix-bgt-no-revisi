@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Alumni Page</title>
   <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
 </head>
 <body class="bg-gray-100 font-sans">
 
@@ -23,23 +24,23 @@
       </div>
     </div>
 
-    <!-- Logo + Menu -->
-    <div class="bg-blue-900 text-white">
-      <div class="flex flex-col items-center py-2">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/3/3f/Placeholder_view_vector.svg" alt="logo" class="h-12 mb-1">
-        <h1 class="font-bold text-lg">MAKOBA</h1>
-        <p class="text-sm">Madrasah Aliyah Negeri Kota Batu</p>
+  <header class="bg-blue-900 text-white shadow">
+    <div class="container mx-auto flex justify-between items-center px-4 py-3">
+      <div class="flex items-center gap-3">
+        <img src="img/mannbg.png" alt="Logo" class="w-10 h-10" />
+        <h1 class="text-lg font-bold">MAN Kota Batu</h1>
       </div>
-
-      <nav class="flex justify-center space-x-6 py-4 font-semibold text-sm bg-blue-800">
+      <nav class="space-x-6 hidden md:block">
         <a href="home.html" class="hover:text-yellow-400">Home</a>
         <a href="profil.html" class="hover:text-yellow-400">Profil</a>
-        <a href="#" class="hover:text-yellow-400">Prestasi</a>
-        <a href="#" class="hover:text-yellow-400">Pengumuman</a>
-        <a href="#" class="hover:text-yellow-400">Layanan</a>
+        <a href="prestasi.html" class="hover:text-yellow-400">Prestasi</a>
+        <a href="pengumuman.html" class="hover:text-yellow-400">Pengumuman</a>
+        <a href="layanan.html" class="hover:text-yellow-400">Layanan</a>
       </nav>
     </div>
   </header>
+
+    
 
   <!-- Profil Alumni -->
   <section class="text-center bg-white py-2">
@@ -48,16 +49,23 @@
       <p class="text-white font-semibold">PROFIL ALUMNI</p>
     </div>
 
-    <!-- Slider -->
-    <div class="flex justify-center items-center space-x-4 mt-8 mb-8">
-      <button class="text-2xl">&lt;</button>
-      <div class="w-28 h-36 bg-gray-300 rounded-lg"></div>
-      <div class="w-28 h-36 bg-gray-300 rounded-lg"></div>
-      <div class="w-28 h-36 bg-gray-300 rounded-lg"></div>
-      <button class="text-2xl">&gt;</button>
-    </div>
-    <button class="mt-4 bg-yellow-400 hover:bg-blue-900 text-blue-900 hover:text-white font-bold px-4 py-2 rounded font-semibold mb-5">Selengkapnya</button>
-  </section>
+ <!-- Slider -->
+<div class="flex justify-center items-center space-x-4 mt-8 mb-8">
+  <button class="text-2xl">&lt;</button>
+  <div class="w-28 h-36 bg-gray-300 rounded-lg"></div>
+  <div class="w-28 h-36 bg-gray-300 rounded-lg"></div>
+  <div class="w-28 h-36 bg-gray-300 rounded-lg"></div>
+  <button class="text-2xl">&gt;</button>
+</div>
+
+<!-- Tombol Selengkapnya -->
+<a href="alumni2.html" 
+   class="mt-4 bg-yellow-400 hover:bg-blue-900 text-blue-900 hover:text-white 
+          font-bold px-4 py-2 rounded font-semibold mb-5 
+          inline-block transition duration-300 ease-in-out transform hover:scale-105">
+   Selengkapnya
+</a>
+
 
   <!-- Tracer Study Alumni -->
   <section class="bg-gray-200 text-center py-6 px-4">

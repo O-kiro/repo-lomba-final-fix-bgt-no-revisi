@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Madrasah Aliyah Negeri Kota Batu</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
 </head>
 <body class="bg-gray-50 font-sans">
@@ -82,8 +83,14 @@
       <h3 class="text-2xl font-bold text-center text-blue-900 mb-6">Formulir Pendaftaran</h3>
       <form class="bg-white shadow rounded-lg p-6 max-w-xl mx-auto space-y-4">
         <input type="text" placeholder="Nama Lengkap" class="w-full p-3 border rounded">
-        <input type="text" placeholder="NISN" class="w-full p-3 border rounded">
+        <input type="text" placeholder="Tanggal Lahir" class="w-full p-3 border rounded">
+        <select class="w-full p-3 border rounded">
+          <option>Jenis Kelamin</option>
+          <option>Laki-Laki</option>
+          <option>Perempuan</option>
+        </select>
         <input type="text" placeholder="Asal Sekolah" class="w-full p-3 border rounded">
+        <input type="text" placeholder="NISN" class="w-full p-3 border rounded">
         <input type="email" placeholder="Email" class="w-full p-3 border rounded">
         <input type="text" placeholder="Nomor HP" class="w-full p-3 border rounded">
         <select class="w-full p-3 border rounded">
@@ -161,6 +168,38 @@
         </div>
   </section>
 
+  <!--Chart-->
+  <section class="mt-6 mb-6 flex justify-center items-center">
+    <div class="w-[900px] h-[400px] mx-auto bg-white p-4 rounded-xl shadow-md">
+     <canvas id="chartLingkaran"></canvas>
+    </div>
+  <div class="flex justify-center items-center">
+  <script>
+  const ctx = document.getElementById('chartLingkaran').getContext('2d');
+  new Chart(ctx, {
+    type: 'pie',
+    data: {
+      labels: ['MTs Negeri', 'MTs Swasta', 'SMP Negeri', 'SMP Swasta'],
+      datasets: [{
+        data: [11, 32, 12, 40],
+        backgroundColor: ['#FFF212', '#8CCF20', '#6320CF', '#CF2034'],
+        borderColor: '#ffffff',
+        borderWidth: 3 
+      }]
+    },
+    options: {
+      responsive: true,
+      plugins: {
+        legend: {
+          position: 'bottom'
+        }
+      }
+    }
+  });
+  </script>
+  </div>
+  </section>
+
   <!-- Footer -->
   <footer class="bg-blue-900 text-white">
     <div class="container mx-auto px-6 py-8 grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -236,7 +275,7 @@
             <li><a href="#" class="hover:text-yellow-400">Persyaratan Pendaftaran</a></li>
             <li><a href="#" class="hover:text-yellow-400">Jadwal Penting</a></li>
             <li><a href="#" class="hover:text-yellow-400">Dokumen Pendukung</a></li>
-            <li><a href="#" class="hover:text-yellow-400">FAQ/Pertanyaan</a></li>
+            <li><a href="#" class="hover:text-yellow-400">FAQ / Pertanyaan</a></li>
           </ul>
         </div>
       </div>

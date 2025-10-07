@@ -221,105 +221,59 @@
   </div>
 </section>
 
-   <!--Tugas, Jadwal dan Raport harian-->
-  <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-6xl mx-auto">
+<!-- Data Siswa Perangkatan -->
+   <section class="bg-yellow-400 border-y-4 border-yellow-400 py-8">
+         <div class="text-center mb-6">
+           <h2 class="text-2xl font-bold text-blue-900">Data Angkatan</h2>
+         </div>
+         <div class="container mx-auto px-4">
+      <div class="grid grid-cols-2 md:grid-cols-4 text-center gap-6">
+        
+        <!-- Item -->
+        <div>
+          <p class="text-3xl font-bold text-blue-900">Kelas X</p>
+          <p class="text-blue-900 font-semibold">?</p>
+        </div>
 
-    <!-- 📅 JADWAL -->
-    <div class="bg-[#2B2DBE] text-white rounded-2xl p-5 shadow-xl">
-      <h2 class="flex items-center text-xl font-bold mb-4">
-        <span class="mr-2">📅</span> Jadwal
-      </h2>
-
-      <!-- Dropdown Hari -->
-      <div class="bg-white text-black rounded-lg px-4 py-2 mb-4 flex items-center justify-between font-semibold">
-        Senin <span class="text-gray-500">▼</span>
+        <!-- Item -->
+        <div>
+          <p class="text-3xl font-bold text-blue-900">Kelas XI</p>
+          <p class="text-blue-900 font-semibold">?</p>
+        </div>
       </div>
-
-      <!-- Box Tabel -->
-      <div class="bg-white rounded-xl overflow-hidden shadow-lg">
-        <!-- Header -->
-        <div class="grid grid-cols-3 bg-yellow-300 text-black font-bold p-2 text-center border-blue-700">
-          <span>Jam</span>
-          <span>Mata Pelajaran</span>
-          <span>Guru</span>
+      
+      <div class="container mx-auto px-4">
+        <div class="grid grid-cols-1 md:grid-cols-1 text-center gap-6 justify-center">
+        <!-- Item -->
+        <div>
+          <p class="text-3xl font-bold text-blue-900">Kelas XII</p>
+          <p class="text-blue-900 font-semibold">?</p>
         </div>
-        <!-- Isi Jadwal -->
-        <div class="divide-y text-sm text-black">
-          <div class="grid grid-cols-3 p-3 font-bold">
-            <span>07.00 - 07.45</span>
-            <span>-</span>
-            <span>-</span>
-          </div>
-          <div class="grid grid-cols-3 p-3 bg-gray-50 font-bold">
-            <span>07.46 - 08.30</span>
-            <span>Matpel</span>
-            <span>Bu / Pak</span>
-          </div>
-          <div class="grid grid-cols-3 p-3 font-bold">
-            <span>08.31 - 09.16</span>
-            <span>Matpel</span>
-            <span>Bu / Pak</span>
-          </div>
-          <div class="grid grid-cols-3 p-3 bg-gray-50 font-bold">
-            <span>09.17 - 10.05</span>
-            <span>Matpel</span>
-            <span>Bu / Pak</span>
-          </div>
-          <div class="grid grid-cols-3 p-3 font-bold">
-            <span>10.06 - 10.51</span>
-            <span>Matpel</span>
-            <span>Bu / Pak</span>
-          </div>
-        </div>
+      </div>
       </div>
     </div>
-
-    <!-- 📝 TUGAS -->
-    <div class="bg-[#2B2DBE] text-white rounded-2xl p-5 shadow-xl">
-      <h2 class="flex items-center text-xl font-bold mb-4">
-        <span class="mr-2">📝</span> Tugas
-      </h2>
-      <div class="flex justify-around">
-        <button class="bg-[#E9E600] text-black font-bold rounded-xl px-6 py-3 shadow-md hover:scale-105 transition">Fisika</button>
-        <button class="bg-[#E9E600] text-black font-bold rounded-xl px-6 py-3 shadow-md hover:scale-105 transition">QurDist</button>
-        <button class="bg-[#E9E600] text-black font-bold rounded-xl px-6 py-3 shadow-md hover:scale-105 transition">B. Arab</button>
-      </div>
+  </section>
+  
+  <!-- Data Siswa Perjurusan-->
+    <section class="bg-blue-900 border-y-4 border-blue-900 py-8">
+    <div class="text-center mb-6">
+      <h2 class="text-2xl font-bold text-yellow-400">Data Jurusan</h2>
     </div>
-
-    <!-- 📊 RAPORT HARIAN -->
-    <div class="bg-[#163B60] text-white rounded-2xl p-5 shadow-xl md:col-span-2">
-      <h2 class="flex items-center text-xl font-bold mb-6">
-        <span class="bg-[#E9E600] text-black px-2 py-1 rounded mr-2">A</span> Raport Harian
-      </h2>
-
-      <div class="grid grid-cols-4 gap-6">
-        <!-- Nilai -->
-        <div class="flex items-center justify-center text-6xl font-bold bg-white text-black rounded-xl shadow-lg">
-          B+
+    <div>
+      <div cl\ass="container mx-auto px-4">
+        <div class="grid grid-cols-2 md:grid-cols-4 text-center gap-6">
+        <!-- item -->
+        <div>
+          <p class="text-3xl font-bold text-yellow-400">Saintek</p>
+          <p class="text-yellow-400 font-semibold">?</p>
         </div>
-
-        <!-- Diagram Batang -->
-        <div class="flex flex-col justify-around space-y-2">
-          <div class="h-6 bg-gray-300 rounded"></div>
-          <div class="h-6 bg-gray-300 rounded"></div>
-          <div class="h-6 bg-gray-300 rounded"></div>
-        </div>
-
-        <!-- Diagram Lingkaran -->
-        <div class="flex items-center justify-center">
-          <div class="w-24 h-24 rounded-full border-[10px] border-[#E9E600] border-t-[#2B2DBE]"></div>
-        </div>
-
-        <!-- Grafik Garis -->
-        <div class="flex items-end space-x-2">
-          <div class="w-3 h-8 bg-[#E9E600]"></div>
-          <div class="w-3 h-14 bg-[#E9E600]"></div>
-          <div class="w-3 h-10 bg-[#E9E600]"></div>
-          <div class="w-3 h-20 bg-[#E9E600]"></div>
+        <!-- item -->
+        <div>
+          <p class="text-3xl font-bold text-yellow-400">Soshum</p>
+          <p class="text-yellow-400 font-semibold">?</p>
         </div>
       </div>
-    </div>
-  </div>
+    </section>
 
   <!-- Daftar Ekskul -->
   <section class="mt-8 mx-4 md:mx-8">
@@ -502,4 +456,5 @@
 
 </body>
 </html>
+
 

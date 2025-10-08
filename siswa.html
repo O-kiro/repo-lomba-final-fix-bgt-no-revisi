@@ -20,7 +20,10 @@
 
       <!-- Right (Search) -->
       <div>
-        <input type="text" placeholder="Pencarian..." class="border rounded px-2 py-1 text-sm">
+        <form id="searchForm" class="hidden md:flex items-center gap-2" onsubmit="return false;">
+            <input id="searchInput" type="text" placeholder="Pencarian..." class="border rounded px-2 py-1 text-sm text-black" aria-label="Pencarian situs">
+            <button type="submit" class="bg-yellow-400 text-blue-900 px-2 py-1 rounded">Cari</button>
+        </form>
       </div>
     </div>
 </header>
@@ -436,6 +439,7 @@
 
 </body>
 </html>
+
 
 
 

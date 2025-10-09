@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alumni</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+/>
+</head>
+<body class="bg-gray-50 font-sans">
+
+  <!-- Header / Navbar -->
+  <header class="bg-blue-800 shadow">
+    <div class="flex items-center justify-between px-4 py-2">
+      <!-- Left -->
+      <div class="flex items-center space-x-2">
+        <button class="bg-blue-900 text-white px-3 py-1 text-sm rounded">Kontak</button>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Flag_of_Indonesia.svg/32px-Flag_of_Indonesia.svg.png" alt="id" class="w-5 h-4">
+      </div>
+
+      <!-- Right (Search) -->
+      <div>
+        <input type="text" placeholder="Pencarian..." class="border rounded px-2 py-1 text-sm">
+      </div>
+    </div>
+
+  <header class="bg-blue-900 text-white shadow">
+    <div class="container mx-auto flex justify-between items-center px-4 py-3">
+      <div class="flex items-center gap-3">
+        <img src="img/mannbg.png" alt="Logo" class="w-10 h-10" />
+        <h1 class="text-lg font-bold">MAN Kota Batu</h1>
+      </div>
+      <nav class="space-x-6 hidden md:block">
+        <a href="home.html" class="hover:text-yellow-400">Home</a>
+        <a href="profil.html" class="hover:text-yellow-400">Profil</a>
+        <a href="prestasi.html" class="hover:text-yellow-400">Prestasi</a>
+        <a href="pengumuman.html" class="hover:text-yellow-400">Pengumuman</a>
+        <a href="layanan.html" class="hover:text-yellow-400">Layanan</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Judul -->
+  <section class="bg-blue-800 text-center py-6 text-white font-bold text-xl">
+    CARI ALUMNI
+    <p class="text-sm font-normal">Profil Singkat Jejak Karier Alumni MAN Kota Batu</p>
+  </section>
+
+  <!-- Form Pencarian -->
+  <div class="container mx-auto mt-6 px-4">
+    <div class="bg-white shadow-md rounded-lg p-6">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
+        <select class="border p-2 rounded">
+          <option>Semua Angkatan</option>
+          <option>41-50</option>
+          <option>31-40</option>
+          <option>21-30</option>
+          <option>11-20</option>
+          <option>1-10</option>
+        </select>
+        <select class="border p-2 rounded">
+          <option>Semua Jurusan</option>
+          <option>IPA</option>
+          <option>IPS</option>
+        </select>
+        <input type="text" placeholder="Nama Alumni" class="border p-2 rounded">
+      </div>
+      <button class="bg-blue-700 hover:bg-blue-800 text-white px-6 py-2 rounded">
+        Cari
+      </button>
+    </div>
+  </div>
+
+  <!-- Filter Tambahan -->
+  <div class="container mx-auto px-4 mt-4">
+    <div class="flex space-x-4 justify-center">
+      <button class="px-4 py-2 bg-blue-700 text-white rounded hover:bg-blue-800">Laki-laki</button>
+      <button class="px-4 py-2 bg-blue-700 text-white rounded hover:bg-blue-800">Perempuan</button>
+      <button class="px-4 py-2 bg-blue-700 text-white rounded hover:bg-blue-800">Semua Alumni</button>
+    </div>
+  </div>
+
+  <!-- Daftar Alumni -->
+  <div class="container mx-auto px-4 mt-6 space-y-6">
+    <!-- Alumni Card -->
+    <div class="bg-white shadow-md rounded-lg p-4 flex">
+      <div class="w-1/3 flex items-center justify-center">
+        <div class="w-28 h-28 bg-gray-300 flex items-center justify-center">FOTO</div>
+      </div>
+      <div class="w-2/3 pl-4">
+        <p class="font-bold">NAMA ALUMNI</p>
+        <p class="mt-2 text-gray-600">Testimoni ?</p>
+      </div>
+    </div>
+
+    <div class="bg-white shadow-md rounded-lg p-4 flex">
+      <div class="w-1/3 flex items-center justify-center">
+        <div class="w-28 h-28 bg-gray-300 flex items-center justify-center">FOTO</div>
+      </div>
+      <div class="w-2/3 pl-4">
+        <p class="font-bold">NAMA ALUMNI</p>
+        <p class="mt-2 text-gray-600">Testimoni ?</p>
+      </div>
+    </div>
+
+    <div class="bg-white shadow-md rounded-lg p-4 flex">
+      <div class="w-1/3 flex items-center justify-center">
+        <div class="w-28 h-28 bg-gray-300 flex items-center justify-center">FOTO</div>
+      </div>
+      <div class="w-2/3 pl-4">
+        <p class="font-bold">NAMA ALUMNI</p>
+        <p class="mt-2 text-gray-600">Testimoni ?</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Pagination -->
+  <div class="flex justify-center items-center space-x-2 my-6">
+    <button class="px-3 py-1 bg-gray-300 rounded hover:bg-blue-600 hover:text-white">‹</button>
+    <button class="px-3 py-1 bg-blue-600 text-white rounded">1</button>
+    <button class="px-3 py-1 bg-gray-300 rounded hover:bg-blue-600 hover:text-white">2</button>
+    <button class="px-3 py-1 bg-gray-300 rounded hover:bg-blue-600 hover:text-white">3</button>
+    <button class="px-3 py-1 bg-gray-300 rounded hover:bg-blue-600 hover:text-white">›</button>
+  </div>
+
+<!-- Footer -->
+<footer class="bg-blue-900 text-white">
+  <div class="container mx-auto px-6 py-12 grid grid-cols-1 md:grid-cols-3 gap-10">
+
+    <!-- Kolom Kiri -->
+    <div class="flex flex-col">
+      <h2 class="text-xl font-bold border-b-2 border-yellow-400 pb-2 mb-3">
+        MADRASAH ALIYAH NEGERI KOTA BATU
+      </h2>
+      <p class="text-gray-300 mb-4 text-sm">
+        Jl. Patimura No.25, Temas, Kec. Batu, Kota Batu, Jawa Timur 65315
+      </p>
+      <ul class="space-y-3 text-sm">
+        <li>
+          <a href="tel:+62341592185" class="flex items-center gap-2 hover:text-yellow-400">
+            <i class="fa-solid fa-phone bg-yellow-400 text-blue-900 w-6 h-6 flex items-center justify-center rounded"></i>
+            (0341) 592185
+          </a>
+        </li>
+        <li>
+          <a href="https://www.instagram.com/mankotabatuofficial" target="_blank" class="flex items-center gap-2 hover:text-yellow-400">
+            <i class="fa-brands fa-instagram bg-yellow-400 text-blue-900 w-6 h-6 flex items-center justify-center rounded"></i>
+            Instagram
+          </a>
+        </li>
+        <li>
+          <a href="https://www.facebook.com/mankotabatuofficial" target="_blank" class="flex items-center gap-2 hover:text-yellow-400">
+            <i class="fa-brands fa-facebook bg-yellow-400 text-blue-900 w-6 h-6 flex items-center justify-center rounded"></i>
+            Facebook
+          </a>
+        </li>
+        <li>
+          <a href="https://www.tiktok.com/@mankotabatuofficial" target="_blank" class="flex items-center gap-2 hover:text-yellow-400">
+            <i class="fa-brands fa-tiktok bg-yellow-400 text-blue-900 w-6 h-6 flex items-center justify-center rounded"></i>
+            TikTok
+          </a>
+        </li>
+        <li>
+          <a href="https://x.com/mankotabatu" target="_blank" class="flex items-center gap-2 hover:text-yellow-400">
+            <i class="fa-brands fa-x bg-yellow-400 text-blue-900 w-6 h-6 flex items-center justify-center rounded"></i>
+            X / Twitter
+          </a>
+        </li>
+        <li>
+          <a href="https://www.linkedin.com/company/man-kota-batu/" target="_blank" class="flex items-center gap-2 hover:text-yellow-400">
+            <i class="fa-brands fa-linkedin bg-yellow-400 text-blue-900 w-6 h-6 flex items-center justify-center rounded"></i>
+            LinkedIn
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Kolom Tengah (Map) -->
+    <div class="flex justify-center md:justify-center">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d587.4862762195498!2d112.53729759328873!3d-7.882424800796341!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sid!2sid!4v1747055343918!5m2!1sid!2sid"
+        class="w-full md:w-[340px] h-[250px] rounded-lg border-2 border-yellow-400 shadow-lg"
+        allowfullscreen
+        loading="lazy"
+        aria-label="Peta lokasi MAN Kota Batu"
+      ></iframe>
+    </div>
+
+    <!-- Kolom Kanan -->
+    <div class="flex flex-col">
+      <h3 class="text-yellow-400 text-lg font-bold mb-3">TAUTAN PENTING</h3>
+      <div class="mb-5">
+        <h4 class="font-semibold">GURU</h4>
+        <ul class="text-sm space-y-2 mt-2">
+          <li><a href="https://rdm.mankotabatu.sch.id/" class="hover:text-yellow-400">Raport Digital Madrasah (RDM)</a></li>
+          <li><a href="https://emisgtk.kemenag.go.id/" class="hover:text-yellow-400">EMIS GTK</a></li>
+          <li><a href="#" class="hover:text-yellow-400">Absensi</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-semibold">SISWA</h4>
+        <ul class="text-sm space-y-2 mt-2">
+          <li><a href="https://uam.mankotabatu.sch.id/" class="hover:text-yellow-400">Computer Based Test (CBT)</a></li>
+          <li><a href="#" class="hover:text-yellow-400">Absensi</a></li>
+          <li><a href="#" class="hover:text-yellow-400">Ekstrakurikuler</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bawah Footer -->
+  <div class="bg-blue-950 text-center text-gray-300 text-sm py-4 mt-10 border-t border-gray-700">
+    © 2025 Tikma. All rights reserved.
+  </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Madrasah Aliyah Negeri Kota Batu</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <meta name="description" content="Website resmi Madrasah Aliyah Negeri Kota Batu berisi informasi profil, prestasi, berita, pengumuman, dan layanan.">
+</head>
+<body class="bg-gray-50 font-sans">
+
+  <!-- Header / Navbar -->
+  <header class="bg-blue-900 text-white shadow">
+  <div class="container mx-auto flex flex-col md:flex-row justify-between items-center px-4 py-4 md:py-3">
+      <!-- Left -->
+      <div class="flex items-center gap-3">
+        <img src="img/logo man.png" alt="Logo" class="w-10 h-10" />
+        <h1 class="text-lg font-bold">MAN Kota Batu</h1>
+      </div>
+
+      <!-- Mobile hamburger -->
+      <button id="nav-toggle" class="md:hidden p-2 rounded bg-blue-800">
+        <i class="fas fa-bars"></i>
+      </button>
+
+      <!-- Nav + Search -->
+      <div id="nav-menu" class="hidden md:flex md:items-center md:gap-6">
+  <nav class="space-x-4 hidden md:block">
+          <a href="home.html" class="hover:text-yellow-400">Home</a>
+          <a href="profil.html" class="hover:text-yellow-400">Profil</a>
+          <a href="prestasi.html" class="hover:text-yellow-400">Prestasi</a>
+          <a href="pengumuman.html" class="hover:text-yellow-400">Pengumuman</a>
+          <a href="layanan.html" class="hover:text-yellow-400">Layanan</a>
+        </nav>
+          <form id="searchForm" class="hidden md:flex items-center gap-2" onsubmit="return false;">
+            <input id="searchInput" type="text" placeholder="Pencarian..." class="border rounded px-2 py-1 text-sm text-black" aria-label="Pencarian situs">
+            <button type="submit" class="bg-yellow-400 text-blue-900 px-2 py-1 rounded">Cari</button>
+          </form>
+      </div>
+    </div>
+
+    <!-- Mobile menu (hidden by default) -->
+    <div id="mobile-menu" class="md:hidden hidden bg-blue-800">
+  <div class="flex flex-col px-6 py-4 space-y-3">
+        <a href="home.html" class="block text-white py-2 hover:bg-blue-700 rounded">Home</a>
+        <a href="profil.html" class="block text-white py-2 hover:bg-blue-700 rounded">Profil</a>
+        <a href="prestasi.html" class="block text-white py-2 hover:bg-blue-700 rounded">Prestasi</a>
+        <a href="pengumuman.html" class="block text-white py-2 hover:bg-blue-700 rounded">Pengumuman</a>
+        <a href="layanan.html" class="block text-white py-2 hover:bg-blue-700 rounded">Layanan</a>
+          <form id="searchFormMobile" class="flex items-center gap-2 mt-2" onsubmit="return false;">
+            <input id="searchInputMobile" type="text" placeholder="Pencarian..." class="border rounded px-2 py-1 text-sm text-black" aria-label="Pencarian mobile">
+            <button type="submit" class="bg-yellow-400 text-blue-900 px-2 py-1 rounded">Cari</button>
+          </form>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="relative">
+  <img src="hero.jpg" alt="Hero" class="w-full h-40 md:h-64 object-cover rounded-b-xl" loading="lazy" />
+    <div class="absolute inset-0 bg-black/40 flex items-center justify-center">
+      <h2 class="text-white text-2xl md:text-4xl font-bold text-center px-4">
+        SELAMAT DATANG DI ZONA INTEGRITAS MADRASAH ALIYAH NEGERI KOTA BATU
+      </h2>
+    </div>
+  </section>
+
+  <!-- Icon Menu -->
+  <section class="bg-white py-6 shadow">
+  <div class="max-w-4xl mx-auto px-4 md:px-8">
+  <div class="grid grid-cols-3 gap-4 text-center">
+
+        <!-- Siswa -->
+        <a href="siswa.html" class="group hover:scale-105 transition">
+          <div class="bg-blue-800 text-yellow-300 w-16 h-16 md:w-20 md:h-20 mx-auto flex items-center justify-center rounded-xl shadow group-hover:bg-yellow-300 group-hover:text-blue-800">
+            <i class="fas fa-user-graduate text-3xl"></i>
+          </div>
+          <p class="mt-2 text-sm md:text-base font-semibold text-gray-700 group-hover:text-blue-800">Siswa</p>
+        </a>
+
+        <!-- Guru -->
+        <a href="guru.html" class="group hover:scale-105 transition">
+          <div class="bg-blue-800 text-yellow-300 w-16 h-16 md:w-20 md:h-20 mx-auto flex items-center justify-center rounded-xl shadow group-hover:bg-yellow-300 group-hover:text-blue-800">
+            <i class="fas fa-chalkboard-teacher text-3xl"></i>
+          </div>
+          <p class="mt-2 text-sm md:text-base font-semibold text-gray-700 group-hover:text-blue-800">Guru</p>
+        </a>
+
+        <!-- Alumni -->
+        <a href="alumni.html" class="group hover:scale-105 transition">
+          <div class="bg-blue-800 text-yellow-300 w-16 h-16 md:w-20 md:h-20 mx-auto flex items-center justify-center rounded-xl shadow group-hover:bg-yellow-300 group-hover:text-blue-800">
+            <i class="fas fa-users text-3xl"></i>
+          </div>
+          <p class="mt-2 text-sm md:text-base font-semibold text-gray-700 group-hover:text-blue-800">Alumni</p>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Pengumuman -->
+  <section id="pengumuman" class="bg-white py-8 scroll-mt-24">
+    <div class="max-w-7xl mx-auto px-6">
+      <h2 class="text-center text-3xl font-bold text-blue-900 mb-6 uppercase">Pengumuman</h2>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <!-- Kolom Pengumuman -->
+        <div class="md:col-span-2 bg-blue-900 rounded-lg shadow-lg p-5">
+          <h3 class="flex items-center gap-3 text-white font-bold text-xl mb-4">
+            <i class="fas fa-bullhorn text-yellow-400 text-2xl"></i> Pengumuman
+          </h3>
+          <ul class="divide-y divide-yellow-400">
+            <li class="py-2">
+            <a href="berita.html" class="text-white font-semibold hover:text-yellow-400">Selamat HUT RI Ke 80!!</a>
+              <p class="text-yellow-300 text-sm">17 Agustus 2025</p>
+            </li>
+            <li class="py-2">
+            <a href="berita.html" class="text-white font-semibold hover:text-yellow-400">Selamat Idul Adha!!!</a>
+              <p class="text-yellow-300 text-sm">6 Juni 2025</p>
+            </li>
+            <li class="py-2">
+            <a href="berita.html" class="text-white font-semibold hover:text-yellow-400">Selamat Hari Lahir Pancasila!!!</a>
+              <p class="text-yellow-300 text-sm">1 Juni 2025</p>
+            </li>
+            <li class="py-2">
+            <a href="ppdb.html" class="text-white font-semibold hover:text-yellow-400">Penerimaan Peserta Didik Baru Telah Dibuka</a>
+              <p class="text-yellow-300 text-sm">18 Februari 2025</p>
+            </li>
+            <li class="py-2">
+            <a href="prestasi.html" class="text-white font-semibold hover:text-yellow-400">91 Peserta Didik MAN Kota Batu Diterima Di Jalur SNBT</a>
+              <p class="text-yellow-300 text-sm">30 Mei 2025</p>
+            </li>
+            <li class="py-2">
+            <a href="berita.html" class="text-white font-semibold hover:text-yellow-400">Selamat Hari Kebangkitan Nasional</a>
+              <p class="text-yellow-300 text-sm">20 Mei 2025</p>
+            </li>
+          </ul>
+          <div class="flex justify-center">
+            <a href="pengumuman.html" class="bg-yellow-400 hover:bg-yellow-500 text-blue-900 px-6 py-2 rounded font-bold transition transform hover:-translate-y-1 hover:shadow-lg inline-block">Lihat selengkapnya</a>
+          </div>
+        </div>
+
+        <!-- Kolom Tautan Cepat -->
+        <div class="bg-yellow-300 rounded-lg shadow-lg">
+          <div class="bg-blue-900 rounded-t-lg p-4 flex items-center gap-2">
+            <i class="fas fa-link text-white"></i>
+            <h3 class="text-white font-bold text-lg">Tautan Cepat</h3>
+          </div>
+          <ul class="divide-y divide-blue-900">
+            <li><a href="ppdb.html" class="block p-3 hover:bg-yellow-400 transition"><span class="font-bold text-blue-900">PPDB</span><p class="text-sm text-blue-800">Penerimaan Peserta Didik Baru</p></a></li>
+            <li><a href="https://rdm.mankotabatu.sch.id/" class="block p-3 hover:bg-yellow-400 transition"><span class="font-bold text-blue-900">RDM</span><p class="text-sm text-blue-800">Raport Digital Madrasah</p></a></li>
+            <li><a href="#" class="block p-3 hover:bg-yellow-400 transition"><span class="font-bold text-blue-900">Pusaka</span><p class="text-sm text-blue-800">Literasi Sekolah</p></a></li>
+            <li><a href="#" class="block p-3 hover:bg-yellow-400 transition"><span class="font-bold text-blue-900">Emis GKT</span><p class="text-sm text-blue-800">Layanan Guru & Tendik</p></a></li>
+            <li><a href="buku_tamu.html" class="block p-3 hover:bg-yellow-400 transition"><span class="font-bold text-blue-900">Buku Tamu</span><p class="text-sm text-blue-800">Layanan Guru & Tendik</p></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Program Unggulan -->
+  <section id="program" class="p-4 scroll-mt-24">
+    <div class="bg-blue-900 text-white p-4 rounded-lg">
+      <h3 class="font-bold mb-6 flex items-center justify-center h-16 md:h-20 text-2xl md:text-4xl">Program Unggulan</h3>
+      <main class="flex flex-col md:flex-row w-full max-w-4xl mx-auto mt-4 md:mt-8">
+        <aside class="flex flex-row md:flex-col justify-between md:mr-6 mb-4 md:mb-0 gap-2 md:gap-0">
+          <button class="bg-blue-700 hover:bg-yellow-400 text-white hover:text-blue-900 font-semibold px-3 py-2 md:px-6 rounded-full border-2 border-blue-900 mb-2 w-full">Olimpiade</button>
+          <button class="bg-blue-700 hover:bg-yellow-400 text-white hover:text-blue-900 font-semibold px-3 py-2 md:px-6 rounded-full mb-2 w-full">Riset</button>
+          <button class="bg-blue-700 hover:bg-yellow-400 text-white hover:text-blue-900 font-semibold px-3 py-2 md:px-6 rounded-full mb-2 w-full">Percepatan</button>
+          <button class="bg-blue-700 hover:bg-yellow-400 text-white hover:text-blue-900 font-semibold px-3 py-2 md:px-6 rounded-full w-full">Tahfidz</button>
+        </aside>
+        <section class="bg-blue-700 rounded-2xl flex-1 p-3 md:p-6 min-w-0">
+          <h2 class="text-white text-lg md:text-xl font-bold mb-4">Olimpiade</h2>
+          <div class="relative w-full mb-4">
+            <select class="appearance-none w-full bg-yellow-400 text-blue-900 font-semibold py-2 px-2 md:px-4 rounded-lg cursor-pointer">
+              <option>Astronomi</option>
+              <option>Biologi</option>
+              <option>Ekonomi</option>
+              <option>Fisika</option>
+              <option>Geografi</option>
+              <option>Kebumian</option>
+              <option>Kimia</option>
+              <option>Matematika</option>
+              <option>TI</option>
+            </select>
+            <div class="absolute right-3 top-1/2 transform -translate-y-1/2 text-blue-900 pointer-events-none">▼</div>
+          </div>
+          <div class="bg-blue-200 text-blue-800 h-32 md:h-40 flex items-center justify-center rounded-lg mb-4">
+            <!-- FOTO -->
+          </div>
+          <div class="bg-blue-200 rounded-lg p-2 md:p-4">
+            <h3 class="text-blue-800 font-bold border-b-2 border-yellow-400 mb-2 text-center">DESKRIPSI</h3>
+            <p class="text-blue-800 text-xs md:text-sm">DESKRIPSI</p>
+          </div>
+        </section>
+      </main>
+    </div>
+  </section>
+
+  <!-- Prestasi -->
+  <div id="prestasi" class="bg-blue-900 text-white p-4 rounded-lg flex items-center gap-2 mb-4 mx-4 md:mx-8 scroll-mt-24  justify-center pl-10">
+    <img src="img/piala.png" alt="Trophy" class="w-10 h-10 mr-3">
+    <h2 class="font-bold text-2xl">Prestasi</h2>
+  </div>
+
+  <div class="flex flex-wrap justify-center gap-6 px-4 md:px-8 mb-8">
+    <!-- Card Prestasi 1 -->
+    <div class="w-60 bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition">
+      <img src="img/prestasi1.png" alt="prestasi 1" class="w-full h-40 object-cover" loading="lazy">
+      <div class="p-4">
+        <h4 class="font-bold text-lg text-blue-800">Juara 1 Olim INFORMATIKA</h4>
+        <p class="text-gray-600 text-sm mt-2">Siswa MAN Kota Batu berhasil meraih Juara 1 tingkat nasional.</p>
+        <a href="Prestasi1.php" class="text-blue-600 text-sm hover:underline">Lihat Detail</a>
+      </div>
+    </div>
+
+    <!-- Card Prestasi 2 -->
+    <div class="w-60 bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition">
+      <img src="images/prestasi2.jpg" alt="prestasi 2" class="w-full h-40 object-cover" loading="lazy">
+      <div class="p-4">
+        <h4 class="font-bold text-lg text-blue-800">Juara 2 Fisika</h4>
+        <p class="text-gray-600 text-sm mt-2">Prestasi hebat diraih siswa MAN Kota Batu di ajang olimpiade.</p>
+      </div>
+    </div>
+
+    <!-- Card Prestasi 3 -->
+    <div class="w-60 bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition">
+      <img src="images/prestasi3.jpg" alt="prestasi 3" class="w-full h-40 object-cover" loading="lazy">
+      <div class="p-4">
+        <h4 class="font-bold text-lg text-blue-800">Juara Debat</h4>
+        <p class="text-gray-600 text-sm mt-2">Tim debat bahasa berhasil menembus tingkat provinsi.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="text-center mt-6 mb-12">
+    <a href="prestasi.html" class="bg-yellow-400 hover:bg-yellow-500 text-blue-900 px-6 py-2 rounded font-bold transition transform hover:-translate-y-1 hover:shadow-lg inline-block">Lihat Lebih Banyak</a>
+  </div>
+
+  <!-- Berita -->
+   
+  <header id="berita" class="bg-blue-900 py-4 scroll-mt-50 flex items-center justify-center pl-10">
+    <img src="img/berita.png" alt="berita" class="w-10 h-10 mr-3">
+    
+    <h2 class="text-white text-2xl font-bold text-center">BERITA</h2>
+  </header>
+
+  <section class="container mx-auto px-4 py-8">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div class="bg-gray-300 rounded-lg h-64 flex items-center justify-center">
+        <span class="text-blue-900 font-bold">  <img src="img/berita1.png" alt= "berita" class="w-[650px] h-[255px] mr-3">
+        
+      </div>
+      <div class="bg-blue-700 text-white rounded-lg p-6 flex flex-col justify-between">
+        <div>
+           <p class="text-sm text-justify leading-relaxed"></p> 
+          <h3 class="text-lg font-bold mb-2">Jadi Tuan Rumah OMI 2025 se-Kota Batu, MAN Kota Batu Kirim 18 Siswa Terbaiknya</h3>
+          <p class="text-sm">Kota Batu – Suasana penuh konsentrasi dan semangat kompetisi menyelimuti Ruang Laboratorium Pelayanan Terpadu Satu Pintu (PTSP) MAN Kota Batu pada Selasa,…</p>
+        </div>
+        <p class="text-sm text-yellow-300 mt-4">09 September 2025 | Kurikulum</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-blue-700 py-8">
+    <div class="container mx-auto px-4">
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
+        <div class="bg-white text-black rounded-lg p-4 flex flex-col">
+            
+          <img src="img/berita2.png">
+          <p class="text-sm text-justify leading-relaxed"></p>
+          <h4 class="font-semibold text-sm mb-1">Wali Kota Batu Cak Nur Hadir di MAN Kota Batu: Ajak Siswa Jadi Pahlawan Lingkungan dan Raih Kesempatan Program 1000 Sarjana</h4>
+          <p class="text-xs text-gray-600">06 Oktober 2025 | Humas</p>
+        </div>
+        <div class="bg-white text-black rounded-lg p-4 flex flex-col">
+           <img src="img/berita5.png">
+           <p class="text-sm text-justify leading-relaxed"></p>
+          <h4 class="font-semibold text-sm mb-1">Pelantikan OSSMaba 48: Estafet Kepemimpinan di MAN Kota Batu Dengan Semangat Baru</h4>
+          <p class="text-xs text-gray-600">29 September 2025 | Humas </p>
+        </div>
+        <div class="bg-white text-black rounded-lg p-5 flex flex-col">
+          <img src="img/berita4.png">
+          <p class="text-sm text-justify leading-relaxed"></p>
+          <h4 class="font-semibold text-sm mb-1">LDKS OssMaba 48: Membangun Komitmen Dan Kerja Sama untuk OSIS Lebih Maju</h4>
+          <p class="text-xs text-gray-600">28 September 2025 | Kesiswaan</p>
+        </div>
+        <div class="bg-white text-black rounded-lg p-4 flex flex-col">
+            <img src="img/berita3.png">
+            <p class="text-sm text-justify leading-relaxed"></p>
+          <h4 class="font-semibold text-sm mb-1">Nduwe Gawe di Madrasah: Ajang Pemilihan Ketua OSIS MAN Kota Batu Periode2025/2026</h4>
+          <p class="text-xs text-gray-600">25 September 2025 | Kesiswaan
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="text-center my-6">
+    <a href="berita.html" class="bg-yellow-400 text-black font-semibold px-5 py-2 rounded-md shadow hover:bg-yellow-500 transition">Lihat Berita Lainnya</a>
+  </div>
+
+
+  <!-- Data Sekolah -->
+  <section id="data-sekolah" class="bg-yellow-400 border-y-4 border-blue-900 py-8 scroll-mt-24">
+    <div class="text-center mb-6">
+      <h2 class="text-2xl font-bold text-blue-900">Data Sekolah</h2>
+    </div>
+    <div class="container mx-auto px-4">
+      <div class="grid grid-cols-2 md:grid-cols-4 text-center gap-6">
+        <div>
+          <p class="text-3xl font-bold text-blue-900">99</p>
+          <p class="text-blue-900 font-semibold">Guru & Karyawan</p>
+        </div>
+        <div>
+          <p class="text-3xl font-bold text-blue-900">1291</p>
+          <p class="text-blue-900 font-semibold">Siswa</p>
+        </div>
+        <div>
+          <p class="text-3xl font-bold text-blue-900">39</p>
+          <p class="text-blue-900 font-semibold">Kelas</p>
+        </div>
+        <div>
+          <p class="text-3xl font-bold text-blue-900">25</p>
+          <p class="text-blue-900 font-semibold">Mapel</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Fasilitas -->
+  <header class="bg-blue-900 py-6 mt-8">
+    <div class="flex items-center justify-center space-x-2">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" class="w-8 h-8 text-yellow-400">
+        <path d="M12 2L2 7v13h7v-6h6v6h7V7L12 2z"/>
+      </svg>
+      <h2 class="text-white text-2xl font-bold">FASILITAS</h2>
+    </div>
+  </header>
+
+  <section class="container mx-auto px-4 py-10">
+    <div class="flex space-x-6 overflow-x-auto pb-4">
+      <div class="bg-gray-300 w-48 h-64 rounded-lg flex-shrink-0"></div>
+       <div class="w-48 h-64 rounded-lg overflow-hidden flex-shrink-0 shadow-md">
+      <img src="img/lapangan.png" alt="Lapangan" class="w-full h-full object-cover">
+        <div class="p-3 text-center">
+    <h3 class="font-semibold text-gray-800">Masjid Ihya' Ulumuddin</h3>
+  </div>
+    </div>
+      <div class="bg-gray-300 w-48 h-64 rounded-lg flex-shrink-0"></div>
+       <div class="w-48 h-64 rounded-lg overflow-hidden flex-shrink-0 shadow-md">
+      <img src="img/aula.png" alt="aula"class="w-full h-full object-cover">
+    </div>
+      <div class="bg-gray-300 w-48 h-64 rounded-lg flex-shrink-0"></div>
+       <div class="w-48 h-64 rounded-lg overflow-hidden flex-shrink-0 shadow-md">
+      <img src="img/perpustakaan.png" alt="Perpustakaan" class="w-full h-full object-cover">
+    </div>
+      <div class="bg-gray-300 w-48 h-64 rounded-lg flex-shrink-0"></div>
+       <div class="w-48 h-64 rounded-lg overflow-hidden flex-shrink-0 shadow-md">
+      <img src="img/masjid.png" alt="Masjid" class="w-full h-full object-cover">
+    </div>
+      <div class="bg-gray-300 w-48 h-64 rounded-lg flex-shrink-0"></div>
+       <div class="w-48 h-64 rounded-lg overflow-hidden flex-shrink-0 shadow-md">
+      <img src="img/ptsp.png" alt="PTSP (Pelayanan Terpadu Satu Pintu)" class="w-full h-full object-cover">
+    </div>
+      <div class="bg-gray-300 w-48 h-64 rounded-lg flex-shrink-0"></div>
+    </div>
+  </section>
+
+<!-- Footer -->
+<footer class="bg-blue-900 text-white">
+  <div class="container mx-auto px-6 py-12 grid grid-cols-1 md:grid-cols-3 gap-10">
+
+    <!-- Kolom Kiri -->
+    <div class="flex flex-col">
+      <h2 class="text-xl font-bold border-b-2 border-yellow-400 pb-2 mb-3">
+        MADRASAH ALIYAH NEGERI KOTA BATU
+      </h2>
+      <p class="text-gray-300 mb-4 text-sm">
+        Jl. Patimura No.25, Temas, Kec. Batu, Kota Batu, Jawa Timur 65315
+      </p>
+      <ul class="space-y-3 text-sm">
+        <li>
+          <a href="tel:+62341592185" class="flex items-center gap-2 hover:text-yellow-400">
+            <i class="fa-solid fa-phone bg-yellow-400 text-blue-900 w-6 h-6 flex items-center justify-center rounded"></i>
+            (0341) 592185
+          </a>
+        </li>
+        <li>
+          <a href="https://www.instagram.com/mankotabatuofficial" target="_blank" class="flex items-center gap-2 hover:text-yellow-400">
+            <i class="fa-brands fa-instagram bg-yellow-400 text-blue-900 w-6 h-6 flex items-center justify-center rounded"></i>
+            Instagram
+          </a>
+        </li>
+        <li>
+          <a href="https://www.facebook.com/mankotabatuofficial" target="_blank" class="flex items-center gap-2 hover:text-yellow-400">
+            <i class="fa-brands fa-facebook bg-yellow-400 text-blue-900 w-6 h-6 flex items-center justify-center rounded"></i>
+            Facebook
+          </a>
+        </li>
+        <li>
+          <a href="https://www.tiktok.com/@mankotabatuofficial" target="_blank" class="flex items-center gap-2 hover:text-yellow-400">
+            <i class="fa-brands fa-tiktok bg-yellow-400 text-blue-900 w-6 h-6 flex items-center justify-center rounded"></i>
+            TikTok
+          </a>
+        </li>
+        <li>
+          <a href="https://x.com/mankotabatu" target="_blank" class="flex items-center gap-2 hover:text-yellow-400">
+            <i class="fa-brands fa-x bg-yellow-400 text-blue-900 w-6 h-6 flex items-center justify-center rounded"></i>
+            X / Twitter
+          </a>
+        </li>
+        <li>
+          <a href="https://www.linkedin.com/company/man-kota-batu/" target="_blank" class="flex items-center gap-2 hover:text-yellow-400">
+            <i class="fa-brands fa-linkedin bg-yellow-400 text-blue-900 w-6 h-6 flex items-center justify-center rounded"></i>
+            LinkedIn
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Kolom Tengah (Map) -->
+    <div class="flex justify-center md:justify-center">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d587.4862762195498!2d112.53729759328873!3d-7.882424800796341!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sid!2sid!4v1747055343918!5m2!1sid!2sid"
+        class="w-full md:w-[340px] h-[250px] rounded-lg border-2 border-yellow-400 shadow-lg"
+        allowfullscreen
+        loading="lazy"
+        aria-label="Peta lokasi MAN Kota Batu"
+      ></iframe>
+    </div>
+
+    <!-- Kolom Kanan -->
+    <div class="flex flex-col">
+      <h3 class="text-yellow-400 text-lg font-bold mb-3">TAUTAN PENTING</h3>
+      <div class="mb-5">
+        <h4 class="font-semibold">GURU</h4>
+        <ul class="text-sm space-y-2 mt-2">
+          <li><a href="https://rdm.mankotabatu.sch.id/" class="hover:text-yellow-400">Raport Digital Madrasah (RDM)</a></li>
+          <li><a href="https://emisgtk.kemenag.go.id/" class="hover:text-yellow-400">EMIS GTK</a></li>
+          <li><a href="#" class="hover:text-yellow-400">Absensi</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-semibold">SISWA</h4>
+        <ul class="text-sm space-y-2 mt-2">
+          <li><a href="https://uam.mankotabatu.sch.id/" class="hover:text-yellow-400">Computer Based Test (CBT)</a></li>
+          <li><a href="#" class="hover:text-yellow-400">Absensi</a></li>
+          <li><a href="#" class="hover:text-yellow-400">Ekstrakurikuler</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bawah Footer -->
+  <div class="bg-blue-950 text-center text-gray-300 text-sm py-4 mt-10 border-t border-gray-700">
+    © 2025 Tikma. All rights reserved.
+  </div>
+</footer>
+
+
+  <!-- JavaScript: mobile nav toggle -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Mobile nav toggle
+      const navToggle = document.getElementById('nav-toggle');
+      const mobileMenu = document.getElementById('mobile-menu');
+      navToggle.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+      });
+
+      // Fitur Search Gabungan
+      function highlightSearch(term) {
+        if (!term) return;
+        console.log('Highlight search term:', term);
+        document.querySelectorAll('.search-highlight').forEach(el => {
+          el.outerHTML = el.innerText;
+        });
+        const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, null, false);
+        let found = false;
+        while (walker.nextNode()) {
+          const node = walker.currentNode;
+          if (node.parentNode && node.nodeValue.trim() && node.nodeValue.toLowerCase().includes(term.toLowerCase())) {
+            found = true;
+            const regex = new RegExp(`(${term})`, 'gi');
+            const span = document.createElement('span');
+            span.className = 'search-highlight bg-yellow-300 text-blue-900 rounded px-1';
+            span.innerHTML = node.nodeValue.replace(regex, '<span class=\"search-highlight bg-yellow-300 text-blue-900 rounded px-1\">$1</span>');
+            node.parentNode.replaceChild(span, node);
+          }
+        }
+        console.log('Highlight found:', found);
+      }
+
+      function showSearchResults(term) {
+        const resultsDiv = document.getElementById('searchResults');
+        const items = Array.from(document.querySelectorAll('.md\:col-span-2 ul.divide-y > li'));
+        if (!term) {
+          resultsDiv.innerHTML = '';
+          return;
+        }
+        const results = items.filter(li => {
+          const title = li.getAttribute('data-title')?.toLowerCase() || '';
+          const date = li.getAttribute('data-date')?.toLowerCase() || '';
+          return title.includes(term.toLowerCase()) || date.includes(term.toLowerCase());
+        });
+        if (results.length === 0) {
+          resultsDiv.innerHTML = '<div class="text-red-600 font-semibold">Tidak ada hasil ditemukan.</div>';
+        } else {
+          resultsDiv.innerHTML = `<div class="text-blue-900 font-bold mb-2">Hasil Pencarian:</div>` + results.map(li => {
+            const a = li.querySelector('a');
+            const p = li.querySelector('p');
+            const href = a.getAttribute('href');
+            return `<div class='mb-2 p-2 bg-yellow-100 rounded'><a href='${href}' target='_blank' class='text-blue-900 font-semibold underline'>${a.innerText}</a> <span class='text-xs text-gray-600'>${p.innerText}</span></div>`;
+          }).join('');
+        }
+      }
+
+      function handleSearch(term) {
+        highlightSearch(term);
+        showSearchResults(term);
+        setTimeout(() => {
+          // Scroll ke section sesuai kata kunci
+          const keyword = term.toLowerCase();
+          let scrolled = false;
+          if (keyword.includes('pengumuman')) {
+            const el = document.getElementById('pengumuman');
+            if (el) { el.scrollIntoView({ behavior: 'smooth', block: 'start' }); scrolled = true; }
+          } else if (keyword.includes('prestasi')) {
+            const el = document.getElementById('prestasi');
+            if (el) { el.scrollIntoView({ behavior: 'smooth', block: 'start' }); scrolled = true; }
+          } else if (keyword.includes('berita')) {
+            const el = document.getElementById('berita');
+            if (el) { el.scrollIntoView({ behavior: 'smooth', block: 'start' }); scrolled = true; }
+          } else if (keyword.includes('data sekolah')) {
+            const el = document.getElementById('data-sekolah');
+            if (el) { el.scrollIntoView({ behavior: 'smooth', block: 'start' }); scrolled = true; }
+          }
+          // Jika tidak ada section yang cocok, scroll ke highlight
+          if (!scrolled) {
+            const highlights = document.querySelectorAll('.search-highlight');
+            console.log('Jumlah highlight:', highlights.length);
+            if (highlights.length > 0) {
+              console.log('Scrolling to highlight:', highlights[0].innerText);
+              highlights[0].scrollIntoView({ behavior: 'smooth', block: 'center' });
+            } else {
+              console.log('Tidak ada highlight, scroll ke atas');
+              window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+          }
+        }, 300);
+        // Membuka tab lain berdasarkan kata kunci
+        if (term) {
+          const keyword = term.toLowerCase();
+          if (keyword.includes('ppdb')) {
+            window.open('ppdb.html', '_blank');
+          } else if (keyword.includes('profil')) {
+            window.open('profil.html', '_blank');
+          } else if (keyword.includes('prestasi')) {
+            window.open('prestasi.html', '_blank');
+          } else if (keyword.includes('pengumuman')) {
+            window.open('pengumuman.html', '_blank');
+          } else if (keyword.includes('layanan')) {
+            window.open('layanan.html', '_blank');
+          } else if (keyword.includes('buku tamu')) {
+            window.open('buku_tamu.html', '_blank');
+          } else if (keyword.includes('berita')) {
+            window.open('berita.html', '_blank');
+          } else if (keyword.includes('alumni2')) {
+            window.open('alumni2.html', '_blank');
+          } else if (keyword.includes('alumni')) {
+            window.open('alumni.html', '_blank');
+          }
+        }
+      }
+
+      document.getElementById('searchForm')?.addEventListener('submit', function() {
+        const term = document.getElementById('searchInput').value;
+        handleSearch(term);
+        // Scroll ke hasil juga di mobile
+        setTimeout(() => {
+          const highlights = document.querySelectorAll('.search-highlight');
+          if (highlights.length > 0) {
+            highlights[0].scrollIntoView({ behavior: 'smooth', block: 'center' });
+          }
+        }, 300);
+      });
+      document.getElementById('searchFormMobile')?.addEventListener('submit', function() {
+        const term = document.getElementById('searchInputMobile').value;
+        handleSearch(term);
+        // Scroll ke hasil juga di mobile
+        setTimeout(() => {
+          const highlights = document.querySelectorAll('.search-highlight');
+          if (highlights.length > 0) {
+            highlights[0].scrollIntoView({ behavior: 'smooth', block: 'center' });
+          }
+        }, 300);
+      });
+    });
+  </script>
+</body>
+
+</html>

@@ -27,7 +27,7 @@
       <!-- Nav + Search -->
       <div id="nav-menu" class="hidden md:flex md:items-center md:gap-6">
   <nav class="space-x-4 hidden md:block">
-          <a href="home.html" class="text-yellow-400 font-bold">Home</a>
+          <a href="home.html" class="hover:text-yellow-400">Home</a>
           <a href="profil.html" class="hover:text-yellow-400">Profil</a>
           <a href="prestasi.html" class="hover:text-yellow-400">Prestasi</a>
           <a href="pengumuman.html" class="hover:text-yellow-400">Pengumuman</a>
@@ -161,64 +161,43 @@
 
   <!-- Program Unggulan -->
   <section id="program" class="p-4 scroll-mt-24">
-  <div class="bg-blue-900 text-white p-6 rounded-2xl">
-    <h3 class="font-bold mb-6 flex items-center justify-center text-white h-16 md:h-20 text-2xl md:text-4xl">
-      Program Unggulan
-    </h3>
-    <main class="flex flex-col md:flex-row w-full max-w-5xl mx-auto mt-4 md:mt-8 mb-12">
-      <!-- Tombol samping -->
-      <aside class="flex flex-row md:flex-col justify-start md:mr-6 mb-4 md:mb-0 gap-6">
-        <button class="bg-yellow-400 text-blue-900 font-bold px-5 py-3 md:px-8 md:py-4 rounded-full border-2 border-blue-900 w-full text-base md:text-lg shadow-md">
-          Olimpiade
-        </button>
-        <button class="bg-blue-700 hover:bg-yellow-400 text-white hover:text-blue-900 font-bold px-5 py-3 md:px-8 md:py-4 rounded-full w-full text-base md:text-lg transition">
-          Riset
-        </button>
-        <button class="bg-blue-700 hover:bg-yellow-400 text-white hover:text-blue-900 font-bold px-5 py-3 md:px-8 md:py-4 rounded-full w-full text-base md:text-lg transition">
-          Percepatan
-        </button>
-        <button class="bg-blue-700 hover:bg-yellow-400 text-white hover:text-blue-900 font-bold px-5 py-3 md:px-8 md:py-4 rounded-full w-full text-base md:text-lg transition">
-          Tahfidz
-        </button>
-      </aside>
-
-      <!-- Isi utama -->
-      <section class="bg-blue-700 rounded-2xl flex-1 p-4 md:p-8 min-w-0">
-        <h2 class="text-white text-xl md:text-2xl font-bold mb-4">Olimpiade</h2>
-        <div class="relative w-full mb-4">
-          <select
-            class="appearance-none w-full bg-yellow-400 text-blue-900 font-semibold py-3 px-3 md:px-5 rounded-lg text-base md:text-lg cursor-pointer"
-          >
-            <option>Astronomi</option>
-            <option>Biologi</option>
-            <option>Ekonomi</option>
-            <option>Fisika</option>
-            <option>Geografi</option>
-            <option>Kebumian</option>
-            <option>Kimia</option>
-            <option>Matematika</option>
-            <option>TI</option>
-          </select>
-          <div class="absolute right-4 top-1/2 transform -translate-y-1/2 text-blue-900 pointer-events-none text-lg">
-            ▼
+    <div class="bg-blue-900 text-white p-4 rounded-lg">
+      <h3 class="font-bold mb-6 flex items-center justify-center h-16 md:h-20 text-2xl md:text-4xl">Program Unggulan</h3>
+      <main class="flex flex-col md:flex-row w-full max-w-4xl mx-auto mt-4 md:mt-8">
+        <aside class="flex flex-row md:flex-col justify-between md:mr-6 mb-4 md:mb-0 gap-2 md:gap-0">
+          <button class="bg-blue-700 hover:bg-yellow-400 text-white hover:text-blue-900 font-semibold px-3 py-2 md:px-6 rounded-full border-2 border-blue-900 mb-2 w-full">Olimpiade</button>
+          <button class="bg-blue-700 hover:bg-yellow-400 text-white hover:text-blue-900 font-semibold px-3 py-2 md:px-6 rounded-full mb-2 w-full">Riset</button>
+          <button class="bg-blue-700 hover:bg-yellow-400 text-white hover:text-blue-900 font-semibold px-3 py-2 md:px-6 rounded-full mb-2 w-full">Percepatan</button>
+          <button class="bg-blue-700 hover:bg-yellow-400 text-white hover:text-blue-900 font-semibold px-3 py-2 md:px-6 rounded-full w-full">Tahfidz</button>
+        </aside>
+        <section class="bg-blue-700 rounded-2xl flex-1 p-3 md:p-6 min-w-0">
+          <h2 class="text-white text-lg md:text-xl font-bold mb-4">Olimpiade</h2>
+          <div class="relative w-full mb-4">
+            <select class="appearance-none w-full bg-yellow-400 text-blue-900 font-semibold py-2 px-2 md:px-4 rounded-lg cursor-pointer">
+              <option>Astronomi</option>
+              <option>Biologi</option>
+              <option>Ekonomi</option>
+              <option>Fisika</option>
+              <option>Geografi</option>
+              <option>Kebumian</option>
+              <option>Kimia</option>
+              <option>Matematika</option>
+              <option>TI</option>
+            </select>
+            <div class="absolute right-3 top-1/2 transform -translate-y-1/2 text-blue-900 pointer-events-none">▼</div>
           </div>
-        </div>
-        <div class="bg-blue-200 text-blue-800 h-40 md:h-56 flex items-center justify-center rounded-lg mb-4 text-base md:text-lg">
-          <!-- FOTO -->
-        </div>
-        <div class="bg-blue-200 rounded-lg p-4 md:p-6">
-          <h3 class="text-blue-800 font-bold border-b-2 border-yellow-400 mb-3 text-center text-base md:text-lg">
-            DESKRIPSI
-          </h3>
-          <p class="text-blue-800 text-sm md:text-base text-center leading-relaxed">
-            DESKRIPSI
-          </p>
-        </div>
-      </section>
-    </main>
-  </div>
+          <div class="bg-blue-200 text-blue-800 h-32 md:h-40 flex items-center justify-center rounded-lg mb-4">
+            <!-- FOTO -->
+          </div>
+          <div class="bg-blue-200 rounded-lg p-2 md:p-4">
+            <h3 class="text-blue-800 font-bold border-b-2 border-yellow-400 mb-2 text-center">DESKRIPSI</h3>
+            <p class="text-blue-800 text-xs md:text-sm">DESKRIPSI</p>
+          </div>
+        </section>
+      </main>
+    </div>
   </section>
-  
+
   <!-- Prestasi -->
   <div id="prestasi" class="bg-blue-900 text-white p-4 rounded-lg flex items-center gap-2 mb-4 mx-4 md:mx-8 scroll-mt-24  justify-center pl-10">
     <img src="img/piala.png" alt="Trophy" class="w-10 h-10 mr-3">
@@ -479,147 +458,148 @@
 </footer>
 
 
-  <!-- JavaScript: mobile nav toggle -->
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      // Mobile nav toggle
-      const navToggle = document.getElementById('nav-toggle');
-      const mobileMenu = document.getElementById('mobile-menu');
-      navToggle.addEventListener('click', () => {
-        mobileMenu.classList.toggle('hidden');
-      });
+<!-- ✅ FIXED & OPTIMIZED: Mobile Nav + Search + Full-Word Highlight -->
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  // === HAMBURGER MENU (Mobile) ===
+  const navToggle = document.getElementById("nav-toggle");
+  const mobileMenu = document.getElementById("mobile-menu");
 
-      // Fitur Search Gabungan
-      function highlightSearch(term) {
-        if (!term) return;
-        console.log('Highlight search term:', term);
-        document.querySelectorAll('.search-highlight').forEach(el => {
-          el.outerHTML = el.innerText;
-        });
-        const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, null, false);
-        let found = false;
-        while (walker.nextNode()) {
-          const node = walker.currentNode;
-          if (node.parentNode && node.nodeValue.trim() && node.nodeValue.toLowerCase().includes(term.toLowerCase())) {
-            found = true;
-            const regex = new RegExp(`(${term})`, 'gi');
-            const span = document.createElement('span');
-            span.className = 'search-highlight bg-yellow-300 text-blue-900 rounded px-1';
-            span.innerHTML = node.nodeValue.replace(regex, '<span class=\"search-highlight bg-yellow-300 text-blue-900 rounded px-1\">$1</span>');
-            node.parentNode.replaceChild(span, node);
-          }
-        }
-        console.log('Highlight found:', found);
+  if (navToggle && mobileMenu) {
+    navToggle.addEventListener("click", () => {
+      if (mobileMenu.classList.contains("hidden")) {
+        mobileMenu.classList.remove("hidden", "animate-slideUp");
+        mobileMenu.classList.add("animate-slideDown");
+      } else {
+        mobileMenu.classList.remove("animate-slideDown");
+        mobileMenu.classList.add("animate-slideUp");
+        setTimeout(() => mobileMenu.classList.add("hidden"), 300);
       }
-
-      function showSearchResults(term) {
-        const resultsDiv = document.getElementById('searchResults');
-        const items = Array.from(document.querySelectorAll('.md\:col-span-2 ul.divide-y > li'));
-        if (!term) {
-          resultsDiv.innerHTML = '';
-          return;
-        }
-        const results = items.filter(li => {
-          const title = li.getAttribute('data-title')?.toLowerCase() || '';
-          const date = li.getAttribute('data-date')?.toLowerCase() || '';
-          return title.includes(term.toLowerCase()) || date.includes(term.toLowerCase());
-        });
-        if (results.length === 0) {
-          resultsDiv.innerHTML = '<div class="text-red-600 font-semibold">Tidak ada hasil ditemukan.</div>';
-        } else {
-          resultsDiv.innerHTML = `<div class="text-blue-900 font-bold mb-2">Hasil Pencarian:</div>` + results.map(li => {
-            const a = li.querySelector('a');
-            const p = li.querySelector('p');
-            const href = a.getAttribute('href');
-            return `<div class='mb-2 p-2 bg-yellow-100 rounded'><a href='${href}' target='_blank' class='text-blue-900 font-semibold underline'>${a.innerText}</a> <span class='text-xs text-gray-600'>${p.innerText}</span></div>`;
-          }).join('');
-        }
-      }
-
-      function handleSearch(term) {
-        highlightSearch(term);
-        showSearchResults(term);
-        setTimeout(() => {
-          // Scroll ke section sesuai kata kunci
-          const keyword = term.toLowerCase();
-          let scrolled = false;
-          if (keyword.includes('pengumuman')) {
-            const el = document.getElementById('pengumuman');
-            if (el) { el.scrollIntoView({ behavior: 'smooth', block: 'start' }); scrolled = true; }
-          } else if (keyword.includes('prestasi')) {
-            const el = document.getElementById('prestasi');
-            if (el) { el.scrollIntoView({ behavior: 'smooth', block: 'start' }); scrolled = true; }
-          } else if (keyword.includes('berita')) {
-            const el = document.getElementById('berita');
-            if (el) { el.scrollIntoView({ behavior: 'smooth', block: 'start' }); scrolled = true; }
-          } else if (keyword.includes('data sekolah')) {
-            const el = document.getElementById('data-sekolah');
-            if (el) { el.scrollIntoView({ behavior: 'smooth', block: 'start' }); scrolled = true; }
-          }
-          // Jika tidak ada section yang cocok, scroll ke highlight
-          if (!scrolled) {
-            const highlights = document.querySelectorAll('.search-highlight');
-            console.log('Jumlah highlight:', highlights.length);
-            if (highlights.length > 0) {
-              console.log('Scrolling to highlight:', highlights[0].innerText);
-              highlights[0].scrollIntoView({ behavior: 'smooth', block: 'center' });
-            } else {
-              console.log('Tidak ada highlight, scroll ke atas');
-              window.scrollTo({ top: 0, behavior: 'smooth' });
-            }
-          }
-        }, 300);
-        // Membuka tab lain berdasarkan kata kunci
-        if (term) {
-          const keyword = term.toLowerCase();
-          if (keyword.includes('ppdb')) {
-            window.open('ppdb.html', '_blank');
-          } else if (keyword.includes('profil')) {
-            window.open('profil.html', '_blank');
-          } else if (keyword.includes('prestasi')) {
-            window.open('prestasi.html', '_blank');
-          } else if (keyword.includes('pengumuman')) {
-            window.open('pengumuman.html', '_blank');
-          } else if (keyword.includes('layanan')) {
-            window.open('layanan.html', '_blank');
-          } else if (keyword.includes('buku tamu')) {
-            window.open('buku_tamu.html', '_blank');
-          } else if (keyword.includes('berita')) {
-            window.open('berita.html', '_blank');
-          } else if (keyword.includes('alumni2')) {
-            window.open('alumni2.html', '_blank');
-          } else if (keyword.includes('alumni')) {
-            window.open('alumni.html', '_blank');
-          }
-        }
-      }
-
-      document.getElementById('searchForm')?.addEventListener('submit', function() {
-        const term = document.getElementById('searchInput').value;
-        handleSearch(term);
-        // Scroll ke hasil juga di mobile
-        setTimeout(() => {
-          const highlights = document.querySelectorAll('.search-highlight');
-          if (highlights.length > 0) {
-            highlights[0].scrollIntoView({ behavior: 'smooth', block: 'center' });
-          }
-        }, 300);
-      });
-      document.getElementById('searchFormMobile')?.addEventListener('submit', function() {
-        const term = document.getElementById('searchInputMobile').value;
-        handleSearch(term);
-        // Scroll ke hasil juga di mobile
-        setTimeout(() => {
-          const highlights = document.querySelectorAll('.search-highlight');
-          if (highlights.length > 0) {
-            highlights[0].scrollIntoView({ behavior: 'smooth', block: 'center' });
-          }
-        }, 300);
-      });
     });
-  </script>
+
+    // Tutup menu jika klik di luar area
+    document.addEventListener("click", (e) => {
+      if (!navToggle.contains(e.target) && !mobileMenu.contains(e.target)) {
+        if (!mobileMenu.classList.contains("hidden")) {
+          mobileMenu.classList.remove("animate-slideDown");
+          mobileMenu.classList.add("animate-slideUp");
+          setTimeout(() => mobileMenu.classList.add("hidden"), 300);
+        }
+      }
+    });
+  }
+
+  // === HIGHLIGHT SELURUH KATA (Bukan potongan teks) ===
+  function removeHighlights() {
+    document.querySelectorAll(".search-highlight").forEach((span) => {
+      const parent = span.parentNode;
+      parent.replaceChild(document.createTextNode(span.textContent), span);
+      parent.normalize();
+    });
+  }
+
+  function highlightFullWord(term) {
+    removeHighlights();
+    if (!term) return;
+
+    // regex untuk highlight seluruh kata yang mengandung term (contoh: "inst" → highlight "Instagram")
+    const regex = new RegExp(`\\b[^\\s]*${term}[^\\s]*\\b`, "gi");
+
+    const walker = document.createTreeWalker(
+      document.body,
+      NodeFilter.SHOW_TEXT,
+      {
+        acceptNode(node) {
+          if (!node.parentElement) return NodeFilter.FILTER_REJECT;
+          const tag = node.parentElement.tagName.toLowerCase();
+          if (["script", "style", "input", "textarea", "button"].includes(tag))
+            return NodeFilter.FILTER_REJECT;
+          if (!node.nodeValue.trim()) return NodeFilter.FILTER_REJECT;
+          return NodeFilter.FILTER_ACCEPT;
+        },
+      }
+    );
+
+    const nodes = [];
+    while (walker.nextNode()) nodes.push(walker.currentNode);
+
+    let firstHighlight = null;
+
+    nodes.forEach((node) => {
+      const text = node.nodeValue;
+      if (regex.test(text)) {
+        const replaced = text.replace(
+          regex,
+          (match) =>
+            `<span class="search-highlight bg-yellow-300 text-blue-900 font-bold px-1 rounded">${match}</span>`
+        );
+        const span = document.createElement("span");
+        span.innerHTML = replaced;
+        node.replaceWith(...span.childNodes);
+
+        if (!firstHighlight) {
+          firstHighlight = document.querySelector(".search-highlight");
+        }
+      }
+    });
+
+    // Scroll ke hasil pertama
+    if (firstHighlight) {
+      firstHighlight.scrollIntoView({ behavior: "smooth", block: "center" });
+    }
+  }
+
+  // === FORM HANDLING (Desktop + Mobile) ===
+  const searchInput = document.getElementById("searchInput");
+  const searchInputMobile = document.getElementById("searchInputMobile");
+
+  document.getElementById("searchForm")?.addEventListener("submit", (e) => {
+    e.preventDefault();
+    highlightFullWord(searchInput.value.trim());
+  });
+
+  document.getElementById("searchFormMobile")?.addEventListener("submit", (e) => {
+    e.preventDefault();
+    highlightFullWord(searchInputMobile.value.trim());
+    mobileMenu.classList.add("hidden");
+  });
+
+  [searchInput, searchInputMobile].forEach((el) => {
+    if (!el) return;
+    el.addEventListener("keydown", (e) => {
+      if (e.key === "Enter") {
+        e.preventDefault();
+        highlightFullWord(el.value.trim());
+      }
+    });
+  });
+});
+
+// === ANIMASI SLIDE (Tailwind Extend) ===
+tailwind.config = {
+  theme: {
+    extend: {
+      keyframes: {
+        slideDown: {
+          "0%": { opacity: "0", transform: "translateY(-10px)" },
+          "100%": { opacity: "1", transform: "translateY(0)" },
+        },
+        slideUp: {
+          "0%": { opacity: "1", transform: "translateY(0)" },
+          "100%": { opacity: "0", transform: "translateY(-10px)" },
+        },
+      },
+      animation: {
+        slideDown: "slideDown 0.3s ease-out forwards",
+        slideUp: "slideUp 0.3s ease-in forwards",
+      },
+    },
+  },
+};
+</script>
+
+
+
 </body>
 
 </html>
-
-

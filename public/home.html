@@ -161,43 +161,64 @@
 
   <!-- Program Unggulan -->
   <section id="program" class="p-4 scroll-mt-24">
-    <div class="bg-blue-900 text-white p-4 rounded-lg">
-      <h3 class="font-bold mb-6 flex items-center justify-center h-16 md:h-20 text-2xl md:text-4xl">Program Unggulan</h3>
-      <main class="flex flex-col md:flex-row w-full max-w-4xl mx-auto mt-4 md:mt-8">
-        <aside class="flex flex-row md:flex-col justify-between md:mr-6 mb-4 md:mb-0 gap-2 md:gap-0">
-          <button class="bg-blue-700 hover:bg-yellow-400 text-white hover:text-blue-900 font-semibold px-3 py-2 md:px-6 rounded-full border-2 border-blue-900 mb-2 w-full">Olimpiade</button>
-          <button class="bg-blue-700 hover:bg-yellow-400 text-white hover:text-blue-900 font-semibold px-3 py-2 md:px-6 rounded-full mb-2 w-full">Riset</button>
-          <button class="bg-blue-700 hover:bg-yellow-400 text-white hover:text-blue-900 font-semibold px-3 py-2 md:px-6 rounded-full mb-2 w-full">Percepatan</button>
-          <button class="bg-blue-700 hover:bg-yellow-400 text-white hover:text-blue-900 font-semibold px-3 py-2 md:px-6 rounded-full w-full">Tahfidz</button>
-        </aside>
-        <section class="bg-blue-700 rounded-2xl flex-1 p-3 md:p-6 min-w-0">
-          <h2 class="text-white text-lg md:text-xl font-bold mb-4">Olimpiade</h2>
-          <div class="relative w-full mb-4">
-            <select class="appearance-none w-full bg-yellow-400 text-blue-900 font-semibold py-2 px-2 md:px-4 rounded-lg cursor-pointer">
-              <option>Astronomi</option>
-              <option>Biologi</option>
-              <option>Ekonomi</option>
-              <option>Fisika</option>
-              <option>Geografi</option>
-              <option>Kebumian</option>
-              <option>Kimia</option>
-              <option>Matematika</option>
-              <option>TI</option>
-            </select>
-            <div class="absolute right-3 top-1/2 transform -translate-y-1/2 text-blue-900 pointer-events-none">▼</div>
-          </div>
-          <div class="bg-blue-200 text-blue-800 h-32 md:h-40 flex items-center justify-center rounded-lg mb-4">
-            <!-- FOTO -->
-          </div>
-          <div class="bg-blue-200 rounded-lg p-2 md:p-4">
-            <h3 class="text-blue-800 font-bold border-b-2 border-yellow-400 mb-2 text-center">DESKRIPSI</h3>
-            <p class="text-blue-800 text-xs md:text-sm">DESKRIPSI</p>
-          </div>
-        </section>
-      </main>
-    </div>
-  </section>
+  <div class="bg-blue-900 text-white p-6 rounded-2xl">
+    <h3 class="font-bold mb-6 flex items-center justify-center text-white h-16 md:h-20 text-2xl md:text-4xl">
+      Program Unggulan
+    </h3>
+    <main class="flex flex-col md:flex-row w-full max-w-5xl mx-auto mt-4 md:mt-8 mb-12">
+      <!-- Tombol samping -->
+      <aside class="flex flex-row md:flex-col justify-start md:mr-6 mb-4 md:mb-0 gap-6">
+        <button class="bg-yellow-400 text-blue-900 font-bold px-5 py-3 md:px-8 md:py-4 rounded-full border-2 border-blue-900 w-full text-base md:text-lg shadow-md">
+          Olimpiade
+        </button>
+        <button class="bg-blue-700 hover:bg-yellow-400 text-white hover:text-blue-900 font-bold px-5 py-3 md:px-8 md:py-4 rounded-full w-full text-base md:text-lg transition">
+          Riset
+        </button>
+        <button class="bg-blue-700 hover:bg-yellow-400 text-white hover:text-blue-900 font-bold px-5 py-3 md:px-8 md:py-4 rounded-full w-full text-base md:text-lg transition">
+          Percepatan
+        </button>
+        <button class="bg-blue-700 hover:bg-yellow-400 text-white hover:text-blue-900 font-bold px-5 py-3 md:px-8 md:py-4 rounded-full w-full text-base md:text-lg transition">
+          Tahfidz
+        </button>
+      </aside>
 
+      <!-- Isi utama -->
+      <section class="bg-blue-700 rounded-2xl flex-1 p-4 md:p-8 min-w-0">
+        <h2 class="text-white text-xl md:text-2xl font-bold mb-4">Olimpiade</h2>
+        <div class="relative w-full mb-4">
+          <select
+            class="appearance-none w-full bg-yellow-400 text-blue-900 font-semibold py-3 px-3 md:px-5 rounded-lg text-base md:text-lg cursor-pointer"
+          >
+            <option>Astronomi</option>
+            <option>Biologi</option>
+            <option>Ekonomi</option>
+            <option>Fisika</option>
+            <option>Geografi</option>
+            <option>Kebumian</option>
+            <option>Kimia</option>
+            <option>Matematika</option>
+            <option>TI</option>
+          </select>
+          <div class="absolute right-4 top-1/2 transform -translate-y-1/2 text-blue-900 pointer-events-none text-lg">
+            ▼
+          </div>
+        </div>
+        <div class="bg-blue-200 text-blue-800 h-40 md:h-56 flex items-center justify-center rounded-lg mb-4 text-base md:text-lg">
+          <!-- FOTO -->
+        </div>
+        <div class="bg-blue-200 rounded-lg p-4 md:p-6">
+          <h3 class="text-blue-800 font-bold border-b-2 border-yellow-400 mb-3 text-center text-base md:text-lg">
+            DESKRIPSI
+          </h3>
+          <p class="text-blue-800 text-sm md:text-base text-center leading-relaxed">
+            DESKRIPSI
+          </p>
+        </div>
+      </section>
+    </main>
+  </div>
+  </section>
+  
   <!-- Prestasi -->
   <div id="prestasi" class="bg-blue-900 text-white p-4 rounded-lg flex items-center gap-2 mb-4 mx-4 md:mx-8 scroll-mt-24  justify-center pl-10">
     <img src="img/piala.png" alt="Trophy" class="w-10 h-10 mr-3">
@@ -600,3 +621,4 @@
 </body>
 
 </html>
+

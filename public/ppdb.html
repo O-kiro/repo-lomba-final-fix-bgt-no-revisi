@@ -10,36 +10,53 @@
 </head>
 <body class="bg-gray-50 font-sans">
 
-  <!-- Navbar -->
-  <header class="bg-blue-800 shadow">
-    <div class="flex items-center justify-between px-4 py-2">
-      <!-- Left -->
-      <div class="flex items-center space-x-2">
-        <button class="bg-blue-900 text-white px-3 py-1 text-sm rounded">Kontak</button>
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Flag_of_Indonesia.svg/32px-Flag_of_Indonesia.svg.png" alt="id" class="w-5 h-4">
-      </div>
-      <!-- Right (Search) -->
-      <div>
-        <input type="text" placeholder="Pencarian..." class="border rounded px-2 py-1 text-sm">
-      </div>
+ <!-- header and navbar -->
+<header class="bg-blue-900 text-white shadow">
+  <div class="container mx-auto flex justify-between items-center px-4 py-4 md:py-3">
+    <!-- Logo di kiri -->
+    <div class="flex items-center gap-3">
+      <img src="img/logo man.png" alt="Logo" class="w-10 h-10" />
+      <h1 class="text-lg font-bold">MAN Kota Batu</h1>
     </div>
-  </header>
 
-  <header class="bg-blue-900 text-white shadow">
-    <div class="container mx-auto flex justify-between items-center px-4 py-3">
-      <div class="flex items-center gap-3">
-        <img src="logo.png" alt="Logo" class="w-10 h-10" />
-        <h1 class="text-lg font-bold">MAN Kota Batu</h1>
-      </div>
-      <nav class="space-x-6 hidden md:block">
+    <!-- Hamburger di kanan (mobile) -->
+    <button id="nav-toggle" class="md:hidden p-2 rounded bg-blue-800">
+      <i class="fas fa-bars"></i>
+    </button>
+
+    <!-- Nav + Search (desktop) -->
+    <div id="nav-menu" class="hidden md:flex md:items-center md:gap-6">
+      <nav class="space-x-4 hidden md:block">
         <a href="home.html" class="hover:text-yellow-400">Home</a>
         <a href="profil.html" class="hover:text-yellow-400">Profil</a>
         <a href="prestasi.html" class="hover:text-yellow-400">Prestasi</a>
         <a href="pengumuman.html" class="hover:text-yellow-400">Pengumuman</a>
         <a href="layanan.html" class="hover:text-yellow-400">Layanan</a>
       </nav>
+      <form id="searchForm" class="hidden md:flex items-center gap-2" onsubmit="return false;">
+        <input id="searchInput" type="text" placeholder="Pencarian..." class="border rounded px-2 py-1 text-sm text-black" aria-label="Pencarian situs">
+        <button type="submit" class="bg-yellow-400 text-blue-900 px-2 py-1 rounded">Cari</button>
+      </form>
     </div>
-  </header>
+  </div>
+
+  <!-- Mobile menu (hidden by default) -->
+  <div id="mobile-menu" class="md:hidden hidden bg-blue-800">
+    <div class="flex flex-col px-6 py-4 space-y-3">
+      <a href="home.html" class="block text-white py-2 hover:bg-blue-700 rounded">Home</a>
+      <a href="profil.html" class="block text-white py-2 hover:bg-blue-700 rounded">Profil</a>
+      <a href="prestasi.html" class="block text-white py-2 hover:bg-blue-700 rounded">Prestasi</a>
+      <a href="pengumuman.html" class="block text-white py-2 hover:bg-blue-700 rounded">Pengumuman</a>
+      <a href="layanan.html" class="block text-white py-2 hover:bg-blue-700 rounded">Layanan</a>
+      <form id="searchFormMobile" class="flex items-center gap-2 mt-2" onsubmit="return false;">
+        <input id="searchInputMobile" type="text" placeholder="Pencarian..." class="border rounded px-2 py-1 text-sm text-black" aria-label="Pencarian mobile">
+        <button type="submit" class="bg-yellow-400 text-blue-900 px-2 py-1 rounded">Cari</button>
+      </form>
+    </div>
+  </div>
+</header>
+
+  
 
   <!-- Hero -->
   <section class="bg-blue-700 text-white text-center py-12">
@@ -261,6 +278,144 @@
     © 2025 Tikma. All rights reserved.
   </div>
 </footer>
+<!-- ✅ FIXED & OPTIMIZED: Mobile Nav + Search + Full-Word Highlight -->
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  // === HAMBURGER MENU (Mobile) ===
+  const navToggle = document.getElementById("nav-toggle");
+  const mobileMenu = document.getElementById("mobile-menu");
 
+  if (navToggle && mobileMenu) {
+    navToggle.addEventListener("click", () => {
+      if (mobileMenu.classList.contains("hidden")) {
+        mobileMenu.classList.remove("hidden", "animate-slideUp");
+        mobileMenu.classList.add("animate-slideDown");
+      } else {
+        mobileMenu.classList.remove("animate-slideDown");
+        mobileMenu.classList.add("animate-slideUp");
+        setTimeout(() => mobileMenu.classList.add("hidden"), 300);
+      }
+    });
+
+    // Tutup menu jika klik di luar area
+    document.addEventListener("click", (e) => {
+      if (!navToggle.contains(e.target) && !mobileMenu.contains(e.target)) {
+        if (!mobileMenu.classList.contains("hidden")) {
+          mobileMenu.classList.remove("animate-slideDown");
+          mobileMenu.classList.add("animate-slideUp");
+          setTimeout(() => mobileMenu.classList.add("hidden"), 300);
+        }
+      }
+    });
+  }
+
+  // === HIGHLIGHT SELURUH KATA (Bukan potongan teks) ===
+  function removeHighlights() {
+    document.querySelectorAll(".search-highlight").forEach((span) => {
+      const parent = span.parentNode;
+      parent.replaceChild(document.createTextNode(span.textContent), span);
+      parent.normalize();
+    });
+  }
+
+  function highlightFullWord(term) {
+    removeHighlights();
+    if (!term) return;
+
+    // regex untuk highlight seluruh kata yang mengandung term (contoh: "inst" → highlight "Instagram")
+    const regex = new RegExp(`\\b[^\\s]*${term}[^\\s]*\\b`, "gi");
+
+    const walker = document.createTreeWalker(
+      document.body,
+      NodeFilter.SHOW_TEXT,
+      {
+        acceptNode(node) {
+          if (!node.parentElement) return NodeFilter.FILTER_REJECT;
+          const tag = node.parentElement.tagName.toLowerCase();
+          if (["script", "style", "input", "textarea", "button"].includes(tag))
+            return NodeFilter.FILTER_REJECT;
+          if (!node.nodeValue.trim()) return NodeFilter.FILTER_REJECT;
+          return NodeFilter.FILTER_ACCEPT;
+        },
+      }
+    );
+
+    const nodes = [];
+    while (walker.nextNode()) nodes.push(walker.currentNode);
+
+    let firstHighlight = null;
+
+    nodes.forEach((node) => {
+      const text = node.nodeValue;
+      if (regex.test(text)) {
+        const replaced = text.replace(
+          regex,
+          (match) =>
+            `<span class="search-highlight bg-yellow-300 text-blue-900 font-bold px-1 rounded">${match}</span>`
+        );
+        const span = document.createElement("span");
+        span.innerHTML = replaced;
+        node.replaceWith(...span.childNodes);
+
+        if (!firstHighlight) {
+          firstHighlight = document.querySelector(".search-highlight");
+        }
+      }
+    });
+
+    // Scroll ke hasil pertama
+    if (firstHighlight) {
+      firstHighlight.scrollIntoView({ behavior: "smooth", block: "center" });
+    }
+  }
+
+  // === FORM HANDLING (Desktop + Mobile) ===
+  const searchInput = document.getElementById("searchInput");
+  const searchInputMobile = document.getElementById("searchInputMobile");
+
+  document.getElementById("searchForm")?.addEventListener("submit", (e) => {
+    e.preventDefault();
+    highlightFullWord(searchInput.value.trim());
+  });
+
+  document.getElementById("searchFormMobile")?.addEventListener("submit", (e) => {
+    e.preventDefault();
+    highlightFullWord(searchInputMobile.value.trim());
+    mobileMenu.classList.add("hidden");
+  });
+
+  [searchInput, searchInputMobile].forEach((el) => {
+    if (!el) return;
+    el.addEventListener("keydown", (e) => {
+      if (e.key === "Enter") {
+        e.preventDefault();
+        highlightFullWord(el.value.trim());
+      }
+    });
+  });
+});
+
+// === ANIMASI SLIDE (Tailwind Extend) ===
+tailwind.config = {
+  theme: {
+    extend: {
+      keyframes: {
+        slideDown: {
+          "0%": { opacity: "0", transform: "translateY(-10px)" },
+          "100%": { opacity: "1", transform: "translateY(0)" },
+        },
+        slideUp: {
+          "0%": { opacity: "1", transform: "translateY(0)" },
+          "100%": { opacity: "0", transform: "translateY(-10px)" },
+        },
+      },
+      animation: {
+        slideDown: "slideDown 0.3s ease-out forwards",
+        slideUp: "slideUp 0.3s ease-in forwards",
+      },
+    },
+  },
+};
+</script>
 </body>
 </html>

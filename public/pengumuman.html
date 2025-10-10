@@ -11,52 +11,51 @@
   />
   </head>
   <body class="bg-gray-50 font-sans">
-
-   <!-- Header / Navbar -->
-  <header class="bg-blue-900 text-white shadow">
-  <div class="container mx-auto flex flex-col md:flex-row justify-between items-center px-4 py-4 md:py-3">
-      <!-- Left -->
-      <div class="flex items-center gap-3">
-        <img src="img/logo man.png" alt="Logo" class="w-10 h-10" />
-        <h1 class="text-lg font-bold">MAN Kota Batu</h1>
-      </div>
-
-      <!-- Mobile hamburger -->
-      <button id="nav-toggle" class="md:hidden p-2 rounded bg-blue-800">
-        <i class="fas fa-bars"></i>
-      </button>
-
-      <!-- Nav + Search -->
-      <div id="nav-menu" class="hidden md:flex md:items-center md:gap-6">
-  <nav class="space-x-4 hidden md:block">
-          <a href="home.html" class="hover:text-yellow-400">Home</a>
-          <a href="profil.html" class="hover:text-yellow-400">Profil</a>
-          <a href="prestasi.html" class="hover:text-yellow-400">Prestasi</a>
-          <a href="pengumuman.html" class="hover:text-yellow-400">Pengumuman</a>
-          <a href="layanan.html" class="hover:text-yellow-400">Layanan</a>
-        </nav>
-          <form id="searchForm" class="hidden md:flex items-center gap-2" onsubmit="return false;">
-            <input id="searchInput" type="text" placeholder="Pencarian..." class="border rounded px-2 py-1 text-sm text-black" aria-label="Pencarian situs">
-            <button type="submit" class="bg-yellow-400 text-blue-900 px-2 py-1 rounded">Cari</button>
-          </form>
-      </div>
+<!-- header and navbar -->
+<header class="bg-blue-900 text-white shadow">
+  <div class="container mx-auto flex justify-between items-center px-4 py-4 md:py-3">
+    <!-- Logo di kiri -->
+    <div class="flex items-center gap-3">
+      <img src="img/logo man.png" alt="Logo" class="w-10 h-10" />
+      <h1 class="text-lg font-bold">MAN Kota Batu</h1>
     </div>
 
-    <!-- Mobile menu (hidden by default) -->
-    <div id="mobile-menu" class="md:hidden hidden bg-blue-800">
-  <div class="flex flex-col px-6 py-4 space-y-3">
-        <a href="home.html" class="block text-white py-2 hover:bg-blue-700 rounded">Home</a>
-        <a href="profil.html" class="block text-white py-2 hover:bg-blue-700 rounded">Profil</a>
-        <a href="prestasi.html" class="block text-white py-2 hover:bg-blue-700 rounded">Prestasi</a>
-        <a href="pengumuman.html" class="block text-white py-2 hover:bg-blue-700 rounded">Pengumuman</a>
-        <a href="layanan.html" class="block text-white py-2 hover:bg-blue-700 rounded">Layanan</a>
-          <form id="searchFormMobile" class="flex items-center gap-2 mt-2" onsubmit="return false;">
-            <input id="searchInputMobile" type="text" placeholder="Pencarian..." class="border rounded px-2 py-1 text-sm text-black" aria-label="Pencarian mobile">
-            <button type="submit" class="bg-yellow-400 text-blue-900 px-2 py-1 rounded">Cari</button>
-          </form>
-      </div>
+    <!-- Hamburger di kanan (mobile) -->
+    <button id="nav-toggle" class="md:hidden p-2 rounded bg-blue-800">
+      <i class="fas fa-bars"></i>
+    </button>
+
+    <!-- Nav + Search (desktop) -->
+    <div id="nav-menu" class="hidden md:flex md:items-center md:gap-6">
+      <nav class="space-x-4 hidden md:block">
+        <a href="home.html" class="hover:text-yellow-400">Home</a>
+        <a href="profil.html" class="hover:text-yellow-400">Profil</a>
+        <a href="prestasi.html" class="hover:text-yellow-400">Prestasi</a>
+        <a href="pengumuman.html" class="hover:text-yellow-400">Pengumuman</a>
+        <a href="layanan.html" class="hover:text-yellow-400">Layanan</a>
+      </nav>
+      <form id="searchForm" class="hidden md:flex items-center gap-2" onsubmit="return false;">
+        <input id="searchInput" type="text" placeholder="Pencarian..." class="border rounded px-2 py-1 text-sm text-black" aria-label="Pencarian situs">
+        <button type="submit" class="bg-yellow-400 text-blue-900 px-2 py-1 rounded">Cari</button>
+      </form>
     </div>
-  </header>
+  </div>
+
+  <!-- Mobile menu (hidden by default) -->
+  <div id="mobile-menu" class="md:hidden hidden bg-blue-800">
+    <div class="flex flex-col px-6 py-4 space-y-3">
+      <a href="home.html" class="block text-white py-2 hover:bg-blue-700 rounded">Home</a>
+      <a href="profil.html" class="block text-white py-2 hover:bg-blue-700 rounded">Profil</a>
+      <a href="prestasi.html" class="block text-white py-2 hover:bg-blue-700 rounded">Prestasi</a>
+      <a href="pengumuman.html" class="block text-white py-2 hover:bg-blue-700 rounded">Pengumuman</a>
+      <a href="layanan.html" class="block text-white py-2 hover:bg-blue-700 rounded">Layanan</a>
+      <form id="searchFormMobile" class="flex items-center gap-2 mt-2" onsubmit="return false;">
+        <input id="searchInputMobile" type="text" placeholder="Pencarian..." class="border rounded px-2 py-1 text-sm text-black" aria-label="Pencarian mobile">
+        <button type="submit" class="bg-yellow-400 text-blue-900 px-2 py-1 rounded">Cari</button>
+      </form>
+    </div>
+  </div>
+</header>
 
   
 

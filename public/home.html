@@ -10,51 +10,51 @@
 </head>
 <body class="bg-gray-50 font-sans">
 
-  <!-- Header / Navbar -->
-  <header class="bg-blue-900 text-white shadow">
-  <div class="container mx-auto flex flex-col md:flex-row justify-between items-center px-4 py-4 md:py-3">
-      <!-- Left -->
-      <div class="flex items-center gap-3">
-        <img src="img/logo man.png" alt="Logo" class="w-10 h-10" />
-        <h1 class="text-lg font-bold">MAN Kota Batu</h1>
-      </div>
-
-      <!-- Mobile hamburger -->
-      <button id="nav-toggle" class="md:hidden p-2 rounded bg-blue-800">
-        <i class="fas fa-bars"></i>
-      </button>
-
-      <!-- Nav + Search -->
-      <div id="nav-menu" class="hidden md:flex md:items-center md:gap-6">
-  <nav class="space-x-4 hidden md:block">
-          <a href="home.html" class="hover:text-yellow-400">Home</a>
-          <a href="profil.html" class="hover:text-yellow-400">Profil</a>
-          <a href="prestasi.html" class="hover:text-yellow-400">Prestasi</a>
-          <a href="pengumuman.html" class="hover:text-yellow-400">Pengumuman</a>
-          <a href="layanan.html" class="hover:text-yellow-400">Layanan</a>
-        </nav>
-          <form id="searchForm" class="hidden md:flex items-center gap-2" onsubmit="return false;">
-            <input id="searchInput" type="text" placeholder="Pencarian..." class="border rounded px-2 py-1 text-sm text-black" aria-label="Pencarian situs">
-            <button type="submit" class="bg-yellow-400 text-blue-900 px-2 py-1 rounded">Cari</button>
-          </form>
-      </div>
+<header class="bg-blue-900 text-white shadow">
+  <div class="container mx-auto flex justify-between items-center px-4 py-4 md:py-3">
+    <!-- Logo di kiri -->
+    <div class="flex items-center gap-3">
+      <img src="img/logo man.png" alt="Logo" class="w-10 h-10" />
+      <h1 class="text-lg font-bold">MAN Kota Batu</h1>
     </div>
 
-    <!-- Mobile menu (hidden by default) -->
-    <div id="mobile-menu" class="md:hidden hidden bg-blue-800">
-  <div class="flex flex-col px-6 py-4 space-y-3">
-        <a href="home.html" class="block text-white py-2 hover:bg-blue-700 rounded">Home</a>
-        <a href="profil.html" class="block text-white py-2 hover:bg-blue-700 rounded">Profil</a>
-        <a href="prestasi.html" class="block text-white py-2 hover:bg-blue-700 rounded">Prestasi</a>
-        <a href="pengumuman.html" class="block text-white py-2 hover:bg-blue-700 rounded">Pengumuman</a>
-        <a href="layanan.html" class="block text-white py-2 hover:bg-blue-700 rounded">Layanan</a>
-          <form id="searchFormMobile" class="flex items-center gap-2 mt-2" onsubmit="return false;">
-            <input id="searchInputMobile" type="text" placeholder="Pencarian..." class="border rounded px-2 py-1 text-sm text-black" aria-label="Pencarian mobile">
-            <button type="submit" class="bg-yellow-400 text-blue-900 px-2 py-1 rounded">Cari</button>
-          </form>
-      </div>
+    <!-- Hamburger di kanan (mobile) -->
+    <button id="nav-toggle" class="md:hidden p-2 rounded bg-blue-800">
+      <i class="fas fa-bars"></i>
+    </button>
+
+    <!-- Nav + Search (desktop) -->
+    <div id="nav-menu" class="hidden md:flex md:items-center md:gap-6">
+      <nav class="space-x-4 hidden md:block">
+        <a href="home.html" class="hover:text-yellow-400">Home</a>
+        <a href="profil.html" class="hover:text-yellow-400">Profil</a>
+        <a href="prestasi.html" class="hover:text-yellow-400">Prestasi</a>
+        <a href="pengumuman.html" class="hover:text-yellow-400">Pengumuman</a>
+        <a href="layanan.html" class="hover:text-yellow-400">Layanan</a>
+      </nav>
+      <form id="searchForm" class="hidden md:flex items-center gap-2" onsubmit="return false;">
+        <input id="searchInput" type="text" placeholder="Pencarian..." class="border rounded px-2 py-1 text-sm text-black" aria-label="Pencarian situs">
+        <button type="submit" class="bg-yellow-400 text-blue-900 px-2 py-1 rounded">Cari</button>
+      </form>
     </div>
-  </header>
+  </div>
+
+  <!-- Mobile menu (hidden by default) -->
+  <div id="mobile-menu" class="md:hidden hidden bg-blue-800">
+    <div class="flex flex-col px-6 py-4 space-y-3">
+      <a href="home.html" class="block text-white py-2 hover:bg-blue-700 rounded">Home</a>
+      <a href="profil.html" class="block text-white py-2 hover:bg-blue-700 rounded">Profil</a>
+      <a href="prestasi.html" class="block text-white py-2 hover:bg-blue-700 rounded">Prestasi</a>
+      <a href="pengumuman.html" class="block text-white py-2 hover:bg-blue-700 rounded">Pengumuman</a>
+      <a href="layanan.html" class="block text-white py-2 hover:bg-blue-700 rounded">Layanan</a>
+      <form id="searchFormMobile" class="flex items-center gap-2 mt-2" onsubmit="return false;">
+        <input id="searchInputMobile" type="text" placeholder="Pencarian..." class="border rounded px-2 py-1 text-sm text-black" aria-label="Pencarian mobile">
+        <button type="submit" class="bg-yellow-400 text-blue-900 px-2 py-1 rounded">Cari</button>
+      </form>
+    </div>
+  </div>
+</header>
+
 
   <!-- Hero Section -->
   <section class="relative">
@@ -159,44 +159,60 @@
     </div>
   </section>
 
-  <!-- Program Unggulan -->
-  <section id="program" class="p-4 scroll-mt-24">
-    <div class="bg-blue-900 text-white p-4 rounded-lg">
-      <h3 class="font-bold mb-6 flex items-center justify-center h-16 md:h-20 text-2xl md:text-4xl">Program Unggulan</h3>
-      <main class="flex flex-col md:flex-row w-full max-w-4xl mx-auto mt-4 md:mt-8">
-        <aside class="flex flex-row md:flex-col justify-between md:mr-6 mb-4 md:mb-0 gap-2 md:gap-0">
-          <button class="bg-blue-700 hover:bg-yellow-400 text-white hover:text-blue-900 font-semibold px-3 py-2 md:px-6 rounded-full border-2 border-blue-900 mb-2 w-full">Olimpiade</button>
-          <button class="bg-blue-700 hover:bg-yellow-400 text-white hover:text-blue-900 font-semibold px-3 py-2 md:px-6 rounded-full mb-2 w-full">Riset</button>
-          <button class="bg-blue-700 hover:bg-yellow-400 text-white hover:text-blue-900 font-semibold px-3 py-2 md:px-6 rounded-full mb-2 w-full">Percepatan</button>
-          <button class="bg-blue-700 hover:bg-yellow-400 text-white hover:text-blue-900 font-semibold px-3 py-2 md:px-6 rounded-full w-full">Tahfidz</button>
-        </aside>
-        <section class="bg-blue-700 rounded-2xl flex-1 p-3 md:p-6 min-w-0">
-          <h2 class="text-white text-lg md:text-xl font-bold mb-4">Olimpiade</h2>
-          <div class="relative w-full mb-4">
-            <select class="appearance-none w-full bg-yellow-400 text-blue-900 font-semibold py-2 px-2 md:px-4 rounded-lg cursor-pointer">
-              <option>Astronomi</option>
-              <option>Biologi</option>
-              <option>Ekonomi</option>
-              <option>Fisika</option>
-              <option>Geografi</option>
-              <option>Kebumian</option>
-              <option>Kimia</option>
-              <option>Matematika</option>
-              <option>TI</option>
-            </select>
-            <div class="absolute right-3 top-1/2 transform -translate-y-1/2 text-blue-900 pointer-events-none">▼</div>
-          </div>
-          <div class="bg-blue-200 text-blue-800 h-32 md:h-40 flex items-center justify-center rounded-lg mb-4">
-            <!-- FOTO -->
-          </div>
-          <div class="bg-blue-200 rounded-lg p-2 md:p-4">
-            <h3 class="text-blue-800 font-bold border-b-2 border-yellow-400 mb-2 text-center">DESKRIPSI</h3>
-            <p class="text-blue-800 text-xs md:text-sm">DESKRIPSI</p>
-          </div>
-        </section>
-      </main>
+<section id="program" class="p-4 scroll-mt-24">
+  <div class="bg-blue-900 text-white p-4 rounded-lg">
+    <h3 class="font-bold mb-6 flex items-center justify-center h-16 md:h-20 text-2xl md:text-4xl text-center">
+      Program Unggulan
+    </h3>
+    <main class="flex flex-col md:flex-row w-full max-w-4xl mx-auto mt-4 md:mt-8 gap-4">
+
+      <!-- Sidebar Tombol -->
+      <aside class="flex flex-col md:flex-col gap-2 md:gap-3 w-full md:w-1/3">
+        <button class="bg-blue-700 hover:bg-yellow-400 text-white hover:text-blue-900 font-semibold px-3 py-2 md:px-6 rounded-full w-full">Olimpiade</button>
+        <button class="bg-blue-700 hover:bg-yellow-400 text-white hover:text-blue-900 font-semibold px-3 py-2 md:px-6 rounded-full w-full">Riset</button>
+        <button class="bg-blue-700 hover:bg-yellow-400 text-white hover:text-blue-900 font-semibold px-3 py-2 md:px-6 rounded-full w-full">Percepatan</button>
+        <button class="bg-blue-700 hover:bg-yellow-400 text-white hover:text-blue-900 font-semibold px-3 py-2 md:px-6 rounded-full w-full">Tahfidz</button>
+      </aside>
+
+      <!-- Konten -->
+      <section class="bg-blue-700 rounded-2xl flex-1 p-3 md:p-6 min-w-0 flex flex-col">
+        <h2 class="text-white text-lg md:text-xl font-bold mb-4 text-center md:text-left">Olimpiade</h2>
+
+        <!-- Dropdown -->
+        <div class="relative w-full mb-4">
+          <select class="appearance-none w-full bg-yellow-400 text-blue-900 font-semibold py-2 px-2 md:px-4 rounded-lg cursor-pointer">
+            <option>Astronomi</option>
+            <option>Biologi</option>
+            <option>Ekonomi</option>
+            <option>Fisika</option>
+            <option>Geografi</option>
+            <option>Kebumian</option>
+            <option>Kimia</option>
+            <option>Matematika</option>
+            <option>TI</option>
+          </select>
+          <div class="absolute right-3 top-1/2 transform -translate-y-1/2 text-blue-900 pointer-events-none">▼</div>
+        </div>
+
+        <!-- Foto --> 
+        <div class="bg-blue-200 text-blue-800 h-32 md:h-40 flex items-center justify-center rounded-lg mb-4">
+          <!-- FOTO -->
+        </div>
+
+        <!-- Deskripsi -->
+        <div class="bg-blue-200 rounded-lg p-2 md:p-4 mt-auto">
+          <h3 class="text-blue-800 font-bold border-b-2 border-yellow-400 mb-2 text-center">DESKRIPSI</h3>
+          <p class="text-blue-800 text-xs md:text-sm">DESKRIPSI</p>
+        </div>
+      </section>
+
+    </main>
+  </div>
+</section>
+
+
     </div>
-  </section>
+
 
   <!-- Prestasi -->
   <div id="prestasi" class="bg-blue-900 text-white p-4 rounded-lg flex items-center gap-2 mb-4 mx-4 md:mx-8 scroll-mt-24  justify-center pl-10">

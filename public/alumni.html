@@ -1,93 +1,296 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Alumni Page</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Alumni MAN Kota Batu</title>
   <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+  />
+  <style>
+    /* Hilangkan scrollbar horizontal */
+    .scrollbar-hide::-webkit-scrollbar {
+      display: none;
+    }
+    .scrollbar-hide {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+  </style>
 </head>
-<body class="bg-gray-100 font-sans">
 
-  <!-- Header / Navbar -->
-  <header class="bg-blue-800 shadow">
-    <div class="flex items-center justify-between px-4 py-2">
-      <!-- Left -->
-      <div class="flex items-center space-x-2">
-        <button class="bg-blue-900 text-white px-3 py-1 text-sm rounded">Kontak</button>
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Flag_of_Indonesia.svg/32px-Flag_of_Indonesia.svg.png" alt="id" class="w-5 h-4">
-      </div>
-
-      <!-- Right (Search) -->
-      <div>
-        <input type="text" placeholder="Pencarian..." class="border rounded px-2 py-1 text-sm">
-      </div>
+<header class="bg-blue-900 text-white shadow">
+  <div class="container mx-auto flex justify-between items-center px-4 py-4 md:py-3">
+    <!-- Logo di kiri -->
+    <div class="flex items-center gap-3">
+      <img src="img/logo man.png" alt="Logo" class="w-10 h-10" />
+      <h1 class="text-lg font-bold">MAN Kota Batu</h1>
     </div>
 
-  <header class="bg-blue-900 text-white shadow">
-    <div class="container mx-auto flex justify-between items-center px-4 py-3">
-      <div class="flex items-center gap-3">
-        <img src="img/mannbg.png" alt="Logo" class="w-10 h-10" />
-        <h1 class="text-lg font-bold">MAN Kota Batu</h1>
-      </div>
-      <nav class="space-x-6 hidden md:block">
+    <!-- Hamburger di kanan (mobile) -->
+    <button id="nav-toggle" class="md:hidden p-2 rounded bg-blue-800">
+      <i class="fas fa-bars"></i>
+    </button>
+
+    <!-- Nav + Search (desktop) -->
+    <div id="nav-menu" class="hidden md:flex md:items-center md:gap-6">
+      <nav class="space-x-4 hidden md:block">
         <a href="home.html" class="hover:text-yellow-400">Home</a>
         <a href="profil.html" class="hover:text-yellow-400">Profil</a>
         <a href="prestasi.html" class="hover:text-yellow-400">Prestasi</a>
         <a href="pengumuman.html" class="hover:text-yellow-400">Pengumuman</a>
         <a href="layanan.html" class="hover:text-yellow-400">Layanan</a>
       </nav>
+      <form id="searchForm" class="hidden md:flex items-center gap-2" onsubmit="return false;">
+        <input id="searchInput" type="text" placeholder="Pencarian..." class="border rounded px-2 py-1 text-sm text-black" aria-label="Pencarian situs">
+        <button type="submit" class="bg-yellow-400 text-blue-900 px-2 py-1 rounded">Cari</button>
+      </form>
     </div>
-  </header>
+  </div>
 
-    
+  <!-- Mobile menu (hidden by default) -->
+  <div id="mobile-menu" class="md:hidden hidden bg-blue-800">
+    <div class="flex flex-col px-6 py-4 space-y-3">
+      <a href="home.html" class="block text-white py-2 hover:bg-blue-700 rounded">Home</a>
+      <a href="profil.html" class="block text-white py-2 hover:bg-blue-700 rounded">Profil</a>
+      <a href="prestasi.html" class="block text-white py-2 hover:bg-blue-700 rounded">Prestasi</a>
+      <a href="pengumuman.html" class="block text-white py-2 hover:bg-blue-700 rounded">Pengumuman</a>
+      <a href="layanan.html" class="block text-white py-2 hover:bg-blue-700 rounded">Layanan</a>
+      <form id="searchFormMobile" class="flex items-center gap-2 mt-2" onsubmit="return false;">
+        <input id="searchInputMobile" type="text" placeholder="Pencarian..." class="border rounded px-2 py-1 text-sm text-black" aria-label="Pencarian mobile">
+        <button type="submit" class="bg-yellow-400 text-blue-900 px-2 py-1 rounded">Cari</button>
+      </form>
+    </div>
+  </div>
+</header>
 
-  <!-- Profil Alumni -->
-  <section class="text-center bg-white py-2">
-    <div class="bg-blue-900 px-6 py-8">
-      <h2 class="text-xl font-bold text-white">ALUMNI</h2>
-      <p class="text-white font-semibold">PROFIL ALUMNI</p>
+  <!-- Section: Alumni -->
+  <section class="bg-white text-center">
+    <div class="bg-blue-800 px-6 py-8">
+      <h2 class="text-2xl font-bold text-white tracking-wide">ALUMNI</h2>
+      <p class="text-white font-medium">PROFIL ALUMNI MAN KOTA BATU</p>
     </div>
 
- <!-- Slider -->
-<div class="flex justify-center items-center space-x-4 mt-8 mb-8">
-  <button class="text-2xl">&lt;</button>
-  <div class="w-28 h-36 bg-gray-300 rounded-lg"></div>
-  <div class="w-28 h-36 bg-gray-300 rounded-lg"></div>
-  <div class="w-28 h-36 bg-gray-300 rounded-lg"></div>
-  <button class="text-2xl">&gt;</button>
+    <!-- Carousel -->
+    <div class="max-w-6xl mx-auto py-10 px-4">
+      <h2 class="text-3xl font-bold text-blue-900 mb-6">Profil Alumni</h2>
+
+      <div class="relative flex items-center justify-center">
+       
+<!-- Tombol kiri -->
+<button
+  type="button"
+  onclick="scrollCarouselLeft()"
+  class="absolute left-4 top-1/2 -translate-y-1/2 z-20 bg-blue-900 text-white rounded-full w-12 h-12 flex items-center justify-center shadow-lg hover:bg-yellow-400 hover:text-blue-900 transition-all duration-300"
+>
+  <i class="fa-solid fa-chevron-left"></i>
+</button>
+
+<!-- Carousel -->
+<div
+  id="carousel"
+  class="flex gap-6 overflow-x-auto scroll-smooth px-12 py-4 snap-x snap-mandatory scrollbar-hide justify-start"
+  style="scrollbar-width: none; width: 80%; scroll-behavior: smooth;"
+>
+
+<!-- Template Card Alumni -->
+<template id="card-template">
+    <div
+        class="relative flex-shrink-0 w-56 bg-white rounded-2xl shadow-md overflow-hidden snap-center group transition-all duration-300 hover:scale-105"
+    >
+        <img
+            src=""
+            alt="Foto Alumni"
+            class="w-full h-40 object-cover"
+        />
+        <div class="p-3">
+            <h3 class="text-blue-900 font-semibold text-lg"></h3>
+        </div>
+        <div
+            class="absolute bottom-0 left-0 w-full bg-blue-900 text-white text-sm p-3 rounded-b-2xl translate-y-full group-hover:translate-y-0 transition duration-300"
+        ></div>
+    </div>
+</template>
+
+<!-- Data Alumni -->
+<div
+    class="relative flex-shrink-0 w-56 bg-white rounded-2xl shadow-md overflow-hidden snap-center group hover:scale-105 transition-all duration-300"
+>
+    <img
+        src="https://via.placeholder.com/200x140"
+        alt="Taqia"
+        class="w-full h-40 object-cover"
+    />
+    <div class="p-3">
+        <h3 class="text-blue-900 font-semibold text-lg">Taqia</h3>
+    </div>
+    <div
+        class="absolute bottom-0 left-0 w-full bg-blue-900 text-white text-sm p-3 rounded-b-2xl translate-y-full group-hover:translate-y-0 transition duration-300"
+    >
+        Lulusan 2020<br />Jurusan: IPA<br />institut tehnologi bandung
+    </div>
 </div>
 
-<!-- Tombol Selengkapnya -->
-<a href="alumni2.html" 
-   class="mt-4 bg-yellow-400 hover:bg-blue-900 text-blue-900 hover:text-white 
-          font-bold px-4 py-2 rounded font-semibold mb-5 
-          inline-block transition duration-300 ease-in-out transform hover:scale-105">
-   Selengkapnya
-</a>
+<div
+    class="relative flex-shrink-0 w-56 bg-white rounded-2xl shadow-md overflow-hidden snap-center group hover:scale-105 transition-all duration-300"
+>
+    <img
+        src="https://via.placeholder.com/200x140"
+        alt="Azriel Agta"
+        class="w-full h-40 object-cover"
+    />
+    <div class="p-3">
+        <h3 class="text-blue-900 font-semibold text-lg">Azriel Agta</h3>
+    </div>
+    <div
+        class="absolute bottom-0 left-0 w-full bg-blue-900 text-white text-sm p-3 rounded-b-2xl translate-y-full group-hover:translate-y-0 transition duration-300"
+    >
+        Lulusan 2021<br />Jurusan: IPS<br />institut negeri sepuluh november
+    </div>
+</div>
 
+<div
+    class="relative flex-shrink-0 w-56 bg-white rounded-2xl shadow-md overflow-hidden snap-center group hover:scale-105 transition-all duration-300"
+>
+    <img
+        src="https://via.placeholder.com/200x140"
+        alt="Reza Malik Sidin"
+        class="w-full h-40 object-cover"
+    />
+    <div class="p-3">
+        <h3 class="text-blue-900 font-semibold text-lg">Reza Malik Sidin </h3>
+    </div>
+    <div
+        class="absolute bottom-0 left-0 w-full bg-blue-900 text-white text-sm p-3 rounded-b-2xl translate-y-full group-hover:translate-y-0 transition duration-300"
+    >
+        Lulusan 2022<br />Jurusan: IPA<br />Technical University of Munich
+    </div>
+</div>
 
-  <!-- Tracer Study Alumni -->
-  <section class="bg-gray-200 text-center py-6 px-4">
-    <h3 class="font-bold text-lg text-blue-900">Tracer Study Alumni</h3>
-    <p class="text-gray-700 text-sm max-w-xl mx-auto mt-2">
-      Halaman ini dikhususkan untuk para alumni Madrasah Aliyah Negeri Kota Batu
-      untuk menyalurkan kesan dan pesan serta pengalaman selama menjadi siswa MAN Kota Batu.
+<div
+    class="relative flex-shrink-0 w-56 bg-white rounded-2xl shadow-md overflow-hidden snap-center group hover:scale-105 transition-all duration-300"
+>
+    <img
+        src="https://via.placeholder.com/200x140"
+        alt="M. Akhnaf Meyfan"
+        class="w-full h-40 object-cover"
+    />
+    <div class="p-3">
+        <h3 class="text-blue-900 font-semibold text-lg">M. Akhnaf Meyfan </h3>
+    </div>
+    <div
+        class="absolute bottom-0 left-0 w-full bg-blue-900 text-white text-sm p-3 rounded-b-2xl translate-y-full group-hover:translate-y-0 transition duration-300"
+    >
+        Lulusan 2023<br />Jurusan: IPA<br />Politeknik Negeri Malang
+    </div>
+</div>
+
+<div
+    class="relative flex-shrink-0 w-56 bg-white rounded-2xl shadow-md overflow-hidden snap-center group hover:scale-105 transition-all duration-300"
+>
+    <img
+        src="https://via.placeholder.com/200x140"
+        alt="Dimas Adi"
+        class="w-full h-40 object-cover"
+    />
+    <div class="p-3">
+        <h3 class="text-blue-900 font-semibold text-lg">Dimas Adi</h3>
+    </div>
+    <div
+        class="absolute bottom-0 left-0 w-full bg-blue-900 text-white text-sm p-3 rounded-b-2xl translate-y-full group-hover:translate-y-0 transition duration-300"
+    >
+        Lulusan 2023<br />Jurusan: BAHASA<br />UIN Malang
+    </div>
+</div>
+<div></div>
+ 
+
+<!-- Tombol kanan -->
+<button
+  type="button"
+  onclick="scrollCarouselRight()"
+  class="absolute right-4 top-1/2 -translate-y-1/2 z-20 bg-blue-900 text-white rounded-full w-12 h-12 flex items-center justify-center shadow-lg hover:bg-yellow-400 hover:text-blue-900 transition-all duration-300"
+  aria-label="Next alumni"
+>
+  <i class="fa-solid fa-chevron-right"></i>
+</button>
+<script>
+const carousel = document.getElementById('carousel');
+let autoScrollInterval;
+
+if (carousel) {
+  // Fungsi scroll ke kiri
+  function scrollCarouselLeft() {
+    carousel.scrollBy({ left: -carousel.clientWidth / 3, behavior: 'smooth' });
+  }
+
+  // Fungsi scroll ke kanan
+  function scrollCarouselRight() {
+    carousel.scrollBy({ left: carousel.clientWidth / 3, behavior: 'smooth' });
+  }
+
+  // Fungsi auto-scroll
+  function startAutoScroll() {
+    autoScrollInterval = setInterval(() => {
+      if (carousel.scrollLeft + carousel.clientWidth >= carousel.scrollWidth - 5) {
+        carousel.scrollTo({ left: 0, behavior: 'smooth' });
+      } else {
+        scrollCarouselRight();
+      }
+    }, 3000); // kecepatan auto scroll (3 detik)
+  }
+
+  // Hentikan auto-scroll
+  function stopAutoScroll() {
+    clearInterval(autoScrollInterval);
+  }
+
+  // Mulai auto-scroll saat halaman dibuka
+  startAutoScroll();
+
+  // Pause auto-scroll saat mouse di atas carousel
+  carousel.addEventListener('mouseenter', stopAutoScroll);
+  carousel.addEventListener('mouseleave', startAutoScroll);
+
+  // Expose functions to global scope for inline onclick handlers
+  window.scrollCarouselLeft = scrollCarouselLeft;
+  window.scrollCarouselRight = scrollCarouselRight;
+}
+</script>
+</div>
+</section>
+
+  <!-- Tracer Study -->
+  <section class="bg-gray-100 text-center py-12 px-4">
+    <h3 class="font-bold text-xl text-blue-900">Tracer Study Alumni</h3>
+    <p class="text-gray-700 text-sm max-w-xl mx-auto mt-3 leading-relaxed">
+      Halaman ini dikhususkan untuk para alumni MAN Kota Batu untuk menyalurkan kesan, pesan, dan pengalaman selama menjadi siswa.
     </p>
-    <button class="mt-4 bg-yellow-400 hover:bg-blue-900 text-blue-900 hover:text-white px-5 py-2 rounded font-semibold">Isi Survei</button>
+    <button
+      class="mt-6 bg-yellow-400 hover:bg-blue-900 text-blue-900 hover:text-white px-5 py-2 rounded font-semibold transition"
+    >
+      Isi Survei
+    </button>
   </section>
 
   <!-- Jumlah Alumni -->
-  <section class="bg-white text-center py-2">
-    <div class="bg-blue-900 px-4 py-4">
-       <h3 class="text-lg font-bold text-white">Jumlah Alumni</h3>
-       <p class="text-xl font-bold mt-2 text-white">Total :</p>
-       <p class="text-xl font-bold mt-2 text-white">3000</p>
+  <section class="bg-white text-center py-10">
+    <div class="bg-blue-900 px-4 py-6 w-full mx-auto rounded-lg">
+      <h3 class="text-lg font-bold text-white">Jumlah Alumni</h3>
+      <p class="text-2xl font-bold mt-2 text-yellow-400">Total: 3.000</p>
     </div>
-    <div class="flex justify-center space-x-4 mt-6 py-4 px-3 mb-8">
-      <div class="w-24 h-20 bg-gray-200 flex items-center justify-center rounded font-semibold">IPA</div>
-      <div class="w-24 h-20 bg-gray-200 flex items-center justify-center rounded font-semibold">IPS</div>
-      <div class="w-24 h-20 bg-gray-200 flex items-center justify-center rounded font-semibold">BAHASA</div>
+    <div class="flex justify-center space-x-6 mt-8">
+      <div class="w-24 h-20 bg-gray-200 flex items-center justify-center rounded font-semibold text-blue-900 shadow">
+        IPA
+      </div>
+      <div class="w-24 h-20 bg-gray-200 flex items-center justify-center rounded font-semibold text-blue-900 shadow">
+        IPS
+      </div>
+      <div class="w-24 h-20 bg-gray-200 flex items-center justify-center rounded font-semibold text-blue-900 shadow">
+        BAHASA
+      </div>
     </div>
   </section>
 
@@ -165,6 +368,9 @@
           <li><a href="#" class="hover:text-yellow-400">Absensi</a></li>
         </ul>
       </div>
+      <!-- Garis pemisah -->
+<div class="border-t-2 border-yellow-400 w-full my-6"></div>
+
       <div>
         <h4 class="font-semibold">SISWA</h4>
         <ul class="text-sm space-y-2 mt-2">
@@ -181,5 +387,147 @@
     © 2025 Tikma. All rights reserved.
   </div>
 </footer>
+
+
+<!-- ✅ FIXED & OPTIMIZED: Mobile Nav + Search + Full-Word Highlight -->
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  // === HAMBURGER MENU (Mobile) ===
+  const navToggle = document.getElementById("nav-toggle");
+  const mobileMenu = document.getElementById("mobile-menu");
+
+  if (navToggle && mobileMenu) {
+    navToggle.addEventListener("click", () => {
+      if (mobileMenu.classList.contains("hidden")) {
+        mobileMenu.classList.remove("hidden", "animate-slideUp");
+        mobileMenu.classList.add("animate-slideDown");
+      } else {
+        mobileMenu.classList.remove("animate-slideDown");
+        mobileMenu.classList.add("animate-slideUp");
+        setTimeout(() => mobileMenu.classList.add("hidden"), 300);
+      }
+    });
+
+    // Tutup menu jika klik di luar area
+    document.addEventListener("click", (e) => {
+      if (!navToggle.contains(e.target) && !mobileMenu.contains(e.target)) {
+        if (!mobileMenu.classList.contains("hidden")) {
+          mobileMenu.classList.remove("animate-slideDown");
+          mobileMenu.classList.add("animate-slideUp");
+          setTimeout(() => mobileMenu.classList.add("hidden"), 300);
+        }
+      }
+    });
+  }
+
+  // === HIGHLIGHT SELURUH KATA (Bukan potongan teks) ===
+  function removeHighlights() {
+    document.querySelectorAll(".search-highlight").forEach((span) => {
+      const parent = span.parentNode;
+      parent.replaceChild(document.createTextNode(span.textContent), span);
+      parent.normalize();
+    });
+  }
+
+  function highlightFullWord(term) {
+    removeHighlights();
+    if (!term) return;
+
+    // regex untuk highlight seluruh kata yang mengandung term (contoh: "inst" → highlight "Instagram")
+    const regex = new RegExp(`\\b[^\\s]*${term}[^\\s]*\\b`, "gi");
+
+    const walker = document.createTreeWalker(
+      document.body,
+      NodeFilter.SHOW_TEXT,
+      {
+        acceptNode(node) {
+          if (!node.parentElement) return NodeFilter.FILTER_REJECT;
+          const tag = node.parentElement.tagName.toLowerCase();
+          if (["script", "style", "input", "textarea", "button"].includes(tag))
+            return NodeFilter.FILTER_REJECT;
+          if (!node.nodeValue.trim()) return NodeFilter.FILTER_REJECT;
+          return NodeFilter.FILTER_ACCEPT;
+        },
+      }
+    );
+
+    const nodes = [];
+    while (walker.nextNode()) nodes.push(walker.currentNode);
+
+    let firstHighlight = null;
+
+    nodes.forEach((node) => {
+      const text = node.nodeValue;
+      if (regex.test(text)) {
+        const replaced = text.replace(
+          regex,
+          (match) =>
+            `<span class="search-highlight bg-yellow-300 text-blue-900 font-bold px-1 rounded">${match}</span>`
+        );
+        const span = document.createElement("span");
+        span.innerHTML = replaced;
+        node.replaceWith(...span.childNodes);
+
+        if (!firstHighlight) {
+          firstHighlight = document.querySelector(".search-highlight");
+        }
+      }
+    });
+
+    // Scroll ke hasil pertama
+    if (firstHighlight) {
+      firstHighlight.scrollIntoView({ behavior: "smooth", block: "center" });
+    }
+  }
+
+  // === FORM HANDLING (Desktop + Mobile) ===
+  const searchInput = document.getElementById("searchInput");
+  const searchInputMobile = document.getElementById("searchInputMobile");
+
+  document.getElementById("searchForm")?.addEventListener("submit", (e) => {
+    e.preventDefault();
+    highlightFullWord(searchInput.value.trim());
+  });
+
+  document.getElementById("searchFormMobile")?.addEventListener("submit", (e) => {
+    e.preventDefault();
+    highlightFullWord(searchInputMobile.value.trim());
+    mobileMenu.classList.add("hidden");
+  });
+
+  [searchInput, searchInputMobile].forEach((el) => {
+    if (!el) return;
+    el.addEventListener("keydown", (e) => {
+      if (e.key === "Enter") {
+        e.preventDefault();
+        highlightFullWord(el.value.trim());
+      }
+    });
+  });
+});
+
+// === ANIMASI SLIDE (Tailwind Extend) ===
+tailwind.config = {
+  theme: {
+    extend: {
+      keyframes: {
+        slideDown: {
+          "0%": { opacity: "0", transform: "translateY(-10px)" },
+          "100%": { opacity: "1", transform: "translateY(0)" },
+        },
+        slideUp: {
+          "0%": { opacity: "1", transform: "translateY(0)" },
+          "100%": { opacity: "0", transform: "translateY(-10px)" },
+        },
+      },
+      animation: {
+        slideDown: "slideDown 0.3s ease-out forwards",
+        slideUp: "slideUp 0.3s ease-in forwards",
+      },
+    },
+  },
+};
+</script>
+
 </body>
 </html>

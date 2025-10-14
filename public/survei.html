@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Survei Kepuasan Layanan</title>
+    <!-- Perbaikan background: gunakan skrip kecil untuk set inline background (warna Tailwind blue-900) agar tidak tertimpa CSS lain -->
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        const b = document.body;
+        // Tailwind blue-900
+        b.style.backgroundColor = '#1e3a8a';
+        b.style.backgroundImage = [
+          'linear-gradient(180deg, rgba(255,255,255,0.02) 0%, rgba(255,255,255,0.00) 40%)',
+          // subtle bluish glow di kiri atas
+          'radial-gradient(800px 400px at 8% 12%, rgba(30,58,138,0.08), transparent 12%)',
+          // lembut di kanan bawah
+          'radial-gradient(600px 300px at 92% 88%, rgba(30,58,138,0.04), transparent 10%)'
+        ].join(', ');
+        b.style.backgroundRepeat = 'no-repeat';
+        b.style.backgroundAttachment = 'fixed';
+        b.style.backgroundSize = 'cover';
+        b.style.color = '#f8fafc';
+      });
+    </script>
+    <!-- Menggunakan Tailwind CSS (via CDN). Konfigurasi tailwind disetel di skrip di bawah dalam <head>. -->
+    <meta name="description" content="Beri nilai singkat untuk membantu kami meningkatkan kualitas layanan. Survei cepat, aman, dan cocok untuk perangkat mobile.">
+    <meta name="theme-color" content="#1e3a8a">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Tailwind config: custom colors, font and shadows (applied when CDN loads) -->
+    <script>
+      window.tailwind = {
+        config: {
+          theme: {
+            extend: {
+              colors: {
+                primary: '#1e3a8a', /* matches bg-blue-900 */
+                accent: '#FBBF24', /* yellow-400 */
+                card: '#ffffff',
+                soft: '#F8FAFC'
+              },
+              fontFamily: {
+                sans: ['Inter', 'ui-sans-serif', 'system-ui', '-apple-system', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial']
+              },
+              boxShadow: {
+                card: '0 10px 30px rgba(2,6,23,0.25)'
+              },
+              borderRadius: {
+                lg: '12px'
+              }
+            }
+          }
+        }
+      }
+    </script>
+
+    <style>
+      :root {
+        --primary: #1e3a8a;
+        --accent: #FBBF24;
+        --bg-main: #1e3a8a;
+      }
+      html, body { height: 100%; }
+      body {
+        font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+        background-color: var(--bg-main);
+        background-image:
+          linear-gradient(180deg, rgba(255,255,255,0.02) 0%, rgba(255,255,255,0.00) 40%),
+          radial-gradient(800px 400px at 10% 10%, rgba(255,255,255,0.02), transparent 12%),
+          radial-gradient(600px 300px at 90% 90%, rgba(255,255,255,0.015), transparent 10%);
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        margin: 0;
+        padding: 2rem;
+        color: #f8fafc;
+      }
+      .survey-card {
+        max-width: 920px;
+        margin: 0 auto;
+        background: linear-gradient(180deg, rgba(255,255,255,0.98), rgba(250,250,250,0.98));
+        border-radius: 12px;
+        box-shadow: 0 10px 30px rgba(2,6,23,0.18);
+        padding: 2.25rem;
+      }
+      input:focus, textarea:focus {
+        outline: none;
+        box-shadow: 0 6px 22px rgba(30,58,138,0.12);
+        border-color: var(--primary);
+      }
+      .rating-option {
+        display: inline-flex;
+        align-items: center;
+        gap: .5rem;
+        padding: .5rem .75rem;
+        border: 1px solid rgba(30,58,138,0.08);
+        border-radius: 10px;
+        background: white;
+        color: var(--primary);
+        cursor: pointer;
+        transition: transform .12s ease, box-shadow .12s ease;
+      }
+      .rating-option input { accent-color: var(--primary); }
+      .rating-option:hover { transform: translateY(-3px); box-shadow: 0 8px 18px rgba(2,6,23,0.06); }
+
+      .btn-primary {
+        background: linear-gradient(90deg, var(--accent), #f6c85b);
+        color: var(--primary);
+        padding: .75rem 1.25rem;
+        border-radius: 10px;
+        font-weight: 700;
+        border: none;
+        cursor: pointer;
+        box-shadow: 0 8px 20px rgba(251,191,36,0.14);
+        transition: transform .18s ease, box-shadow .18s ease, filter .18s ease;
+      }
+      .btn-primary:hover { transform: translateY(-2px) scale(1.02); filter: brightness(1.02); }
+
+      @media (max-width: 640px) {
+        body { padding: 1rem; }
+        .survey-card { padding: 1.25rem; }
+      }
+    </style>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-blue-900 min-h-screen py-12">
+    <main class="survey-card">
+        <header class="text-center mb-8">
+            <div class="inline-flex items-center gap-4 justify-center">
+                <span class="inline-flex items-center justify-center w-12 h-12 rounded-full bg-yellow-500/20 text-yellow-500 flex-shrink-0">
+                    <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M9 11l2 2 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <rect x="3.5" y="3.5" width="17" height="17" rx="3" stroke="currentColor" stroke-width="1.5"/>
+                    </svg>
+                </span>
+
+                <h1 class="text-2xl sm:text-3xl md:text-4xl font-extrabold tracking-tight text-slate-800">
+                    Survei Kepuasan Layanan
+                </h1>
+            </div>
+
+            <p class="mt-2 text-sm text-slate-600 max-w-xl mx-auto">
+                Mohon luangkan beberapa menit untuk mengisi survei ini — masukan Anda membantu meningkatkan mutu layanan sekolah kami.
+            </p>
+
+            <div class="mt-4 flex items-center justify-center">
+                <div class="w-28 h-1 rounded-full bg-yellow-400/70 shadow-sm"></div>
+            </div>
+        </header>
+
+        <form id="surveyForm" class="space-y-6" novalidate>
+            <div>
+                <label for="name" class="block text-slate-700 font-semibold mb-2">Nama Lengkap</label>
+                <input type="text" id="name" name="name" required placeholder="Nama lengkap" 
+                    class="w-full p-3 border border-slate-200 rounded-md focus:outline-none focus:border-blue-900 bg-white text-slate-800">
+            </div>
+
+            <div>
+                <label for="institution" class="block text-slate-700 font-semibold mb-2">Asal Instansi / Sekolah</label>
+                <input type="text" id="institution" name="institution" required placeholder="Contoh: SMA Negeri 1" 
+                    class="w-full p-3 border border-slate-200 rounded-md focus:outline-none focus:border-blue-900 bg-white text-slate-800">
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                    <label for="whatsapp" class="block text-slate-700 font-semibold mb-2">Nomor WhatsApp</label>
+                    <input type="tel" id="whatsapp" name="whatsapp" required placeholder="+62 812-3456-7890" pattern="[\d+\-\s()]{6,}" 
+                        class="w-full p-3 border border-slate-200 rounded-md focus:outline-none focus:border-blue-900 bg-white text-slate-800">
+                </div>
+
+                <div>
+                    <label for="email" class="block text-slate-700 font-semibold mb-2">Email (opsional)</label>
+                    <input type="email" id="email" name="email" placeholder="nama@contoh.com" 
+                        class="w-full p-3 border border-slate-200 rounded-md focus:outline-none focus:border-blue-900 bg-white text-slate-800">
+                </div>
+            </div>
+
+            <div>
+                <label class="block text-slate-700 font-semibold mb-3">Bagaimana penilaian Anda terhadap pelayanan PTSP yang anda dapatkan?</label>
+                <div class="flex flex-wrap gap-3">
+                    <label class="rating-option">
+                        <input type="radio" name="rating_ptsp" value="1" required>
+                        <span class="text-sm">Sangat Tidak Puas</span>
+                    </label>
+                    <label class="rating-option">
+                        <input type="radio" name="rating_ptsp" value="2">
+                        <span class="text-sm">Tidak Puas</span>
+                    </label>
+                    <label class="rating-option">
+                        <input type="radio" name="rating_ptsp" value="3">
+                        <span class="text-sm">Cukup</span>
+                    </label>
+                    <label class="rating-option">
+                        <input type="radio" name="rating_ptsp" value="4">
+                        <span class="text-sm">Puas</span>
+                    </label>
+                    <label class="rating-option">
+                        <input type="radio" name="rating_ptsp" value="5">
+                        <span class="text-sm">Sangat Puas</span>
+                    </label>
+                </div>
+            </div>
+            <div>
+                <label class="block text-slate-700 font-semibold mb-3">Bagaimana penilaian Anda terhadap performa / kinerja petugas dalam melayani kebutuhan anda?</label>
+                <div class="flex flex-wrap gap-3">
+                    <label class="rating-option">
+                        <input type="radio" name="rating_petugas" value="1" required>
+                        <span class="text-sm">Sangat Tidak Puas</span>
+                    </label>
+                    <label class="rating-option">
+                        <input type="radio" name="rating_petugas" value="2">
+                        <span class="text-sm">Tidak Puas</span>
+                    </label>
+                    <label class="rating-option">
+                        <input type="radio" name="rating_petugas" value="3">
+                        <span class="text-sm">Cukup</span>
+                    </label>
+                    <label class="rating-option">
+                        <input type="radio" name="rating_petugas" value="4">
+                        <span class="text-sm">Puas</span>
+                    </label>
+                    <label class="rating-option">
+                        <input type="radio" name="rating_petugas" value="5">
+                        <span class="text-sm">Sangat Puas</span>
+                    </label>
+                </div>
+            </div>
+            <div>
+                <label class="block text-slate-700 font-semibold mb-3">Bagaimana penilaian Anda terhadap seberapa cepat layanan yang kami berikan?</label>
+                <div class="flex flex-wrap gap-3">
+                    <label class="rating-option">
+                        <input type="radio" name="rating_speed" value="1" required>
+                        <span class="text-sm">Sangat Tidak Puas</span>
+                    </label>
+                    <label class="rating-option">
+                        <input type="radio" name="rating_speed" value="2">
+                        <span class="text-sm">Tidak Puas</span>
+                    </label>
+                    <label class="rating-option">
+                        <input type="radio" name="rating_speed" value="3">
+                        <span class="text-sm">Cukup</span>
+                    </label>
+                    <label class="rating-option">
+                        <input type="radio" name="rating_speed" value="4">
+                        <span class="text-sm">Puas</span>
+                    </label>
+                    <label class="rating-option">
+                        <input type="radio" name="rating_speed" value="5">
+                        <span class="text-sm">Sangat Puas</span>
+                    </label>
+                </div>
+            </div>
+            <div>
+                <label class="block text-slate-700 font-semibold mb-3">Apakah ada biaya saat mendapatkan layanan dari kami?</label>
+                <div class="flex flex-wrap gap-3">
+                    <label class="rating-option">
+                        <input type="radio" name="rating_biaya" value="1" required>
+                        <span class="text-sm">Sangat Tidak Puas</span>
+                    </label>
+                    <label class="rating-option">
+                        <input type="radio" name="rating_biaya" value="2">
+                        <span class="text-sm">Tidak Puas</span>
+                    </label>
+                    <label class="rating-option">
+                        <input type="radio" name="rating_biaya" value="3">
+                        <span class="text-sm">Cukup</span>
+                    </label>
+                    <label class="rating-option">
+                        <input type="radio" name="rating_biaya" value="4">
+                        <span class="text-sm">Puas</span>
+                    </label>
+                    <label class="rating-option">
+                        <input type="radio" name="rating_biaya" value="5">
+                        <span class="text-sm">Sangat Puas</span>
+                    </label>
+                </div>
+            </div>
+            <div>
+                <label class="block text-slate-700 font-semibold mb-3">Bagaimana penilaian Anda terhadap layanan kami secara keseluruhan?</label>
+                <div class="flex flex-wrap gap-3">
+                    <label class="rating-option">
+                        <input type="radio" name="rating_overall" value="1" required>
+                        <span class="text-sm">Sangat Tidak Puas</span>
+                    </label>
+                    <label class="rating-option">
+                        <input type="radio" name="rating_overall" value="2">
+                        <span class="text-sm">Tidak Puas</span>
+                    </label>
+                    <label class="rating-option">
+                        <input type="radio" name="rating_overall" value="3">
+                        <span class="text-sm">Cukup</span>
+                    </label>
+                    <label class="rating-option">
+                        <input type="radio" name="rating_overall" value="4">
+                        <span class="text-sm">Puas</span>
+                    </label>
+                    <label class="rating-option">
+                        <input type="radio" name="rating_overall" value="5">
+                        <span class="text-sm">Sangat Puas</span>
+                    </label>
+                </div>
+            </div>
+            <div>
+                <label for="feedback" class="block text-slate-700 font-semibold mb-2">Saran dan Masukan</label>
+                <textarea id="feedback" name="feedback" rows="4" placeholder="Tulis saran atau masukan Anda di sini..." 
+                    class="w-full p-3 border border-slate-200 rounded-md focus:outline-none focus:border-blue-900 bg-white text-slate-800"></textarea>
+            </div>
+
+            <div class="flex items-center gap-4">
+                <button type="submit" class="bg-yellow-400 text-blue-900 font-bold px-5 py-3 rounded-lg shadow-md hover:shadow-lg transform transition duration-200 ease-out hover:-translate-y-1 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-yellow-300 focus:ring-offset-2">
+                    Kirim Survei
+                </button>
+                <div id="submitStatus" role="status" class="text-sm text-slate-600 hidden">Mengirim...</div>
+            </div>
+        </form>
+    </main>
+</body>
+<script>
+(function () {
+    const form = document.getElementById('surveyForm');
+    const statusEl = document.getElementById('submitStatus');
+    const submitBtn = form.querySelector('button[type="submit"]');
+
+    function createToast(message, success = true) {
+        // remove existing
+        const existing = document.getElementById('survey-toast');
+        if (existing) existing.remove();
+
+        const wrap = document.createElement('div');
+        wrap.id = 'survey-toast';
+        wrap.setAttribute('role', 'status');
+        wrap.className = 'fixed bottom-6 left-1/2 transform -translate-x-1/2 z-50 flex items-center gap-3 px-4 py-2 rounded-lg shadow-lg';
+        wrap.style.background = success ? 'linear-gradient(90deg,#ecfccb,#fef3c7)' : 'linear-gradient(90deg,#fee2e2,#ffffff)';
+        wrap.style.color = success ? '#065f46' : '#991b1b';
+        wrap.style.boxShadow = '0 8px 30px rgba(2,6,23,0.12)';
+
+        const icon = document.createElement('div');
+        icon.className = 'w-6 h-6 flex items-center justify-center';
+        icon.innerHTML = success
+            ? '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>'
+            : '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 9v4m0 4h.01" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+
+        const text = document.createElement('div');
+        text.className = 'text-sm font-medium';
+        text.textContent = message;
+
+        wrap.appendChild(icon);
+        wrap.appendChild(text);
+        document.body.appendChild(wrap);
+
+        setTimeout(() => {
+            wrap.style.transition = 'opacity .35s ease, transform .35s ease';
+            wrap.style.opacity = '0';
+            wrap.style.transform = 'translateY(6px) translateX(-50%)';
+        }, 2400);
+        setTimeout(() => wrap.remove(), 2800);
+    }
+
+    async function trySendToServer(payload) {
+        // Replace '/api/survey' with real endpoint when available
+        try {
+            const resp = await fetch('/api/survey', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(payload),
+                keepalive: true
+            });
+            return resp.ok;
+        } catch (err) {
+            return false;
+        }
+    }
+
+    function saveLocally(payload) {
+        const key = 'pendingSurveys';
+        const list = JSON.parse(localStorage.getItem(key) || '[]');
+        list.push({ payload, createdAt: new Date().toISOString() });
+        localStorage.setItem(key, JSON.stringify(list));
+    }
+
+    form.addEventListener('submit', async function (e) {
+        e.preventDefault();
+
+        // HTML5 validation
+        if (!form.checkValidity()) {
+            form.reportValidity();
+            return;
+        }
+
+        submitBtn.disabled = true;
+        submitBtn.classList.add('opacity-80', 'cursor-wait');
+        statusEl.classList.remove('hidden');
+        statusEl.textContent = 'Mengirim...';
+
+        const fd = new FormData(form);
+        const data = Object.fromEntries(fd.entries());
+
+        // Basic sanitization/trimming
+        Object.keys(data).forEach(k => {
+            if (typeof data[k] === 'string') data[k] = data[k].trim();
+        });
+
+        const sent = await trySendToServer(data);
+
+        if (sent) {
+            statusEl.textContent = 'Terima kasih — survei berhasil dikirim.';
+            createToast('Survei berhasil dikirim. Terima kasih!', true);
+        } else {
+            saveLocally(data);
+            statusEl.textContent = 'Koneksi bermasalah — survei disimpan secara lokal.';
+            createToast('Koneksi gagal. Survei disimpan secara lokal.', false);
+        }
+
+        // reset and restore
+        form.reset();
+        submitBtn.disabled = false;
+        submitBtn.classList.remove('opacity-80', 'cursor-wait');
+        // return focus to first input for accessibility
+        const first = form.querySelector('input, textarea, select');
+        if (first) first.focus();
+    });
+
+    // Optional: try to resend locally saved surveys when connection returns
+    window.addEventListener('online', async () => {
+        const key = 'pendingSurveys';
+        const pending = JSON.parse(localStorage.getItem(key) || '[]');
+        if (!pending.length) return;
+
+        for (const item of pending.slice()) {
+            const ok = await trySendToServer(item.payload);
+            if (ok) {
+                // remove this item from storage
+                const current = JSON.parse(localStorage.getItem(key) || '[]');
+                const idx = current.findIndex(i => i.createdAt === item.createdAt);
+                if (idx > -1) {
+                    current.splice(idx, 1);
+                    localStorage.setItem(key, JSON.stringify(current));
+                }
+            }
+        }
+
+        if (!JSON.parse(localStorage.getItem(key) || '[]').length) {
+            createToast('Semua survei lokal berhasil dikirim.', true);
+        }
+    });
+})();
+</script>
+</html>

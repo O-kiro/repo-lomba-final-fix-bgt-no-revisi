@@ -65,40 +65,69 @@
     <p class="text-lg md:text-4xl text-white font-bold">MAN KOTA BATU</p>
   </section>
 
-  <!-- Konten Utama -->
-  <main class="bg-white py-8 px-4 text-center">
-    <!-- Gambar Prestasi -->
-    <img src="https://upload.wikimedia.org/wikipedia/commons/3/3f/Placeholder_view_vector.svg" alt="Prestasi" class="mx-auto w-60 md:w-80 mb-6 rounded shadow">
+  <!-- KONTEN UTAMA -->
+<main class="py-16 px-6 md:px-20">
+  <div class="max-w-7xl mx-auto space-y-20">
 
-    <!-- Deskripsi Berita -->
-    <p class="max-w-4xl mx-auto text-sm md:text-base text-gray-800 leading-relaxed mb-10">
-      MALANG POSCO MEDIA, MALANG - Sebanyak 16 siswa MAN Kota Batu terpilih menjadi anggota Pasukan Pengibar Bendera Pusaka (Paskibraka) dalam upacara peringatan Hari Ulang Tahun (HUT) ke-78 Republik Indonesia di lapangan Balai Among Tani Kota Batu.
-    </p>
-
-    <!-- Foto Placeholder -->
-    <div class="bg-gray-300 w-60 h-32 mx-auto rounded mb-2 flex items-center justify-center px-8 py-8">
-      <span class="text-gray-600 font-semibold">FOTO</span>
+    <!-- Prestasi Utama -->
+    <div class="relative rounded-3xl overflow-hidden soft-shadow hover:scale-[1.01] transition-all duration-500 glass">
+      <div class="md:flex">
+        <!-- Gambar -->
+        <div class="md:w-1/2">
+          <img src="img/Prestasi_1.jpg" alt="Prestasi Terbaru" class="h-80 md:h-full w-full object-cover hover:scale-105 transition-transform duration-700">
+        </div>
+        <!-- Deskripsi -->
+        <div class="md:w-1/2 p-10 flex flex-col justify-center text-center md:text-left bg-white/80 backdrop-blur-md">
+          <span class="bg-yellow-400 text-blue-900 text-xs font-bold px-3 py-1 rounded-full mb-3 self-center md:self-start">🏆 Prestasi Terbaru</span>
+          <h3 class="text-3xl font-extrabold text-blue-900 mb-2">ACHMAD MUDZAKIR A. (XI-E)</h3>
+          <p class="text-gray-700 mb-3 leading-relaxed">
+            Meraih <span class="text-yellow-500 font-bold">2 Medali</span> — 
+            <span class="text-yellow-500 font-semibold">Emas (100m Gaya Dada)</span> dan 
+            <span class="text-yellow-500 font-semibold">Perunggu (50m Gaya Punggung)</span> 
+            pada Cabang Olahraga Renang.
+          </p>
+          <p class="text-blue-900 italic font-medium">
+            Kejuaraan Renang Aquatik Indonesia Kota Malang <br>
+            <span class="text-blue-800">Malang, 27–28 September 2025</span>
+          </p>
+        </div>
+      </div>
     </div>
-    <p class="text-sm text-gray-700 font-semibold py-10">DESKRIPSI</p>
-    <!-- Pagination -->
-    <div class="flex justify-center items-center space-x-2 my-6">
-     <!-- Tombol sebelumnya -->
-     <button class="w-8 h-8 flex items-center justify-center rounded-full bg-gray-300 text-gray-700 hover:bg-blue-600 hover:text-white transition duration-200 ease-in-out">
-       ‹
-     </button>
-    
-     <!-- Halaman -->
-     <button class="w-8 h-8 flex items-center justify-center rounded-full bg-blue-600 text-white">1</button>
-     <button class="w-8 h-8 flex items-center justify-center rounded-full bg-gray-300 text-gray-700 hover:bg-blue-600 hover:text-white transition duration-200 ease-in-out">2</button>
-     <button class="w-8 h-8 flex items-center justify-center rounded-full bg-gray-300 text-gray-700 hover:bg-blue-600 hover:text-white transition duration-200 ease-in-out">3</button>
-    \
-     <!-- Tombol selanjutnya -->
-     <button class="w-8 h-8 flex items-center justify-center rounded-full bg-gray-300 text-gray-700 hover:bg-blue-600 hover:text-white transition duration-200 ease-in-out">
-       ›
-     </button>
-     </div>
-   </main>
 
+    <!-- Prestasi Lainnya -->
+    <div class="grid md:grid-cols-2 gap-10">
+      <div class="bg-white rounded-2xl shadow-lg hover:shadow-blue-200 p-6 text-center hover:-translate-y-2 transition-all duration-500 animate-fadeInUp">
+        <img src="img/Prestasi_2.jpg" class="rounded-xl h-64 w-full object-cover mb-5">
+        <h3 class="text-2xl font-bold text-blue-900 mb-2">PADUAN SUARA MAKOBA VOICE</h3>
+        <p class="text-gray-700">
+          Meraih <span class="font-semibold text-yellow-500">Juara 3</span> 
+          dalam <span class="font-bold text-blue-900">Lomba Paduan Suara Nasional 2025</span>.
+        </p>
+        <p class="text-gray-500 italic mt-2">Diselenggarakan oleh Direktorat KSKK</p>
+      </div>
+
+      <div class="bg-white rounded-2xl shadow-lg hover:shadow-blue-200 p-6 text-center hover:-translate-y-2 transition-all duration-500 animate-fadeInUp">
+        <img src="img/Prestasi_3.webp" class="rounded-xl h-64 w-full object-cover mb-5">
+        <h3 class="text-2xl font-bold text-blue-900 mb-2">ALETA PRABA SANTOSO (X-A)</h3>
+        <p class="text-gray-700">
+          Meraih <span class="font-semibold text-yellow-500">Juara 1</span> 
+          dalam <span class="font-bold text-blue-900">Lomba Menulis Cerpen Tingkat Nasional</span>.
+        </p>
+        <p class="text-gray-500 italic mt-2">Diselenggarakan oleh IGINOS (Ikatan Guru Inovator & Penggerak Literasi Nasional)</p>
+      </div>
+    </div>
+  
+    <!-- Pagination -->
+    <div class="flex justify-center items-center gap-3 mt-10">
+      <button class="w-9 h-9 flex items-center justify-center rounded-full bg-gray-200 hover:bg-blue-600 hover:text-white transition">‹</button>
+      <button class="w-9 h-9 flex items-center justify-center rounded-full bg-blue-600 text-white font-bold shadow">1</button>
+      <button class="w-9 h-9 flex items-center justify-center rounded-full bg-gray-200 hover:bg-blue-600 hover:text-white transition">2</button>
+      <button class="w-9 h-9 flex items-center justify-center rounded-full bg-gray-200 hover:bg-blue-600 hover:text-white transition">3</button>
+      <button class="w-9 h-9 flex items-center justify-center rounded-full bg-gray-200 hover:bg-blue-600 hover:text-white transition">›</button>
+    </div>
+  </div>
+</main>
+  
 <!-- Footer -->
 <footer class="bg-blue-900 text-white">
   <div class="container mx-auto px-6 py-12 grid grid-cols-1 md:grid-cols-3 gap-10">

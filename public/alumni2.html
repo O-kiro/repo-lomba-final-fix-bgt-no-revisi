@@ -118,7 +118,9 @@
 
   <!-- BEASISWA -->
   <section  id="beasiswa" class="pt-0 -mt-8 bg-white relative z-10">
-    <h2 class="bg-blue-900 text-white text-center py-3 font-bold text-xl tracking-wide shadow-md">BEASISWA</h2>
+ <div class="bg-blue-900 text-white text-center py-8 shadow-md">
+    <h2 class="text-3xl font-bold uppercase tracking-wide">Beasiswa</h2>
+    </div>
 
     <div class="max-w-6xl mx-auto mt-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 px-4">
       <!-- Card Beasiswa -->
@@ -175,9 +177,9 @@
 
  <!-- PODCAST DAN WEBINAR -->
 <section class="py-12 bg-gradient-to-b from-gray-100 to-blue-50">
-  <h2 class="bg-blue-900 text-white text-center py-3 font-bold text-xl tracking-wide shadow-md">
-    PODCAST DAN WEBINAR
-  </h2>
+ <div class="bg-blue-900 text-white text-center py-8 shadow-md">
+    <h2 class="text-3xl font-bold uppercase tracking-wide">Podcast Dan Webinar</h2>
+    </div>
 
   <div class="max-w-6xl mx-auto mt-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 px-4">
 
@@ -307,14 +309,16 @@
 </section>
 
 <!-- ================= PRESTASI ALUMNI ================= -->
-<section id="prestasi" class="py-16 bg-white">
+<section id="prestasi" class="py-16 bg-white overflow-hidden relative">
   <div class="bg-blue-900 text-white text-center py-8 shadow-md">
     <h2 class="text-3xl font-bold uppercase tracking-wide">Prestasi Alumni</h2>
     <p class="mt-2 text-blue-100">Raih impian dan terus berprestasi di setiap langkah</p>
   </div>
 
   <div class="relative overflow-hidden mt-10">
-    <div id="prestasi-track" class="flex gap-6 w-max">
+    <div id="prestasi-track"
+         class="flex gap-6 w-max animate-scroll-smooth">
+      <!-- Ulangi kartu agar efek looping lancar -->
       <div class="card bg-blue-50 p-6 rounded-2xl shadow-md min-w-[280px] hover:-translate-y-1 hover:shadow-xl transition duration-300 ease-out">
         <img src="https://picsum.photos/400/250?4" class="rounded-xl mb-4 w-full h-40 object-cover" />
         <h3 class="text-lg font-bold text-blue-900">Juara Olimpiade Nasional</h3>
@@ -333,7 +337,7 @@
         <p class="text-gray-600 text-sm">Rafi Hidayat mendirikan perusahaan pendidikan digital.</p>
       </div>
 
-      <!-- duplikat -->
+      <!-- Duplikat agar looping tidak terlihat berhenti -->
       <div class="card bg-blue-50 p-6 rounded-2xl shadow-md min-w-[280px] hover:-translate-y-1 hover:shadow-xl transition duration-300 ease-out">
         <img src="https://picsum.photos/400/250?4" class="rounded-xl mb-4 w-full h-40 object-cover" />
         <h3 class="text-lg font-bold text-blue-900">Juara Olimpiade Nasional</h3>
@@ -355,73 +359,24 @@
   </div>
 </section>
 
-  <!-- KEGIATAN -->
-  <section id="kegiatan" class="py-16 bg-gray-50">
-    <div class="bg-blue-900 text-white text-center py-8 shadow-md">
-      <h2 class="text-3xl font-bold uppercase tracking-wide">Kegiatan Alumni</h2>
-      <p class="mt-2 text-blue-100">Kegiatan sosial, reuni, dan pelatihan alumni MAN Kota Batu</p>
-    </div>
-
-    <div class="max-w-6xl mx-auto mt-10 grid grid-cols-1 md:grid-cols-3 gap-8 px-4">
-      <div class="bg-white rounded-2xl shadow-md overflow-hidden hover:-translate-y-1 hover:shadow-lg transition">
-        <img src="img/kegiatan1.jpg" class="w-full h-48 object-cover" alt="Kegiatan 1">
-        <div class="p-6">
-          <h3 class="text-lg font-bold text-blue-900">Reuni Akbar</h3>
-          <p class="text-gray-600 text-sm mt-2">Temu kangen lintas angkatan penuh nostalgia.</p>
-        </div>
-      </div>
-      <div class="bg-white rounded-2xl shadow-md overflow-hidden hover:-translate-y-1 hover:shadow-lg transition">
-        <img src="img/kegiatan2.jpg" class="w-full h-48 object-cover" alt="Kegiatan 2">
-        <div class="p-6">
-          <h3 class="text-lg font-bold text-blue-900">Bakti Sosial</h3>
-          <p class="text-gray-600 text-sm mt-2">Alumni berkontribusi melalui kegiatan sosial.</p>
-        </div>
-      </div>
-      <div class="bg-white rounded-2xl shadow-md overflow-hidden hover:-translate-y-1 hover:shadow-lg transition">
-        <img src="img/kegiatan3.jpg" class="w-full h-48 object-cover" alt="Kegiatan 3">
-        <div class="p-6">
-          <h3 class="text-lg font-bold text-blue-900">Pelatihan Karier</h3>
-          <p class="text-gray-600 text-sm mt-2">Bekal skill kerja bagi lulusan baru MAN Kota Batu.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
 <style>
-@keyframes loop-scroll2 {
+@keyframes scrollSmooth {
   0% { transform: translateX(0); }
   100% { transform: translateX(-50%); }
 }
-.animate-loop-scroll2 {
-  width: max-content;
-  animation: loop-scroll2 45s linear infinite;
+
+.animate-scroll-smooth {
+  display: flex;
+  animation: scrollSmooth 20s linear infinite;
 }
 </style>
 
-<section class="relative w-full h-[80vh] overflow-hidden">
-  <div class="absolute inset-0">
-    <div class="w-full h-full">
-      <div class="swiper-container h-full">
-        <div class="swiper-wrapper">
-          <div class="swiper-slide">
-            <img src="img/wisuda1.jpg" class="w-full h-full object-cover" alt="Wisuda 2023">
-          </div>
-          <div class="swiper-slide">
-            <img src="img/wisuda2.jpg" class="w-full h-full object-cover" alt="Reuni 2022">
-          </div>
-          <div class="swiper-slide">
-            <img src="img/wisuda3.jpg" class="w-full h-full object-cover" alt="Kegiatan Alumni">
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+ 
 
-  <div class="absolute inset-0 bg-black/40 flex flex-col justify-center items-center text-center text-white">
-    <h2 class="text-3xl font-bold mb-2">Galeri Kenangan Alumni</h2>
-    <p class="max-w-2xl">Momen-momen berharga alumni MAN Kota Batu yang penuh kebanggaan dan kebersamaan.</p>
-  </div>
-</section>
+
+
+
+
 
 <!-- SwiperJS CDN -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"/>
@@ -438,8 +393,12 @@
 </script>
 
 <section class="bg-blue-50 py-12">
+    <div class="bg-blue-900 text-white text-center py-8 shadow-md">
+    <h2 class="text-3xl font-bold uppercase tracking-wide">Jalur Karier Alumni</h2>
+    <p class="mt-2 text-blue-100"></p>
+  </div>
   <div class="max-w-6xl mx-auto text-center">
-    <h2 class="text-2xl font-bold text-blue-900 mb-6">Jalur Karier Alumni</h2>
+    <h2 class="text-2xl font-bold text-blue-900 mb-6"></h2>
     <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
       <div class="bg-white p-6 rounded-xl shadow hover:scale-105 hover:shadow-xl transition">
         <i class="fa-solid fa-user-graduate text-blue-700 text-4xl mb-3"></i>
@@ -465,8 +424,13 @@
   </div>
 </section>
 <section class="bg-white py-12">
+  <div class="bg-blue-900 text-white text-center py-8 shadow-md">
+    <h2 class="text-3xl font-bold uppercase tracking-wide">Testimoni Alumni</h2>
+    <p class="mt-2 text-blue-100"></p>
+    </div>
   <div class="max-w-4xl mx-auto text-center">
-    <h2 class="text-2xl font-bold text-blue-900 mb-6">Testimoni Alumni</h2>
+    <h2 class="text-2xl font-bold text-blue-900 mb-6"></h2>
+    
 
     <div class="swiper testimonial-swiper">
       <div class="swiper-wrapper">

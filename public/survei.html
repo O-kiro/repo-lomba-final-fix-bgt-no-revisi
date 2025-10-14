@@ -431,18 +431,21 @@
         const pending = JSON.parse(localStorage.getItem(key) || '[]');
         if (!pending.length) return;
 
-        for (const item of pending.slice()) {
-            const ok = await trySendToServer(item.payload);
-            if (ok) {
-                // remove this item from storage
-                const current = JSON.parse(localStorage.getItem(key) || '[]');
-                const idx = current.findIndex(i => i.createdAt === item.createdAt);
-                if (idx > -1) {
-                    current.splice(idx, 1);
-                    localStorage.setItem(key, JSON.stringify(current));
-                }
-            }
-        }
+        // Try resending each pending item with UI feedback, then redirect to layanan.html
+        let successes = 0;
+        let failures = 0;
+
+        // show status
+        statusEl.classList.remove('hidden');
+        statusEl.textContent = `Menemukan ${pending.length} survei tersimpan. Mengirim...`;
+        submitBtn.disabled = true;
+        submitBtn.classList.add('opacity-80', 'cursor-wait');
+
+        // setelah form.reset() dan mengembalikan state tombol
+        setTimeout(() => {
+            statusEl.classList.add('hidden');
+            window.location.href = 'layanan.html';
+        }, 1500);
 
         if (!JSON.parse(localStorage.getItem(key) || '[]').length) {
             createToast('Semua survei lokal berhasil dikirim.', true);

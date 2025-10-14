@@ -242,7 +242,170 @@
   <!-- Bawah Footer -->
   <div class="bg-blue-950 text-center text-gray-300 text-sm py-4 mt-10 border-t border-gray-700">
     © 2025 Tikma. All rights reserved.
-  </div>
+  <script>
+  (function () {
+    // Elemen rating (angka besar) dan elemen responden (teks kecil)
+    const ratingEls = Array.from(
+      document.querySelectorAll('section.px-6 .grid .bg-blue-900 .text-4xl')
+    );
+    const respondentEls = Array.from(
+      document.querySelectorAll('section.px-6 .grid .bg-blue-900 .text-sm')
+    );
+
+    if (!respondentEls.length || !ratingEls.length) return;
+
+    // Utility parse
+    const parseIntFromText = (text) => {
+      const n = parseInt((text || "").replace(/\D/g, ""), 10);
+      return Number.isFinite(n) ? n : 0;
+    };
+    const parseRatingFromText = (text) => {
+      // format "9/10" or "8.5/10"
+      if (!text) return 0;
+      const m = text.trim().split('/')[0];
+      const v = parseFloat((m || "0").replace(/[^\d.]/g, ""));
+      return Number.isFinite(v) ? v : 0;
+    };
+
+    // Ambil nilai awal dari DOM
+    const initialCounts = respondentEls.map((el) => parseIntFromText(el.textContent));
+    const initialTotals = ratingEls.map((el, i) => {
+      // total = rating * count
+      const avg = parseRatingFromText(el.textContent);
+      return Math.round(avg * (initialCounts[i] || 0) * 10) / 10; // simpan satu desimal akurat
+    });
+
+    // Load / sinkron storage
+    const KEY_COUNTS = "survey_counts";
+    const KEY_TOTALS = "survey_totals";
+    let counts, totals;
+
+    try {
+      const storedCounts = JSON.parse(localStorage.getItem(KEY_COUNTS) || "null");
+      const storedTotals = JSON.parse(localStorage.getItem(KEY_TOTALS) || "null");
+      if (Array.isArray(storedCounts) && storedCounts.length === initialCounts.length) {
+        counts = storedCounts;
+      } else {
+        counts = initialCounts.slice();
+        localStorage.setItem(KEY_COUNTS, JSON.stringify(counts));
+      }
+      if (Array.isArray(storedTotals) && storedTotals.length === initialTotals.length) {
+        totals = storedTotals;
+      } else {
+        totals = initialTotals.slice();
+        localStorage.setItem(KEY_TOTALS, JSON.stringify(totals));
+      }
+    } catch {
+      counts = initialCounts.slice();
+      totals = initialTotals.slice();
+      localStorage.setItem(KEY_COUNTS, JSON.stringify(counts));
+      localStorage.setItem(KEY_TOTALS, JSON.stringify(totals));
+    }
+
+    // Render ke DOM
+    function formatAvg(avg) {
+      if (!isFinite(avg)) return "0";
+      if (Math.abs(avg - Math.round(avg)) < 1e-9) return String(Math.round(avg));
+      return avg.toFixed(1);
+    }
+    function render() {
+      respondentEls.forEach((el, i) => {
+        el.textContent = `(${counts[i]} responden)`;
+      });
+      ratingEls.forEach((el, i) => {
+        const c = counts[i] || 0;
+        const avg = c ? totals[i] / c : 0;
+        el.textContent = `${formatAvg(avg)}/10`;
+      });
+    }
+
+    // Tambah responden & update totals.
+    // scores: array of numbers (satu per kartu) yang mewakili skor baru dari 0..10.
+    // Jika scores tidak diberikan, hanya tambahkan jumlah responden tanpa mengubah totals.
+    function incrementAll(by = 1, scores = null) {
+      if (!Array.isArray(counts) || !Array.isArray(totals)) return;
+      if (scores && (!Array.isArray(scores) || scores.length !== counts.length)) {
+        // jika scores tidak valid, abaikan scores
+        scores = null;
+      }
+
+      for (let i = 0; i < counts.length; i++) {
+        counts[i] = (counts[i] || 0) + by;
+        if (scores) {
+          const add = Number(scores[i]) || 0;
+          totals[i] = (totals[i] || 0) + add * by;
+        }
+      }
+
+      localStorage.setItem(KEY_COUNTS, JSON.stringify(counts));
+      localStorage.setItem(KEY_TOTALS, JSON.stringify(totals));
+      render();
+    }
+
+    // Expose API: survei.html dapat memanggil window.submitSurvey(scores) sebelum redirect
+    // contoh: localStorage.setItem('survey_scores', JSON.stringify([9,10,8,10,10,10])); localStorage.setItem('survey_submitted','1'); window.location='layanan.html';
+    window.incrementAllRespondents = incrementAll;
+    window.submitSurveyAndRedirect = function(scores) {
+      try {
+        if (Array.isArray(scores)) {
+          localStorage.setItem("survey_scores", JSON.stringify(scores));
+        }
+        localStorage.setItem("survey_submitted", "1");
+      } catch {}
+    };
+
+    // Cek flag saat load: jika ada survey_submitted, tambahkan.
+    function checkAndConsumeSubmittedFlag() {
+      try {
+        if (localStorage.getItem("survey_submitted")) {
+          let scores = null;
+          try {
+            const s = JSON.parse(localStorage.getItem("survey_scores") || "null");
+            if (Array.isArray(s) && s.length === counts.length) scores = s.map(Number);
+          } catch {}
+          incrementAll(1, scores);
+          localStorage.removeItem("survey_submitted");
+          localStorage.removeItem("survey_scores");
+        }
+      } catch {}
+    }
+
+    // Dengarkan perubahan storage (tab lain)
+    window.addEventListener("storage", (e) => {
+      try {
+        if (e.key === "survey_submitted" && e.newValue) {
+          // Jika ada flag dari tab lain: baca optional survey_scores lalu increment
+          let scores = null;
+          try {
+            const s = JSON.parse(localStorage.getItem("survey_scores") || "null");
+            if (Array.isArray(s) && s.length === counts.length) scores = s.map(Number);
+          } catch {}
+          incrementAll(1, scores);
+          localStorage.removeItem("survey_submitted");
+          localStorage.removeItem("survey_scores");
+        }
+        if (e.key === KEY_COUNTS && e.newValue) {
+          const updated = JSON.parse(e.newValue);
+          if (Array.isArray(updated) && updated.length === counts.length) {
+            counts = updated;
+            render();
+          }
+        }
+        if (e.key === KEY_TOTALS && e.newValue) {
+          const updated = JSON.parse(e.newValue);
+          if (Array.isArray(updated) && updated.length === totals.length) {
+            totals = updated;
+            render();
+          }
+        }
+      } catch {}
+    });
+
+    // Inisialisasi render & cek flag
+    render();
+    checkAndConsumeSubmittedFlag();
+  })();
+  </script>
 </footer>
 <!-- ✅ FIXED & OPTIMIZED: Mobile Nav + Search + Full-Word Highlight -->
 <script>
@@ -384,8 +547,3 @@ tailwind.config = {
 };
 </script>
 </html>
-
-
-
-
-

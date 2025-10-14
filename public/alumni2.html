@@ -1,130 +1,506 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Alumni</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Halaman Alumni - MAN Kota Batu</title>
+
+  <!-- Tailwind Config (letakkan sebelum CDN) -->
+  <script>
+    tailwind = {
+      theme: {
+        extend: {
+          keyframes: {
+            slideDown: { "0%": { opacity: "0", transform: "translateY(-10px)" }, "100%": { opacity: "1", transform: "translateY(0)" } },
+            slideUp: { "0%": { opacity: "1", transform: "translateY(0)" }, "100%": { opacity: "0", transform: "translateY(-10px)" } },
+          },
+          animation: {
+            slideDown: "slideDown 0.3s ease-out forwards",
+            slideUp: "slideUp 0.3s ease-in forwards",
+          },
+        },
+      },
+    };
+  </script>
+
   <script src="https://cdn.tailwindcss.com"></script>
-  <link
-  rel="stylesheet"
-  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
-<body class="bg-gray-50 font-sans">
+<body class="bg-gray-50 text-gray-800">
 
-  <!-- Header / Navbar -->
-  <header class="bg-blue-800 shadow">
-    <div class="flex items-center justify-between px-4 py-2">
-      <!-- Left -->
-      <div class="flex items-center space-x-2">
-        <button class="bg-blue-900 text-white px-3 py-1 text-sm rounded">Kontak</button>
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Flag_of_Indonesia.svg/32px-Flag_of_Indonesia.svg.png" alt="id" class="w-5 h-4">
-      </div>
-
-      <!-- Right (Search) -->
-      <div>
-        <input type="text" placeholder="Pencarian..." class="border rounded px-2 py-1 text-sm">
-      </div>
+ <header class="bg-blue-900 text-white shadow">
+  <div class="container mx-auto flex justify-between items-center px-4 py-4 md:py-3">
+    <!-- Logo di kiri -->
+    <div class="flex items-center gap-3">
+      <img src="img/logo man.png" alt="Logo" class="w-10 h-10" />
+      <h1 class="text-lg font-bold">MAN Kota Batu</h1>
     </div>
 
-  <header class="bg-blue-900 text-white shadow">
-    <div class="container mx-auto flex justify-between items-center px-4 py-3">
-      <div class="flex items-center gap-3">
-        <img src="img/mannbg.png" alt="Logo" class="w-10 h-10" />
-        <h1 class="text-lg font-bold">MAN Kota Batu</h1>
-      </div>
-      <nav class="space-x-6 hidden md:block">
+    <!-- Hamburger di kanan (mobile) -->
+    <button id="nav-toggle" class="md:hidden p-2 rounded bg-blue-800">
+      <i class="fas fa-bars"></i>
+    </button>
+
+    <!-- Nav + Search (desktop) -->
+    <div id="nav-menu" class="hidden md:flex md:items-center md:gap-6">
+      <nav class="space-x-4 hidden md:block">
         <a href="home.html" class="hover:text-yellow-400">Home</a>
         <a href="profil.html" class="hover:text-yellow-400">Profil</a>
         <a href="prestasi.html" class="hover:text-yellow-400">Prestasi</a>
         <a href="pengumuman.html" class="hover:text-yellow-400">Pengumuman</a>
         <a href="layanan.html" class="hover:text-yellow-400">Layanan</a>
       </nav>
+      <form id="searchForm" class="hidden md:flex items-center gap-2" onsubmit="return false;">
+        <input id="searchInput" type="text" placeholder="Pencarian..." class="border rounded px-2 py-1 text-sm text-black" aria-label="Pencarian situs">
+        <button type="submit" class="bg-yellow-400 text-blue-900 px-2 py-1 rounded">Cari</button>
+      </form>
     </div>
-  </header>
+  </div>
 
-  <!-- Judul -->
-  <section class="bg-blue-800 text-center py-6 text-white font-bold text-xl">
-    CARI ALUMNI
-    <p class="text-sm font-normal">Profil Singkat Jejak Karier Alumni MAN Kota Batu</p>
+  <!-- Mobile menu (hidden by default) -->
+  <div id="mobile-menu" class="md:hidden hidden bg-blue-800">
+    <div class="flex flex-col px-6 py-4 space-y-3">
+      <a href="home.html" class="block text-white py-2 hover:bg-blue-700 rounded">Home</a>
+      <a href="profil.html" class="block text-white py-2 hover:bg-blue-700 rounded">Profil</a>
+      <a href="prestasi.html" class="block text-white py-2 hover:bg-blue-700 rounded">Prestasi</a>
+      <a href="pengumuman.html" class="block text-white py-2 hover:bg-blue-700 rounded">Pengumuman</a>
+      <a href="layanan.html" class="block text-white py-2 hover:bg-blue-700 rounded">Layanan</a>
+      <form id="searchFormMobile" class="flex items-center gap-2 mt-2" onsubmit="return false;">
+        <input id="searchInputMobile" type="text" placeholder="Pencarian..." class="border rounded px-2 py-1 text-sm text-black" aria-label="Pencarian mobile">
+        <button type="submit" class="bg-yellow-400 text-blue-900 px-2 py-1 rounded">Cari</button>
+      </form>
+    </div>
+  </div>
+</header>
+
+
+<!-- ALUMNI SLIDESHOW -->
+<section class="relative h-screen w-full overflow-hidden">
+
+  <!-- Slideshow container -->
+  <div id="alumni-slides" class="absolute inset-0">
+    <!-- Slide 1 -->
+    <div class="absolute inset-0 bg-cover bg-center opacity-0 transition-opacity duration-1000"
+         style="background-image: url('https://picsum.photos/1920/1080?random=1');"></div>
+
+    <!-- Slide 2 -->
+    <div class="absolute inset-0 bg-cover bg-center opacity-0 transition-opacity duration-1000"
+         style="background-image: url('https://picsum.photos/1920/1080?random=2');"></div>
+
+    <!-- Slide 3 -->
+    <div class="absolute inset-0 bg-cover bg-center opacity-0 transition-opacity duration-1000"
+         style="background-image: url('https://picsum.photos/1920/1080?random=3');"></div>
+
+    <!-- Slide 4 -->
+    <div class="absolute inset-0 bg-cover bg-center opacity-0 transition-opacity duration-1000"
+         style="background-image: url('https://picsum.photos/1920/1080?random=4');"></div>
+  </div>
+
+  <!-- Overlay warna biru lembut -->
+  <div class="absolute inset-0 bg-blue-900 bg-opacity-70"></div>
+
+  <!-- Konten tengah -->
+  <div class="relative z-10 flex flex-col items-center justify-center text-center text-white h-full px-6">
+    <h2 class="text-4xl md:text-5xl font-extrabold mb-4">
+      <span class="text-yellow-400">Momen Wisuda</span> Alumni MAN Kota Batu
+    </h2>
+    <p class="text-lg md:text-xl max-w-2xl mb-8">
+      Perjalanan penuh kenangan menuju masa depan gemilang bersama MAN Kota Batu.
+    </p>
+    <a href="#galeri"
+       class="bg-yellow-400 hover:bg-yellow-500 text-blue-900 font-semibold px-6 py-3 rounded-full transition">
+       Lihat Galeri Alumni
+    </a>
+  </div>
+</section>
+
+
+
+  <!-- BEASISWA -->
+  <section  id="beasiswa" class="pt-0 -mt-8 bg-white relative z-10">
+    <h2 class="bg-blue-900 text-white text-center py-3 font-bold text-xl tracking-wide shadow-md">BEASISWA</h2>
+
+    <div class="max-w-6xl mx-auto mt-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 px-4">
+      <!-- Card Beasiswa -->
+      <div class="bg-white rounded-2xl shadow-md p-6 flex flex-col items-center hover:shadow-lg hover:-translate-y-1 transition duration-300">
+        <img src="https://picsum.photos/150?random=1" class="w-24 h-24 rounded-full mb-3 object-cover" alt="">
+        <p class="font-semibold text-gray-800">Beasiswa Prestasi Akademik</p>
+        <p class="text-sm text-gray-500 text-center mt-2">Untuk siswa dengan nilai akademik terbaik di kelasnya.</p>
+      </div>
+
+      <div class="bg-white rounded-2xl shadow-md p-6 flex flex-col items-center hover:shadow-lg hover:-translate-y-1 transition duration-300">
+        <img src="https://picsum.photos/150?random=2" class="w-24 h-24 rounded-full mb-3 object-cover" alt="">
+        <p class="font-semibold text-gray-800">Beasiswa Tahfidz Al-Qur'an</p>
+        <p class="text-sm text-gray-500 text-center mt-2">Diperuntukkan bagi siswa penghafal Al-Qur’an minimal 5 juz.</p>
+      </div>
+
+      <div class="bg-white rounded-2xl shadow-md p-6 flex flex-col items-center hover:shadow-lg hover:-translate-y-1 transition duration-300">
+        <img src="https://picsum.photos/150?random=3" class="w-24 h-24 rounded-full mb-3 object-cover" alt="">
+        <p class="font-semibold text-gray-800">Beasiswa Unggulan Madrasah</p>
+        <p class="text-sm text-gray-500 text-center mt-2">Diberikan kepada siswa berprestasi di tingkat kota/provinsi.</p>
+      </div>
+
+      <div class="bg-white rounded-2xl shadow-md p-6 flex flex-col items-center hover:shadow-lg hover:-translate-y-1 transition duration-300">
+        <img src="https://picsum.photos/150?random=4" class="w-24 h-24 rounded-full mb-3 object-cover" alt="">
+        <p class="font-semibold text-gray-800">Beasiswa Santri Berprestasi</p>
+        <p class="text-sm text-gray-500 text-center mt-2">Untuk siswa aktif di pesantren dengan kontribusi sosial tinggi.</p>
+      </div>
+
+      <div class="bg-white rounded-2xl shadow-md p-6 flex flex-col items-center hover:shadow-lg hover:-translate-y-1 transition duration-300">
+        <img src="https://picsum.photos/150?random=5" class="w-24 h-24 rounded-full mb-3 object-cover" alt="">
+        <p class="font-semibold text-gray-800">Beasiswa Ekonomi Lemah</p>
+        <p class="text-sm text-gray-500 text-center mt-2">Diberikan kepada siswa dengan kondisi ekonomi tidak mampu.</p>
+      </div>
+
+      <div class="bg-white rounded-2xl shadow-md p-6 flex flex-col items-center hover:shadow-lg hover:-translate-y-1 transition duration-300">
+        <img src="https://picsum.photos/150?random=6" class="w-24 h-24 rounded-full mb-3 object-cover" alt="">
+        <p class="font-semibold text-gray-800">Beasiswa Atletik & Seni</p>
+        <p class="text-sm text-gray-500 text-center mt-2">Bagi siswa yang menorehkan prestasi di bidang olahraga atau seni.</p>
+      </div>
+
+      <div class="bg-white rounded-2xl shadow-md p-6 flex flex-col items-center hover:shadow-lg hover:-translate-y-1 transition duration-300">
+        <img src="https://picsum.photos/150?random=7" class="w-24 h-24 rounded-full mb-3 object-cover" alt="">
+        <p class="font-semibold text-gray-800">Beasiswa Olimpiade</p>
+        <p class="text-sm text-gray-500 text-center mt-2">Untuk siswa yang lolos seleksi olimpiade sains tingkat nasional.</p>
+      </div>
+
+      <div class="bg-white rounded-2xl shadow-md p-6 flex flex-col items-center hover:shadow-lg hover:-translate-y-1 transition duration-300">
+        <img src="https://picsum.photos/150?random=8" class="w-24 h-24 rounded-full mb-3 object-cover" alt="">
+        <p class="font-semibold text-gray-800">Beasiswa Alumni Peduli</p>
+        <p class="text-sm text-gray-500 text-center mt-2">Program dari para alumni MAN Kota Batu untuk siswa aktif.</p>
+      </div>
+    </div>
   </section>
 
-  <!-- Form Pencarian -->
-  <div class="container mx-auto mt-6 px-4">
-    <div class="bg-white shadow-md rounded-lg p-6">
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
-        <select class="border p-2 rounded">
-          <option>Semua Angkatan</option>
-          <option>41-50</option>
-          <option>31-40</option>
-          <option>21-30</option>
-          <option>11-20</option>
-          <option>1-10</option>
-        </select>
-        <select class="border p-2 rounded">
-          <option>Semua Jurusan</option>
-          <option>IPA</option>
-          <option>IPS</option>
-        </select>
-        <input type="text" placeholder="Nama Alumni" class="border p-2 rounded">
+
+ <!-- PODCAST DAN WEBINAR -->
+<section class="py-12 bg-gradient-to-b from-gray-100 to-blue-50">
+  <h2 class="bg-blue-900 text-white text-center py-3 font-bold text-xl tracking-wide shadow-md">
+    PODCAST DAN WEBINAR
+  </h2>
+
+  <div class="max-w-6xl mx-auto mt-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 px-4">
+
+    <!-- Card 1 -->
+    <div class="bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-xl hover:-translate-y-1 transition duration-300">
+      <img src="https://picsum.photos/400/250?random=21" alt="Podcast 1" class="w-full h-48 object-cover">
+      <div class="p-5">
+        <h3 class="font-semibold text-gray-800 text-lg mb-2">Webinar: Tips Lolos Beasiswa Luar Negeri</h3>
+        <p class="text-sm text-gray-500 mb-3">Dipandu oleh alumni penerima beasiswa LPDP dan IISMA.</p>
+        <button class="mt-auto inline-flex items-center gap-2 text-blue-700 font-semibold hover:text-blue-900 transition">
+          <i class="fa-solid fa-play-circle"></i> Dengarkan Sekarang
+        </button>
       </div>
-      <button class="bg-blue-700 hover:bg-blue-800 text-white px-6 py-2 rounded">
-        Cari
-      </button>
+    </div>
+
+    <!-- Card 2 -->
+    <div class="bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-xl hover:-translate-y-1 transition duration-300">
+      <img src="https://picsum.photos/400/250?random=22" alt="Podcast 2" class="w-full h-48 object-cover">
+      <div class="p-5">
+        <h3 class="font-semibold text-gray-800 text-lg mb-2">Podcast: Cerita Sukses Alumni MAN Batu</h3>
+        <p class="text-sm text-gray-500 mb-3">Dengarkan perjalanan alumni hingga diterima di universitas ternama.</p>
+        <button class="mt-auto inline-flex items-center gap-2 text-blue-700 font-semibold hover:text-blue-900 transition">
+          <i class="fa-solid fa-headphones"></i> Putar Podcast
+        </button>
+      </div>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-xl hover:-translate-y-1 transition duration-300">
+      <img src="https://picsum.photos/400/250?random=23" alt="Podcast 3" class="w-full h-48 object-cover">
+      <div class="p-5">
+        <h3 class="font-semibold text-gray-800 text-lg mb-2">Webinar: Strategi Masuk PTN Favorit</h3>
+        <p class="text-sm text-gray-500 mb-3">Panduan langsung dari pembimbing prestasi MAN Kota Batu.</p>
+        <button class="mt-auto inline-flex items-center gap-2 text-blue-700 font-semibold hover:text-blue-900 transition">
+          <i class="fa-solid fa-video"></i> Tonton Webinar
+        </button>
+      </div>
+    </div>
+
+    <!-- Card 4 -->
+    <div class="bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-xl hover:-translate-y-1 transition duration-300">
+      <img src="https://picsum.photos/400/250?random=24" alt="Podcast 4" class="w-full h-48 object-cover">
+      <div class="p-5">
+        <h3 class="font-semibold text-gray-800 text-lg mb-2">Podcast: Hidup di Luar Negeri</h3>
+        <p class="text-sm text-gray-500 mb-3">Cerita adaptasi alumni di Jepang, Mesir, dan Malaysia.</p>
+        <button class="mt-auto inline-flex items-center gap-2 text-blue-700 font-semibold hover:text-blue-900 transition">
+          <i class="fa-solid fa-globe"></i> Dengarkan Sekarang
+        </button>
+      </div>
+    </div>
+
+    <!-- Card 5 -->
+    <div class="bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-xl hover:-translate-y-1 transition duration-300">
+      <img src="https://picsum.photos/400/250?random=25" alt="Podcast 5" class="w-full h-48 object-cover">
+      <div class="p-5">
+        <h3 class="font-semibold text-gray-800 text-lg mb-2">Webinar: Beasiswa Dalam Negeri</h3>
+        <p class="text-sm text-gray-500 mb-3">Kupas tuntas beasiswa dari kampus dan kementerian pendidikan.</p>
+        <button class="mt-auto inline-flex items-center gap-2 text-blue-700 font-semibold hover:text-blue-900 transition">
+          <i class="fa-solid fa-play"></i> Tonton Sekarang
+        </button>
+      </div>
+    </div>
+
+    <!-- Card 6 -->
+    <div class="bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-xl hover:-translate-y-1 transition duration-300">
+      <img src="https://picsum.photos/400/250?random=26" alt="Podcast 6" class="w-full h-48 object-cover">
+      <div class="p-5">
+        <h3 class="font-semibold text-gray-800 text-lg mb-2">Podcast: Tips Belajar Efektif</h3>
+        <p class="text-sm text-gray-500 mb-3">Trik belajar fokus dan produktif dari guru MAN Kota Batu.</p>
+        <button class="mt-auto inline-flex items-center gap-2 text-blue-700 font-semibold hover:text-blue-900 transition">
+          <i class="fa-solid fa-microphone"></i> Dengarkan
+        </button>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ================= CERITA ALUMNI ================= -->
+<section id="cerita" class="py-16 bg-gray-50">
+  <div class="bg-blue-900 text-white text-center py-8 shadow-md">
+    <h2 class="text-3xl font-bold uppercase tracking-wide">Cerita Alumni</h2>
+    <p class="mt-2 text-blue-100">Kisah inspiratif perjalanan alumni MAN Kota Batu</p>
+  </div>
+
+  <div class="relative overflow-hidden mt-10">
+    <div id="cerita-track" class="flex gap-6 w-max">
+      <div class="card bg-white shadow-md rounded-2xl p-6 min-w-[300px] hover:-translate-y-1 hover:shadow-xl transition duration-300 ease-out">
+        <img src="https://picsum.photos/400/250?1" class="rounded-xl mb-4 w-full h-48 object-cover" />
+        <h3 class="text-xl font-bold text-blue-900">Rizki Amalia</h3>
+        <p class="text-gray-600 text-sm">“Dari MAN Kota Batu, saya belajar pentingnya disiplin dan percaya diri.”</p>
+      </div>
+
+      <div class="card bg-white shadow-md rounded-2xl p-6 min-w-[300px] hover:-translate-y-1 hover:shadow-xl transition duration-300 ease-out">
+        <img src="https://picsum.photos/400/250?2" class="rounded-xl mb-4 w-full h-48 object-cover" />
+        <h3 class="text-xl font-bold text-blue-900">Fajar Hidayat</h3>
+        <p class="text-gray-600 text-sm">“Lingkungan madrasah membuat saya tumbuh dengan nilai-nilai Islami.”</p>
+      </div>
+
+      <div class="card bg-white shadow-md rounded-2xl p-6 min-w-[300px] hover:-translate-y-1 hover:shadow-xl transition duration-300 ease-out">
+        <img src="https://picsum.photos/400/250?3" class="rounded-xl mb-4 w-full h-48 object-cover" />
+        <h3 class="text-xl font-bold text-blue-900">Siti Rahma</h3>
+        <p class="text-gray-600 text-sm">“Guru-guru MAN sangat peduli dengan perkembangan siswanya.”</p>
+      </div>
+
+      <!-- Duplikat untuk looping -->
+      <div class="card bg-white shadow-md rounded-2xl p-6 min-w-[300px] hover:-translate-y-1 hover:shadow-xl transition duration-300 ease-out">
+        <img src="https://picsum.photos/400/250?1" class="rounded-xl mb-4 w-full h-48 object-cover" />
+        <h3 class="text-xl font-bold text-blue-900">Rizki Amalia</h3>
+        <p class="text-gray-600 text-sm">“Dari MAN Kota Batu, saya belajar pentingnya disiplin dan percaya diri.”</p>
+      </div>
+
+      <div class="card bg-white shadow-md rounded-2xl p-6 min-w-[300px] hover:-translate-y-1 hover:shadow-xl transition duration-300 ease-out">
+        <img src="https://picsum.photos/400/250?2" class="rounded-xl mb-4 w-full h-48 object-cover" />
+        <h3 class="text-xl font-bold text-blue-900">Fajar Hidayat</h3>
+        <p class="text-gray-600 text-sm">“Lingkungan madrasah membuat saya tumbuh dengan nilai-nilai Islami.”</p>
+      </div>
+
+      <div class="card bg-white shadow-md rounded-2xl p-6 min-w-[300px] hover:-translate-y-1 hover:shadow-xl transition duration-300 ease-out">
+        <img src="https://picsum.photos/400/250?3" class="rounded-xl mb-4 w-full h-48 object-cover" />
+        <h3 class="text-xl font-bold text-blue-900">Siti Rahma</h3>
+        <p class="text-gray-600 text-sm">“Guru-guru MAN sangat peduli dengan perkembangan siswanya.”</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PRESTASI ALUMNI ================= -->
+<section id="prestasi" class="py-16 bg-white">
+  <div class="bg-blue-900 text-white text-center py-8 shadow-md">
+    <h2 class="text-3xl font-bold uppercase tracking-wide">Prestasi Alumni</h2>
+    <p class="mt-2 text-blue-100">Raih impian dan terus berprestasi di setiap langkah</p>
+  </div>
+
+  <div class="relative overflow-hidden mt-10">
+    <div id="prestasi-track" class="flex gap-6 w-max">
+      <div class="card bg-blue-50 p-6 rounded-2xl shadow-md min-w-[280px] hover:-translate-y-1 hover:shadow-xl transition duration-300 ease-out">
+        <img src="https://picsum.photos/400/250?4" class="rounded-xl mb-4 w-full h-40 object-cover" />
+        <h3 class="text-lg font-bold text-blue-900">Juara Olimpiade Nasional</h3>
+        <p class="text-gray-600 text-sm">Siti Aisyah meraih medali emas di bidang matematika.</p>
+      </div>
+
+      <div class="card bg-blue-50 p-6 rounded-2xl shadow-md min-w-[280px] hover:-translate-y-1 hover:shadow-xl transition duration-300 ease-out">
+        <img src="https://picsum.photos/400/250?5" class="rounded-xl mb-4 w-full h-40 object-cover" />
+        <h3 class="text-lg font-bold text-blue-900">Lulus Cumlaude</h3>
+        <p class="text-gray-600 text-sm">Ahmad Fajar menempuh studi S1 dengan predikat tertinggi.</p>
+      </div>
+
+      <div class="card bg-blue-50 p-6 rounded-2xl shadow-md min-w-[280px] hover:-translate-y-1 hover:shadow-xl transition duration-300 ease-out">
+        <img src="https://picsum.photos/400/250?6" class="rounded-xl mb-4 w-full h-40 object-cover" />
+        <h3 class="text-lg font-bold text-blue-900">Founder Startup EduTech</h3>
+        <p class="text-gray-600 text-sm">Rafi Hidayat mendirikan perusahaan pendidikan digital.</p>
+      </div>
+
+      <!-- duplikat -->
+      <div class="card bg-blue-50 p-6 rounded-2xl shadow-md min-w-[280px] hover:-translate-y-1 hover:shadow-xl transition duration-300 ease-out">
+        <img src="https://picsum.photos/400/250?4" class="rounded-xl mb-4 w-full h-40 object-cover" />
+        <h3 class="text-lg font-bold text-blue-900">Juara Olimpiade Nasional</h3>
+        <p class="text-gray-600 text-sm">Siti Aisyah meraih medali emas di bidang matematika.</p>
+      </div>
+
+      <div class="card bg-blue-50 p-6 rounded-2xl shadow-md min-w-[280px] hover:-translate-y-1 hover:shadow-xl transition duration-300 ease-out">
+        <img src="https://picsum.photos/400/250?5" class="rounded-xl mb-4 w-full h-40 object-cover" />
+        <h3 class="text-lg font-bold text-blue-900">Lulus Cumlaude</h3>
+        <p class="text-gray-600 text-sm">Ahmad Fajar menempuh studi S1 dengan predikat tertinggi.</p>
+      </div>
+
+      <div class="card bg-blue-50 p-6 rounded-2xl shadow-md min-w-[280px] hover:-translate-y-1 hover:shadow-xl transition duration-300 ease-out">
+        <img src="https://picsum.photos/400/250?6" class="rounded-xl mb-4 w-full h-40 object-cover" />
+        <h3 class="text-lg font-bold text-blue-900">Founder Startup EduTech</h3>
+        <p class="text-gray-600 text-sm">Rafi Hidayat mendirikan perusahaan pendidikan digital.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+  <!-- KEGIATAN -->
+  <section id="kegiatan" class="py-16 bg-gray-50">
+    <div class="bg-blue-900 text-white text-center py-8 shadow-md">
+      <h2 class="text-3xl font-bold uppercase tracking-wide">Kegiatan Alumni</h2>
+      <p class="mt-2 text-blue-100">Kegiatan sosial, reuni, dan pelatihan alumni MAN Kota Batu</p>
+    </div>
+
+    <div class="max-w-6xl mx-auto mt-10 grid grid-cols-1 md:grid-cols-3 gap-8 px-4">
+      <div class="bg-white rounded-2xl shadow-md overflow-hidden hover:-translate-y-1 hover:shadow-lg transition">
+        <img src="img/kegiatan1.jpg" class="w-full h-48 object-cover" alt="Kegiatan 1">
+        <div class="p-6">
+          <h3 class="text-lg font-bold text-blue-900">Reuni Akbar</h3>
+          <p class="text-gray-600 text-sm mt-2">Temu kangen lintas angkatan penuh nostalgia.</p>
+        </div>
+      </div>
+      <div class="bg-white rounded-2xl shadow-md overflow-hidden hover:-translate-y-1 hover:shadow-lg transition">
+        <img src="img/kegiatan2.jpg" class="w-full h-48 object-cover" alt="Kegiatan 2">
+        <div class="p-6">
+          <h3 class="text-lg font-bold text-blue-900">Bakti Sosial</h3>
+          <p class="text-gray-600 text-sm mt-2">Alumni berkontribusi melalui kegiatan sosial.</p>
+        </div>
+      </div>
+      <div class="bg-white rounded-2xl shadow-md overflow-hidden hover:-translate-y-1 hover:shadow-lg transition">
+        <img src="img/kegiatan3.jpg" class="w-full h-48 object-cover" alt="Kegiatan 3">
+        <div class="p-6">
+          <h3 class="text-lg font-bold text-blue-900">Pelatihan Karier</h3>
+          <p class="text-gray-600 text-sm mt-2">Bekal skill kerja bagi lulusan baru MAN Kota Batu.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<style>
+@keyframes loop-scroll2 {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.animate-loop-scroll2 {
+  width: max-content;
+  animation: loop-scroll2 45s linear infinite;
+}
+</style>
+
+<section class="relative w-full h-[80vh] overflow-hidden">
+  <div class="absolute inset-0">
+    <div class="w-full h-full">
+      <div class="swiper-container h-full">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <img src="img/wisuda1.jpg" class="w-full h-full object-cover" alt="Wisuda 2023">
+          </div>
+          <div class="swiper-slide">
+            <img src="img/wisuda2.jpg" class="w-full h-full object-cover" alt="Reuni 2022">
+          </div>
+          <div class="swiper-slide">
+            <img src="img/wisuda3.jpg" class="w-full h-full object-cover" alt="Kegiatan Alumni">
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 
-  <!-- Filter Tambahan -->
-  <div class="container mx-auto px-4 mt-4">
-    <div class="flex space-x-4 justify-center">
-      <button class="px-4 py-2 bg-blue-700 text-white rounded hover:bg-blue-800">Laki-laki</button>
-      <button class="px-4 py-2 bg-blue-700 text-white rounded hover:bg-blue-800">Perempuan</button>
-      <button class="px-4 py-2 bg-blue-700 text-white rounded hover:bg-blue-800">Semua Alumni</button>
+  <div class="absolute inset-0 bg-black/40 flex flex-col justify-center items-center text-center text-white">
+    <h2 class="text-3xl font-bold mb-2">Galeri Kenangan Alumni</h2>
+    <p class="max-w-2xl">Momen-momen berharga alumni MAN Kota Batu yang penuh kebanggaan dan kebersamaan.</p>
+  </div>
+</section>
+
+<!-- SwiperJS CDN -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"/>
+<script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+<script>
+  const swiper = new Swiper('.swiper-container', {
+    loop: true,
+    autoplay: {
+      delay: 3000,
+      disableOnInteraction: false,
+    },
+    speed: 800,
+  });
+</script>
+
+<section class="bg-blue-50 py-12">
+  <div class="max-w-6xl mx-auto text-center">
+    <h2 class="text-2xl font-bold text-blue-900 mb-6">Jalur Karier Alumni</h2>
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+      <div class="bg-white p-6 rounded-xl shadow hover:scale-105 hover:shadow-xl transition">
+        <i class="fa-solid fa-user-graduate text-blue-700 text-4xl mb-3"></i>
+        <h3 class="font-semibold text-lg text-blue-800">Perguruan Tinggi</h3>
+        <p class="text-gray-600 text-sm">Alumni diterima di kampus dalam & luar negeri.</p>
+      </div>
+      <div class="bg-white p-6 rounded-xl shadow hover:scale-105 hover:shadow-xl transition">
+        <i class="fa-solid fa-briefcase text-blue-700 text-4xl mb-3"></i>
+        <h3 class="font-semibold text-lg text-blue-800">Profesional</h3>
+        <p class="text-gray-600 text-sm">Bekerja di perusahaan dan lembaga ternama.</p>
+      </div>
+      <div class="bg-white p-6 rounded-xl shadow hover:scale-105 hover:shadow-xl transition">
+        <i class="fa-solid fa-lightbulb text-blue-700 text-4xl mb-3"></i>
+        <h3 class="font-semibold text-lg text-blue-800">Wirausaha</h3>
+        <p class="text-gray-600 text-sm">Mendirikan usaha di bidang teknologi & kreatif.</p>
+      </div>
+      <div class="bg-white p-6 rounded-xl shadow hover:scale-105 hover:shadow-xl transition">
+        <i class="fa-solid fa-flask text-blue-700 text-4xl mb-3"></i>
+        <h3 class="font-semibold text-lg text-blue-800">Riset & Akademik</h3>
+        <p class="text-gray-600 text-sm">Berkarier sebagai peneliti dan dosen muda.</p>
+      </div>
     </div>
   </div>
+</section>
+<section class="bg-white py-12">
+  <div class="max-w-4xl mx-auto text-center">
+    <h2 class="text-2xl font-bold text-blue-900 mb-6">Testimoni Alumni</h2>
 
-  <!-- Daftar Alumni -->
-  <div class="container mx-auto px-4 mt-6 space-y-6">
-    <!-- Alumni Card -->
-    <div class="bg-white shadow-md rounded-lg p-4 flex">
-      <div class="w-1/3 flex items-center justify-center">
-        <div class="w-28 h-28 bg-gray-300 flex items-center justify-center">FOTO</div>
-      </div>
-      <div class="w-2/3 pl-4">
-        <p class="font-bold">NAMA ALUMNI</p>
-        <p class="mt-2 text-gray-600">Testimoni ?</p>
-      </div>
-    </div>
-
-    <div class="bg-white shadow-md rounded-lg p-4 flex">
-      <div class="w-1/3 flex items-center justify-center">
-        <div class="w-28 h-28 bg-gray-300 flex items-center justify-center">FOTO</div>
-      </div>
-      <div class="w-2/3 pl-4">
-        <p class="font-bold">NAMA ALUMNI</p>
-        <p class="mt-2 text-gray-600">Testimoni ?</p>
-      </div>
-    </div>
-
-    <div class="bg-white shadow-md rounded-lg p-4 flex">
-      <div class="w-1/3 flex items-center justify-center">
-        <div class="w-28 h-28 bg-gray-300 flex items-center justify-center">FOTO</div>
-      </div>
-      <div class="w-2/3 pl-4">
-        <p class="font-bold">NAMA ALUMNI</p>
-        <p class="mt-2 text-gray-600">Testimoni ?</p>
+    <div class="swiper testimonial-swiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <p class="text-gray-700 italic mb-4">“MAN Kota Batu membentuk karakter saya menjadi pribadi yang mandiri dan berpikir kritis.”</p>
+          <h3 class="font-semibold text-blue-800">– Ahmad Fadli, Alumni 2019</h3>
+        </div>
+        <div class="swiper-slide">
+          <p class="text-gray-700 italic mb-4">“Bimbingan guru dan lingkungan yang positif membuat saya siap bersaing di dunia kampus.”</p>
+          <h3 class="font-semibold text-blue-800">– Siti Rahma, Alumni 2020</h3>
+        </div>
+        <div class="swiper-slide">
+          <p class="text-gray-700 italic mb-4">“Dukungan madrasah menjadi dasar saya mendirikan startup di bidang pendidikan.”</p>
+          <h3 class="font-semibold text-blue-800">– Rafi Setiawan, Alumni 2018</h3>
+        </div>
       </div>
     </div>
   </div>
+</section>
 
-  <!-- Pagination -->
-  <div class="flex justify-center items-center space-x-2 my-6">
-    <button class="px-3 py-1 bg-gray-300 rounded hover:bg-blue-600 hover:text-white">‹</button>
-    <button class="px-3 py-1 bg-blue-600 text-white rounded">1</button>
-    <button class="px-3 py-1 bg-gray-300 rounded hover:bg-blue-600 hover:text-white">2</button>
-    <button class="px-3 py-1 bg-gray-300 rounded hover:bg-blue-600 hover:text-white">3</button>
-    <button class="px-3 py-1 bg-gray-300 rounded hover:bg-blue-600 hover:text-white">›</button>
-  </div>
+<script>
+const testimonialSwiper = new Swiper('.testimonial-swiper', {
+  loop: true,
+  autoplay: {
+    delay: 4000,
+    disableOnInteraction: false,
+  },
+  speed: 600,
+});
+</script>
+
+
+
+
 
 <!-- Footer -->
 <footer class="bg-blue-900 text-white">
@@ -200,6 +576,9 @@
           <li><a href="#" class="hover:text-yellow-400">Absensi</a></li>
         </ul>
       </div>
+      <!-- Garis pemisah -->
+<div class="border-t-2 border-yellow-400 w-full my-6"></div>
+
       <div>
         <h4 class="font-semibold">SISWA</h4>
         <ul class="text-sm space-y-2 mt-2">
@@ -217,5 +596,178 @@
   </div>
 </footer>
 
+
+<!-- ✅ FIXED & OPTIMIZED: Mobile Nav + Search + Full-Word Highlight -->
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  // === HAMBURGER MENU (Mobile) ===
+  const navToggle = document.getElementById("nav-toggle");
+  const mobileMenu = document.getElementById("mobile-menu");
+
+  if (navToggle && mobileMenu) {
+    navToggle.addEventListener("click", () => {
+      if (mobileMenu.classList.contains("hidden")) {
+        mobileMenu.classList.remove("hidden", "animate-slideUp");
+        mobileMenu.classList.add("animate-slideDown");
+      } else {
+        mobileMenu.classList.remove("animate-slideDown");
+        mobileMenu.classList.add("animate-slideUp");
+        setTimeout(() => mobileMenu.classList.add("hidden"), 300);
+      }
+    });
+
+    // Tutup menu jika klik di luar area
+    document.addEventListener("click", (e) => {
+      if (!navToggle.contains(e.target) && !mobileMenu.contains(e.target)) {
+        if (!mobileMenu.classList.contains("hidden")) {
+          mobileMenu.classList.remove("animate-slideDown");
+          mobileMenu.classList.add("animate-slideUp");
+          setTimeout(() => mobileMenu.classList.add("hidden"), 300);
+        }
+      }
+    });
+  }
+
+  // === HIGHLIGHT SELURUH KATA (Bukan potongan teks) ===
+  function removeHighlights() {
+    document.querySelectorAll(".search-highlight").forEach((span) => {
+      const parent = span.parentNode;
+      parent.replaceChild(document.createTextNode(span.textContent), span);
+      parent.normalize();
+    });
+  }
+
+  function highlightFullWord(term) {
+    removeHighlights();
+    if (!term) return;
+
+    // regex untuk highlight seluruh kata yang mengandung term (contoh: "inst" → highlight "Instagram")
+    const regex = new RegExp(`\\b[^\\s]*${term}[^\\s]*\\b`, "gi");
+
+    const walker = document.createTreeWalker(
+      document.body,
+      NodeFilter.SHOW_TEXT,
+      {
+        acceptNode(node) {
+          if (!node.parentElement) return NodeFilter.FILTER_REJECT;
+          const tag = node.parentElement.tagName.toLowerCase();
+          if (["script", "style", "input", "textarea", "button"].includes(tag))
+            return NodeFilter.FILTER_REJECT;
+          if (!node.nodeValue.trim()) return NodeFilter.FILTER_REJECT;
+          return NodeFilter.FILTER_ACCEPT;
+        },
+      }
+    );
+
+    const nodes = [];
+    while (walker.nextNode()) nodes.push(walker.currentNode);
+
+    let firstHighlight = null;
+
+    nodes.forEach((node) => {
+      const text = node.nodeValue;
+      if (regex.test(text)) {
+        const replaced = text.replace(
+          regex,
+          (match) =>
+            `<span class="search-highlight bg-yellow-300 text-blue-900 font-bold px-1 rounded">${match}</span>`
+        );
+        const span = document.createElement("span");
+        span.innerHTML = replaced;
+        node.replaceWith(...span.childNodes);
+
+        if (!firstHighlight) {
+          firstHighlight = document.querySelector(".search-highlight");
+        }
+      }
+    });
+
+    // Scroll ke hasil pertama
+    if (firstHighlight) {
+      firstHighlight.scrollIntoView({ behavior: "smooth", block: "center" });
+    }
+  }
+
+  // === FORM HANDLING (Desktop + Mobile) ===
+  const searchInput = document.getElementById("searchInput");
+  const searchInputMobile = document.getElementById("searchInputMobile");
+
+  document.getElementById("searchForm")?.addEventListener("submit", (e) => {
+    e.preventDefault();
+    highlightFullWord(searchInput.value.trim());
+  });
+
+  document.getElementById("searchFormMobile")?.addEventListener("submit", (e) => {
+    e.preventDefault();
+    highlightFullWord(searchInputMobile.value.trim());
+    mobileMenu.classList.add("hidden");
+  });
+
+  [searchInput, searchInputMobile].forEach((el) => {
+    if (!el) return;
+    el.addEventListener("keydown", (e) => {
+      if (e.key === "Enter") {
+        e.preventDefault();
+        highlightFullWord(el.value.trim());
+      }
+    });
+  });
+});
+
+// === ANIMASI SLIDE (Tailwind Extend) ===
+tailwind.config = {
+  theme: {
+    extend: {
+      keyframes: {
+        slideDown: {
+          "0%": { opacity: "0", transform: "translateY(-10px)" },
+          "100%": { opacity: "1", transform: "translateY(0)" },
+        },
+        slideUp: {
+          "0%": { opacity: "1", transform: "translateY(0)" },
+          "100%": { opacity: "0", transform: "translateY(-10px)" },
+        },
+      },
+      animation: {
+        slideDown: "slideDown 0.3s ease-out forwards",
+        slideUp: "slideUp 0.3s ease-in forwards",
+      },
+    },
+  },
+};
+
+</script>
+<!-- Script Slide Otomatis -->
+<script>
+  const slides = document.querySelectorAll('#alumni-slides > div');
+  let index = 0;
+
+  function showSlide(i) {
+    slides.forEach((slide, idx) => {
+      slide.style.opacity = idx === i ? '1' : '0';
+    });
+  }
+
+  function nextSlide() {
+    index = (index + 1) % slides.length;
+    showSlide(index);
+  }
+
+  // tampilkan slide pertama
+  showSlide(index);
+  setInterval(nextSlide, 4000); // ganti setiap 4 detik
+</script>
+<style>
+@keyframes scrollLoop {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+#cerita-track, #prestasi-track {
+  animation: scrollLoop 30s linear infinite;
+}
+#cerita-track:hover, #prestasi-track:hover {
+  animation-play-state: paused;
+}
+</style>
 </body>
 </html>

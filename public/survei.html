@@ -155,20 +155,26 @@
 
         <form id="surveyForm" class="space-y-6" novalidate>
             <div>
-                <label for="name" class="block text-slate-700 font-semibold mb-2">Nama Lengkap</label>
+                <label for="name" class="block text-slate-700 font-semibold mb-2">Nama Lengkap 
+                    <span class="text-red-500">*</span>
+                </label>
                 <input type="text" id="name" name="name" required placeholder="Nama lengkap" 
                     class="w-full p-3 border border-slate-200 rounded-md focus:outline-none focus:border-blue-900 bg-white text-slate-800">
             </div>
 
             <div>
-                <label for="institution" class="block text-slate-700 font-semibold mb-2">Asal Instansi / Sekolah</label>
+                <label for="institution" class="block text-slate-700 font-semibold mb-2">Asal Instansi / Sekolah 
+                    <span class="text-red-500">*</span>
+                </label>
                 <input type="text" id="institution" name="institution" required placeholder="Contoh: SMA Negeri 1" 
                     class="w-full p-3 border border-slate-200 rounded-md focus:outline-none focus:border-blue-900 bg-white text-slate-800">
             </div>
 
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
-                    <label for="whatsapp" class="block text-slate-700 font-semibold mb-2">Nomor WhatsApp</label>
+                    <label for="whatsapp" class="block text-slate-700 font-semibold mb-2">Nomor WhatsApp 
+                        <span class="text-red-500">*</span>
+                    </label>
                     <input type="tel" id="whatsapp" name="whatsapp" required placeholder="+62 812-3456-7890" pattern="[\d+\-\s()]{6,}" 
                         class="w-full p-3 border border-slate-200 rounded-md focus:outline-none focus:border-blue-900 bg-white text-slate-800">
                 </div>
@@ -181,7 +187,9 @@
             </div>
 
             <div>
-                <label class="block text-slate-700 font-semibold mb-3">Bagaimana penilaian Anda terhadap pelayanan PTSP yang anda dapatkan?</label>
+                <label class="block text-slate-700 font-semibold mb-3">Bagaimana penilaian Anda terhadap pelayanan PTSP yang anda dapatkan? 
+                    <span class="text-red-500">*</span>
+                </label>
                 <div class="flex flex-wrap gap-3">
                     <label class="rating-option">
                         <input type="radio" name="rating_ptsp" value="1" required>
@@ -206,7 +214,9 @@
                 </div>
             </div>
             <div>
-                <label class="block text-slate-700 font-semibold mb-3">Bagaimana penilaian Anda terhadap performa / kinerja petugas dalam melayani kebutuhan anda?</label>
+                <label class="block text-slate-700 font-semibold mb-3">Bagaimana penilaian Anda terhadap performa / kinerja petugas dalam melayani kebutuhan anda?
+                    <span class="text-red-500">*</span>
+                </label>
                 <div class="flex flex-wrap gap-3">
                     <label class="rating-option">
                         <input type="radio" name="rating_petugas" value="1" required>
@@ -231,7 +241,9 @@
                 </div>
             </div>
             <div>
-                <label class="block text-slate-700 font-semibold mb-3">Bagaimana penilaian Anda terhadap seberapa cepat layanan yang kami berikan?</label>
+                <label class="block text-slate-700 font-semibold mb-3">Bagaimana penilaian Anda terhadap seberapa cepat layanan yang MAN Kota Batu berikan? 
+                    <span class="text-red-500">*</span>
+                </label>
                 <div class="flex flex-wrap gap-3">
                     <label class="rating-option">
                         <input type="radio" name="rating_speed" value="1" required>
@@ -256,32 +268,24 @@
                 </div>
             </div>
             <div>
-                <label class="block text-slate-700 font-semibold mb-3">Apakah ada biaya saat mendapatkan layanan dari kami?</label>
+                <label class="block text-slate-700 font-semibold mb-3">Apakah ada biaya saat mendapatkan layanan dari MAN Kota Batu? 
+                    <span class="text-red-500">*</span>
+                </label>
                 <div class="flex flex-wrap gap-3">
                     <label class="rating-option">
                         <input type="radio" name="rating_biaya" value="1" required>
-                        <span class="text-sm">Sangat Tidak Puas</span>
+                        <span class="text-sm">Ada</span>
                     </label>
                     <label class="rating-option">
                         <input type="radio" name="rating_biaya" value="2">
-                        <span class="text-sm">Tidak Puas</span>
-                    </label>
-                    <label class="rating-option">
-                        <input type="radio" name="rating_biaya" value="3">
-                        <span class="text-sm">Cukup</span>
-                    </label>
-                    <label class="rating-option">
-                        <input type="radio" name="rating_biaya" value="4">
-                        <span class="text-sm">Puas</span>
-                    </label>
-                    <label class="rating-option">
-                        <input type="radio" name="rating_biaya" value="5">
-                        <span class="text-sm">Sangat Puas</span>
+                        <span class="text-sm">Tidak Ada</span>
                     </label>
                 </div>
             </div>
             <div>
-                <label class="block text-slate-700 font-semibold mb-3">Bagaimana penilaian Anda terhadap layanan kami secara keseluruhan?</label>
+                <label class="block text-slate-700 font-semibold mb-3">Bagaimana penilaian Anda terhadap layanan di MAN Kota Batu secara keseluruhan?
+                    <span class="text-red-500">*</span>
+                </label>
                 <div class="flex flex-wrap gap-3">
                     <label class="rating-option">
                         <input type="radio" name="rating_overall" value="1" required>
@@ -306,17 +310,49 @@
                 </div>
             </div>
             <div>
-                <label for="feedback" class="block text-slate-700 font-semibold mb-2">Saran dan Masukan</label>
+                <label for="feedback" class="block text-slate-700 font-semibold mb-2">Saran dan Masukan (Opsional)</label>
                 <textarea id="feedback" name="feedback" rows="4" placeholder="Tulis saran atau masukan Anda di sini..." 
                     class="w-full p-3 border border-slate-200 rounded-md focus:outline-none focus:border-blue-900 bg-white text-slate-800"></textarea>
             </div>
+<div class="flex items-center gap-4">
+  <button 
+    type="button" 
+    id="submitButton"
+    class="bg-yellow-400 text-blue-900 font-bold px-5 py-3 rounded-lg shadow-md hover:shadow-lg transform transition duration-200 ease-out hover:-translate-y-1 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-yellow-300 focus:ring-offset-2">
+    Kirim Survei
+  </button>
 
-            <div class="flex items-center gap-4">
-                <button type="submit" class="bg-yellow-400 text-blue-900 font-bold px-5 py-3 rounded-lg shadow-md hover:shadow-lg transform transition duration-200 ease-out hover:-translate-y-1 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-yellow-300 focus:ring-offset-2">
-                    Kirim Survei
-                </button>
-                <div id="submitStatus" role="status" class="text-sm text-slate-600 hidden">Mengirim...</div>
-            </div>
+  <!-- Pesan konfirmasi awal -->
+  <div id="confirmMessage" class="text-sm text-slate-600 flex items-center gap-1">
+    <span class="text-red-500">*</span>
+    Pastikan kamu sudah yakin dengan jawaban sebelum mengirim surveinya
+  </div>
+
+  <!-- Status kirim -->
+  <div id="submitStatus" role="status" class="text-sm text-slate-600 hidden">
+    Mengirim...
+  </div>
+</div>
+
+<script>
+  const button = document.getElementById('submitButton');
+  const confirmMessage = document.getElementById('confirmMessage');
+  const submitStatus = document.getElementById('submitStatus');
+
+  button.addEventListener('click', () => {
+    // Sembunyikan pesan konfirmasi, tampilkan status kirim
+    confirmMessage.classList.add('hidden');
+    submitStatus.classList.remove('hidden');
+
+    // (opsional) simulasi pengiriman data
+    setTimeout(() => {
+      submitStatus.textContent = "Terkirim!";
+      button.disabled = true;
+      button.classList.add('opacity-60', 'cursor-not-allowed');
+    }, 2000);
+  });
+</script>
+
         </form>
     </main>
 </body>

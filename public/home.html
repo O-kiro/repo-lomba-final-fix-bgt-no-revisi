@@ -159,62 +159,187 @@
     </div>
   </section>
 
-<section id="program" class="p-4 scroll-mt-24">
-  <div class="bg-blue-900 text-white p-4 rounded-lg">
-    <div class="flex items-center justify-center space-x-2 mt-4">
-         <i class="fas fa-book-open text-3xl flex justify-center text-yellow-400"></i>
-         <h2 class="text-white text-2xl font-bold">PROGRAM UNGGULAN</h2>
-    </div>
-    <main class="flex flex-col md:flex-row w-full max-w-8xl mx-auto mt-4 md:mt-8 gap-4">
+<section id="program" class="p-4 scroll-mt-24"> 
+  <div class="bg-blue-900 text-white p-4 rounded-lg"> 
+    <div class="flex items-center justify-center space-x-2 mt-4"> 
+      <i class="fas fa-book-open text-3xl flex justify-center text-yellow-400"></i> 
+      <h2 class="text-white text-2xl font-bold">PROGRAM UNGGULAN</h2> 
+    </div> 
 
+    <main class="flex flex-col md:flex-row w-full max-w-8xl mx-auto mt-4 md:mt-8 gap-4"> 
       <!-- Sidebar Tombol -->
-      <aside class="flex flex-col md:flex-col gap-11 md:gap-19 w-full md:w-1/3 mt-2">
-        <button class="bg-yellow-400 text-blue-900 font-bold px-6 py-5 md:px-6 text-xl rounded-full w-full">Olimpiade</button>
-        <button class="bg-blue-700 hover:bg-yellow-400 text-white hover:text-blue-900 font-semibold px-6 py-5 text-xl md:px-6 rounded-full w-full">Riset</button>
-        <button class="bg-blue-700 hover:bg-yellow-400 text-white hover:text-blue-900 font-semibold px-6 py-5 text-xl md:px-6 rounded-full w-full">Percepatan</button>
-        <button class="bg-blue-700 hover:bg-yellow-400 text-white hover:text-blue-900 font-semibold px-6 py-5 text-xl md:px-6 rounded-full w-full">Tahfidz</button>
-      </aside>
+      <aside class="flex flex-col md:flex-col gap-11 md:gap-19 w-full md:w-1/3 mt-2"> 
+        <button class="tab-btn bg-yellow-400 text-blue-900 font-bold px-6 py-5 md:px-6 text-xl rounded-full w-full active" data-tab="olimpiade">Olimpiade</button> 
+        <button class="tab-btn bg-blue-700 hover:bg-yellow-400 text-white hover:text-blue-900 font-semibold px-6 py-5 text-xl md:px-6 rounded-full w-full" data-tab="riset">Riset</button> 
+        <button class="tab-btn bg-blue-700 hover:bg-yellow-400 text-white hover:text-blue-900 font-semibold px-6 py-5 text-xl md:px-6 rounded-full w-full" data-tab="percepatan">Percepatan</button> 
+        <button class="tab-btn bg-blue-700 hover:bg-yellow-400 text-white hover:text-blue-900 font-semibold px-6 py-5 text-xl md:px-6 rounded-full w-full" data-tab="tahfidz">Tahfidz</button> 
+      </aside> 
 
       <!-- Konten -->
-      <section class="bg-blue-700 rounded-2xl flex-1 p-3 md:p-6 min-w-0 flex flex-col mb-8">
-        <h2 class="text-white text-lg md:text-xl font-bold mb-4 text-center md:text-left">Olimpiade</h2>
+      <section class="bg-blue-700 rounded-2xl flex-1 p-3 md:p-6 min-w-0 flex flex-col mb-8"> 
+        <div id="tab-content" class="space-y-4">
+          
+          <!-- Default (Olimpiade) -->
+          <div class="tab-panel" id="olimpiade" style="display: block;">
+  <h2 class="text-white text-lg md:text-xl font-bold mb-4 text-center md:text-left">Olimpiade</h2>
 
-        <!-- Dropdown -->
-        <div class="relative w-full mb-4">
-          <select class="appearance-none w-full bg-yellow-400 text-blue-900 font-semibold py-2 px-2 md:px-4 rounded-lg cursor-pointer">
-            <option>Astronomi</option>
-            <option>Biologi</option>
-            <option>Ekonomi</option>
-            <option>Fisika</option>
-            <option>Geografi</option>
-            <option>Kebumian</option>
-            <option>Kimia</option>
-            <option>Matematika</option>
-            <option>TI</option>
-          </select>
-          <div class="absolute right-3 top-1/2 transform -translate-y-1/2 text-blue-900 pointer-events-none">▼</div>
-        </div>
+  <!-- Dropdown Bidang -->
+  <div class="relative w-full mb-4"> 
+    <select id="olimpiade-select" class="appearance-none w-full bg-yellow-400 text-blue-900 font-semibold py-2 px-2 md:px-4 rounded-lg cursor-pointer"> 
+      <option value="astronomi">Astronomi</option> 
+      <option value="biologi">Biologi</option> 
+      <option value="ekonomi">Ekonomi</option> 
+      <option value="fisika">Fisika</option> 
+      <option value="geografi">Geografi</option> 
+      <option value="kebumian">Kebumian</option> 
+      <option value="kimia">Kimia</option> 
+      <option value="matematika">Matematika</option> 
+      <option value="ti">TI</option> 
+    </select> 
+    <div class="absolute right-3 top-1/2 transform -translate-y-1/2 text-blue-900 pointer-events-none">▼</div> 
+  </div> 
 
-        <!-- Foto --> 
-        <div class="bg-blue-200 text-blue-800 h-32 md:h-40 flex items-center justify-center rounded-lg mb-4">
-          <!-- FOTO -->
-        </div>
-
-        <!-- Deskripsi -->
-        <div class="bg-blue-200 rounded-lg p-2 md:p-4 mt-auto">
-          <h3 class="text-blue-800 font-bold border-b-2 border-yellow-400 mb-2 text-center">DESKRIPSI</h3>
-          <p class="text-blue-800 text-xs md:text-sm">DESKRIPSI</p>
-        </div>
-      </section>
-
-    </main>
-  </div>
-</section>
-
-
+  <!-- Konten Dinamis -->
+  <div id="olimpiade-content">
+    <!-- Konten default (Astronomi) -->
+    <div class="bg-blue-200 text-blue-800 h-32 md:h-40 flex items-center justify-center rounded-lg mb-4">
+      <span class="font-semibold">FOTO ASTRONOMI</span>
+    </div> 
+    <div class="bg-blue-200 rounded-lg p-2 md:p-4 mt-auto"> 
+      <h3 class="text-blue-800 font-bold border-b-2 border-yellow-400 mb-2 text-center">DESKRIPSI</h3> 
+      <p class="text-blue-800 text-xs md:text-sm text-justify">Program Olimpiade Astronomi membimbing siswa memahami fenomena langit, astrofisika, dan pengamatan bintang untuk kompetisi nasional dan internasional.</p> 
     </div>
+  </div>
+</div>
 
+<script>
+  // Data konten per bidang olimpiade
+  const olimpiadeData = {
+    astronomi: {
+      foto: "FOTO ASTRONOMI",
+      deskripsi: "Program Olimpiade Astronomi membimbing siswa memahami fenomena langit, astrofisika, dan pengamatan bintang untuk kompetisi nasional dan internasional."
+    },
+    biologi: {
+      foto: "FOTO BIOLOGI",
+      deskripsi: "Program Olimpiade Biologi membantu siswa mendalami konsep biologi molekuler, genetika, dan ekologi untuk ajang kompetisi akademik."
+    },
+    ekonomi: {
+      foto: "FOTO EKONOMI",
+      deskripsi: "Program Olimpiade Ekonomi mengasah kemampuan analisis pasar, teori ekonomi mikro dan makro untuk kompetisi tingkat nasional."
+    },
+    fisika: {
+      foto: "FOTO FISIKA",
+      deskripsi: "Program Olimpiade Fisika membekali siswa dengan pemahaman mendalam tentang mekanika, elektromagnetisme, dan fisika modern."
+    },
+    geografi: {
+      foto: "FOTO GEOGRAFI",
+      deskripsi: "Program Olimpiade Geografi menanamkan pemahaman tentang bumi, lingkungan, dan dinamika ruang permukaan planet."
+    },
+    kebumian: {
+      foto: "FOTO KEBUMIAN",
+      deskripsi: "Program Olimpiade Kebumian membimbing siswa memahami geologi, meteorologi, dan oseanografi untuk kompetisi nasional."
+    },
+    kimia: {
+      foto: "FOTO KIMIA",
+      deskripsi: "Program Olimpiade Kimia fokus pada pemahaman reaksi kimia, struktur atom, dan aplikasi eksperimen laboratorium."
+    },
+    matematika: {
+      foto: "FOTO MATEMATIKA",
+      deskripsi: "Program Olimpiade Matematika mengasah kemampuan logika, analisis, dan problem solving tingkat tinggi."
+    },
+    ti: {
+      foto: "FOTO TI",
+      deskripsi: "Program Olimpiade Teknologi Informasi memperkuat logika pemrograman, algoritma, dan pemecahan masalah berbasis komputer."
+    }
+  };
 
+  // Event listener untuk dropdown
+  const olimpiadeSelect = document.getElementById("olimpiade-select");
+  const olimpiadeContent = document.getElementById("olimpiade-content");
+
+  olimpiadeSelect.addEventListener("change", (e) => {
+    const bidang = e.target.value;
+    const data = olimpiadeData[bidang];
+
+    olimpiadeContent.innerHTML = `
+      <div class="bg-blue-200 text-blue-800 h-32 md:h-40 flex items-center justify-center rounded-lg mb-4">
+        <span class="font-semibold">${data.foto}</span>
+      </div> 
+      <div class="bg-blue-200 rounded-lg p-2 md:p-4 mt-auto"> 
+        <h3 class="text-blue-800 font-bold border-b-2 border-yellow-400 mb-2 text-center">DESKRIPSI</h3> 
+        <p class="text-blue-800 text-xs md:text-sm text-justify">${data.deskripsi}</p> 
+      </div>
+    `;
+  });
+</script>
+
+          <!-- Riset -->
+          <div class="tab-panel" id="riset" style="display: none;">
+            <h2 class="text-white text-lg md:text-xl font-bold mb-4 text-center md:text-left">Riset</h2>
+            <div class="bg-blue-200 text-blue-800 h-32 md:h-40 flex items-center justify-center rounded-lg mb-4">
+              <span class="font-semibold">FOTO RISET</span>
+            </div>
+            <div class="bg-blue-200 rounded-lg p-2 md:p-4">
+              <h3 class="text-blue-800 font-bold border-b-2 border-yellow-400 mb-2 text-center">DESKRIPSI</h3>
+              <p class="text-blue-800 text-xs md:text-sm text-justify">Program riset mendorong siswa untuk mengembangkan kemampuan penelitian ilmiah dengan bimbingan dosen dan peneliti profesional.</p>
+            </div>
+          </div>
+
+          <!-- Percepatan -->
+          <div class="tab-panel" id="percepatan" style="display: none;">
+            <h2 class="text-white text-lg md:text-xl font-bold mb-4 text-center md:text-left">Percepatan</h2>
+            <div class="bg-blue-200 text-blue-800 h-32 md:h-40 flex items-center justify-center rounded-lg mb-4">
+              <span class="font-semibold">FOTO PERCEPATAN</span>
+            </div>
+            <div class="bg-blue-200 rounded-lg p-2 md:p-4">
+              <h3 class="text-blue-800 font-bold border-b-2 border-yellow-400 mb-2 text-center">DESKRIPSI</h3>
+              <p class="text-blue-800 text-xs md:text-sm text-justify">Program percepatan diperuntukkan bagi siswa berprestasi agar dapat menyelesaikan studi lebih cepat dengan hasil maksimal.</p>
+            </div>
+          </div>
+
+          <!-- Tahfidz -->
+          <div class="tab-panel" id="tahfidz" style="display: none;">
+            <h2 class="text-white text-lg md:text-xl font-bold mb-4 text-center md:text-left">Tahfidz</h2>
+            <div class="bg-blue-200 text-blue-800 h-32 md:h-40 flex items-center justify-center rounded-lg mb-4">
+              <span class="font-semibold">FOTO TAHFIDZ</span>
+            </div>
+            <div class="bg-blue-200 rounded-lg p-2 md:p-4">
+              <h3 class="text-blue-800 font-bold border-b-2 border-yellow-400 mb-2 text-center">DESKRIPSI</h3>
+              <p class="text-blue-800 text-xs md:text-sm text-justify">Program tahfidz difokuskan pada pembinaan hafalan Al-Qur’an dan penguatan karakter religius siswa.</p>
+            </div>
+          </div>
+        </div>
+      </section> 
+    </main> 
+  </div> 
+</section> 
+
+<!-- SCRIPT UNTUK TAB -->
+<script>
+  const buttons = document.querySelectorAll(".tab-btn");
+  const panels = document.querySelectorAll(".tab-panel");
+
+  buttons.forEach(btn => {
+    btn.addEventListener("click", () => {
+      // Reset semua tombol
+      buttons.forEach(b => {
+        b.classList.remove("bg-yellow-400", "text-blue-900", "font-bold");
+        b.classList.add("bg-blue-700", "text-white", "hover:bg-yellow-400", "hover:text-blue-900");
+      });
+
+      // Aktifkan tombol yang diklik
+      btn.classList.remove("bg-blue-700", "text-white");
+      btn.classList.add("bg-yellow-400", "text-blue-900", "font-bold");
+
+      // Tampilkan panel sesuai tombol
+      const target = btn.getAttribute("data-tab");
+      panels.forEach(panel => {
+        panel.style.display = panel.id === target ? "block" : "none";
+      });
+    });
+  });
+</script>
+  
   <!-- Prestasi -->
   <header id="prestasi" class="bg-blue-900 text-white p-4 flex items-center gap-2 mb-4 mx-full md:mx-full scroll-mt-24 justify-center pl-10">
     <i class="fas fa-trophy text-3xl flex justify-center text-yellow-400"></i>
@@ -623,6 +748,7 @@ tailwind.config = {
 </body>
 
 </html>
+
 
 
 

@@ -4,368 +4,387 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Profil Sekolah MAN Kota Batu</title>
+
+  <!-- Tailwind CSS & Font Awesome -->
   <script src="https://cdn.tailwindcss.com"></script>
-    <link
+  <link 
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
   />
 </head>
+
 <body class="bg-gray-100 font-sans">
-<!-- header and navbar -->
- <header class="bg-blue-900 text-white shadow">
-  <div class="container mx-auto flex justify-between items-center px-4 py-4 md:py-3">
-    <!-- Logo di kiri -->
-    <div class="flex items-center gap-3">
-      <img src="img/logo man.png" alt="Logo" class="w-10 h-10" />
-      <h1 class="text-lg font-bold">MAN Kota Batu</h1>
+
+  <!-- ================= HEADER & NAVBAR ================= -->
+  <header class="bg-blue-900 text-white shadow">
+    <div class="container mx-auto flex justify-between items-center px-4 py-4 md:py-3">
+      
+      <!-- Logo -->
+      <div class="flex items-center gap-3">
+        <img src="img/logo-man.png" alt="Logo MAN Kota Batu" class="w-10 h-10" />
+        <h1 class="text-lg font-bold">MAN Kota Batu</h1>
+      </div>
+
+      <!-- Tombol Hamburger (Mobile) -->
+      <button id="nav-toggle" class="md:hidden p-2 rounded bg-blue-800">
+        <i class="fas fa-bars"></i>
+      </button>
+
+      <!-- Menu Navigasi (Desktop) -->
+      <div id="nav-menu" class="hidden md:flex md:items-center md:gap-6">
+        <nav class="space-x-4 hidden md:block">
+          <a href="home.html" class="hover:text-yellow-400">Home</a>
+          <a href="profil.html" class="text-yellow-400 font-bold">Profil</a>
+          <a href="prestasi.html" class="hover:text-yellow-400">Prestasi</a>
+          <a href="pengumuman.html" class="hover:text-yellow-400">Pengumuman</a>
+          <a href="layanan.html" class="hover:text-yellow-400">Layanan</a>
+        </nav>
+
+        <!-- Form Pencarian (Desktop) -->
+        <form id="searchForm" class="hidden md:flex items-center gap-2" onsubmit="return false;">
+          <input 
+            id="searchInput" 
+            type="text" 
+            placeholder="Pencarian..." 
+            class="border rounded px-2 py-1 text-sm text-black" 
+            aria-label="Pencarian situs"
+          >
+          <button type="submit" class="bg-yellow-400 text-blue-900 px-2 py-1 rounded">Cari</button>
+        </form>
+      </div>
     </div>
 
-    <!-- Hamburger di kanan (mobile) -->
-    <button id="nav-toggle" class="md:hidden p-2 rounded bg-blue-800">
-      <i class="fas fa-bars"></i>
-    </button>
+    <!-- Menu Navigasi (Mobile) -->
+    <div id="mobile-menu" class="md:hidden hidden bg-blue-800">
+      <div class="flex flex-col px-6 py-4 space-y-3">
+        <a href="home.html" class="block text-white py-2 hover:bg-blue-700 rounded">Home</a>
+        <a href="profil.html" class="block text-white py-2 hover:bg-blue-700 rounded">Profil</a>
+        <a href="prestasi.html" class="block text-white py-2 hover:bg-blue-700 rounded">Prestasi</a>
+        <a href="pengumuman.html" class="block text-white py-2 hover:bg-blue-700 rounded">Pengumuman</a>
+        <a href="layanan.html" class="block text-white py-2 hover:bg-blue-700 rounded">Layanan</a>
 
-    <!-- Nav + Search (desktop) -->
-    <div id="nav-menu" class="hidden md:flex md:items-center md:gap-6">
-      <nav class="space-x-4 hidden md:block">
-        <a href="home.html" class="hover:text-yellow-400">Home</a>
-        <a href="profil.html" class="text-yellow-400 font-bold">Profil</a>
-        <a href="prestasi.html" class="hover:text-yellow-400">Prestasi</a>
-        <a href="pengumuman.html" class="hover:text-yellow-400">Pengumuman</a>
-        <a href="layanan.html" class="hover:text-yellow-400">Layanan</a>
-      </nav>
-      <form id="searchForm" class="hidden md:flex items-center gap-2" onsubmit="return false;">
-        <input id="searchInput" type="text" placeholder="Pencarian..." class="border rounded px-2 py-1 text-sm text-black" aria-label="Pencarian situs">
-        <button type="submit" class="bg-yellow-400 text-blue-900 px-2 py-1 rounded">Cari</button>
-      </form>
+        <!-- Form Pencarian (Mobile) -->
+        <form id="searchFormMobile" class="flex items-center gap-2 mt-2" onsubmit="return false;">
+          <input 
+            id="searchInputMobile" 
+            type="text" 
+            placeholder="Pencarian..." 
+            class="border rounded px-2 py-1 text-sm text-black"
+            aria-label="Pencarian mobile"
+          >
+          <button type="submit" class="bg-yellow-400 text-blue-900 px-2 py-1 rounded">Cari</button>
+        </form>
+      </div>
     </div>
-  </div>
+  </header>
 
-  <!-- Mobile menu (hidden by default) -->
-  <div id="mobile-menu" class="md:hidden hidden bg-blue-800">
-    <div class="flex flex-col px-6 py-4 space-y-3">
-      <a href="home.html" class="block text-white py-2 hover:bg-blue-700 rounded">Home</a>
-      <a href="profil.html" class="block text-white py-2 hover:bg-blue-700 rounded">Profil</a>
-      <a href="prestasi.html" class="block text-white py-2 hover:bg-blue-700 rounded">Prestasi</a>
-      <a href="pengumuman.html" class="block text-white py-2 hover:bg-blue-700 rounded">Pengumuman</a>
-      <a href="layanan.html" class="block text-white py-2 hover:bg-blue-700 rounded">Layanan</a>
-      <form id="searchFormMobile" class="flex items-center gap-2 mt-2" onsubmit="return false;">
-        <input id="searchInputMobile" type="text" placeholder="Pencarian..." class="border rounded px-2 py-1 text-sm text-black" aria-label="Pencarian mobile">
-        <button type="submit" class="bg-yellow-400 text-blue-900 px-2 py-1 rounded">Cari</button>
-      </form>
-    </div>
-  </div>
-</header>
-
+<!-- ================= PROFIL SEKOLAH ================= -->
+<section class="reveal max-w-6xl mx-auto bg-gradient-to-br from-white to-blue-50 shadow-xl rounded-2xl p-8 mt-10 hover:shadow-2xl transition duration-500">
   
+  <!-- Judul Bagian -->
+  <div class="flex items-center justify-center gap-3 mb-6">
+    <i class="fas fa-school text-blue-900 text-3xl"></i>
+    <h2 class="text-2xl font-bold text-blue-800">Profil Sekolah MAN Kota Batu</h2>
+  </div>
 
-  <!-- Profil Sekolah -->
-  <section class="max-w-6xl mx-auto bg-white shadow-lg rounded-2xl p-6 mt-6">
-    <div class="flex flex-col md:flex-row gap-6">
-      <div class="flex justify-center items-center md:w-1/3">
-        <img src="img/logo man.png" alt="Logo MAN Kota Batu" class="w-40">
-      </div>
-      <div class="md:w-2/3 grid grid-cols-2 gap-4 text-sm">
-        <p><strong>Status Madrasah:</strong> Negeri</p>
-        <p><strong>NPSN:</strong> -</p>
-        <p><strong>Akreditasi:</strong> A</p>
-        <p><strong>Kepala Sekolah:</strong> Drs. H. Farhadi, M.Si</p>
-        <p><strong>Alamat:</strong> Jl. Pattimura No.25 Batu</p>
-        <p><strong>Telepon:</strong> (0341) 591553</p>
-        <p><strong>Jumlah Guru:</strong> 79 Guru</p>
-        <p><strong>Email:</strong> mankotabatu@gmail.com</p>
-        <p><strong>Jumlah Siswa:</strong> 1290 siswa/i </p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Visi & Misi -->
-  <section class="max-w-6xl mx-auto bg-blue-50 shadow-lg rounded-2xl p-6 mt-6">
-    <div class="flex items-center justify-center pl-10 gap-3">
-        <i class="fas fa-bullseye text-3xl flex justify-center text-blue-900 mb-4"></i>
-        <h2 class="text-3xl font-bold text-center text-blue-800 mb-4">VISI DAN MISI</h2>
-    </div>
-    <div class="flex flex-col md:flex-row items-center gap-6">
-      <img src="https://i.ibb.co/XWs7qM9/kepala.png" alt="Kepala Sekolah" class="w-40 rounded-lg">
-      <div>
-        <p class="text-lg font-semibold text-blue-900">Visi:</p>
-        <p class="italic">"Terwujudnya Madrasah Unggul dan Bermartabat"</p>
-        <p class="text-lg font-semibold text-blue-900 mt-4">Misi:</p>
-        <ul class="list-disc ml-6 space-y-1">
-          <li>Menghasilkan warga madrasah yang Islami, Nasionalis, dan Berakhlak Mulia</li>
-          <li>Mengembangkan potensi unggul siswa dalam bidang akademik dan non-akademik</li>
-          <li>Mewujudkan lingkungan yang ramah dan berbudaya literasi</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <!-- Tentang MAN Kota Batu -->
-  <section class="max-w-6xl mx-auto bg-white shadow-lg rounded-2xl p-6 mt-6">
-    <div class="flex items-center justify-center pl-10 gap-3">
-        <i class="fas fa-circle-info text-3xl flex justify-center text-blue-900 mb-4"></i>
-        <h2 class="text-xl font-bold text-center text-blue-800 mb-4">TENTANG MAN KOTA BATU</h2>
-    </div>
+  <div class="flex flex-col md:flex-row gap-8 items-center">
     
-    <!-- Awal Berdiri -->
-    <div class="mb-6">
-      <h3 class="font-semibold">Awal Berdiri (1981)</h3>
-      <p class="text-sm text-gray-700 mt-2">
-        Pada Tahun 1981 berdiri Madrasah Aliyah Negeri Batu yang awalnya menempati bekas gedung SGO Batu di Jl. Pattimura. 
-        Perjalanan panjang penuh tantangan membawa MAN Batu berkembang hingga kini.
-      </p>
+    <!-- Logo Sekolah -->
+    <div class="flex justify-center md:w-1/3">
+      <img src="img/manlogos.png" alt="Logo MAN Kota Batu" class="w-44 hover:scale-105 transition-transform duration-300">
     </div>
 
-    <!-- Berganti Nama -->
-    <div class="mb-6">
-      <h3 class="font-semibold">Berganti Nama Menjadi MAN Kota Batu (2014)</h3>
-      <p class="text-sm text-gray-700 mt-2">
-        Dengan meningkatnya status menjadi Kota Batu, maka sesuai dengan Keputusan Menteri Agama RI, 
-        Madrasah Aliyah Negeri Batu berganti nama menjadi MAN Kota Batu pada tanggal 5 September 2014.
-      </p>
+    <!-- Info Sekolah -->
+    <div class="md:w-2/3 grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm text-gray-700">
+      <p><strong>Status Madrasah:</strong> Negeri</p>
+      <p><strong>NPSN:</strong> -</p>
+      <p><strong>Akreditasi:</strong> <span class="text-green-600 font-semibold">A (Unggul)</span></p>
+      <p><strong>Kepala Sekolah:</strong> Drs. H. Farhadi, M.Si</p>
+      <p><strong>Alamat:</strong> Jl. Pattimura No.25 Batu</p>
+      <p><strong>Telepon:</strong> (0341) 591553</p>
+      <p><strong>Jumlah Guru:</strong> 79 Guru</p>
+      <p><strong>Email:</strong> mankotabatu@gmail.com</p>
+      <p><strong>Jumlah Siswa:</strong> 1.290 siswa/i</p>
+    </div>
+  </div>
+</section>
+
+
+  <!-- ================= VISI & MISI ================= -->
+  <section class="reveal max-w-6xl mx-auto bg-gradient-to-br from-blue-50 to-white shadow-xl rounded-2xl p-10 mt-10 border-t-4 border-yellow-400 hover:shadow-2xl transition duration-500">
+    <div class="flex items-center gap-3 mb-8">
+      <i class="fas fa-bullseye text-4xl text-blue-900"></i>
+      <h2 class="text-3xl font-bold text-blue-900 tracking-wide uppercase">Visi & Misi</h2>
     </div>
 
-    <!-- Pergantian Pimpinan -->
-    <div>
-      <h3 class="font-semibold">Pergantian Pimpinan</h3>
-      <p class="text-sm text-gray-700 mt-2">
-        Dari awal berdiri sampai sekarang, madrasah ini telah mengalami beberapa kali pergantian pimpinan. 
-        Setiap kepemimpinan memberikan warna tersendiri dalam pengembangan madrasah menuju yang lebih baik.
-      </p>
+    <div class="flex flex-col md:flex-row items-start gap-8">
+      
+      <!-- Foto Kepala Sekolah -->
+      <div class="md:w-1/3 flex justify-center md:justify-start">
+        <img src="img/kepala sekolah.png" alt="Kepala Sekolah MAN Kota Batu" class="w-52 rounded-xl shadow-md hover:scale-105 transition-transform duration-300">
+      </div>
+
+      <!-- Teks Visi & Misi -->
+      <div class="md:w-2/3 space-y-5 text-gray-700 leading-relaxed">
+        <div>
+          <h3 class="text-2xl font-semibold text-blue-900 flex items-center gap-2">
+            <i class="fa-solid fa-eye text-yellow-500"></i> Visi
+          </h3>
+          <p class="italic mt-2 text-gray-800 text-lg">
+            "Terwujudnya Madrasah Unggul dan Bermartabat"
+          </p>
+        </div>
+
+        <div>
+          <h3 class="text-2xl font-semibold text-blue-900 flex items-center gap-2">
+            <i class="fa-solid fa-list-check text-yellow-500"></i> Misi
+          </h3>
+          <ul class="list-disc ml-6 mt-2 space-y-2">
+            <li>Menghasilkan warga madrasah yang Islami, nasionalis, dan berakhlak mulia.</li>
+            <li>Mengembangkan potensi unggul siswa dalam bidang akademik dan non-akademik.</li>
+            <li>Mewujudkan lingkungan madrasah yang ramah, bersih, dan berbudaya literasi.</li>
+          </ul>
+        </div>
+      </div>
     </div>
   </section>
 
-<!-- Footer -->
-<footer class="bg-blue-900 text-white">
-  <div class="container mx-auto px-6 py-12 grid grid-cols-1 md:grid-cols-3 gap-10">
+<!-- ================= TENTANG MAN KOTA BATU (SEJARAH) ================= -->
+<section id="tentang" class="reveal max-w-6xl mx-auto bg-white shadow-xl rounded-2xl p-8 mt-10 border-t-8 border-yellow-400 hover:shadow-2xl transition duration-500">
+  <div class="flex items-center justify-center gap-3 mb-6">
+    <i class="fas fa-school text-blue-900 text-3xl"></i>
+    <h2 class="text-2xl font-bold text-blue-800">Sejarah MAN Kota Batu</h2>
+  </div>
 
-    <!-- Kolom Kiri -->
-    <div class="flex flex-col">
-      <h2 class="text-xl font-bold border-b-2 border-yellow-400 pb-2 mb-3">
-        MADRASAH ALIYAH NEGERI KOTA BATU
-      </h2>
-      <p class="text-gray-300 mb-4 text-sm">
-        Jl. Patimura No.25, Temas, Kec. Batu, Kota Batu, Jawa Timur 65315
+  <div class="space-y-6 text-gray-700 leading-relaxed">
+    <!-- Awal Berdiri -->
+    <div class="bg-blue-50 p-4 rounded-lg hover:bg-blue-100 transition">
+      <h3 class="font-semibold text-blue-900">Awal Berdirinya MAN Kota Batu</h3>
+      <p class="mt-2 text-sm">
+        MAN Kota Batu berawal dari lembaga pendidikan bernama <strong>PGAA NU Batu</strong>. 
+        Kemudian, lembaga ini berubah menjadi <strong>SPIAIN Sunan Ampel</strong> berdasarkan 
+        Surat Keputusan Menteri Agama Republik Indonesia Nomor 02 Tahun 1970. 
+        Pada masa awal berdirinya, kegiatan belajar mengajar masih menumpang di gedung 
+        milik Yayasan Al-Ma’arif Batu di Jalan Semeru No. 22.
       </p>
-      <ul class="space-y-3 text-sm">
-        <li>
-          <a href="tel:+62341592185" class="flex items-center gap-2 hover:text-yellow-400">
+    </div>
+
+    <!-- Pindah ke Gedung Sendiri -->
+    <div class="bg-blue-50 p-4 rounded-lg hover:bg-blue-100 transition">
+      <h3 class="font-semibold text-blue-900">Menempati Gedung Sendiri (1981)</h3>
+      <p class="mt-2 text-sm">
+        Pada tahun <strong>1981</strong>, madrasah ini mulai menempati gedung sendiri di 
+        <strong>Jalan Pattimura No. 25, Temas, Kota Batu</strong>. 
+        Gedung ini dibangun melalui Dana DIP Tahun Anggaran 1980/1981, 
+        sehingga menjadi tonggak penting dalam perkembangan madrasah.
+      </p>
+    </div>
+
+    <!-- Perubahan Status -->
+    <div class="bg-blue-50 p-4 rounded-lg hover:bg-blue-100 transition">
+      <h3 class="font-semibold text-blue-900">Perubahan Nama dan Status</h3>
+      <p class="mt-2 text-sm">
+        Pada tahun <strong>1978</strong>, madrasah ini sempat berubah nama menjadi 
+        <strong>MAN Malang II</strong> berdasarkan Keputusan Menteri Agama RI Nomor 17 Tahun 1978.  
+        Setelah wilayah Batu resmi menjadi kota administratif, nama madrasah disesuaikan 
+        menjadi <strong>MAN Kota Batu</strong> melalui Keputusan Menteri Agama RI Nomor 157 Tahun 2014.
+      </p>
+    </div>
+
+    <!-- Perkembangan Hingga Kini -->
+    <div class="bg-blue-50 p-4 rounded-lg hover:bg-blue-100 transition">
+      <h3 class="font-semibold text-blue-900">Perkembangan Hingga Sekarang</h3>
+      <p class="mt-2 text-sm">
+        Seiring waktu, MAN Kota Batu terus berkembang menjadi lembaga pendidikan Islam yang unggul 
+        dalam bidang akademik, keagamaan, dan riset. Madrasah ini kini menjadi salah satu 
+        <strong>madrasah favorit di Jawa Timur</strong> dan dikenal aktif dalam kegiatan 
+        keagamaan, akademik, serta pengembangan karakter siswa.
+      </p>
+    </div>
+  </div>
+</section>
+
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="bg-blue-900 text-white mt-16">
+    <div class="container mx-auto px-6 py-12 grid grid-cols-1 md:grid-cols-3 gap-10">
+
+      <!-- Kolom Kiri -->
+      <div>
+        <h2 class="text-xl font-bold border-b-2 border-yellow-400 pb-2 mb-3">
+          Madrasah Aliyah Negeri Kota Batu
+        </h2>
+        <p class="text-gray-300 mb-4 text-sm">
+          Jl. Patimura No.25, Temas, Kec. Batu, Kota Batu, Jawa Timur 65315
+        </p>
+
+        <ul class="space-y-3 text-sm">
+          <li><a href="tel:+62341592185" class="flex items-center gap-2 hover:text-yellow-400">
             <i class="fa-solid fa-phone bg-yellow-400 text-blue-900 w-6 h-6 flex items-center justify-center rounded"></i>
             (0341) 592185
-          </a>
-        </li>
-        <li>
-          <a href="https://www.instagram.com/mankotabatuofficial" target="_blank" class="flex items-center gap-2 hover:text-yellow-400">
+          </a></li>
+
+          <li><a href="https://www.instagram.com/mankotabatuofficial" target="_blank" class="flex items-center gap-2 hover:text-yellow-400">
             <i class="fa-brands fa-instagram bg-yellow-400 text-blue-900 w-6 h-6 flex items-center justify-center rounded"></i>
             Instagram
-          </a>
-        </li>
-        <li>
-          <a href="https://www.facebook.com/mankotabatuofficial" target="_blank" class="flex items-center gap-2 hover:text-yellow-400">
+          </a></li>
+
+          <li><a href="https://www.facebook.com/mankotabatuofficial" target="_blank" class="flex items-center gap-2 hover:text-yellow-400">
             <i class="fa-brands fa-facebook bg-yellow-400 text-blue-900 w-6 h-6 flex items-center justify-center rounded"></i>
             Facebook
-          </a>
-        </li>
-        <li>
-          <a href="https://www.tiktok.com/@mankotabatuofficial" target="_blank" class="flex items-center gap-2 hover:text-yellow-400">
+          </a></li>
+
+          <li><a href="https://www.tiktok.com/@mankotabatuofficial" target="_blank" class="flex items-center gap-2 hover:text-yellow-400">
             <i class="fa-brands fa-tiktok bg-yellow-400 text-blue-900 w-6 h-6 flex items-center justify-center rounded"></i>
             TikTok
-          </a>
-        </li>
-        <li>
-          <a href="https://x.com/mankotabatu" target="_blank" class="flex items-center gap-2 hover:text-yellow-400">
-            <i class="fa-brands fa-x bg-yellow-400 text-blue-900 w-6 h-6 flex items-center justify-center rounded"></i>
+          </a></li>
+
+          <li><a href="https://x.com/mankotabatu" target="_blank" class="flex items-center gap-2 hover:text-yellow-400">
+            <i class="fa-brands fa-x-twitter bg-yellow-400 text-blue-900 w-6 h-6 flex items-center justify-center rounded"></i>
             X / Twitter
-          </a>
-        </li>
-        <li>
-          <a href="https://www.linkedin.com/company/man-kota-batu/" target="_blank" class="flex items-center gap-2 hover:text-yellow-400">
+          </a></li>
+
+          <li><a href="https://www.linkedin.com/company/man-kota-batu/" target="_blank" class="flex items-center gap-2 hover:text-yellow-400">
             <i class="fa-brands fa-linkedin bg-yellow-400 text-blue-900 w-6 h-6 flex items-center justify-center rounded"></i>
             LinkedIn
-          </a>
-        </li>
-      </ul>
-    </div>
-
-    <!-- Kolom Tengah (Map) -->
-    <div class="flex justify-center md:justify-center">
-      <iframe
-        src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d587.4862762195498!2d112.53729759328873!3d-7.882424800796341!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sid!2sid!4v1747055343918!5m2!1sid!2sid"
-        class="w-full md:w-[340px] h-[250px] rounded-lg border-2 border-yellow-400 shadow-lg"
-        allowfullscreen
-        loading="lazy"
-        aria-label="Peta lokasi MAN Kota Batu"
-      ></iframe>
-    </div>
-
-    <!-- Kolom Kanan -->
-    <div class="flex flex-col">
-      <h3 class="text-yellow-400 text-lg font-bold mb-3">TAUTAN PENTING</h3>
-      <div class="mb-5">
-        <h4 class="font-semibold">GURU</h4>
-        <ul class="text-sm space-y-2 mt-2">
-          <li><a href="https://rdm.mankotabatu.sch.id/" class="hover:text-yellow-400">Raport Digital Madrasah (RDM)</a></li>
-          <li><a href="https://emisgtk.kemenag.go.id/" class="hover:text-yellow-400">EMIS GTK</a></li>
-          <li><a href="#" class="hover:text-yellow-400">Absensi</a></li>
+          </a></li>
         </ul>
       </div>
-      <!-- Garis pemisah -->
+
+      <!-- Kolom Tengah (Peta) -->
+      <div class="flex justify-center">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d587.4862762195498!2d112.53729759328873!3d-7.882424800796341!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sid!2sid!4v1747055343918!5m2!1sid!2sid"
+          class="w-full md:w-[340px] h-[250px] rounded-lg border-2 border-yellow-400 shadow-lg"
+          allowfullscreen
+          loading="lazy"
+          aria-label="Peta lokasi MAN Kota Batu">
+        </iframe>
+      </div>
+
+      <!-- Kolom Kanan -->
+      <div>
+        <h3 class="text-yellow-400 text-lg font-bold mb-3">Tautan Penting</h3>
+
+        <div class="mb-5">
+          <h4 class="font-semibold">Guru</h4>
+          <ul class="text-sm space-y-2 mt-2">
+            <li><a href="https://rdm.mankotabatu.sch.id/" class="hover:text-yellow-400">Raport Digital Madrasah (RDM)</a></li>
+            <li><a href="https://emisgtk.kemenag.go.id/" class="hover:text-yellow-400">EMIS GTK</a></li>
+            <li><a href="#" class="hover:text-yellow-400">Absensi</a></li>
+          </ul>
+        </div>
+
         <div class="border-t-2 border-yellow-400 w-full my-6"></div>
 
-      <div>
-        <h4 class="font-semibold">SISWA</h4>
-        <ul class="text-sm space-y-2 mt-2">
-          <li><a href="https://uam.mankotabatu.sch.id/" class="hover:text-yellow-400">Computer Based Test (CBT)</a></li>
-          <li><a href="#" class="hover:text-yellow-400">Absensi</a></li>
-          <li><a href="#" class="hover:text-yellow-400">Ekstrakurikuler</a></li>
-        </ul>
+        <div>
+          <h4 class="font-semibold">Siswa</h4>
+          <ul class="text-sm space-y-2 mt-2">
+            <li><a href="https://uam.mankotabatu.sch.id/" class="hover:text-yellow-400">Computer Based Test (CBT)</a></li>
+            <li><a href="#" class="hover:text-yellow-400">Absensi</a></li>
+            <li><a href="#" class="hover:text-yellow-400">Ekstrakurikuler</a></li>
+          </ul>
+        </div>
       </div>
     </div>
-  </div>
 
-  <!-- Bawah Footer -->
-  <div class="bg-blue-950 text-center text-gray-300 text-sm py-4 mt-10 border-t border-gray-700">
-    © 2025 Tikma. All rights reserved.
-  </div>
-</footer>
-<!-- ✅ FIXED & OPTIMIZED: Mobile Nav + Search + Full-Word Highlight -->
-<script>
-document.addEventListener("DOMContentLoaded", function () {
-  // === HAMBURGER MENU (Mobile) ===
-  const navToggle = document.getElementById("nav-toggle");
-  const mobileMenu = document.getElementById("mobile-menu");
+    <!-- Footer Bawah -->
+    <div class="bg-blue-950 text-center text-gray-300 text-sm py-4 border-t border-gray-700">
+      © 2025 Tikma. All rights reserved.
+    </div>
+  </footer>
 
-  if (navToggle && mobileMenu) {
-    navToggle.addEventListener("click", () => {
-      if (mobileMenu.classList.contains("hidden")) {
-        mobileMenu.classList.remove("hidden", "animate-slideUp");
-        mobileMenu.classList.add("animate-slideDown");
-      } else {
-        mobileMenu.classList.remove("animate-slideDown");
-        mobileMenu.classList.add("animate-slideUp");
-        setTimeout(() => mobileMenu.classList.add("hidden"), 300);
+  <!-- ================= SCRIPT ================= -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      // --- MENU MOBILE ---
+      const navToggle = document.getElementById("nav-toggle");
+      const mobileMenu = document.getElementById("mobile-menu");
+
+      if (navToggle && mobileMenu) {
+        navToggle.addEventListener("click", () => {
+          if (mobileMenu.classList.contains("hidden")) {
+            mobileMenu.classList.remove("hidden", "animate-slideUp");
+            mobileMenu.classList.add("animate-slideDown");
+          } else {
+            mobileMenu.classList.remove("animate-slideDown");
+            mobileMenu.classList.add("animate-slideUp");
+            setTimeout(() => mobileMenu.classList.add("hidden"), 300);
+          }
+        });
+
+        // Tutup menu jika klik di luar area
+        document.addEventListener("click", (e) => {
+          if (!navToggle.contains(e.target) && !mobileMenu.contains(e.target)) {
+            if (!mobileMenu.classList.contains("hidden")) {
+              mobileMenu.classList.remove("animate-slideDown");
+              mobileMenu.classList.add("animate-slideUp");
+              setTimeout(() => mobileMenu.classList.add("hidden"), 300);
+            }
+          }
+        });
       }
-    });
 
-    // Tutup menu jika klik di luar area
-    document.addEventListener("click", (e) => {
-      if (!navToggle.contains(e.target) && !mobileMenu.contains(e.target)) {
-        if (!mobileMenu.classList.contains("hidden")) {
-          mobileMenu.classList.remove("animate-slideDown");
-          mobileMenu.classList.add("animate-slideUp");
-          setTimeout(() => mobileMenu.classList.add("hidden"), 300);
-        }
+      // --- HIGHLIGHT PENCARIAN ---
+      function removeHighlights() {
+        document.querySelectorAll(".search-highlight").forEach((span) => {
+          const parent = span.parentNode;
+          parent.replaceChild(document.createTextNode(span.textContent), span);
+          parent.normalize();
+        });
       }
-    });
-  }
 
-  // === HIGHLIGHT SELURUH KATA (Bukan potongan teks) ===
-  function removeHighlights() {
-    document.querySelectorAll(".search-highlight").forEach((span) => {
-      const parent = span.parentNode;
-      parent.replaceChild(document.createTextNode(span.textContent), span);
-      parent.normalize();
-    });
-  }
+      function highlightFullWord(term) {
+        removeHighlights();
+        if (!term) return;
 
-  function highlightFullWord(term) {
-    removeHighlights();
-    if (!term) return;
+        const regex = new RegExp(`\\b[^\\s]*${term}[^\\s]*\\b`, "gi");
 
-    // regex untuk highlight seluruh kata yang mengandung term (contoh: "inst" → highlight "Instagram")
-    const regex = new RegExp(`\\b[^\\s]*${term}[^\\s]*\\b`, "gi");
+        const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, {
+          acceptNode(node) {
+            if (!node.parentElement) return NodeFilter.FILTER_REJECT;
+            const tag = node.parentElement.tagName.toLowerCase();
+            if (["script", "style", "input", "textarea", "button"].includes(tag)) return NodeFilter.FILTER_REJECT;
+            if (!node.textContent.match(regex)) return NodeFilter.FILTER_SKIP;
+            return NodeFilter.FILTER_ACCEPT;
+          }
+        });
 
-    const walker = document.createTreeWalker(
-      document.body,
-      NodeFilter.SHOW_TEXT,
-      {
-        acceptNode(node) {
-          if (!node.parentElement) return NodeFilter.FILTER_REJECT;
-          const tag = node.parentElement.tagName.toLowerCase();
-          if (["script", "style", "input", "textarea", "button"].includes(tag))
-            return NodeFilter.FILTER_REJECT;
-          if (!node.nodeValue.trim()) return NodeFilter.FILTER_REJECT;
-          return NodeFilter.FILTER_ACCEPT;
-        },
+        const nodes = [];
+        while (walker.nextNode()) nodes.push(walker.currentNode);
+
+        nodes.forEach((node) => {
+          const span = document.createElement("span");
+          span.innerHTML = node.textContent.replace(regex, match =>
+            `<span class='search-highlight bg-yellow-300 text-black font-semibold'>${match}</span>`
+          );
+          node.parentNode.replaceChild(span, node);
+        });
       }
-    );
 
-    const nodes = [];
-    while (walker.nextNode()) nodes.push(walker.currentNode);
+      document.querySelectorAll("#searchForm, #searchFormMobile").forEach(form => {
+        form.addEventListener("submit", (e) => {
+          e.preventDefault();
+          const term = form.querySelector("input").value.trim();
+          highlightFullWord(term);
+        });
+      });
 
-    let firstHighlight = null;
-
-    nodes.forEach((node) => {
-      const text = node.nodeValue;
-      if (regex.test(text)) {
-        const replaced = text.replace(
-          regex,
-          (match) =>
-            `<span class="search-highlight bg-yellow-300 text-blue-900 font-bold px-1 rounded">${match}</span>`
-        );
-        const span = document.createElement("span");
-        span.innerHTML = replaced;
-        node.replaceWith(...span.childNodes);
-
-        if (!firstHighlight) {
-          firstHighlight = document.querySelector(".search-highlight");
-        }
+      // --- ANIMASI REVEAL ---
+      const reveals = document.querySelectorAll(".reveal");
+      function revealOnScroll() {
+        const windowHeight = window.innerHeight;
+        reveals.forEach((section) => {
+          const sectionTop = section.getBoundingClientRect().top;
+          if (sectionTop < windowHeight - 100) section.classList.add("opacity-100", "translate-y-0");
+        });
       }
+
+      reveals.forEach((section) => section.classList.add("opacity-0", "translate-y-10", "transition-all", "duration-700"));
+      window.addEventListener("scroll", revealOnScroll);
+      revealOnScroll();
     });
+  </script>
 
-    // Scroll ke hasil pertama
-    if (firstHighlight) {
-      firstHighlight.scrollIntoView({ behavior: "smooth", block: "center" });
-    }
-  }
-
-  // === FORM HANDLING (Desktop + Mobile) ===
-  const searchInput = document.getElementById("searchInput");
-  const searchInputMobile = document.getElementById("searchInputMobile");
-
-  document.getElementById("searchForm")?.addEventListener("submit", (e) => {
-    e.preventDefault();
-    highlightFullWord(searchInput.value.trim());
-  });
-
-  document.getElementById("searchFormMobile")?.addEventListener("submit", (e) => {
-    e.preventDefault();
-    highlightFullWord(searchInputMobile.value.trim());
-    mobileMenu.classList.add("hidden");
-  });
-
-  [searchInput, searchInputMobile].forEach((el) => {
-    if (!el) return;
-    el.addEventListener("keydown", (e) => {
-      if (e.key === "Enter") {
-        e.preventDefault();
-        highlightFullWord(el.value.trim());
-      }
-    });
-  });
-});
-
-// === ANIMASI SLIDE (Tailwind Extend) ===
-tailwind.config = {
-  theme: {
-    extend: {
-      keyframes: {
-        slideDown: {
-          "0%": { opacity: "0", transform: "translateY(-10px)" },
-          "100%": { opacity: "1", transform: "translateY(0)" },
-        },
-        slideUp: {
-          "0%": { opacity: "1", transform: "translateY(0)" },
-          "100%": { opacity: "0", transform: "translateY(-10px)" },
-        },
-      },
-      animation: {
-        slideDown: "slideDown 0.3s ease-out forwards",
-        slideUp: "slideUp 0.3s ease-in forwards",
-      },
-    },
-  },
-};
-</script>
 </body>
 </html>

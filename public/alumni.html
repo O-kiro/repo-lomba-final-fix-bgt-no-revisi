@@ -264,7 +264,7 @@ if (carousel) {
 
   <!-- Tracer Study -->
   <section class="bg-gray-100 text-center py-12 px-4">
-    <h3 class="font-bold text-xl text-blue-900">Tracer Study Alumni</h3>
+    <h3 class="font-bold text-xl text-blue-900">MAKOBA CARIER CENTER</h3>
     <p class="text-gray-700 text-sm max-w-xl mx-auto mt-3 leading-relaxed">
       Halaman ini dikhususkan untuk para alumni MAN Kota Batu untuk menyalurkan kesan, pesan, dan pengalaman selama menjadi siswa.
     </p>
@@ -275,25 +275,82 @@ if (carousel) {
     </button>
   </section>
 
-  <!-- Jumlah Alumni -->
-  <section class="bg-white text-center py-10">
-    <div class="bg-blue-900 px-4 py-6 w-full mx-auto rounded-lg">
-      <h3 class="text-lg font-bold text-white">Jumlah Alumni</h3>
-      <p class="text-2xl font-bold mt-2 text-yellow-400">Total: 3.000</p>
-    </div>
-    <div class="flex justify-center space-x-6 mt-8">
-      <div class="w-24 h-20 bg-gray-200 flex items-center justify-center rounded font-semibold text-blue-900 shadow">
-        IPA
+ <!-- ================= CERITA ALUMNI ================= -->
+    <section id="cerita" class="py-16 bg-gray-50">
+      <div class="bg-blue-900 text-white text-center py-8 shadow-md">
+        <h2 class="text-3xl font-bold uppercase tracking-wide">Cerita Alumni</h2>
+        <p class="mt-2 text-blue-100">Kisah inspiratif perjalanan dan testimoni alumni MAN Kota Batu</p>
       </div>
-      <div class="w-24 h-20 bg-gray-200 flex items-center justify-center rounded font-semibold text-blue-900 shadow">
-        IPS
-      </div>
-      <div class="w-24 h-20 bg-gray-200 flex items-center justify-center rounded font-semibold text-blue-900 shadow">
-        BAHASA
-      </div>
-    </div>
-  </section>
 
+      <div class="relative overflow-hidden mt-10">
+        <div id="cerita-track" class="flex gap-6 w-max">
+          <div class="card bg-white shadow-md rounded-2xl p-6 min-w-[300px] hover:-translate-y-1 hover:shadow-xl transition duration-300 ease-out">
+            <img src="https://picsum.photos/400/250?1" class="rounded-xl mb-4 w-full h-48 object-cover" />
+            <h3 class="text-xl font-bold text-blue-900">Rizki Amalia</h3>
+            <p class="text-gray-600 text-sm">“Dari MAN Kota Batu, saya belajar pentingnya disiplin dan percaya diri.”</p>
+          </div>
+
+          <div class="card bg-white shadow-md rounded-2xl p-6 min-w-[300px] hover:-translate-y-1 hover:shadow-xl transition duration-300 ease-out">
+            <img src="https://picsum.photos/400/250?2" class="rounded-xl mb-4 w-full h-48 object-cover" />
+            <h3 class="text-xl font-bold text-blue-900">Fajar Hidayat</h3>
+            <p class="text-gray-600 text-sm">“Lingkungan madrasah membuat saya tumbuh dengan nilai-nilai Islami.”</p>
+          </div>
+
+          <div class="card bg-white shadow-md rounded-2xl p-6 min-w-[300px] hover:-translate-y-1 hover:shadow-xl transition duration-300 ease-out">
+            <img src="https://picsum.photos/400/250?3" class="rounded-xl mb-4 w-full h-48 object-cover" />
+            <h3 class="text-xl font-bold text-blue-900">Siti Rahma</h3>
+            <p class="text-gray-600 text-sm">“Guru-guru MAN sangat peduli dengan perkembangan siswanya.”</p>
+          </div>
+
+          <!-- Duplikat untuk looping -->
+          <div class="card bg-white shadow-md rounded-2xl p-6 min-w-[300px] hover:-translate-y-1 hover:shadow-xl transition duration-300 ease-out">
+            <img src="https://picsum.photos/400/250?1" class="rounded-xl mb-4 w-full h-48 object-cover" />
+            <h3 class="text-xl font-bold text-blue-900">Rizki Amalia</h3>
+            <p class="text-gray-600 text-sm">“Dari MAN Kota Batu, saya belajar pentingnya disiplin dan percaya diri.”</p>
+          </div>
+
+          <div class="card bg-white shadow-md rounded-2xl p-6 min-w-[300px] hover:-translate-y-1 hover:shadow-xl transition duration-300 ease-out">
+            <img src="https://picsum.photos/400/250?2" class="rounded-xl mb-4 w-full h-48 object-cover" />
+            <h3 class="text-xl font-bold text-blue-900">Fajar Hidayat</h3>
+            <p class="text-gray-600 text-sm">“Lingkungan madrasah membuat saya tumbuh dengan nilai-nilai Islami.”</p>
+          </div>
+
+          <div class="card bg-white shadow-md rounded-2xl p-6 min-w-[300px] hover:-translate-y-1 hover:shadow-xl transition duration-300 ease-out">
+            <img src="https://picsum.photos/400/250?3" class="rounded-xl mb-4 w-full h-48 object-cover" />
+            <h3 class="text-xl font-bold text-blue-900">Siti Rahma</h3>
+            <p class="text-gray-600 text-sm">“Guru-guru MAN sangat peduli dengan perkembangan siswanya.”</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+
+        <style>
+    @keyframes scrollSmooth {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    .animate-scroll-smooth {
+      display: flex;
+      animation: scrollSmooth 20s linear infinite;
+    }
+    </style>
+
+        <!-- SwiperJS CDN -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"/>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script>
+      const swiper = new Swiper('.swiper-container', {
+        loop: true,
+        autoplay: {
+          delay: 3000,
+          disableOnInteraction: false,
+        },
+        speed: 800,
+      });
+    </script>
 <!-- Footer -->
 <footer class="bg-blue-900 text-white">
   <div class="container mx-auto px-6 py-12 grid grid-cols-1 md:grid-cols-3 gap-10">
@@ -528,6 +585,37 @@ tailwind.config = {
   },
 };
 </script>
+    <!-- Script Slide Otomatis -->
+    <script>
+      const slides = document.querySelectorAll('#alumni-slides > div');
+      let index = 0;
 
+      function showSlide(i) {
+        slides.forEach((slide, idx) => {
+          slide.style.opacity = idx === i ? '1' : '0';
+        });
+      }
+
+      function nextSlide() {
+        index = (index + 1) % slides.length;
+        showSlide(index);
+      }
+
+      // tampilkan slide pertama
+      showSlide(index);
+      setInterval(nextSlide, 4000); // ganti setiap 4 detik
+    </script>
+    <style>
+    @keyframes scrollLoop {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+    #cerita-track, #prestasi-track {
+      animation: scrollLoop 30s linear infinite;
+    }
+    #cerita-track:hover, #prestasi-track:hover {
+      animation-play-state: paused;
+    }
+    </style>
 </body>
 </html>

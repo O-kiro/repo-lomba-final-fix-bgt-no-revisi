@@ -55,17 +55,48 @@
   </div>
 </header>
 
-
   <!-- Hero Section -->
-  <section class="relative">
-  <img src="hero.jpg" alt="Hero" class="w-full h-40 md:h-64 object-cover rounded-b-xl" loading="lazy" />
-    <div class="absolute inset-0 bg-black/40 flex items-center justify-center">
-      <h2 class="text-white text-2xl md:text-4xl font-bold text-center px-4">
-        SELAMAT DATANG DI ZONA INTEGRITAS MADRASAH ALIYAH NEGERI KOTA BATU
-      </h2>
-    </div>
-  </section>
+<section class="relative overflow-hidden rounded-b-xl">
+  <!-- Container untuk slide -->
+  <div id="hero-slider" class="flex transition-transform duration-700 ease-in-out">
+    <img src="img/Gedung_Kelas_Baru_2.jpg" alt="Hero 1" class="w-full h-[360px] md:h-[500px] object-cover flex-shrink-0" loading="lazy" />
+    <img src="img/Gedung_Belakang_5.jpg" alt="Hero 2" class="w-full h-[360px] md:h-[500px] object-cover flex-shrink-0" loading="lazy" />
+  </div>
 
+<!-- Overlay teks -->
+<div class="absolute inset-0 bg-black/50 flex flex-col items-center justify-center text-center px-4">
+  <h2 class="text-white text-3xl md:text-5xl font-extrabold tracking-wide drop-shadow-lg">
+    <span class="text-yellow-400">SELAMAT DATANG</span> <br>
+    DI ZONA INTEGRITAS <br>
+    <span class="text-yellow-300">MADRASAH ALIYAH NEGERI KOTA BATU</span>
+  </h2>
+  <p class="mt-4 text-white text-sm md:text-lg italic">
+    “Menuju Madrasah yang Berintegritas, Berkualitas, dan Berakhlak Mulia”
+  </p>
+</div>
+
+<script>
+  window.addEventListener("load", () => {
+    const slider = document.getElementById("hero-slider");
+    const slides = slider.children;
+    let currentIndex = 0;
+    const slideCount = slides.length;
+
+    // Pastikan semua gambar punya lebar 100% yang fix
+    slider.style.width = `${slideCount * 100}%`;
+    Array.from(slides).forEach(slide => {
+      slide.style.width = `${100 / slideCount}%`;
+    });
+
+    // Jalankan transisi geser kiri
+    setInterval(() => {
+      currentIndex = (currentIndex + 1) % slideCount;
+      slider.style.transform = `translateX(-${currentIndex * (100 / slideCount)}%)`;
+    }, 5000);
+  });
+</script>
+</section>
+  
   <!-- Icon Menu -->
   <section class="bg-white py-6 shadow">
   <div class="max-w-4xl mx-auto px-4 md:px-8">
@@ -749,6 +780,7 @@ tailwind.config = {
 </body>
 
 </html>
+
 
 
 

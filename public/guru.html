@@ -9,37 +9,46 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
   </head>
   <body class="bg-gray-50 font-sans">
-<!-- header and navbar -->
+<!-- ✅ Header dan Navbar dengan Auto Layout -->
 <header class="bg-blue-900 text-white shadow">
-  <div class="container mx-auto flex justify-between items-center px-4 py-4 md:py-3">
-    <!-- Logo di kiri -->
-    <div class="flex items-center gap-3">
+  <div class="container mx-auto flex flex-wrap items-center justify-between gap-4 px-4 py-3">
+    <!-- Logo -->
+    <div class="flex items-center gap-3 flex-shrink-0">
       <img src="img/logo man.png" alt="Logo" class="w-10 h-10" />
-      <h1 class="text-lg font-bold">MAN Kota Batu</h1>
+      <h1 class="text-lg font-bold whitespace-nowrap">MAN Kota Batu</h1>
     </div>
 
-    <!-- Hamburger di kanan (mobile) -->
+    <!-- Tombol Hamburger (mobile) -->
     <button id="nav-toggle" class="md:hidden p-2 rounded bg-blue-800">
       <i class="fas fa-bars"></i>
     </button>
 
-    <!-- Nav + Search (desktop) -->
-    <div id="nav-menu" class="hidden md:flex md:items-center md:gap-6">
-      <nav class="space-x-4 hidden md:block">
+    <!-- Menu Utama + Search (desktop) -->
+    <div id="nav-menu" class="hidden w-full md:flex md:w-auto md:items-center md:gap-6">
+      <nav class="flex flex-col md:flex-row w-full md:w-auto text-center md:text-left gap-2 md:gap-4">
         <a href="home.html" class="hover:text-yellow-400">Home</a>
         <a href="profil.html" class="hover:text-yellow-400">Profil</a>
         <a href="prestasi.html" class="hover:text-yellow-400">Prestasi</a>
         <a href="pengumuman.html" class="hover:text-yellow-400">Pengumuman</a>
         <a href="layanan.html" class="hover:text-yellow-400">Layanan</a>
       </nav>
-      <form id="searchForm" class="hidden md:flex items-center gap-2" onsubmit="return false;">
-        <input id="searchInput" type="text" placeholder="Pencarian..." class="border rounded px-2 py-1 text-sm text-black" aria-label="Pencarian situs">
-        <button type="submit" class="bg-yellow-400 text-blue-900 px-2 py-1 rounded">Cari</button>
+
+      <form id="searchForm" class="flex justify-center md:justify-end items-center gap-2 mt-3 md:mt-0" onsubmit="return false;">
+        <input
+          id="searchInput"
+          type="text"
+          placeholder="Pencarian..."
+          class="border rounded px-2 py-1 text-sm text-black flex-1 md:flex-none"
+          aria-label="Pencarian situs"
+        />
+        <button type="submit" class="bg-yellow-400 text-blue-900 px-3 py-1 rounded hover:bg-yellow-300 transition">
+          Cari
+        </button>
       </form>
     </div>
   </div>
 
-  <!-- Mobile menu (hidden by default) -->
+  <!-- Menu Mobile -->
   <div id="mobile-menu" class="md:hidden hidden bg-blue-800">
     <div class="flex flex-col px-6 py-4 space-y-3">
       <a href="home.html" class="block text-white py-2 hover:bg-blue-700 rounded">Home</a>
@@ -47,191 +56,97 @@
       <a href="prestasi.html" class="block text-white py-2 hover:bg-blue-700 rounded">Prestasi</a>
       <a href="pengumuman.html" class="block text-white py-2 hover:bg-blue-700 rounded">Pengumuman</a>
       <a href="layanan.html" class="block text-white py-2 hover:bg-blue-700 rounded">Layanan</a>
+
       <form id="searchFormMobile" class="flex items-center gap-2 mt-2" onsubmit="return false;">
-        <input id="searchInputMobile" type="text" placeholder="Pencarian..." class="border rounded px-2 py-1 text-sm text-black" aria-label="Pencarian mobile">
-        <button type="submit" class="bg-yellow-400 text-blue-900 px-2 py-1 rounded">Cari</button>
+        <input
+          id="searchInputMobile"
+          type="text"
+          placeholder="Pencarian..."
+          class="border rounded px-2 py-1 text-sm text-black flex-1"
+          aria-label="Pencarian mobile"
+        />
+        <button type="submit" class="bg-yellow-400 text-blue-900 px-3 py-1 rounded hover:bg-yellow-300 transition">
+          Cari
+        </button>
       </form>
     </div>
   </div>
 </header>
 
 
-    <!-- Hero Section -->
-    <section class="relative">
-      <img src="hero.jpg" alt="Hero" class="w-full h-64 object-cover" />
-      <div class="absolute inset-0 bg-black/40 flex items-center justify-center">
-        <h2 class="text-white text-2xl md:text-4xl font-bold text-center px-4">
-          SELAMAT DATANG DI ZONA INTEGRITAS MADRASAH ALIYAH NEGERI KOTA BATU
-        </h2>
-      </div>
-    </section>
 
 
-    <!-- Pengumuman dan Tautan Cepat -->
-  <section class="bg-white py-8">
-    <div class="max-w-7xl mx-auto px-6">
-      <!-- Judul -->
-      <h2 class="text-center text-3xl font-bold text-blue-900 mb-6 uppercase">Pengumuman</h2>
-
-      <!-- Grid -->
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-
-        <!-- Kolom Pengumuman -->
-        <div class="md:col-span-2 bg-blue-900 rounded-lg shadow-lg p-5">
-          <h3 class="flex items-center gap-3 text-white font-bold text-xl mb-4">
-            <i class="fas fa-bullhorn text-yellow-400 text-2xl"></i> Pengumuman
-          </h3>
-          <ul class="divide-y divide-yellow-400">
-            <li class="py-2">
-              <a href="#" class="text-white font-semibold hover:text-yellow-400">
-                Selamat HUT RI Ke 80!!
-              </a>
-              <p class="text-yellow-300 text-sm">17 Agustus 2025</p>
-            </li>
-            <li class="py-2">
-              <a href="#" class="text-white font-semibold hover:text-yellow-400">
-                Selamat Idul Adha!!!
-              </a>
-              <p class="text-yellow-300 text-sm">6 Juni 2025</p>
-            </li>
-            <li class="py-2">
-              <a href="#" class="text-white font-semibold hover:text-yellow-400">
-                Selamat Hari Lahir Pancasila!!!
-              </a>
-              <p class="text-yellow-300 text-sm">1 Juni 2025</p>
-            </li>
-            <li class="py-2">
-              <a href="#" class="text-white font-semibold hover:text-yellow-400">
-                Penerimaan Peserta Didik Baru Telah Dibuka
-              </a>
-              <p class="text-yellow-300 text-sm">18 Februari 2025</p>
-            </li>
-            <li class="py-2">
-              <a href="#" class="text-white font-semibold hover:text-yellow-400">
-                91 Peserta Didik MAN Kota Batu Diterima Di Jalur SNBT
-              </a>
-              <p class="text-yellow-300 text-sm">30 Mei 2025</p>
-            </li>
-            <li class="py-2">
-              <a href="#" class="text-white font-semibold hover:text-yellow-400">
-                Selamat Hari Kebangkitan Nasional
-              </a>
-              <p class="text-yellow-300 text-sm">20 Mei 2025</p>
-            </li>
-          </ul>
-          <div class="flex justify-center">
-              <a href="pengumuman.html" class="bg-yellow-400 hover:bg-yellow-500 text-blue-900 px-6 py-2 rounded font-bold transition transform hover:-translate-y-1 hover:shadow-lg inline-block">Lihat selengkapnya</a>
-          </div>
-        </div>
-
-        <!-- Kolom Tautan Cepat -->
-        <div class="bg-yellow-300 rounded-lg shadow-lg">
-          <div class="bg-blue-900 rounded-t-lg p-4 flex items-center gap-2">
-            <i class="fas fa-link text-white"></i>
-            <h3 class="text-white font-bold text-lg">Tautan Cepat</h3>
-          </div>
-          <ul class="divide-y divide-blue-900">
-            <li>
-              <a href="https://rdm.mankotabatu.sch.id/" class="block p-3 hover:bg-yellow-400 transition">
-                <span class="font-bold text-blue-900">RDM</span>
-                <p class="text-sm text-blue-800">Raport Digital Madrasah</p>
-              </a>
-            </li>
-            <li>
-              <a href="#" class="block p-3 hover:bg-yellow-400 transition">
-                <span class="font-bold text-blue-900">Pusaka</span>
-                <p class="text-sm text-blue-800">Literasi Sekolah</p>
-              </a>
-            </li>
-            <li>
-              <a href="#" class="block p-3 hover:bg-yellow-400 transition">
-                <span class="font-bold text-blue-900">Emis GKT</span>
-                <p class="text-sm text-blue-800">Layanan Guru & Tendik</p>
-              </a>
-            </li>
-            <li>
-              <a href="buku_tamu.html" class="block p-3 hover:bg-yellow-400 transition">
-                <span class="font-bold text-blue-900">Buku Tamu</span>
-                <p class="text-sm text-blue-800">Pengunjung MAN Kota Batu</p>
-              </a>
-            </li>
-          </ul>
-        </div>
-      </div>
+   <!-- Section: Alumni -->
+  <section class="bg-white text-center">
+    <div class="bg-blue-800 px-6 py-8">
+      <h2 class="text-2xl font-bold text-white tracking-wide">GURU</h2>
+      <p class="text-white font-medium"></p>
     </div>
-  </section>
 
-    <!-- Layanan -->
-  <section class="bg-white py-8">
-    <div class="w-full max-w-7xl mx-auto px-6">
-      <!-- Judul -->
-      <div class="flex items-center gap-2 mb-6">
-        <i class="fas fa-tools text-yellow-400 text-2xl"></i>
-        <h2 class="text-2xl font-bold text-blue-900">Layanan</h2>
-      </div>
-
-      <!-- Grid 2 Kolom -->
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 w-full">
-
-        <!-- Menu Layanan -->
-        <div class="flex flex-col gap-4">
-          <!-- Absensi -->
-          <a href="#"
-            class="flex items-center gap-3 bg-blue-800 text-white p-4 rounded-lg shadow hover:bg-blue-700 transition w-full">
-            <div class="bg-yellow-300 text-blue-900 w-14 h-14 flex items-center justify-center rounded-md">
-              <i class="fas fa-book text-2xl"></i>
-            </div>
-            <span class="text-xl font-semibold">RDM</span>
-          </a>
-
-          <!-- Absensi -->
-          <a href="#"
-            class="flex items-center gap-3 bg-blue-800 text-white p-4 rounded-lg shadow hover:bg-blue-700 transition w-full">
-            <div class="bg-yellow-300 text-blue-900 w-14 h-14 flex items-center justify-center rounded-md">
-              <i class="fas fa-clipboard-list text-2xl"></i>
-            </div>
-            <span class="text-xl font-semibold">Absensi</span>
-          </a>
-
-          <!-- Perpus -->
-          <a href="#"
-            class="flex items-center gap-3 bg-blue-800 text-white p-4 rounded-lg shadow hover:bg-blue-700 transition w-full">
-            <div class="bg-yellow-300 text-blue-900 w-14 h-14 flex items-center justify-center rounded-md">
-              <i class="fas fa-book text-2xl"></i>
-            </div>
-            <span class="text-xl font-semibold">Perpus</span>
-          </a>
-        </div>
-
-        <!-- Form Login -->
-        <div class="bg-blue-100 p-6 rounded-lg shadow w-full">
-          <h3 class="bg-blue-800 text-white text-lg font-bold py-3 px-4 rounded-t-lg -mt-6 mb-6 w-fit">Login</h3>
-          <form action="#" class="space-y-4">
-            <!-- Username -->
-            <div>
-              <label for="username" class="block text-sm font-semibold text-gray-700">User</label>
-              <input id="username" type="text" placeholder="Masukkan user"
-                class="w-full px-3 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500">
-            </div>
-
-            <!-- Password -->
-            <div>
-              <label for="password" class="block text-sm font-semibold text-gray-700">Pass</label>
-              <input id="password" type="password" placeholder="Masukkan password"
-                class="w-full px-3 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500">
-            </div>
-
-            <!-- Tombol Login -->
-            <button type="submit"
-              class="w-full bg-blue-700 text-white font-semibold py-3 rounded-lg hover:bg-blue-800 transition">
-              Log in
-            </button>
-          </form>
-        </div>
-      </div>
+<!-- Layanan -->
+<section class="bg-white py-10">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6">
+    <!-- Judul -->
+    <div class="flex items-center gap-2 mb-6">
+      <i class="fas fa-tools text-yellow-400 text-2xl"></i>
+      <h2 class="text-2xl font-bold text-blue-900">Layanan</h2>
     </div>
-  </section>
 
+    <!-- Grid Responsif -->
+    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-3 gap-4 sm:gap-6">
+
+      <!-- Item -->
+      <a href="#"
+        class="flex flex-col sm:flex-row items-center justify-center sm:justify-start gap-2 sm:gap-3 bg-blue-800 text-white p-3 sm:p-4 rounded-lg shadow hover:bg-blue-700 transition text-center sm:text-left">
+        <div class="bg-yellow-300 text-blue-900 w-12 h-12 flex items-center justify-center rounded-md">
+          <i class="fas fa-file-alt text-xl"></i>
+        </div>
+        <span class="text-base sm:text-lg font-semibold">CBT</span>
+      </a>
+
+      <a href="#"
+        class="flex flex-col sm:flex-row items-center justify-center sm:justify-start gap-2 sm:gap-3 bg-blue-800 text-white p-3 sm:p-4 rounded-lg shadow hover:bg-blue-700 transition text-center sm:text-left">
+        <div class="bg-yellow-300 text-blue-900 w-12 h-12 flex items-center justify-center rounded-md">
+          <i class="fas fa-clipboard-list text-xl"></i>
+        </div>
+        <span class="text-base sm:text-lg font-semibold">Absensi</span>
+      </a>
+
+      <a href="#"
+        class="flex flex-col sm:flex-row items-center justify-center sm:justify-start gap-2 sm:gap-3 bg-blue-800 text-white p-3 sm:p-4 rounded-lg shadow hover:bg-blue-700 transition text-center sm:text-left">
+        <div class="bg-yellow-300 text-blue-900 w-12 h-12 flex items-center justify-center rounded-md">
+          <i class="fas fa-book text-xl"></i>
+        </div>
+        <span class="text-base sm:text-lg font-semibold">Perpus</span>
+      </a>
+
+      <a href="#"
+        class="flex flex-col sm:flex-row items-center justify-center sm:justify-start gap-2 sm:gap-3 bg-blue-800 text-white p-3 sm:p-4 rounded-lg shadow hover:bg-blue-700 transition text-center sm:text-left">
+        <div class="bg-yellow-300 text-blue-900 w-12 h-12 flex items-center justify-center rounded-md">
+          <i class="fas fa-laptop-code text-xl"></i>
+        </div>
+        <span class="text-base sm:text-lg font-semibold">RDM</span>
+      </a>
+
+      <a href="#"
+        class="flex flex-col sm:flex-row items-center justify-center sm:justify-start gap-2 sm:gap-3 bg-blue-800 text-white p-3 sm:p-4 rounded-lg shadow hover:bg-blue-700 transition text-center sm:text-left">
+        <div class="bg-yellow-300 text-blue-900 w-12 h-12 flex items-center justify-center rounded-md">
+          <i class="fas fa-user-graduate text-xl"></i>
+        </div>
+        <span class="text-base sm:text-lg font-semibold">PUSAKA</span>
+      </a>
+
+      <a href="#"
+        class="flex flex-col sm:flex-row items-center justify-center sm:justify-start gap-2 sm:gap-3 bg-blue-800 text-white p-3 sm:p-4 rounded-lg shadow hover:bg-blue-700 transition text-center sm:text-left">
+        <div class="bg-yellow-300 text-blue-900 w-12 h-12 flex items-center justify-center rounded-md">
+          <i class="fas fa-book-open text-xl"></i>
+        </div>
+        <span class="text-base sm:text-lg font-semibold">BUKU TAMU</span>
+      </a>
+
+    </div>
+  </div>
+</section>
 
 
     <!-- Berita -->
@@ -366,7 +281,8 @@
       </div>
 
       <!-- Kolom Kanan -->
-      <div class="flex flex-col">
+      <div class="flex flex-col text-left items-start">
+
         <h3 class="text-yellow-400 text-lg font-bold mb-3">TAUTAN PENTING</h3>
         <div class="mb-5">
           <h4 class="font-semibold">GURU</h4>
@@ -376,9 +292,9 @@
             <li><a href="#" class="hover:text-yellow-400">Absensi</a></li>
           </ul>
         </div>
-              <!-- Garis pemisah -->
-        <div class="border-t-2 border-yellow-400 w-full my-6"></div>
-      <div>
+        <!-- Garis pemisah -->
+<div class="border-t-2 border-yellow-400 w-full my-6"></div>
+
         <div>
           <h4 class="font-semibold">SISWA</h4>
           <ul class="text-sm space-y-2 mt-2">

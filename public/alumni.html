@@ -3,32 +3,25 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Halaman Alumni - MAN Kota Batu</title>
-
-  <!-- Tailwind Config (letakkan sebelum CDN) -->
-  <script>
-    tailwind = {
-      theme: {
-        extend: {
-          keyframes: {
-            slideDown: { "0%": { opacity: "0", transform: "translateY(-10px)" }, "100%": { opacity: "1", transform: "translateY(0)" } },
-            slideUp: { "0%": { opacity: "1", transform: "translateY(0)" }, "100%": { opacity: "0", transform: "translateY(-10px)" } },
-          },
-          animation: {
-            slideDown: "slideDown 0.3s ease-out forwards",
-            slideUp: "slideUp 0.3s ease-in forwards",
-          },
-        },
-      },
-    };
-  </script>
-
+  <title>Alumni MAN Kota Batu</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+  />
+  <style>
+    /* Hilangkan scrollbar horizontal */
+    .scrollbar-hide::-webkit-scrollbar {
+      display: none;
+    }
+    .scrollbar-hide {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+  </style>
 </head>
-<body class="bg-gray-50 text-gray-800">
 
- <header class="bg-blue-900 text-white shadow">
+<header class="bg-blue-900 text-white shadow">
   <div class="container mx-auto flex justify-between items-center px-4 py-4 md:py-3">
     <!-- Logo di kiri -->
     <div class="flex items-center gap-3">
@@ -73,290 +66,295 @@
   </div>
 </header>
 
+  <!-- Section: Alumni -->
+  <section class="bg-white text-center">
+    <div class="bg-blue-800 px-6 py-8">
+      <h2 class="text-2xl font-bold text-white tracking-wide">ALUMNI</h2>
+      <p class="text-white font-medium">PROFIL ALUMNI MAN KOTA BATU</p>
+    </div>
 
-<!-- ALUMNI SLIDESHOW -->
-<section class="relative h-screen w-full overflow-hidden">
+    <!-- Carousel -->
+    <div class="max-w-6xl mx-auto py-10 px-4">
+      <h2 class="text-3xl font-bold text-blue-900 mb-6">Profil Alumni</h2>
 
-  <!-- Slideshow container -->
-  <div id="alumni-slides" class="absolute inset-0">
-    <!-- Slide 1 -->
-    <div class="absolute inset-0 bg-cover bg-center opacity-0 transition-opacity duration-1000"
-         style="background-image: url('https://picsum.photos/1920/1080?random=1');"></div>
+      <div class="relative flex items-center justify-center">
+       
+<!-- Tombol kiri -->
+<button
+  type="button"
+  onclick="scrollCarouselLeft()"
+  class="absolute left-4 top-1/2 -translate-y-1/2 z-20 bg-blue-900 text-white rounded-full w-12 h-12 flex items-center justify-center shadow-lg hover:bg-yellow-400 hover:text-blue-900 transition-all duration-300"
+>
+  <i class="fa-solid fa-chevron-left"></i>
+</button>
 
-    <!-- Slide 2 -->
-    <div class="absolute inset-0 bg-cover bg-center opacity-0 transition-opacity duration-1000"
-         style="background-image: url('https://picsum.photos/1920/1080?random=2');"></div>
+<!-- Carousel -->
+<div
+  id="carousel"
+  class="flex gap-6 overflow-x-auto scroll-smooth px-12 py-4 snap-x snap-mandatory scrollbar-hide justify-start"
+  style="scrollbar-width: none; width: 80%; scroll-behavior: smooth;"
+>
 
-    <!-- Slide 3 -->
-    <div class="absolute inset-0 bg-cover bg-center opacity-0 transition-opacity duration-1000"
-         style="background-image: url('https://picsum.photos/1920/1080?random=3');"></div>
+<!-- Template Card Alumni -->
+<template id="card-template">
+    <div
+        class="relative flex-shrink-0 w-56 bg-white rounded-2xl shadow-md overflow-hidden snap-center group transition-all duration-300 hover:scale-105"
+    >
+        <img
+            src=""
+            alt="Foto Alumni"
+            class="w-full h-40 object-cover"
+        />
+        <div class="p-3">
+            <h3 class="text-blue-900 font-semibold text-lg"></h3>
+        </div>
+        <div
+            class="absolute bottom-0 left-0 w-full bg-blue-900 text-white text-sm p-3 rounded-b-2xl translate-y-full group-hover:translate-y-0 transition duration-300"
+        ></div>
+    </div>
+</template>
 
-    <!-- Slide 4 -->
-    <div class="absolute inset-0 bg-cover bg-center opacity-0 transition-opacity duration-1000"
-         style="background-image: url('https://picsum.photos/1920/1080?random=4');"></div>
-  </div>
+<!-- Data Alumni -->
+<div
+    class="relative flex-shrink-0 w-56 bg-white rounded-2xl shadow-md overflow-hidden snap-center group hover:scale-105 transition-all duration-300"
+>
+    <img
+        src="https://via.placeholder.com/200x140"
+        alt="Taqia"
+        class="w-full h-40 object-cover"
+    />
+    <div class="p-3">
+        <h3 class="text-blue-900 font-semibold text-lg">Taqia</h3>
+    </div>
+    <div
+        class="absolute bottom-0 left-0 w-full bg-blue-900 text-white text-sm p-3 rounded-b-2xl translate-y-full group-hover:translate-y-0 transition duration-300"
+    >
+        Lulusan 2020<br />Jurusan: IPA<br />institut tehnologi bandung
+    </div>
+</div>
 
-  <!-- Overlay warna biru lembut -->
-  <div class="absolute inset-0 bg-blue-900 bg-opacity-70"></div>
+<div
+    class="relative flex-shrink-0 w-56 bg-white rounded-2xl shadow-md overflow-hidden snap-center group hover:scale-105 transition-all duration-300"
+>
+    <img
+        src="https://via.placeholder.com/200x140"
+        alt="Azriel Agta"
+        class="w-full h-40 object-cover"
+    />
+    <div class="p-3">
+        <h3 class="text-blue-900 font-semibold text-lg">Azriel Agta</h3>
+    </div>
+    <div
+        class="absolute bottom-0 left-0 w-full bg-blue-900 text-white text-sm p-3 rounded-b-2xl translate-y-full group-hover:translate-y-0 transition duration-300"
+    >
+        Lulusan 2021<br />Jurusan: IPS<br />institut negeri sepuluh november
+    </div>
+</div>
 
-  <!-- Konten tengah -->
-  <div class="relative z-10 flex flex-col items-center justify-center text-center text-white h-full px-6">
-    <h2 class="text-4xl md:text-5xl font-extrabold mb-4">
-      <span class="text-yellow-400">Momen Wisuda</span> Alumni MAN Kota Batu
-    </h2>
-    <p class="text-lg md:text-xl max-w-2xl mb-8">
-      Perjalanan penuh kenangan menuju masa depan gemilang bersama MAN Kota Batu.
-    </p>
-    <a href="#galeri"
-       class="bg-yellow-400 hover:bg-yellow-500 text-blue-900 font-semibold px-6 py-3 rounded-full transition">
-       Lihat Galeri Alumni
-    </a>
-  </div>
+<div
+    class="relative flex-shrink-0 w-56 bg-white rounded-2xl shadow-md overflow-hidden snap-center group hover:scale-105 transition-all duration-300"
+>
+    <img
+        src="https://via.placeholder.com/200x140"
+        alt="Reza Malik Sidin"
+        class="w-full h-40 object-cover"
+    />
+    <div class="p-3">
+        <h3 class="text-blue-900 font-semibold text-lg">Reza Malik Sidin </h3>
+    </div>
+    <div
+        class="absolute bottom-0 left-0 w-full bg-blue-900 text-white text-sm p-3 rounded-b-2xl translate-y-full group-hover:translate-y-0 transition duration-300"
+    >
+        Lulusan 2022<br />Jurusan: IPA<br />Technical University of Munich
+    </div>
+</div>
+
+<div
+    class="relative flex-shrink-0 w-56 bg-white rounded-2xl shadow-md overflow-hidden snap-center group hover:scale-105 transition-all duration-300"
+>
+    <img
+        src="https://via.placeholder.com/200x140"
+        alt="M. Akhnaf Meyfan"
+        class="w-full h-40 object-cover"
+    />
+    <div class="p-3">
+        <h3 class="text-blue-900 font-semibold text-lg">M. Akhnaf Meyfan </h3>
+    </div>
+    <div
+        class="absolute bottom-0 left-0 w-full bg-blue-900 text-white text-sm p-3 rounded-b-2xl translate-y-full group-hover:translate-y-0 transition duration-300"
+    >
+        Lulusan 2023<br />Jurusan: IPA<br />Politeknik Negeri Malang
+    </div>
+</div>
+
+<div
+    class="relative flex-shrink-0 w-56 bg-white rounded-2xl shadow-md overflow-hidden snap-center group hover:scale-105 transition-all duration-300"
+>
+    <img
+        src="https://via.placeholder.com/200x140"
+        alt="Dimas Adi"
+        class="w-full h-40 object-cover"
+    />
+    <div class="p-3">
+        <h3 class="text-blue-900 font-semibold text-lg">Dimas Adi</h3>
+    </div>
+    <div
+        class="absolute bottom-0 left-0 w-full bg-blue-900 text-white text-sm p-3 rounded-b-2xl translate-y-full group-hover:translate-y-0 transition duration-300"
+    >
+        Lulusan 2023<br />Jurusan: BAHASA<br />UIN Malang
+    </div>
+</div>
+<div></div>
+ 
+
+<!-- Tombol kanan -->
+<button
+  type="button"
+  onclick="scrollCarouselRight()"
+  class="absolute right-4 top-1/2 -translate-y-1/2 z-20 bg-blue-900 text-white rounded-full w-12 h-12 flex items-center justify-center shadow-lg hover:bg-yellow-400 hover:text-blue-900 transition-all duration-300"
+  aria-label="Next alumni"
+>
+  <i class="fa-solid fa-chevron-right"></i>
+</button>
+<script>
+const carousel = document.getElementById('carousel');
+let autoScrollInterval;
+
+if (carousel) {
+  // Fungsi scroll ke kiri
+  function scrollCarouselLeft() {
+    carousel.scrollBy({ left: -carousel.clientWidth / 3, behavior: 'smooth' });
+  }
+
+  // Fungsi scroll ke kanan
+  function scrollCarouselRight() {
+    carousel.scrollBy({ left: carousel.clientWidth / 3, behavior: 'smooth' });
+  }
+
+  // Fungsi auto-scroll
+  function startAutoScroll() {
+    autoScrollInterval = setInterval(() => {
+      if (carousel.scrollLeft + carousel.clientWidth >= carousel.scrollWidth - 5) {
+        carousel.scrollTo({ left: 0, behavior: 'smooth' });
+      } else {
+        scrollCarouselRight();
+      }
+    }, 3000); // kecepatan auto scroll (3 detik)
+  }
+
+  // Hentikan auto-scroll
+  function stopAutoScroll() {
+    clearInterval(autoScrollInterval);
+  }
+
+  // Mulai auto-scroll saat halaman dibuka
+  startAutoScroll();
+
+  // Pause auto-scroll saat mouse di atas carousel
+  carousel.addEventListener('mouseenter', stopAutoScroll);
+  carousel.addEventListener('mouseleave', startAutoScroll);
+
+  // Expose functions to global scope for inline onclick handlers
+  window.scrollCarouselLeft = scrollCarouselLeft;
+  window.scrollCarouselRight = scrollCarouselRight;
+}
+</script>
+</div>
 </section>
 
+  <!-- MAKOBA CARIER CENTER -->
+  <section class="bg-gray-100 text-center py-12 px-4">
+    <h3 class="font-bold text-xl text-blue-900">MAKOBA CAREER CENTER</h3>
+    <p class="text-gray-700 text-sm max-w-xl mx-auto mt-3 leading-relaxed">
+      Halaman ini dikhususkan untuk para alumni MAN Kota Batu untuk menyalurkan kesan, pesan, dan pengalaman selama menjadi siswa.
+    </p>
+    <br>
+<a
+  href="alumni2.html" 
+  class="mt-6 bg-yellow-400 hover:bg-blue-900 text-blue-900 hover:text-white px-5 py-2 rounded font-semibold transition"
+  target="_blank"
+>
+MASUK
+</a>
 
-
-  <!-- BEASISWA -->
-  <section  id="beasiswa" class="pt-0 -mt-8 bg-white relative z-10">
- <div class="bg-blue-900 text-white text-center py-8 shadow-md">
-    <h2 class="text-3xl font-bold uppercase tracking-wide">Beasiswa</h2>
-    </div>
-
-    <div class="max-w-6xl mx-auto mt-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 px-4">
-      <!-- Card Beasiswa -->
-      <div class="bg-white rounded-2xl shadow-md p-6 flex flex-col items-center hover:shadow-lg hover:-translate-y-1 transition duration-300">
-        <img src="EDUZI.jpg" class="w-24 h-24 rounded-full mb-3 object-cover" alt="">
-        <p class="font-semibold text-gray-800">Beasiswa Eduzi</p>
-        <a href="https://www.beasiswapascasarjana.com/2025/10/beasiswa-eduzi-smp-sma-d3-d4-s1-s2.html" target="_blank" class="text-sm text-blue-600 hover:underline mt-2">Info selengkapnya</a>
-      </div>
-
-      <div class="bg-white rounded-2xl shadow-md p-6 flex flex-col items-center hover:shadow-lg hover:-translate-y-1 transition duration-300">
-        <img src="DMH.jpg" class="w-24 h-24 rounded-full mb-3 object-cover" alt="">
-        <p class="font-semibold text-gray-800">Beasiswa DMH Academy</p>
-        <a href="https://www.beasiswapascasarjana.com/2025/08/beasiswa-dmh-academy-smp-sma-smk-d3-d4-s1.html" target="_blank" class="text-sm text-blue-600 hover:underline mt-2">Info selengkapnya</a>
-      </div>
-
-      <div class="bg-white rounded-2xl shadow-md p-6 flex flex-col items-center hover:shadow-lg hover:-translate-y-1 transition duration-300">
-        <img src="Gap.jpg" class="w-24 h-24 rounded-full mb-3 object-cover" alt="">
-        <p class="font-semibold text-gray-800">Beasiswa Gap Year untuk Lulusan SMA/MA yang Mau Kuliah Universitas</p>
-        <a href="https://www.beasiswapascasarjana.com/2025/10/easiswa-gap-year-lulusan-sma-ma.html" target="_blank" class="text-sm text-blue-600 hover:underline mt-2">Info selengkapnya</a>
-      </div>
-
-      <div class="bg-white rounded-2xl shadow-md p-6 flex flex-col items-center hover:shadow-lg hover:-translate-y-1 transition duration-300">
-        <img src="CAHAYA.jpg" class="w-24 h-24 rounded-full mb-3 object-cover" alt="">
-        <p class="font-semibold text-gray-800">Beasiswa Cahaya Prestasi untuk Siswa SD, SMP, SMA, dan Mahasiswa</p>
-        <a href="https://www.beasiswapascasarjana.com/2025/09/beasiswa-cahaya-prestasi-sd-smp-sma-s1-d4-d3.html" target="_blank" class="text-sm text-blue-600 hover:underline mt-2">Info selengkapnya</a>
-      </div>
-
-      <div class="bg-white rounded-2xl shadow-md p-6 flex flex-col items-center hover:shadow-lg hover:-translate-y-1 transition duration-300">
-        <img src="cipta pelita.jpg" class="w-24 h-24 rounded-full mb-3 object-cover" alt="">
-        <p class="font-semibold text-gray-800">Beasiswa Cipta Pelita</p>
-        <a href="https://santrihub.id/beasiswa/beasiswa-cipta-pelita/" target="_blank" class="text-sm text-blue-600 hover:underline mt-2">Info selengkapnya</a>
-      </div>
-
-      <div class="bg-white rounded-2xl shadow-md p-6 flex flex-col items-center hover:shadow-lg hover:-translate-y-1 transition duration-300">
-        <img src="semesta.jpg" class="w-24 h-24 rounded-full mb-3 object-cover" alt="">
-        <p class="font-semibold text-gray-800">Beasiswa Semesta</p>
-        <a href="https://semesta.sch.id/id/pendaftaran-jalur-beasiswa-sekolah-semesta-tahun-ajaran-2025-2026/" target="_blank" class="text-sm text-blue-600 hover:underline mt-2">Info selengkapnya</a>
-      </div>
-
-      <div class="bg-white rounded-2xl shadow-md p-6 flex flex-col items-center hover:shadow-lg hover:-translate-y-1 transition duration-300">
-        <img src="stekom.jpg" class="w-24 h-24 rounded-full mb-3 object-cover" alt="">
-        <p class="font-semibold text-gray-800">Beasiswa Universitas STEKOM</p>
-        <a href="https://beasiswa.stekom.ac.id/pendaftaran" target="_blank" class="text-sm text-blue-600 hover:underline mt-2">Info selengkapnya</a>
-      </div>
-
-      <div class="bg-white rounded-2xl shadow-md p-6 flex flex-col items-center hover:shadow-lg hover:-translate-y-1 transition duration-300">
-        <img src="gongbu.jpg" class="w-24 h-24 rounded-full mb-3 object-cover" alt="">
-        <p class="font-semibold text-gray-800">Beasiswa Gongbu</p>
-        <a href="https://santrihub.id/beasiswa/beasiswa-gongbu/" target="_blank" class="text-sm text-blue-600 hover:underline mt-2">Info selengkapnya</a>
-      </div>
-    </div>
   </section>
 
+ <!-- ================= CERITA ALUMNI ================= -->
+    <section id="cerita" class="py-16 bg-gray-50">
+      <div class="bg-blue-900 text-white text-center py-8 shadow-md">
+        <h2 class="text-3xl font-bold uppercase tracking-wide">Cerita Alumni</h2>
+        <p class="mt-2 text-blue-100">Kisah inspiratif perjalanan dan testimoni alumni MAN Kota Batu</p>
+      </div>
 
-<!-- PODCAST DAN WEBINAR -->
-<section class="py-12 bg-gradient-to-b from-gray-100 to-blue-50">
-  <div class="bg-blue-900 text-white text-center py-8 shadow-md">
-    <h2 class="text-3xl font-bold uppercase tracking-wide">Podcast Dan Webinar</h2>
-  </div>
+      <div class="relative overflow-hidden mt-10">
+        <div id="cerita-track" class="flex gap-6 w-max">
+          <div class="card bg-white shadow-md rounded-2xl p-6 min-w-[300px] hover:-translate-y-1 hover:shadow-xl transition duration-300 ease-out">
+            <img src="https://picsum.photos/400/250?1" class="rounded-xl mb-4 w-full h-48 object-cover" />
+            <h3 class="text-xl font-bold text-blue-900">Rizki Amalia</h3>
+            <p class="text-gray-600 text-sm">“Dari MAN Kota Batu, saya belajar pentingnya disiplin dan percaya diri.”</p>
+          </div>
 
-  <div class="max-w-6xl mx-auto mt-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 px-4">
+          <div class="card bg-white shadow-md rounded-2xl p-6 min-w-[300px] hover:-translate-y-1 hover:shadow-xl transition duration-300 ease-out">
+            <img src="https://picsum.photos/400/250?2" class="rounded-xl mb-4 w-full h-48 object-cover" />
+            <h3 class="text-xl font-bold text-blue-900">Fajar Hidayat</h3>
+            <p class="text-gray-600 text-sm">“Lingkungan madrasah membuat saya tumbuh dengan nilai-nilai Islami.”</p>
+          </div>
 
-    <!-- Card Template -->
-    <div class="bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-xl hover:-translate-y-1 transition duration-300 flex flex-col">
-      <img src="WECI.avif" alt="Podcast 1" class="w-full h-48 object-cover">
-      <div class="p-5 flex flex-col flex-grow justify-between">
-        <div>
-          <h3 class="font-semibold text-gray-800 text-lg mb-2">Weci is The Best, Cerita dari Pujon ke Kota Batu</h3>
-          <p class="text-sm text-gray-500 mb-3">MAN Kota Batu kali ini spesial banget! Episode ini menghadirkan Drs. Farhadi, M.Si., Kepala Madrasah MAN Kota Batu yang baru saja dilantik untuk masa jabatan keduanya.
-            Beliau berbagi cerita, pengalaman, dan harapan besar untuk membawa MAN Kota Batu menjadi madrasah yang semakin maju dan berprestasi!.</p>
+          <div class="card bg-white shadow-md rounded-2xl p-6 min-w-[300px] hover:-translate-y-1 hover:shadow-xl transition duration-300 ease-out">
+            <img src="https://picsum.photos/400/250?3" class="rounded-xl mb-4 w-full h-48 object-cover" />
+            <h3 class="text-xl font-bold text-blue-900">Siti Rahma</h3>
+            <p class="text-gray-600 text-sm">“Guru-guru MAN sangat peduli dengan perkembangan siswanya.”</p>
+          </div>
+
+          <!-- Duplikat untuk looping -->
+          <div class="card bg-white shadow-md rounded-2xl p-6 min-w-[300px] hover:-translate-y-1 hover:shadow-xl transition duration-300 ease-out">
+            <img src="https://picsum.photos/400/250?1" class="rounded-xl mb-4 w-full h-48 object-cover" />
+            <h3 class="text-xl font-bold text-blue-900">Rizki Amalia</h3>
+            <p class="text-gray-600 text-sm">“Dari MAN Kota Batu, saya belajar pentingnya disiplin dan percaya diri.”</p>
+          </div>
+
+          <div class="card bg-white shadow-md rounded-2xl p-6 min-w-[300px] hover:-translate-y-1 hover:shadow-xl transition duration-300 ease-out">
+            <img src="https://picsum.photos/400/250?2" class="rounded-xl mb-4 w-full h-48 object-cover" />
+            <h3 class="text-xl font-bold text-blue-900">Fajar Hidayat</h3>
+            <p class="text-gray-600 text-sm">“Lingkungan madrasah membuat saya tumbuh dengan nilai-nilai Islami.”</p>
+          </div>
+
+          <div class="card bg-white shadow-md rounded-2xl p-6 min-w-[300px] hover:-translate-y-1 hover:shadow-xl transition duration-300 ease-out">
+            <img src="https://picsum.photos/400/250?3" class="rounded-xl mb-4 w-full h-48 object-cover" />
+            <h3 class="text-xl font-bold text-blue-900">Siti Rahma</h3>
+            <p class="text-gray-600 text-sm">“Guru-guru MAN sangat peduli dengan perkembangan siswanya.”</p>
+          </div>
         </div>
-        <a href="https://youtu.be/bd6EjPSM2i4?si=YQIo1swIHQzLX-OX" target="_blank"
-          class="inline-flex items-center gap-2 text-blue-700 font-semibold hover:text-blue-900 transition mt-3">
-          <i class="fa-solid fa-play-circle"></i> Dengarkan Sekarang
-        </a>
       </div>
-    </div>
-
-    <!-- Card 2 -->
-    <div class="bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-xl hover:-translate-y-1 transition duration-300 flex flex-col">
-      <img src="walkot.avif" alt="Podcast 2" class="w-full h-48 object-cover">
-      <div class="p-5 flex flex-col flex-grow justify-between">
-        <div>
-          <h3 class="font-semibold text-gray-800 text-lg mb-2">BUKA-BUKAAN!! Cak Nur Wali Kota Batu Ceita Cinta Monyet Masa SMA</h3>
-          <p class="text-sm text-gray-500 mb-3"> MAN Kota Batu kedatangan tamu spesial, Bapak Nurrokhman, Walikota Batu terpilih sekaligus alumni kebanggaan MAN Kota Batu! Beliau berbagi kisah perjuangan hingga sukses menjadi walikota, plus cerita cinta monyet semasa SMA!
-            Saksikan selengkapnya di podcast di atas — enjoy! </p>
-        </div>
-        <a href="https://youtu.be/M8OvXgISXLo?si=tjhysbDhwlhZwcP8" target="_blank"
-          class="inline-flex items-center gap-2 text-blue-700 font-semibold hover:text-blue-900 transition mt-3">
-          <i class="fa-solid fa-headphones"></i> Putar Podcast
-        </a>
-      </div>
-    </div>
-
-    <!-- Card 3 -->
-    <div class="bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-xl hover:-translate-y-1 transition duration-300 flex flex-col">
-      <img src="Merdeka.avif" alt="Podcast 3" class="w-full h-48 object-cover">
-      <div class="p-5 flex flex-col flex-grow justify-between">
-        <div>
-          <h3 class="font-semibold text-gray-800 text-lg mb-2">Merdeka Belajar VS Belajar Merdeka Banak jaan Menuju Perguruan tinggi</h3>
-          <p class="text-sm text-gray-500 mb-3">Sudah dua tahun MAN Kota Batu menerapkan Kurikulum Merdeka, dan topik ini masih hangat dibicarakan, terutama di antara siswa Kurikulum 13 dan Kurmer.
-            Podcast kali ini menghadirkan Waka Kurikulum yang bakal bahas serunya perbedaan dan tantangan Kurmer di MAN Kota Batu.
-            Yuk tonton keseruannya!.</p>
-        </div>
-        <a href="https://youtu.be/TOIP-txvKhg?si=STuM7fMe067d-48W" target="_blank"
-          class="inline-flex items-center gap-2 text-blue-700 font-semibold hover:text-blue-900 transition mt-3">
-          <i class="fa-solid fa-video"></i> Tonton Webinar
-        </a>
-      </div>
-    </div>
-
-    <!-- Card 4 -->
-    <div class="bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-xl hover:-translate-y-1 transition duration-200 flex flex-col">
-      <img src="pendekar putri.avif" alt="Podcast 4" class="w-full h-48 object-cover">
-      <div class="p-5 flex flex-col flex-grow justify-between">
-        <div>
-          <h3 class="font-semibold text-gray-800 text-lg mb-2">Dua Pendekar Putri MAN Kota Batu Mendunia</h3>
-          <p class="text-sm text-gray-500 mb-3"> Dua siswi hebat MAN Kota Batu, Khadijah Chyntadewi Nurislami dan Jadid Camelia Hayrunnisa, raih dua medali bergengsi di International Karate Championship Piala Kemenpora RI – Yogyakarta Open Tournament IV!
-            Selamat dan bangga banget! .</p>
-        </div>
-        <a href="https://youtu.be/3VqcX7v9Pl8?si=sr5i0SuSMlRemLux" target="_blank"
-          class="inline-flex items-center gap-2 text-blue-700 font-semibold hover:text-blue-900 transition mt-3">
-          <i class="fa-solid fa-globe"></i> Dengarkan Sekarang
-        </a>
-      </div>
-    </div>
-
-    <!-- Card 5 -->
-    <div class="bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-xl hover:-translate-y-1 transition duration-300 flex flex-col">
-      <img src="osis romadonavif.avif" alt="Podcast 5" class="w-full h-48 object-cover">
-      <div class="p-5 flex flex-col flex-grow justify-between">
-        <div>
-          <h3 class="font-semibold text-gray-800 text-lg mb-2">SPESIAL RAMADHAN!! OSSMABA dengan Event Ramadhan</h3>
-          <p class="text-sm text-gray-500 mb-3"> Bulan Ramadan kali ini, OSSMABA punya banyak event seru! 
-            Bareng Mas Didan (Ketua 2) dan Mas Qadafi (Sekbid Agama) yang bakal bahas semua keseruannya!
-            Daripada cuma baca, mending langsung tonton podcast-nya — yuk cek keseruannya! HAVE FUNN!!.</p>
-        </div>
-        <a href="https://youtu.be/lFMsiPKPXHk?si=2rmLc6po4kUkvdl9" target="_blank"
-          class="inline-flex items-center gap-2 text-blue-700 font-semibold hover:text-blue-900 transition mt-3">
-          <i class="fa-solid fa-play"></i> Tonton Sekarang
-        </a>
-      </div>
-    </div>
-
-    <!-- Card 6 -->
-    <div class="bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-xl hover:-translate-y-1 transition duration-300 flex flex-col">
-      <img src="anti sampah.avif" alt="Podcast 6" class="w-full h-48 object-cover">
-      <div class="p-5 flex flex-col flex-grow justify-between">
-        <div>
-          <h3 class="font-semibold text-gray-800 text-lg mb-2">MAKOBA Anti Sampah Plastik "Budidaya Jamur, Musnahkan Plastik"</h3>
-          <p class="text-sm text-gray-500 mb-3">Kali ini bintang tamunya adalah Tim Jamur Makoba dari MAN Kota Batu!
-            Terdiri dari Arraya Raihan Arizolla, Utiya Rahma, dan Yassar Izaz Najwa Alfarizky, mereka sukses raih medali perunggu di OPSI dan MYRES 2024!
-            Keren banget!.</p>
-        </div>
-        <a href="https://youtu.be/IOE-KH-gRDQ?si=bwi_AzduSpaP-Unm" target="_blank"
-          class="inline-flex items-center gap-2 text-blue-700 font-semibold hover:text-blue-900 transition mt-3">
-          <i class="fa-solid fa-microphone"></i> Dengarkan
-        </a>
-      </div>
-    </div>
-
-  </div>
-</section>
+    </section>
 
 
 
+        <style>
+    @keyframes scrollSmooth {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
 
+    .animate-scroll-smooth {
+      display: flex;
+      animation: scrollSmooth 20s linear infinite;
+    }
+    </style>
 
-
-<!-- ================= PRESTASI ALUMNI ================= -->
-<section id="prestasi" class="py-16 bg-white overflow-hidden relative">
-  <div class="bg-blue-900 text-white text-center py-8 shadow-md">
-    <h2 class="text-3xl font-bold uppercase tracking-wide">Prestasi Alumni</h2>
-    <p class="mt-2 text-blue-100">Raih impian dan terus berprestasi di setiap langkah</p>
-  </div>
-
-  <div class="relative overflow-hidden mt-10">
-    <div id="prestasi-track"
-         class="flex gap-6 w-max animate-scroll-smooth">
-      
-      <!-- Kartu Prestasi 1 -->
-      <div class="card bg-blue-50 p-6 rounded-2xl shadow-md min-w-[250px] hover:-translate-y-1 hover:shadow-xl transition duration-300 ease-out">
-        <img src="lomba vidio.jpg" class="rounded-xl mb-4 w-full h-[380px] object-cover object-center" />
-        <h3 class="text-lg font-bold text-blue-900">Lomba Vidio One Minute For Eart </h3>
-        <p class="text-gray-600 text-sm">Barqy Munawwir Siswa Kelas XII-D Mendapatkan Juara 1.</p>
-      </div>
-
-      <!-- Kartu Prestasi 2 -->
-      <div class="card bg-blue-50 p-6 rounded-2xl shadow-md min-w-[250px] hover:-translate-y-1 hover:shadow-xl transition duration-300 ease-out">
-        <img src="renang.jpg" class="rounded-xl mb-4 w-full h-[380px] object-cover object-center" />
-        <h3 class="text-lg font-bold text-blue-900">Cabang Olah Raga Renang</h3>
-        <p class="text-gray-600 text-sm">Ahmad Muzakir A. Siswa Kelas XI-E Mendapatkan Mendali Perak Perunggu.</p>
-      </div>
-
-      <!-- Kartu Prestasi 3 -->
-      <div class="card bg-blue-50 p-6 rounded-2xl shadow-md min-w-[250px] hover:-translate-y-1 hover:shadow-xl transition duration-300 ease-out">
-        <img src="opsi.jpg" class="rounded-xl mb-4 w-full h-[380px] object-cover object-center" />
-        <h3 class="text-lg font-bold text-blue-900">Olimpiade Penelitian Siswa Indonesia(OPSI)</h3>
-        <p class="text-gray-600 text-sm">Arraya Raihan Arizola dan Yassar Izaz Najwa Alfarizky Siswa Kelas XII MIPA 1 Mendapatkan Juara 3.</p>
-      </div>
-
-      <!-- Duplikat untuk looping -->
-      <div class="card bg-blue-50 p-6 rounded-2xl shadow-md min-w-[250px] hover:-translate-y-1 hover:shadow-xl transition duration-300 ease-out">
-        <img src="cerpen.jpg" class="rounded-xl mb-4 w-full h-[380px] object-cover object-center" />
-        <h3 class="text-lg font-bold text-blue-900">Lomba Menulis Cerpen Tingkat Nasional</h3>
-        <p class="text-gray-600 text-sm">Aletha Praba Santoso Siswi Kelas X-A Mendapatkan Juara 1.</p>
-      </div>
-
-      <div class="card bg-blue-50 p-6 rounded-2xl shadow-md min-w-[250px] hover:-translate-y-1 hover:shadow-xl transition duration-300 ease-out">
-        <img src="lari pr.jpg" class="rounded-xl mb-4 w-full h-[380px] object-cover object-center" />
-        <h3 class="text-lg font-bold text-blue-900">Cabang Olahraga Lari Tingat Umum</h3>
-        <p class="text-gray-600 text-sm">Syaffira Qurrota Siswi Kelas XI-L Mendapatkan Juara 1.</p>
-      </div>
-
-      <div class="card bg-blue-50 p-6 rounded-2xl shadow-md min-w-[250px] hover:-translate-y-1 hover:shadow-xl transition duration-300 ease-out">
-        <img src="owf.jpg" class="rounded-xl mb-4 w-full h-[380px] object-cover object-center" />
-        <h3 class="text-lg font-bold text-blue-900">Cabang Olahraga Open Water Finswimming(OWF)</h3>
-        <p class="text-gray-600 text-sm">Fakrial Almeren Siswa Baru Kelas X Mendapatkan Mendali Perak.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<style>
-@keyframes scrollSmooth {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
-}
-
-.animate-scroll-smooth {
-  display: flex;
-  animation: scrollSmooth 20s linear infinite;
-}
-</style>
-
-
+        <!-- SwiperJS CDN -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"/>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script>
+      const swiper = new Swiper('.swiper-container', {
+        loop: true,
+        autoplay: {
+          delay: 3000,
+          disableOnInteraction: false,
+        },
+        speed: 800,
+      });
+    </script>
 <!-- Footer -->
 <footer class="bg-blue-900 text-white">
   <div class="container mx-auto px-6 py-12 grid grid-cols-1 md:grid-cols-3 gap-10">
@@ -497,7 +495,7 @@ document.addEventListener("DOMContentLoaded", function () {
     if (!term) return;
 
     // regex untuk highlight seluruh kata yang mengandung term (contoh: "inst" → highlight "Instagram")
-    const regex = new RegExp(\\b[^\\s]*${term}[^\\s]*\\b, "gi");
+    const regex = new RegExp(`\\b[^\\s]*${term}[^\\s]*\\b`, "gi");
 
     const walker = document.createTreeWalker(
       document.body,
@@ -525,7 +523,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const replaced = text.replace(
           regex,
           (match) =>
-            <span class="search-highlight bg-yellow-300 text-blue-900 font-bold px-1 rounded">${match}</span>
+            `<span class="search-highlight bg-yellow-300 text-blue-900 font-bold px-1 rounded">${match}</span>`
         );
         const span = document.createElement("span");
         span.innerHTML = replaced;
@@ -590,39 +588,38 @@ tailwind.config = {
     },
   },
 };
-
 </script>
-<!-- Script Slide Otomatis -->
-<script>
-  const slides = document.querySelectorAll('#alumni-slides > div');
-  let index = 0;
+    <!-- Script Slide Otomatis -->
+    <script>
+      const slides = document.querySelectorAll('#alumni-slides > div');
+      let index = 0;
 
-  function showSlide(i) {
-    slides.forEach((slide, idx) => {
-      slide.style.opacity = idx === i ? '1' : '0';
-    });
-  }
+      function showSlide(i) {
+        slides.forEach((slide, idx) => {
+          slide.style.opacity = idx === i ? '1' : '0';
+        });
+      }
 
-  function nextSlide() {
-    index = (index + 1) % slides.length;
-    showSlide(index);
-  }
+      function nextSlide() {
+        index = (index + 1) % slides.length;
+        showSlide(index);
+      }
 
-  // tampilkan slide pertama
-  showSlide(index);
-  setInterval(nextSlide, 4000); // ganti setiap 4 detik
-</script>
-<style>
-@keyframes scrollLoop {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
-}
-#cerita-track, #prestasi-track {
-  animation: scrollLoop 30s linear infinite;
-}
-#cerita-track:hover, #prestasi-track:hover {
-  animation-play-state: paused;
-}
-</style>
+      // tampilkan slide pertama
+      showSlide(index);
+      setInterval(nextSlide, 4000); // ganti setiap 4 detik
+    </script>
+    <style>
+    @keyframes scrollLoop {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+    #cerita-track, #prestasi-track {
+      animation: scrollLoop 30s linear infinite;
+    }
+    #cerita-track:hover, #prestasi-track:hover {
+      animation-play-state: paused;
+    }
+    </style>
 </body>
 </html>

@@ -89,7 +89,7 @@
     <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
       <!-- Berita Utama 1 -->
       <div class="bg-white shadow-md rounded-lg overflow-hidden">
-        <img src="img/Berita2.png" alt="Wali Kota Batu Hadir di MAN Kota Batu" class="w-full h-40 object-cover">
+        <img src="img/berita2.png" alt="Wali Kota Batu Hadir di MAN Kota Batu" class="w-full h-40 object-cover">
         <div class="p-4">
           <h2 class="font-bold">Wali Kota Batu Hadir di MAN Kota Batu: Ajak Siswa Jadi Pahlawan Lingkungan dan Raih Kesempatan Program 1000 Sarjana</h2>
           <p class="text-gray-600 text-sm mt-1">Batu, Pemerintah Kota Batu terus mendorong keterlibatan generasi muda dalam menjaga kelestarian lingkungan melalui program Batu Greenation Fest Goes to School.</p>
@@ -113,51 +113,121 @@
   </div>
 
   <!-- Berita Sebelumnya -->
+<section>
   <div class="container mx-auto px-4 mt-8">
     <h3 class="bg-blue-800 text-white text-center py-2 px-6 font-bold">Berita sebelumnya</h3>
     <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-4">
-      <div class="bg-white shadow-md rounded-lg overflow-hidden">
-        <img src="img/berita5.png" alt="Pelantikan OSSMaba 48" class="w-full h-40 object-cover">
-        <div class="p-3">
-          <h4 class="font-bold text-sm">Pelantikan OSSMaba 48: Estafet Kepemimpinan di MAN Kota Batu Dengan Semangat Baru</h4>
-          <p class="text-gray-600 text-xs">Batu – 29/9/25. Setelah sukses melaksanakan LDKS bagi pengurus baru OSIS MAN Kota Batu, tibalah saatnya pelantikan Pengurus OSIS periode 2025-2026.</p>
-        </div>
-        <div class="text-center my-6">
-            <a href="https://mankotabatu.sch.id/berita/pelantikan-osis-ossmaba-48-estafet-kepemimpinan-baru-di-man-kota-batu" class="bg-yellow-400 text-blue-900 font-bold px-5 py-2 rounded-md shadow hover:bg-blue-900 hover:text-white transition">Baca Selengkapnya</a>
-        </div>
-      </div>
-      <div class="bg-white shadow-md rounded-lg overflow-hidden">
-        <img src="img/berita4.png" alt="LDKS OssMaba 48" class="w-full h-40 object-cover">
-        <div class="p-3">
-          <h4 class="font-bold text-sm">LDKS OssMaba 48: Membangun Komitmen Dan Kerja Sama untuk OSIS Lebih Maju</h4>
-          <p class="text-gray-600 text-xs">MAN BATU – Rangkaian kegiatan rekrutmen OSIS MAN Kota Batu masih terus berlanjut.</p>
-        </div>
-        <div class="text-center my-6">
-            <a href="https://mankotabatu.sch.id/berita/ldks-ossmaba-48-membangun-komitmen-dan-kerja-sama-untuk-osis-lebih-maju" class="bg-yellow-400 text-blue-900 font-bold px-5 py-2 rounded-md shadow hover:bg-blue-900 hover:text-white transition">Baca Selengkapnya</a>
+    <script>
+// Simpan isi setiap halaman berita di sini
+const beritaPages = {
+  1: `
+    <div class="flex flex-wrap justify-center gap-6 px-4 md:px-8 mb-8">
+      <div class="max-w-sm bg-white rounded-xl shadow-md overflow-hidden">
+        <img src="img/berita5.png" alt="berita1" class="w-full h-40 object-cover">
+        <div class="p-4">
+          <h4 class="font-bold text-lg text-blue-900">Pelantikan OSSMaba 48: Estafet Kepemimpinan di MAN Kota Batu</h4>
+          <p class="text-gray-600 text-sm mt-2">Batu, 29 September 2025 – Setelah sukses melaksanakan LDKS bagi pengurus baru OSIS MAN Kota Batu...</p>
+          <a href="#" class="bg-yellow-400 hover:bg-yellow-500 text-blue-900 px-4 py-2 rounded font-bold inline-block mt-3 transition">Baca Selengkapnya</a>
         </div>
       </div>
-      <div class="bg-white shadow-md rounded-lg overflow-hidden">
-        <img src="img/berita3.png " alt="Pemilihan Ketua Osis" class="w-full h-40 object-cover">
-        <div class="p-3">
-          <h4 class="font-bold text-sm">Nduwe Gawe di Madrasah: Ajang Pemilihan Ketua OSIS MAN Kota Batu Periode2025/2026</h4>
-          <p class="text-gray-600 text-xs">Batu – Suasana Aula MAN Kota Batu pada Kamis, 25 September 2025 dipenuhi riuh semangat warga madrasah.</p>
+
+      <div class="max-w-sm bg-white rounded-xl shadow-md overflow-hidden">
+        <img src="img/berita4.png" alt="berita2" class="w-full h-40 object-cover">
+        <div class="p-4">
+          <h4 class="font-bold text-lg text-blue-900">LDKS OssMaba 48: Membangun Komitmen dan Kerja Sama untuk OSIS Lebih Maju</h4>
+          <p class="text-gray-600 text-sm mt-2">MAN BATU – Rangkaian kegiatan rekrutmen OSIS MAN Kota Batu masih terus berlanjut...</p>
+          <a href="#" class="bg-yellow-400 hover:bg-yellow-500 text-blue-900 px-4 py-2 rounded font-bold inline-block mt-3 transition">Baca Selengkapnya</a>
         </div>
-        <div class="text-center my-6">
-            <a href="https://mankotabatu.sch.id/berita/nduwe-gawe-di-madrasah-ajang-pemilihan-ketua-osis-man-kota-batu-periode20252026" class="bg-yellow-400 text-blue-900 font-bold px-5 py-2 rounded-md shadow hover:bg-blue-900 hover:text-white transition">Baca Selengkapnya</a>
+      </div>
+
+      <div class="max-w-sm bg-white rounded-xl shadow-md overflow-hidden">
+        <img src="img/berita3.png" alt="berita3" class="w-full h-40 object-cover">
+        <div class="p-4">
+          <h4 class="font-bold text-lg text-blue-900">Nduwe Gawe di Madrasah: Ajang Pemilihan Ketua OSIS MAN Kota Batu Periode 2025/2026</h4>
+          <p class="text-gray-600 text-sm mt-2">Batu, 25 September 2025 – Suasana Aula MAN Kota Batu dipenuhi semangat warga madrasah...</p>
+          <a href="https://mankotabatu.sch.id/berita/nduwe-gawe-di-madrasah-ajang-pemilihan-ketua-osis-man-kota-batu-periode20252026" class="bg-yellow-400 hover:bg-yellow-500 text-blue-900 px-4 py-2 rounded font-bold inline-block mt-3 transition">Baca Selengkapnya</a>
         </div>
       </div>
     </div>
-  </div>
+  `,
+  2: `
+    <div class="flex flex-wrap justify-center gap-6 px-4 md:px-8 mb-8">
+      <div class="max-w-sm bg-white rounded-xl shadow-md overflow-hidden">
+        <img src="img/Road Show.jpeg" alt="berita4" class="w-full h-40 object-cover">
+        <div class="p-4">
+          <h4 class="font-bold text-lg text-blue-900">Siswa MAN Kota Batu Sadar Akan “Kecelakaan Berawal Dari Pelanggaran, Sayangi Diri Anda”</h4>
+          <p class="text-gray-600 text-sm mt-2">Kota Batu, 18/9/25. Siswa-siswi MAN Kota Batu kembali menjadi tuan rumah kegiatan Sosialisasi Road Safety Riding dalam rangka mewujudkan Kamseltibcarlantas…</p>
+          <a href="#" class="bg-yellow-400 hover:bg-yellow-500 text-blue-900 px-4 py-2 rounded font-bold inline-block mt-3 transition">Baca Selengkapnya</a>
+        </div>
+      </div>
 
-  <!-- Pagination -->
-  <div class="flex justify-center items-center space-x-2 my-6 mb-6">
-    <button class="px-3 py-1 bg-gray-300 rounded hover:bg-blue-600 hover:text-white transition duration-200 ease-in-out">‹</button>
-    <button class="px-3 py-1 bg-blue-600 text-white rounded">1</button>
-    <button class="px-3 py-1 bg-gray-300 rounded hover:bg-blue-600 hover:text-white transition duration-200 ease-in-out">2</button>
-    <button class="px-3 py-1 bg-gray-300 rounded hover:bg-blue-600 hover:text-white transition duration-200 ease-in-out">3</button>
-    <button class="px-3 py-1 bg-gray-300 rounded hover:bg-blue-600 hover:text-white transition duration-200 ease-in-out">›</button>
-  </div>
+      <div class="max-w-sm bg-white rounded-xl shadow-md overflow-hidden">
+        <img src="img/Maulid Nabi.jpg" alt="berita5" class="w-full h-40 object-cover">
+        <div class="p-4">
+          <h4 class="font-bold text-lg text-blue-900">Teladani Akhlak dan Cinta Sang Rasul, MAN Kota Batu Rayakan Maulid Nabi Muhammad SAW Penuh Makna</h4>
+          <p class="text-gray-600 text-sm mt-2">Kota Batu – Madrasah Aliyah Negeri Kota Batu kembali merayakan peringatan Maulid Nabi Muhammad SAW pada Jumat, 12/09/25. Kegiatan Maulid 1447 H itu diselenggarakan…</p>
+          <a href="#" class="bg-yellow-400 hover:bg-yellow-500 text-blue-900 px-4 py-2 rounded font-bold inline-block mt-3 transition">Baca Selengkapnya</a>
+        </div>
+      </div>
 
+      <div class="flex flex-wrap justify-center gap-6 px-4 md:px-8 mb-8">
+      <div class="max-w-sm bg-white rounded-xl shadow-md overflow-hidden">
+        <img src="img/Cek Kesehatan.jpg" alt="berita6" class="w-full h-40 object-cover">
+        <div class="p-4">
+          <h4 class="font-bold text-lg text-blue-900">Dukung Program Quick Win Presiden, MAN Kota Batu Adakan Cek Kesehatan Gratis Siswa</h4>
+          <p class="text-gray-600 text-sm mt-2">Batu, 11 September 2025 – MAN Kota Batu bekerja sama dengan Puskesmas Sisir sukses menyelenggarakan kegiatan Cek Kesehatan Gratis Siswa yang berlangsung…</p>
+          <a href="#" class="bg-yellow-400 hover:bg-yellow-500 text-blue-900 px-4 py-2 rounded font-bold inline-block mt-3 transition">Baca Selengkapnya</a>
+        </div>
+      </div>
+    </div>
+  `,
+  3: `
+    <div class="flex flex-wrap justify-center gap-6 px-4 md:px-8 mb-8">
+      <div class="max-w-sm bg-white rounded-xl shadow-md overflow-hidden">
+        <img src="img/berita1.png" alt="berita6" class="w-full h-40 object-cover">
+        <div class="p-4">
+          <h4 class="font-bold text-lg text-blue-900">Jadi Tuan Rumah OMI 2025 se-Kota Batu, MAN Kota Batu Kirim 18 Siswa Terbaiknya</h4>
+          <p class="text-gray-600 text-sm mt-2">
+Kota Batu – Suasana penuh konsentrasi dan semangat kompetisi menyelimuti Ruang Laboratorium Pelayanan Terpadu Satu Pintu (PTSP) MAN Kota Batu pada Selasa,…</p>
+          <a href="#" class="bg-yellow-400 hover:bg-yellow-500 text-blue-900 px-4 py-2 rounded font-bold inline-block mt-3 transition">Baca Selengkapnya</a>
+        </div>
+      </div>
+    </div>
+  `
+};
+
+// Ganti isi berita sesuai halaman
+function tampilkanBerita(page) {
+  document.getElementById("berita-list").innerHTML = beritaPages[page];
+
+  // Ganti warna tombol aktif
+  for (let i = 1; i <= 3; i++) {
+    const btn = document.getElementById(`page-${i}`);
+    if (i === page) {
+      btn.classList.add("bg-blue-900", "text-white");
+      btn.classList.remove("bg-gray-300", "text-blue-900");
+    } else {
+      btn.classList.add("bg-gray-300", "text-blue-900");
+      btn.classList.remove("bg-blue-900", "text-white");
+    }
+  }
+}
+
+// Tampilkan halaman pertama saat load
+window.onload = () => tampilkanBerita(1);
+   </script>
+</div>
+
+<div id="berita-list" class="flex flex-wrap justify-center gap-6 px-4 md:px-8 mb-8">
+  <!-- isi berita pertama akan terganti otomatis -->
+</div>
+
+<div class="flex justify-center items-center space-x-2 my-6 mb-6">
+  <button id="page-1" onclick="tampilkanBerita(1)" class="px-3 py-1 bg-blue-900 text-white rounded">1</button>
+  <button id="page-2" onclick="tampilkanBerita(2)" class="px-3 py-1 bg-gray-300 text-blue-900 rounded hover:bg-blue-900 hover:text-white">2</button>
+  <button id="page-3" onclick="tampilkanBerita(3)" class="px-3 py-1 bg-gray-300 text-blue-900 rounded hover:bg-blue-900 hover:text-white">3</button>
+</div>
+</section>
 
 <!-- Footer -->
 <footer class="bg-blue-900 text-white">

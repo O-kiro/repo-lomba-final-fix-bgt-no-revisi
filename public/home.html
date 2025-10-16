@@ -503,44 +503,111 @@
     </div>
   </section>
 
-  <!-- Fasilitas -->
-  <header class="bg-blue-900 py-6 mt-8">
-    <div class="flex items-center justify-center space-x-2">
-      <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" class="w-8 h-8 text-yellow-400">
-        <path d="M12 2L2 7v13h7v-6h6v6h7V7L12 2z"/>
-      </svg>
-      <h2 class="text-white text-2xl font-bold">FASILITAS</h2>
-    </div>
-  </header>
-
-  <section class="container mx-auto px-4 py-10">
-    <div class="flex space-x-6 overflow-x-auto pb-4">
-      <div class="bg-gray-300 w-48 h-64 rounded-lg flex-shrink-0"></div>
-       <div class="w-48 h-64 rounded-lg overflow-hidden flex-shrink-0 shadow-md">
-      <img src="img/lapangan.png" alt="Lapangan" class="w-full h-full object-cover">
-        <div class="p-3 text-center">
-    <h3 class="font-semibold text-gray-800">Masjid Ihya' Ulumuddin</h3>
+<!-- ====== FASILITAS ====== -->
+<header class="bg-blue-900 py-6 mt-8">
+  <div class="flex items-center justify-center space-x-2">
+    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+      viewBox="0 0 24 24" class="w-8 h-8 text-yellow-400">
+      <path d="M12 2L2 7v13h7v-6h6v6h7V7L12 2z" />
+    </svg>
+    <h2 class="text-white text-2xl font-bold">FASILITAS</h2>
   </div>
-    </div>
-      <div class="bg-gray-300 w-48 h-64 rounded-lg flex-shrink-0"></div>
-       <div class="w-48 h-64 rounded-lg overflow-hidden flex-shrink-0 shadow-md">
-      <img src="img/aula.png" alt="aula"class="w-full h-full object-cover">
-    </div>
-      <div class="bg-gray-300 w-48 h-64 rounded-lg flex-shrink-0"></div>
-       <div class="w-48 h-64 rounded-lg overflow-hidden flex-shrink-0 shadow-md">
-      <img src="img/perpustakaan.png" alt="Perpustakaan" class="w-full h-full object-cover">
-    </div>
-      <div class="bg-gray-300 w-48 h-64 rounded-lg flex-shrink-0"></div>
-       <div class="w-48 h-64 rounded-lg overflow-hidden flex-shrink-0 shadow-md">
-      <img src="img/masjid.png" alt="Masjid" class="w-full h-full object-cover">
-    </div>
-      <div class="bg-gray-300 w-48 h-64 rounded-lg flex-shrink-0"></div>
-       <div class="w-48 h-64 rounded-lg overflow-hidden flex-shrink-0 shadow-md">
-      <img src="img/ptsp.png" alt="PTSP (Pelayanan Terpadu Satu Pintu)" class="w-full h-full object-cover">
-    </div>
-      <div class="bg-gray-300 w-48 h-64 rounded-lg flex-shrink-0"></div>
-    </div>
-  </section>
+</header>
+
+<section class="relative w-full overflow-hidden py-10 bg-white">
+  <!-- Efek gradasi kiri-kanan -->
+  <div class="pointer-events-none absolute top-0 left-0 w-32 h-full bg-gradient-to-r from-white via-white/80 to-transparent z-10"></div>
+  <div class="pointer-events-none absolute top-0 right-0 w-32 h-full bg-gradient-to-l from-white via-white/80 to-transparent z-10"></div>
+
+  <!-- Track slider -->
+  <div class="slider-track flex space-x-6">
+
+    <!-- ===== SET FASILITAS LENGKAP ===== -->
+    <div class="fasilitas-item"><img src="img/lapangan.png" alt="Lapangan"><h3>Lapangan</h3></div>
+    <div class="fasilitas-item"><img src="img/aula.png" alt="Aula"><h3>Aula</h3></div>
+    <div class="fasilitas-item"><img src="img/perpustakaan.png" alt="Perpustakaan"><h3>Perpustakaan</h3></div>
+    <div class="fasilitas-item"><img src="img/masjid.png" alt="Masjid"><h3>Masjid</h3></div>
+    <div class="fasilitas-item"><img src="img/ptsp.png" alt="PTSP"><h3>PTSP</h3></div>
+    <div class="fasilitas-item"><img src="img/multimedia.png" alt="Multimedia"><h3>Multimedia</h3></div>
+    <div class="fasilitas-item"><img src="img/ruang_bk.png" alt="Ruang BK"><h3>Ruang BK</h3></div>
+    <div class="fasilitas-item"><img src="img/uks.png" alt="UKS"><h3>UKS</h3></div>
+    <div class="fasilitas-item"><img src="img/koperasi.png" alt="Koperasi"><h3>Koperasi</h3></div>
+    <div class="fasilitas-item"><img src="img/lab_komputer.png" alt="Lab Komputer"><h3>Lab Komputer</h3></div>
+    <div class="fasilitas-item"><img src="img/lab_ipa.png" alt="Lab IPA"><h3>Lab IPA</h3></div>
+    <div class="fasilitas-item"><img src="img/ruang_seni.png" alt="Ruang Seni"><h3>Ruang Seni</h3></div>
+
+    <!-- 🔁 Duplikasi penuh untuk loop halus -->
+    <div class="fasilitas-item"><img src="img/lapangan.png" alt="Lapangan"><h3>Lapangan</h3></div>
+    <div class="fasilitas-item"><img src="img/aula.png" alt="Aula"><h3>Aula</h3></div>
+    <div class="fasilitas-item"><img src="img/perpustakaan.png" alt="Perpustakaan"><h3>Perpustakaan</h3></div>
+    <div class="fasilitas-item"><img src="img/masjid.png" alt="Masjid"><h3>Masjid</h3></div>
+    <div class="fasilitas-item"><img src="img/ptsp.png" alt="PTSP"><h3>PTSP</h3></div>
+    <div class="fasilitas-item"><img src="img/multimedia.png" alt="Multimedia"><h3>Multimedia</h3></div>
+    <div class="fasilitas-item"><img src="img/ruang_bk.png" alt="Ruang BK"><h3>Ruang BK</h3></div>
+    <div class="fasilitas-item"><img src="img/uks.png" alt="UKS"><h3>UKS</h3></div>
+    <div class="fasilitas-item"><img src="img/koperasi.png" alt="Koperasi"><h3>Koperasi</h3></div>
+    <div class="fasilitas-item"><img src="img/lab_komputer.png" alt="Lab Komputer"><h3>Lab Komputer</h3></div>
+    <div class="fasilitas-item"><img src="img/lab_ipa.png" alt="Lab IPA"><h3>Lab IPA</h3></div>
+    <div class="fasilitas-item"><img src="img/ruang_seni.png" alt="Ruang Seni"><h3>Ruang Seni</h3></div>
+
+  </div>
+</section>
+
+<style>
+/* === ANIMASI SUPER SMOOTH TANPA JEDA === */
+.slider-track {
+  width: max-content;
+  display: flex;
+  animation: slide 90s linear infinite;
+}
+
+@keyframes slide {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* Hover pause */
+.slider-track:hover {
+  animation-play-state: paused;
+}
+
+/* === KARTU FASILITAS === */
+.fasilitas-item {
+  width: 12rem;
+  height: 16rem;
+  background: white;
+  border-radius: 0.75rem;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  flex-shrink: 0;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.fasilitas-item img {
+  width: 100%;
+  height: 75%;
+  object-fit: cover;
+}
+
+.fasilitas-item h3 {
+  text-align: center;
+  color: #1f2937;
+  font-weight: 600;
+  padding-top: 0.5rem;
+}
+
+/* Hover efek lembut */
+.fasilitas-item:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.25);
+}
+
+/* Efek gradasi fade kiri kanan */
+.pointer-events-none {
+  pointer-events: none;
+}
+</style>
+
 
 <!-- Footer -->
 <footer class="bg-blue-900 text-white">

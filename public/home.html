@@ -392,66 +392,88 @@
     <a href="prestasi.html" class="bg-yellow-400 hover:bg-yellow-500 text-blue-900 px-6 py-2 rounded font-bold transition transform hover:-translate-y-1 hover:shadow-lg inline-block">Lihat Lebih Banyak</a>
   </div>
 
-  <!-- Berita -->
-   
-  <header id="berita" class="bg-blue-900 py-4 scroll-mt-50 flex items-center justify-center pl-10 gap-3">
-    <i class="fa-solid fa-newspaper text-3xl flex justify-center text-yellow-400"></i>
-    <h2 class="text-white text-2xl font-bold text-center">BERITA</h2>
-  </header>
+<!-- ===== BERITA ===== -->
+<header id="berita" class="bg-blue-900 py-4 scroll-mt-50 flex items-center justify-center gap-3">
+  <i class="fa-solid fa-newspaper text-3xl text-yellow-400"></i>
+  <h2 class="text-white text-2xl font-bold text-center">BERITA</h2>
+</header>
 
-  <section class="container mx-auto px-4 py-8">
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-      <div class="bg-gray-300 rounded-lg h-64 flex items-center justify-center">
-        <span class="text-blue-900 font-bold">  <img src="img/berita1.png" alt= "berita" class="w-[650px] h-[255px] mr-3">
-        
-      </div>
-      <div class="bg-blue-700 text-white rounded-lg p-6 flex flex-col justify-between">
-        <div>
-           <p class="text-sm text-justify leading-relaxed"></p> 
-          <h3 class="text-lg font-bold mb-2">Jadi Tuan Rumah OMI 2025 se-Kota Batu, MAN Kota Batu Kirim 18 Siswa Terbaiknya</h3>
-          <p class="text-sm">Kota Batu – Suasana penuh konsentrasi dan semangat kompetisi menyelimuti Ruang Laboratorium Pelayanan Terpadu Satu Pintu (PTSP) MAN Kota Batu pada Selasa,…</p>
-        </div>
-        <p class="text-sm text-yellow-300 mt-4">09 September 2025 | Kurikulum</p>
-      </div>
+<section class="container mx-auto px-4 py-8">
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+    <!-- Berita Utama -->
+    <div class="bg-gray-300 rounded-lg overflow-hidden">
+      <img src="img/berita1.png" alt="Berita utama" class="w-full h-[255px] object-cover">
     </div>
-  </section>
 
-  <section class="bg-blue-700 py-8">
-    <div class="container mx-auto px-4">
-      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
-        <div class="bg-white text-black rounded-lg p-4 flex flex-col">
-            
-          <img src="img/berita2.png">
-          <p class="text-sm text-justify leading-relaxed"></p>
-          <h4 class="font-semibold text-sm mb-1">Wali Kota Batu Cak Nur Hadir di MAN Kota Batu: Ajak Siswa Jadi Pahlawan Lingkungan dan Raih Kesempatan Program 1000 Sarjana</h4>
-          <p class="text-xs text-gray-600">06 Oktober 2025 | Humas</p>
-        </div>
-        <div class="bg-white text-black rounded-lg p-4 flex flex-col">
-           <img src="img/berita5.png">
-           <p class="text-sm text-justify leading-relaxed"></p>
-          <h4 class="font-semibold text-sm mb-1">Pelantikan OSSMaba 48: Estafet Kepemimpinan di MAN Kota Batu Dengan Semangat Baru</h4>
-          <p class="text-xs text-gray-600">29 September 2025 | Humas </p>
-        </div>
-        <div class="bg-white text-black rounded-lg p-5 flex flex-col">
-          <img src="img/berita4.png">
-          <p class="text-sm text-justify leading-relaxed"></p>
-          <h4 class="font-semibold text-sm mb-1">LDKS OssMaba 48: Membangun Komitmen Dan Kerja Sama untuk OSIS Lebih Maju</h4>
-          <p class="text-xs text-gray-600">28 September 2025 | Kesiswaan</p>
-        </div>
-        <div class="bg-white text-black rounded-lg p-4 flex flex-col">
-            <img src="img/berita3.png">
-            <p class="text-sm text-justify leading-relaxed"></p>
-          <h4 class="font-semibold text-sm mb-1">Nduwe Gawe di Madrasah: Ajang Pemilihan Ketua OSIS MAN Kota Batu Periode2025/2026</h4>
-          <p class="text-xs text-gray-600">25 September 2025 | Kesiswaan
-        </div>
+    <div class="bg-blue-700 text-white rounded-lg p-6 flex flex-col justify-between">
+      <div>
+        <h3 class="text-lg font-bold mb-2">
+          Jadi Tuan Rumah OMI 2025 se-Kota Batu, MAN Kota Batu Kirim 18 Siswa Terbaiknya
+        </h3>
+        <p class="text-sm text-justify leading-relaxed">
+          Kota Batu – Suasana penuh konsentrasi dan semangat kompetisi menyelimuti Ruang Laboratorium
+          Pelayanan Terpadu Satu Pintu (PTSP) MAN Kota Batu pada Selasa,…
+        </p>
       </div>
+      <p class="text-sm text-yellow-300 mt-4">09 September 2025 | Kurikulum</p>
     </div>
-  </section>
-
-  <div class="text-center my-6">
-    <a href="berita.html" class="bg-yellow-400 text-black font-semibold px-5 py-2 rounded-md shadow hover:bg-yellow-500 transition">Lihat Berita Lainnya</a>
   </div>
+</section>
 
+<section class="bg-blue-700 py-8">
+  <div class="container mx-auto px-4">
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
+
+      <!-- Card 1 -->
+      <div class="bg-white text-black rounded-lg p-4 flex flex-col hover:shadow-xl transition">
+        <img src="img/berita2.png" alt="Berita 2"
+             class="w-full h-40 object-cover rounded-md mb-2">
+        <h4 class="font-semibold text-sm mb-1">
+          Wali Kota Batu Cak Nur Hadir di MAN Kota Batu: Ajak Siswa Jadi Pahlawan Lingkungan dan Raih Kesempatan Program 1000 Sarjana
+        </h4>
+        <p class="text-xs text-gray-600 mt-1">06 Oktober 2025 | Humas</p>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="bg-white text-black rounded-lg p-4 flex flex-col hover:shadow-xl transition">
+        <img src="img/berita5.png" alt="Berita 3"
+             class="w-full h-40 object-cover rounded-md mb-2">
+        <h4 class="font-semibold text-sm mb-1">
+          Pelantikan OSSMaba 48: Estafet Kepemimpinan di MAN Kota Batu Dengan Semangat Baru
+        </h4>
+        <p class="text-xs text-gray-600 mt-1">29 September 2025 | Humas</p>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="bg-white text-black rounded-lg p-4 flex flex-col hover:shadow-xl transition">
+        <img src="img/berita4.png" alt="Berita 4"
+             class="w-full h-40 object-cover rounded-md mb-2">
+        <h4 class="font-semibold text-sm mb-1">
+          LDKS OssMaba 48: Membangun Komitmen Dan Kerja Sama untuk OSIS Lebih Maju
+        </h4>
+        <p class="text-xs text-gray-600 mt-1">28 September 2025 | Kesiswaan</p>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="bg-white text-black rounded-lg p-4 flex flex-col hover:shadow-xl transition">
+        <img src="img/berita3.png" alt="Berita 5"
+             class="w-full h-40 object-cover rounded-md mb-2">
+        <h4 class="font-semibold text-sm mb-1">
+          Nduwe Gawe di Madrasah: Ajang Pemilihan Ketua OSIS MAN Kota Batu Periode 2025/2026
+        </h4>
+        <p class="text-xs text-gray-600 mt-1">25 September 2025 | Kesiswaan</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===== TOMBOL BERITA LAIN ===== -->
+<div class="text-center my-6">
+  <a href="berita.html" class="bg-yellow-400 text-black font-semibold px-5 py-2 rounded-md shadow hover:bg-yellow-500 transition">
+    Lihat Berita Lainnya
+  </a>
+</div>
 
   <!-- Data Sekolah -->
   <section id="data-sekolah" class="bg-yellow-400 border-y-4 border-blue-900 py-8 scroll-mt-24">
@@ -760,7 +782,6 @@ tailwind.config = {
 </body>
 
 </html>
-
 
 
 

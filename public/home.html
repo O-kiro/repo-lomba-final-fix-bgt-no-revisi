@@ -190,160 +190,110 @@
     </div>
   </section>
 
+<!-- Program Unggulan -->
 <section id="program" class="p-4 scroll-mt-24"> 
   <div class="bg-blue-900 text-white p-4 rounded-lg"> 
+    <!-- Judul -->
     <div class="flex items-center justify-center space-x-2 mt-4"> 
       <i class="fas fa-book-open text-3xl flex justify-center text-yellow-400"></i> 
       <h2 class="text-white text-2xl font-bold">PROGRAM UNGGULAN</h2> 
     </div> 
 
-    <main class="flex flex-col md:flex-row w-full max-w-8xl mx-auto mt-4 md:mt-8 gap-4"> 
+      <main class="flex flex-col md:flex-row w-full max-w-8xl mx-auto mt-4 md:mt-8 gap-4"> 
       <!-- Sidebar Tombol -->
-      <aside class="flex flex-col md:flex-col gap-11 md:gap-19 w-full md:w-1/3 mt-2"> 
+      <aside class="flex flex-col md:flex-col gap-11 md:gap-24 w-full md:w-1/3 mt-2"> 
         <button class="tab-btn bg-yellow-400 text-blue-900 font-semibold px-6 py-5 md:px-6 text-xl rounded-full w-full active" data-tab="olimpiade">Olimpiade</button> 
         <button class="tab-btn bg-blue-700 hover:bg-yellow-400 text-white hover:text-blue-900 font-semibold px-6 py-5 text-xl md:px-6 rounded-full w-full" data-tab="riset">Riset</button> 
         <button class="tab-btn bg-blue-700 hover:bg-yellow-400 text-white hover:text-blue-900 font-semibold px-6 py-5 text-xl md:px-6 rounded-full w-full" data-tab="percepatan">Percepatan</button> 
         <button class="tab-btn bg-blue-700 hover:bg-yellow-400 text-white hover:text-blue-900 font-semibold px-6 py-5 text-xl md:px-6 rounded-full w-full" data-tab="tahfidz">Tahfidz</button> 
       </aside> 
 
+
       <!-- Konten -->
-      <section class="bg-blue-700 rounded-2xl flex-1 p-3 md:p-6 min-w-0 flex flex-col mb-8"> 
+      <section class="bg-blue-700 rounded-2xl flex-1 p-4 md:p-6 flex flex-col mb-8"> 
         <div id="tab-content" class="space-y-4">
-          
-          <!-- Default (Olimpiade) -->
+
+          <!-- Panel: Olimpiade -->
           <div class="tab-panel" id="olimpiade" style="display: block;">
-  <h2 class="text-white text-lg md:text-xl font-bold mb-4 text-center md:text-left">Olimpiade</h2>
+            <h2 class="text-white text-lg md:text-xl font-bold mb-4 text-center md:text-left">Olimpiade</h2>
 
-  <!-- Dropdown Bidang -->
-  <div class="relative w-full mb-4"> 
-    <select id="olimpiade-select" class="appearance-none w-full bg-yellow-400 text-blue-900 font-semibold py-2 px-2 md:px-4 rounded-lg cursor-pointer"> 
-      <option value="astronomi">🌌 Astronomi</option> 
-      <option value="biologi">🧬 Biologi</option> 
-      <option value="ekonomi">💰 Ekonomi</option> 
-      <option value="fisika">⚛️ Fisika</option> 
-      <option value="geografi">🌍 Geografi</option> 
-      <option value="kebumian">🌋 Kebumian</option> 
-      <option value="kimia">🧪 Kimia</option> 
-      <option value="matematika">➗ Matematika</option> 
-      <option value="ti">💻 Teknologi Informasi (TI)</option> 
-    </select> 
-    <div class="absolute right-3 top-1/2 transform -translate-y-1/2 text-blue-900 pointer-events-none">▼</div> 
-  </div> 
+            <!-- Dropdown Bidang -->
+            <div class="relative w-full mb-4"> 
+              <select id="olimpiade-select" class="appearance-none w-full bg-yellow-400 text-blue-900 font-semibold py-2 px-4 rounded-lg cursor-pointer"> 
+                <option value="astronomi" selected>Astronomi</option> 
+                <option value="biologi">Biologi</option> 
+                <option value="ekonomi">Ekonomi</option> 
+                <option value="fisika">Fisika</option> 
+                <option value="geografi">Geografi</option> 
+                <option value="kebumian">Kebumian</option> 
+                <option value="kimia">Kimia</option> 
+                <option value="matematika">Matematika</option> 
+                <option value="ti">Teknologi Informasi (TI)</option> 
+              </select> 
+              <div class="absolute right-3 top-1/2 transform -translate-y-1/2 text-blue-900 pointer-events-none">▼</div> 
+            </div> 
 
-  <!-- Konten Dinamis -->
-  <div id="olimpiade-content">
-    <!-- Konten default (Astronomi) -->
-    <div class="bg-blue-200 text-blue-800 h-32 md:h-40 flex items-center justify-center rounded-lg mb-4">
-      <span class="font-semibold">FOTO ASTRONOMI</span>
-    </div> 
-    <div class="bg-blue-200 rounded-lg p-2 md:p-4 mt-auto"> 
-      <h3 class="text-blue-800 font-bold border-b-2 border-yellow-400 mb-2 text-center">DESKRIPSI</h3> 
-      <p class="text-blue-800 text-xs md:text-sm text-justify">Kelas Olimpiade *astronomi* merupakan program sekolah khusus yang dirancang untuk mengembangkan potensi siswa berprestasi dalam bidang Astronomi yang berfokus dalam ajang Olimpiade. Program ini memberikan pembelajaran intensif, pendampingan dari pembina berpengalaman, serta kegiatan pelatihan terstruktur guna mempersiapkan siswa menghadapi kompetisi tingkat nasional dan internasional serta kompetisi lainnya. Melalui kelas ini, sekolah berkomitmen mencetak generasi unggul yang berintegritas, kompetitif, dan berdaya saing global.</p> 
-    </div>
-  </div>
-</div>
+            <!-- Konten Dinamis -->
+            <div id="olimpiade-content">
+              <div class="relative w-full h-40 md:h-56 rounded-lg overflow-hidden mb-4">
+                <img src="img/Astronomi.jpeg" alt="Foto Olimpiade Astronomi" class="w-full h-full object-cover">
+              </div>
+              <div class="bg-blue-200 rounded-lg p-4">
+                <h3 class="text-blue-800 font-bold border-b-2 border-yellow-400 mb-2 text-center">DESKRIPSI</h3>
+                <p class="text-blue-800 text-sm text-justify">
+                  Kelas Olimpiade *astronomi* merupakan program sekolah khusus yang dirancang untuk mengembangkan potensi siswa berprestasi dalam bidang Astronomi yang berfokus dalam ajang Olimpiade. Program ini memberikan pembelajaran intensif, pendampingan dari pembina berpengalaman, serta kegiatan pelatihan terstruktur guna mempersiapkan siswa menghadapi kompetisi tingkat nasional dan internasional serta kompetisi lainnya. Melalui kelas ini, sekolah berkomitmen mencetak generasi unggul yang berintegritas, kompetitif, dan berdaya saing global.
+                </p>
+              </div>
+            </div>
+          </div>
 
-<script>
-  // Data konten per bidang olimpiade
-  const olimpiadeData = {
-    astronomi: {
-      foto: "FOTO ASTRONOMI",
-      deskripsi: "Kelas Olimpiade *astronomi* merupakan program sekolah khusus yang dirancang untuk mengembangkan potensi siswa berprestasi dalam bidang Astronomi yang berfokus dalam ajang Olimpiade. Program ini memberikan pembelajaran intensif, pendampingan dari pembina berpengalaman, serta kegiatan pelatihan terstruktur guna mempersiapkan siswa menghadapi kompetisi tingkat nasional dan internasional serta kompetisi lainnya. Melalui kelas ini, sekolah berkomitmen mencetak generasi unggul yang berintegritas, kompetitif, dan berdaya saing global."
-    },
-    biologi: {
-      foto: "FOTO BIOLOGI",
-      deskripsi: "Kelas Olimpiade *biologi* merupakan program sekolah khusus yang dirancang untuk mengembangkan potensi siswa berprestasi dalam bidang Biologi yang berfokus dalam ajang Olimpiade. Program ini memberikan pembelajaran intensif, pendampingan dari pembina berpengalaman, serta kegiatan pelatihan terstruktur guna mempersiapkan siswa menghadapi kompetisi tingkat nasional dan internasional serta kompetisi lainnya. Melalui kelas ini, sekolah berkomitmen mencetak generasi unggul yang berintegritas, kompetitif, dan berdaya saing global."
-    },
-    ekonomi: {
-      foto: "FOTO EKONOMI",
-      deskripsi: "Kelas Olimpiade *ekonomi* merupakan program sekolah khusus yang dirancang untuk mengembangkan potensi siswa berprestasi dalam bidang Ekonomi yang berfokus dalam ajang Olimpiade. Program ini memberikan pembelajaran intensif, pendampingan dari pembina berpengalaman, serta kegiatan pelatihan terstruktur guna mempersiapkan siswa menghadapi kompetisi tingkat nasional dan internasional serta kompetisi lainnya. Melalui kelas ini, sekolah berkomitmen mencetak generasi unggul yang berintegritas, kompetitif, dan berdaya saing global."
-    },
-    fisika: {
-      foto: "FOTO FISIKA",
-      deskripsi: "Kelas Olimpiade *fisika* merupakan program sekolah khusus yang dirancang untuk mengembangkan potensi siswa berprestasi dalam bidang Fisika yang berfokus dalam ajang Olimpiade. Program ini memberikan pembelajaran intensif, pendampingan dari pembina berpengalaman, serta kegiatan pelatihan terstruktur guna mempersiapkan siswa menghadapi kompetisi tingkat nasional dan internasional serta kompetisi lainnya. Melalui kelas ini, sekolah berkomitmen mencetak generasi unggul yang berintegritas, kompetitif, dan berdaya saing global."
-    },
-    geografi: {
-      foto: "FOTO GEOGRAFI",
-      deskripsi: "Kelas Olimpiade *geografi* merupakan program sekolah khusus yang dirancang untuk mengembangkan potensi siswa berprestasi dalam bidang Geografi yang berfokus dalam ajang Olimpiade. Program ini memberikan pembelajaran intensif, pendampingan dari pembina berpengalaman, serta kegiatan pelatihan terstruktur guna mempersiapkan siswa menghadapi kompetisi tingkat nasional dan internasional serta kompetisi lainnya. Melalui kelas ini, sekolah berkomitmen mencetak generasi unggul yang berintegritas, kompetitif, dan berdaya saing global."
-    },
-    kebumian: {
-      foto: "FOTO KEBUMIAN",
-      deskripsi: "Kelas Olimpiade *kebumian* merupakan program sekolah khusus yang dirancang untuk mengembangkan potensi siswa berprestasi dalam bidang Kebumian yang berfokus dalam ajang Olimpiade. Program ini memberikan pembelajaran intensif, pendampingan dari pembina berpengalaman, serta kegiatan pelatihan terstruktur guna mempersiapkan siswa menghadapi kompetisi tingkat nasional dan internasional serta kompetisi lainnya. Melalui kelas ini, sekolah berkomitmen mencetak generasi unggul yang berintegritas, kompetitif, dan berdaya saing global."
-    },
-    kimia: {
-      foto: "FOTO KIMIA",
-      deskripsi: "Kelas Olimpiade *kimia* merupakan program sekolah khusus yang dirancang untuk mengembangkan potensi siswa berprestasi dalam bidang Kimia yang berfokus dalam ajang Olimpiade. Program ini memberikan pembelajaran intensif, pendampingan dari pembina berpengalaman, serta kegiatan pelatihan terstruktur guna mempersiapkan siswa menghadapi kompetisi tingkat nasional dan internasional serta kompetisi lainnya. Melalui kelas ini, sekolah berkomitmen mencetak generasi unggul yang berintegritas, kompetitif, dan berdaya saing global."
-    },
-    matematika: {
-      foto: "FOTO MATEMATIKA",
-      deskripsi: "Kelas Olimpiade *matematika* merupakan program sekolah khusus yang dirancang untuk mengembangkan potensi siswa berprestasi dalam bidang Matematika yang berfokus dalam ajang Olimpiade. Program ini memberikan pembelajaran intensif, pendampingan dari pembina berpengalaman, serta kegiatan pelatihan terstruktur guna mempersiapkan siswa menghadapi kompetisi tingkat nasional dan internasional serta kompetisi lainnya. Melalui kelas ini, sekolah berkomitmen mencetak generasi unggul yang berintegritas, kompetitif, dan berdaya saing global."
-    },
-    ti: {
-      foto: "FOTO TI",
-      deskripsi: "Kelas Olimpiade *informatika* merupakan program sekolah khusus yang dirancang untuk mengembangkan potensi siswa berprestasi dalam bidang Teknik Informatika yang berfokus dalam ajang Olimpiade. Program ini memberikan pembelajaran intensif, pendampingan dari pembina berpengalaman, serta kegiatan pelatihan terstruktur guna mempersiapkan siswa menghadapi kompetisi tingkat nasional dan internasional serta kompetisi lainnya. Melalui kelas ini, sekolah berkomitmen mencetak generasi unggul yang berintegritas, kompetitif, dan berdaya saing global."
-    }
-  };
-
-  // Event listener untuk dropdown
-  const olimpiadeSelect = document.getElementById("olimpiade-select");
-  const olimpiadeContent = document.getElementById("olimpiade-content");
-
-  olimpiadeSelect.addEventListener("change", (e) => {
-    const bidang = e.target.value;
-    const data = olimpiadeData[bidang];
-
-    olimpiadeContent.innerHTML = `
-      <div class="bg-blue-200 text-blue-800 h-32 md:h-40 flex items-center justify-center rounded-lg mb-4">
-        <span class="font-semibold">${data.foto}</span>
-      </div> 
-      <div class="bg-blue-200 rounded-lg p-2 md:p-4 mt-auto"> 
-        <h3 class="text-blue-800 font-bold border-b-2 border-yellow-400 mb-2 text-center">DESKRIPSI</h3> 
-        <p class="text-blue-800 text-xs md:text-sm text-justify">${data.deskripsi}</p> 
-      </div>
-    `;
-  });
-</script>
-
-          <!-- Riset -->
+          <!-- Panel: Riset -->
           <div class="tab-panel" id="riset" style="display: none;">
             <h2 class="text-white text-lg md:text-xl font-bold mb-4 text-center md:text-left">Riset</h2>
-            <div class="bg-blue-200 text-blue-800 h-32 md:h-40 flex items-center justify-center rounded-lg mb-4">
-              <span class="font-semibold">FOTO RISET</span>
+            <div class="relative w-full h-40 md:h-56 rounded-lg overflow-hidden mb-4">
+              <img src="img/riset.jpeg" alt="Foto Riset" class="w-full h-full object-cover">
             </div>
-            <div class="bg-blue-200 rounded-lg p-2 md:p-4">
+            <div class="bg-blue-200 rounded-lg p-4">
               <h3 class="text-blue-800 font-bold border-b-2 border-yellow-400 mb-2 text-center">DESKRIPSI</h3>
-              <p class="text-blue-800 text-xs md:text-sm text-justify">Program riset mendorong siswa untuk mengembangkan kemampuan penelitian ilmiah dengan bimbingan dosen dan peneliti profesional.</p>
+              <p class="text-blue-800 text-sm text-justify">
+                Kelas Riset merupakan program sekolah khusus yang dirancang untuk mengembangkan potensi siswa dalam bidang penelitian ilmiah. Program ini memberikan pembelajaran intensif, pendampingan dari pembimbing berpengalaman, serta kegiatan eksperimen dan publikasi ilmiah guna mempersiapkan siswa berpartisipasi dalam kompetisi penelitian tingkat nasional maupun internasional. Melalui kelas ini, sekolah berkomitmen mencetak generasi peneliti muda yang kritis, inovatif, dan berintegritas tinggi.
+              </p>
             </div>
           </div>
 
-          <!-- Percepatan -->
+          <!-- Panel: Percepatan -->
           <div class="tab-panel" id="percepatan" style="display: none;">
             <h2 class="text-white text-lg md:text-xl font-bold mb-4 text-center md:text-left">Percepatan</h2>
-            <div class="bg-blue-200 text-blue-800 h-32 md:h-40 flex items-center justify-center rounded-lg mb-4">
-              <span class="font-semibold">FOTO PERCEPATAN</span>
+            <div class="relative w-full h-40 md:h-56 rounded-lg overflow-hidden mb-4">
+              <img src="img/Percepatan.jpeg" alt="Foto Percepatan" class="w-full h-full object-cover">
             </div>
-            <div class="bg-blue-200 rounded-lg p-2 md:p-4">
+            <div class="bg-blue-200 rounded-lg p-4">
               <h3 class="text-blue-800 font-bold border-b-2 border-yellow-400 mb-2 text-center">DESKRIPSI</h3>
-              <p class="text-blue-800 text-xs md:text-sm text-justify">Program percepatan diperuntukkan bagi siswa berprestasi agar dapat menyelesaikan studi lebih cepat dengan hasil maksimal.</p>
+              <p class="text-blue-800 text-sm text-justify">
+                Kelas Percepatan merupakan program khusus yang diperuntukkan bagi siswa berpotensi tinggi untuk menyelesaikan jenjang pendidikan dalam waktu yang lebih singkat. Program ini menawarkan pembelajaran intensif, kurikulum yang terintegrasi, serta bimbingan akademik berkelanjutan agar siswa mampu mengoptimalkan kemampuan berpikir kritis dan kreatif. Melalui kelas ini, sekolah berkomitmen mencetak lulusan yang unggul, adaptif, dan siap bersaing di tingkat nasional maupun global.
+              </p>
             </div>
           </div>
 
-          <!-- Tahfidz -->
+          <!-- Panel: Tahfidz -->
           <div class="tab-panel" id="tahfidz" style="display: none;">
             <h2 class="text-white text-lg md:text-xl font-bold mb-4 text-center md:text-left">Tahfidz</h2>
-            <div class="bg-blue-200 text-blue-800 h-32 md:h-40 flex items-center justify-center rounded-lg mb-4">
-              <span class="font-semibold">FOTO TAHFIDZ</span>
+            <div class="relative w-full h-40 md:h-56 rounded-lg overflow-hidden mb-4">
+              <img src="img/tahfidz.jpeg" alt="Foto Tahfidz" class="w-full h-full object-cover">
             </div>
-            <div class="bg-blue-200 rounded-lg p-2 md:p-4">
+            <div class="bg-blue-200 rounded-lg p-4">
               <h3 class="text-blue-800 font-bold border-b-2 border-yellow-400 mb-2 text-center">DESKRIPSI</h3>
-              <p class="text-blue-800 text-xs md:text-sm text-justify">Program tahfidz difokuskan pada pembinaan hafalan Al-Qur’an dan penguatan karakter religius siswa.</p>
+              <p class="text-blue-800 text-sm text-justify">
+                Kelas Tahfidz merupakan program unggulan yang difokuskan pada pembinaan hafalan Al-Qur’an secara sistematis dan berkelanjutan. Program ini memberikan bimbingan dari para ustadz dan ustadzah yang berkompeten, serta menerapkan metode hafalan yang efektif dan terukur. Melalui program ini, sekolah berupaya membentuk generasi Qurani yang berakhlak mulia, disiplin, dan mampu mengamalkan nilai-nilai Al-Qur’an dalam kehidupan sehari-hari.
+              </p>
             </div>
           </div>
+
         </div>
-      </section> 
-    </main> 
-  </div> 
-</section> 
+      </section>
+    </main>
+  </div>
+</section>
 
 <!-- SCRIPT UNTUK TAB -->
 <script>
@@ -352,22 +302,52 @@
 
   buttons.forEach(btn => {
     btn.addEventListener("click", () => {
-      // Reset semua tombol
+      // reset tombol
       buttons.forEach(b => {
         b.classList.remove("bg-yellow-400", "text-blue-900", "font-bold");
-        b.classList.add("bg-blue-700", "text-white", "hover:bg-yellow-400", "hover:text-blue-900");
+        b.classList.add("bg-blue-700", "text-white");
       });
 
-      // Aktifkan tombol yang diklik
+      // aktifkan tombol
       btn.classList.remove("bg-blue-700", "text-white");
       btn.classList.add("bg-yellow-400", "text-blue-900", "font-bold");
 
-      // Tampilkan panel sesuai tombol
+      // tampilkan panel
       const target = btn.getAttribute("data-tab");
       panels.forEach(panel => {
         panel.style.display = panel.id === target ? "block" : "none";
       });
     });
+  });
+
+  // === Ganti foto dan deskripsi Olimpiade ===
+  const olimpiadeSelect = document.getElementById("olimpiade-select");
+  const olimpiadeContent = document.getElementById("olimpiade-content");
+
+  const olimpiadeData = {
+    astronomi: { img: "img/Astronomi.jpeg", desc: "Kelas Olimpiade *astronomi* merupakan program sekolah khusus yang dirancang untuk mengembangkan potensi siswa berprestasi dalam bidang Astronomi yang berfokus dalam ajang Olimpiade. Program ini memberikan pembelajaran intensif, pendampingan dari pembina berpengalaman, serta kegiatan pelatihan terstruktur guna mempersiapkan siswa menghadapi kompetisi tingkat nasional dan internasional serta kompetisi lainnya. Melalui kelas ini, sekolah berkomitmen mencetak generasi unggul yang berintegritas, kompetitif, dan berdaya saing global." },
+    biologi: { img: "img/Biologi.jpeg", desc: "Kelas Olimpiade *biologi* merupakan program sekolah khusus yang dirancang untuk mengembangkan potensi siswa berprestasi dalam bidang Biologi yang berfokus dalam ajang Olimpiade. Program ini memberikan pembelajaran intensif, pendampingan dari pembina berpengalaman, serta kegiatan pelatihan terstruktur guna mempersiapkan siswa menghadapi kompetisi tingkat nasional dan internasional serta kompetisi lainnya. Melalui kelas ini, sekolah berkomitmen mencetak generasi unggul yang berintegritas, kompetitif, dan berdaya saing global." },
+    ekonomi: { img: "img/ekonomi.jpeg", desc: "Kelas Olimpiade *ekonomi* merupakan program sekolah khusus yang dirancang untuk mengembangkan potensi siswa berprestasi dalam bidang Ekonomi yang berfokus dalam ajang Olimpiade. Program ini memberikan pembelajaran intensif, pendampingan dari pembina berpengalaman, serta kegiatan pelatihan terstruktur guna mempersiapkan siswa menghadapi kompetisi tingkat nasional dan internasional serta kompetisi lainnya. Melalui kelas ini, sekolah berkomitmen mencetak generasi unggul yang berintegritas, kompetitif, dan berdaya saing global." },
+    fisika: { img: "img/Fisika.jpeg", desc: "Kelas Olimpiade *fisika* merupakan program sekolah khusus yang dirancang untuk mengembangkan potensi siswa berprestasi dalam bidang Fisika yang berfokus dalam ajang Olimpiade. Program ini memberikan pembelajaran intensif, pendampingan dari pembina berpengalaman, serta kegiatan pelatihan terstruktur guna mempersiapkan siswa menghadapi kompetisi tingkat nasional dan internasional serta kompetisi lainnya. Melalui kelas ini, sekolah berkomitmen mencetak generasi unggul yang berintegritas, kompetitif, dan berdaya saing global." },
+    geografi: { img: "img/Geografi.jpeg", desc: "Kelas Olimpiade *geografi* merupakan program sekolah khusus yang dirancang untuk mengembangkan potensi siswa berprestasi dalam bidang Geografi yang berfokus dalam ajang Olimpiade. Program ini memberikan pembelajaran intensif, pendampingan dari pembina berpengalaman, serta kegiatan pelatihan terstruktur guna mempersiapkan siswa menghadapi kompetisi tingkat nasional dan internasional serta kompetisi lainnya. Melalui kelas ini, sekolah berkomitmen mencetak generasi unggul yang berintegritas, kompetitif, dan berdaya saing global." },
+    kebumian: { img: "img/Kebumian.jpeg", desc: "Kelas Olimpiade *kebumian* merupakan program sekolah khusus yang dirancang untuk mengembangkan potensi siswa berprestasi dalam bidang Kebumian yang berfokus dalam ajang Olimpiade. Program ini memberikan pembelajaran intensif, pendampingan dari pembina berpengalaman, serta kegiatan pelatihan terstruktur guna mempersiapkan siswa menghadapi kompetisi tingkat nasional dan internasional serta kompetisi lainnya. Melalui kelas ini, sekolah berkomitmen mencetak generasi unggul yang berintegritas, kompetitif, dan berdaya saing global." },
+    kimia: { img: "img/Kimia.jpeg", desc: "Kelas Olimpiade *kimia* merupakan program sekolah khusus yang dirancang untuk mengembangkan potensi siswa berprestasi dalam bidang Kimia yang berfokus dalam ajang Olimpiade. Program ini memberikan pembelajaran intensif, pendampingan dari pembina berpengalaman, serta kegiatan pelatihan terstruktur guna mempersiapkan siswa menghadapi kompetisi tingkat nasional dan internasional serta kompetisi lainnya. Melalui kelas ini, sekolah berkomitmen mencetak generasi unggul yang berintegritas, kompetitif, dan berdaya saing global." },
+    matematika: { img: "img/Matematika.jpeg", desc: "Kelas Olimpiade *matematika* merupakan program sekolah khusus yang dirancang untuk mengembangkan potensi siswa berprestasi dalam bidang Matematika yang berfokus dalam ajang Olimpiade. Program ini memberikan pembelajaran intensif, pendampingan dari pembina berpengalaman, serta kegiatan pelatihan terstruktur guna mempersiapkan siswa menghadapi kompetisi tingkat nasional dan internasional serta kompetisi lainnya. Melalui kelas ini, sekolah berkomitmen mencetak generasi unggul yang berintegritas, kompetitif, dan berdaya saing global. " },
+    ti: { img: "img/Informatika.jpeg", desc: "Kelas Olimpiade *informatika* merupakan program sekolah khusus yang dirancang untuk mengembangkan potensi siswa berprestasi dalam bidang Teknik Informatika yang berfokus dalam ajang Olimpiade. Program ini memberikan pembelajaran intensif, pendampingan dari pembina berpengalaman, serta kegiatan pelatihan terstruktur guna mempersiapkan siswa menghadapi kompetisi tingkat nasional dan internasional serta kompetisi lainnya. Melalui kelas ini, sekolah berkomitmen mencetak generasi unggul yang berintegritas, kompetitif, dan berdaya saing global." },
+  };
+
+  olimpiadeSelect.addEventListener("change", (e) => {
+    const bidang = e.target.value;
+    const data = olimpiadeData[bidang];
+    olimpiadeContent.innerHTML = `
+      <div class='relative w-full h-40 md:h-56 rounded-lg overflow-hidden mb-4'>
+        <img src='${data.img}' alt='Foto ${bidang}' class='w-full h-full object-cover'>
+      </div>
+      <div class='bg-blue-200 rounded-lg p-4'>
+        <h3 class='text-blue-800 font-bold border-b-2 border-yellow-400 mb-2 text-center'>DESKRIPSI</h3>
+        <p class='text-blue-800 text-sm text-justify'>${data.desc}</p>
+      </div>
+    `;
   });
 </script>
   
@@ -380,29 +360,30 @@
   <div class="flex flex-wrap justify-center gap-6 px-4 md:px-8 mb-8">
     <!-- Card Prestasi 1 -->
     <div class="w-60 bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition">
-      <img src="img/prestasi1.png" alt="prestasi 1" class="w-full h-40 object-cover" loading="lazy">
+      <img src="img/Prestasi_1.jpg" alt="prestasi 1" class="w-full h-40 object-cover" loading="lazy">
       <div class="p-4">
-        <h4 class="font-bold text-lg text-blue-800">Juara 1 Olim INFORMATIKA</h4>
-        <p class="text-gray-600 text-sm mt-2">Siswa MAN Kota Batu berhasil meraih Juara 1 tingkat nasional.</p>
-        <a href="Prestasi1.php" class="text-blue-600 text-sm hover:underline">Lihat Detail</a>
+        <h4 class="font-bold text-lg text-blue-800">ACHMAD MUDZAKIR A. (XI-E)</h4>
+        <p class="text-gray-600 text-sm mt-2">Berhasil meraih 2 Medali Cabang Olahraga Renang di Kejuaraan Renang Aquatik Indonesia Kota Malang </p>
+        <p class="text-blue-900 text-sm mt-2">Malang, 28-29 September 2025.</p>
       </div>
     </div>
 
     <!-- Card Prestasi 2 -->
     <div class="w-60 bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition">
-      <img src="images/prestasi2.jpg" alt="prestasi 2" class="w-full h-40 object-cover" loading="lazy">
+      <img src="img/Prestasi_2.jpg" alt="prestasi 2" class="w-full h-40 object-cover" loading="lazy">
       <div class="p-4">
-        <h4 class="font-bold text-lg text-blue-800">Juara 2 Fisika</h4>
-        <p class="text-gray-600 text-sm mt-2">Prestasi hebat diraih siswa MAN Kota Batu di ajang olimpiade.</p>
+        <h4 class="font-bold text-lg text-blue-800">PADUAN SUARA MAKOBA VOICE</h4>
+        <p class="text-gray-600 text-sm mt-2">Mendapatkan Juara 3 di Lomba Paduan Suara Nasional Tahun 2025 Diselenggarakan oleh Direktorat KSKK</p>
       </div>
     </div>
 
     <!-- Card Prestasi 3 -->
     <div class="w-60 bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition">
-      <img src="images/prestasi3.jpg" alt="prestasi 3" class="w-full h-40 object-cover" loading="lazy">
+      <img src="img/Prestasi_3.webp" alt="prestasi 3" class="w-full h-40 object-cover" loading="lazy">
       <div class="p-4">
         <h4 class="font-bold text-lg text-blue-800">Juara Debat</h4>
-        <p class="text-gray-600 text-sm mt-2">Tim debat bahasa berhasil menembus tingkat provinsi.</p>
+        <p class="text-gray-600 text-sm mt-2">Mendapatkan Juara 1 Cabang Lomba Menulis Cerpen Tingkat Nasional yang Diselenggarakan oleh IGINOS (Ikatan Guru Inovator dan Penggerak Literasi Nasional)</p>
+        <p class="text-blue-900 text-sm mt-2">09 Juli - 30 Agustus 2025</p>
       </div>
     </div>
   </div>
@@ -779,6 +760,7 @@ tailwind.config = {
 </body>
 
 </html>
+
 
 
 

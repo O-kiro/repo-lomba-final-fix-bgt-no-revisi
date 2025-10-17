@@ -314,6 +314,7 @@
                 <textarea id="feedback" name="feedback" rows="4" placeholder="Tulis saran atau masukan Anda di sini..." 
                     class="w-full p-3 border border-slate-200 rounded-md focus:outline-none focus:border-blue-900 bg-white text-slate-800"></textarea>
             </div>
+            </form>
 <div class="flex items-center gap-4">
   <button 
     type="button" 
@@ -335,27 +336,103 @@
 </div>
 
 <script>
+document.addEventListener('DOMContentLoaded', () => {
+  const form = document.getElementById('surveyForm');
   const button = document.getElementById('submitButton');
   const confirmMessage = document.getElementById('confirmMessage');
   const submitStatus = document.getElementById('submitStatus');
 
-  button.addEventListener('click', () => {
-    // Sembunyikan pesan konfirmasi, tampilkan status kirim
+  // fungsi buat toast kecil (notif sukses / gagal)
+  function createToast(message, success = true) {
+    const existing = document.getElementById('survey-toast');
+    if (existing) existing.remove();
+
+    const wrap = document.createElement('div');
+    wrap.id = 'survey-toast';
+    wrap.className =
+      'fixed bottom-6 left-1/2 -translate-x-1/2 z-50 flex items-center gap-3 px-4 py-2 rounded-lg shadow-lg text-sm font-medium transition';
+    wrap.style.background = success
+      ? 'linear-gradient(90deg,#ecfccb,#fef3c7)'
+      : 'linear-gradient(90deg,#fee2e2,#ffffff)';
+    wrap.style.color = success ? '#065f46' : '#991b1b';
+    wrap.style.boxShadow = '0 8px 30px rgba(2,6,23,0.12)';
+    wrap.textContent = message;
+    document.body.appendChild(wrap);
+
+    setTimeout(() => (wrap.style.opacity = '0'), 2200);
+    setTimeout(() => wrap.remove(), 2600);
+  }
+
+  // Fungsi simulasi kirim data ke server (dummy)
+  async function trySendToServer(payload) {
+    try {
+      const res = await fetch('/api/survey', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload),
+      });
+      return res.ok;
+    } catch {
+      return false;
+    }
+  }
+
+  // ketika tombol diklik
+  button.addEventListener('click', async () => {
+    // validasi form HTML5
+    if (!form.checkValidity()) {
+      form.reportValidity();
+      return;
+    }
+
+    // sembunyikan konfirmasi, tampilkan status kirim
     confirmMessage.classList.add('hidden');
     submitStatus.classList.remove('hidden');
+    submitStatus.textContent = "Mengirim data...";
 
-    // (opsional) simulasi pengiriman data
-    setTimeout(() => {
+    button.disabled = true;
+    button.classList.add('opacity-70', 'cursor-not-allowed');
+
+    const fd = new FormData(form);
+    const data = Object.fromEntries(fd.entries());
+
+    const sent = await trySendToServer(data);
+
+    if (sent) {
       submitStatus.textContent = "Terkirim!";
-      button.disabled = true;
-      button.classList.add('opacity-60', 'cursor-not-allowed');
-    }, 2000);
-  });
-</script>
+      createToast("Survei berhasil dikirim. Terima kasih!", true);
+    } else {
+      submitStatus.textContent = "Koneksi bermasalah, tersimpan lokal.";
+      localStorage.setItem("surveyBackup", JSON.stringify(data));
+      createToast("Koneksi gagal, survei disimpan lokal.", false);
+    }
 
-        </form>
-    </main>
+    // reset & redirect setelah 2.5 detik
+    setTimeout(() => {
+      form.reset();
+      submitStatus.classList.add('hidden');
+      button.disabled = false;
+      button.classList.remove('opacity-70', 'cursor-not-allowed');
+      window.location.href = "layanan.html";
+    }, 2500);
+  });
+
+  // jika online, kirim ulang survei lokal
+  window.addEventListener('online', async () => {
+    const saved = localStorage.getItem("surveyBackup");
+    if (!saved) return;
+    const data = JSON.parse(saved);
+    const ok = await trySendToServer(data);
+    if (ok) {
+      localStorage.removeItem("surveyBackup");
+      createToast("Survei lokal berhasil dikirim ulang.", true);
+    }
+  });
+});
+</script>
+</main>
 </body>
+
 <script>
 (function () {
     const form = document.getElementById('surveyForm');

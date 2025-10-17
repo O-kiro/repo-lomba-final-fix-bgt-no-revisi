@@ -94,38 +94,139 @@
       </div>
     </div>
 
-    <!-- Prestasi Lainnya -->
-    <div class="grid md:grid-cols-2 gap-10">
-      <div class="bg-white rounded-2xl shadow-lg hover:shadow-blue-200 p-6 text-center hover:-translate-y-2 transition-all duration-500 animate-fadeInUp">
-        <img src="img/Prestasi_2.jpg" class="rounded-xl h-64 w-full object-cover mb-5">
-        <h3 class="text-2xl font-bold text-blue-900 mb-2">PADUAN SUARA MAKOBA VOICE</h3>
-        <p class="text-gray-700">
-          Meraih <span class="font-semibold text-yellow-500">Juara 3</span> 
-          dalam <span class="font-bold text-blue-900">Lomba Paduan Suara Nasional 2025</span>.
-        </p>
-        <p class="text-gray-500 italic mt-2">Diselenggarakan oleh Direktorat KSKK</p>
-      </div>
-
-      <div class="bg-white rounded-2xl shadow-lg hover:shadow-blue-200 p-6 text-center hover:-translate-y-2 transition-all duration-500 animate-fadeInUp">
-        <img src="img/Prestasi_3.webp" class="rounded-xl h-64 w-full object-cover mb-5">
-        <h3 class="text-2xl font-bold text-blue-900 mb-2">ALETA PRABA SANTOSO (X-A)</h3>
-        <p class="text-gray-700">
-          Meraih <span class="font-semibold text-yellow-500">Juara 1</span> 
-          dalam <span class="font-bold text-blue-900">Lomba Menulis Cerpen Tingkat Nasional</span>.
-        </p>
-        <p class="text-gray-500 italic mt-2">Diselenggarakan oleh IGINOS (Ikatan Guru Inovator & Penggerak Literasi Nasional)</p>
-      </div>
-    </div>
-  
-    <!-- Pagination -->
-    <div class="flex justify-center items-center gap-3 mt-10">
-      <button class="w-9 h-9 flex items-center justify-center rounded-full bg-gray-200 hover:bg-blue-600 hover:text-white transition">‹</button>
-      <button class="w-9 h-9 flex items-center justify-center rounded-full bg-blue-600 text-white font-bold shadow">1</button>
-      <button class="w-9 h-9 flex items-center justify-center rounded-full bg-gray-200 hover:bg-blue-600 hover:text-white transition">2</button>
-      <button class="w-9 h-9 flex items-center justify-center rounded-full bg-gray-200 hover:bg-blue-600 hover:text-white transition">3</button>
-      <button class="w-9 h-9 flex items-center justify-center rounded-full bg-gray-200 hover:bg-blue-600 hover:text-white transition">›</button>
-    </div>
+<!-- === PRESTASI LAINNYA (DENGAN PAGINATION & TOMBOL KANAN-KIRI) === -->
+<div id="prestasi-container" class="grid md:grid-cols-2 gap-10 transition-all duration-700">
+  <!-- Halaman 1 (default) -->
+  <div class="bg-white rounded-2xl shadow-lg hover:shadow-blue-200 p-6 text-center hover:rotate-[2deg] hover:-translate-y-2 transition-all duration-500">
+    <img src="img/Prestasi_2.jpg" class="rounded-xl h-64 w-full object-cover mb-5">
+    <h3 class="text-2xl font-bold text-blue-900 mb-2">PADUAN SUARA MAKOBA VOICE</h3>
+    <p class="text-gray-700">
+      Meraih <span class="font-semibold text-yellow-500">Juara 3</span> 
+      dalam <span class="font-bold text-blue-900">Lomba Paduan Suara Nasional 2025</span>.
+    </p>
+    <p class="text-gray-500 italic mt-2">Diselenggarakan oleh Direktorat KSKK</p>
   </div>
+
+  <div class="bg-white rounded-2xl shadow-lg hover:shadow-blue-200 p-6 text-center hover:rotate-[2deg] hover:-translate-y-2 transition-all duration-500">
+    <img src="img/Prestasi_3.webp" class="rounded-xl h-64 w-full object-cover mb-5">
+    <h3 class="text-2xl font-bold text-blue-900 mb-2">ALETA PRABA SANTOSO (X-A)</h3>
+    <p class="text-gray-700">
+      Meraih <span class="font-semibold text-yellow-500">Juara 1</span> 
+      dalam <span class="font-bold text-blue-900">Lomba Menulis Cerpen Tingkat Nasional</span>.
+    </p>
+    <p class="text-gray-500 italic mt-2">Diselenggarakan oleh IGINOS (Ikatan Guru Inovator & Penggerak Literasi Nasional)</p>
+  </div>
+</div>
+
+<!-- Pagination -->
+<div class="flex justify-center items-center gap-3 mt-10">
+  <button id="prevPage" class="nav-btn w-9 h-9 flex items-center justify-center rounded-full bg-gray-200 hover:bg-blue-700 hover:text-white transition">‹</button>
+  <button data-page="1" class="page-btn w-9 h-9 flex items-center justify-center rounded-full bg-blue-900 text-white font-bold shadow transition">1</button>
+  <button data-page="2" class="page-btn w-9 h-9 flex items-center justify-center rounded-full bg-gray-200 hover:bg-blue-700 hover:text-white transition">2</button>
+  <button data-page="3" class="page-btn w-9 h-9 flex items-center justify-center rounded-full bg-gray-200 hover:bg-blue-700 hover:text-white transition">3</button>
+  <button id="nextPage" class="nav-btn w-9 h-9 flex items-center justify-center rounded-full bg-gray-200 hover:bg-blue-700 hover:text-white transition">›</button>
+</div>
+
+<script>
+// === DATA PRESTASI PER HALAMAN ===
+const prestasiPages = {
+  1: `
+    <div class="bg-white rounded-2xl shadow-lg hover:shadow-blue-200 p-6 text-center hover:rotate-[2deg] hover:-translate-y-2 transition-all duration-500">
+      <img src="img/Prestasi_2.jpg" class="rounded-xl h-64 w-full object-cover mb-5">
+      <h3 class="text-2xl font-bold text-blue-900 mb-2">PADUAN SUARA MAKOBA VOICE</h3>
+      <p class="text-gray-700">Meraih <span class="font-semibold text-yellow-500">Juara 3</span> 
+      dalam <span class="font-bold text-blue-900">Lomba Paduan Suara Nasional 2025</span>.</p>
+      <p class="text-gray-500 italic mt-2">Diselenggarakan oleh Direktorat KSKK</p>
+    </div>
+
+    <div class="bg-white rounded-2xl shadow-lg hover:shadow-blue-200 p-6 text-center hover:rotate-[2deg] hover:-translate-y-2 transition-all duration-500">
+      <img src="img/Prestasi_3.webp" class="rounded-xl h-64 w-full object-cover mb-5">
+      <h3 class="text-2xl font-bold text-blue-900 mb-2">ALETA PRABA SANTOSO (X-A)</h3>
+      <p class="text-gray-700">Meraih <span class="font-semibold text-yellow-500">Juara 1</span> 
+      dalam <span class="font-bold text-blue-900">Lomba Menulis Cerpen Tingkat Nasional</span>.</p>
+      <p class="text-gray-500 italic mt-2">Diselenggarakan oleh IGINOS (Ikatan Guru Inovator & Penggerak Literasi Nasional)</p>
+    </div>
+  `,
+  2: `
+    <div class="bg-white rounded-2xl shadow-lg hover:shadow-blue-200 p-6 text-center hover:rotate-[2deg] hover:-translate-y-2 transition-all duration-500">
+      <img src="img/Prestasi_4.jpg" class="rounded-xl h-64 w-full object-cover mb-5">
+      <h3 class="text-2xl font-bold text-blue-900 mb-2">TIM ROBOTIK MAN KOTA BATU</h3>
+      <p class="text-gray-700">Meraih <span class="font-semibold text-yellow-500">Juara 2</span> 
+      dalam Kompetisi Robot Madrasah Nasional.</p>
+      <p class="text-gray-500 italic mt-2">Jakarta, Agustus 2025</p>
+    </div>
+
+    <div class="bg-white rounded-2xl shadow-lg hover:shadow-blue-200 p-6 text-center hover:rotate-[2deg] hover:-translate-y-2 transition-all duration-500">
+      <img src="img/Prestasi_5.jpg" class="rounded-xl h-64 w-full object-cover mb-5">
+      <h3 class="text-2xl font-bold text-blue-900 mb-2">DEBATE CLUB MAN KOTA BATU</h3>
+      <p class="text-gray-700">Meraih <span class="font-semibold text-yellow-500">Juara 1</span> 
+      dalam Lomba Debat Bahasa Inggris Tingkat Jawa Timur.</p>
+      <p class="text-gray-500 italic mt-2">Surabaya, Juni 2025</p>
+    </div>
+  `,
+  3: `
+    <div class="bg-white rounded-2xl shadow-lg hover:shadow-blue-200 p-6 text-center hover:rotate-[2deg] hover:-translate-y-2 transition-all duration-500">
+      <img src="img/Prestasi_6.jpg" class="rounded-xl h-64 w-full object-cover mb-5">
+      <h3 class="text-2xl font-bold text-blue-900 mb-2">OLIMPIADE SAINS</h3>
+      <p class="text-gray-700">Meraih <span class="font-semibold text-yellow-500">Medali Emas</span> 
+      dalam bidang Fisika Tingkat Nasional.</p>
+      <p class="text-gray-500 italic mt-2">Bandung, Juli 2025</p>
+    </div>
+
+    <div class="bg-white rounded-2xl shadow-lg hover:shadow-blue-200 p-6 text-center hover:rotate-[2deg] hover:-translate-y-2 transition-all duration-500">
+      <img src="img/Prestasi_7.jpg" class="rounded-xl h-64 w-full object-cover mb-5">
+      <h3 class="text-2xl font-bold text-blue-900 mb-2">KELOMPOK PASKIBRA</h3>
+      <p class="text-gray-700">Menjadi <span class="font-semibold text-yellow-500">Pasukan Terbaik</span> 
+      dalam Lomba PBB se-Malang Raya.</p>
+      <p class="text-gray-500 italic mt-2">Malang, Agustus 2025</p>
+    </div>
+  `
+};
+
+// === LOGIKA PAGINATION ===
+let currentPage = 1;
+const totalPages = Object.keys(prestasiPages).length;
+
+const prestasiContainer = document.getElementById("prestasi-container");
+const pageButtons = document.querySelectorAll(".page-btn");
+const prevPage = document.getElementById("prevPage");
+const nextPage = document.getElementById("nextPage");
+
+function showPage(page) {
+  if (page < 1) page = totalPages;
+  if (page > totalPages) page = 1;
+  currentPage = page;
+
+  // Ubah warna tombol aktif
+  pageButtons.forEach(btn => {
+    btn.classList.remove("bg-blue-900", "text-white", "font-bold", "shadow");
+    btn.classList.add("bg-gray-200");
+  });
+  const activeBtn = document.querySelector(`[data-page="${page}"]`);
+  activeBtn.classList.add("bg-blue-900", "text-white", "font-bold", "shadow");
+  activeBtn.classList.remove("bg-gray-200");
+
+  // Efek animasi ganti halaman
+  prestasiContainer.style.transform = "rotateY(90deg)";
+  prestasiContainer.style.opacity = "0";
+  prestasiContainer.style.transition = "transform 0.4s ease, opacity 0.4s ease";
+
+  setTimeout(() => {
+    prestasiContainer.innerHTML = prestasiPages[page];
+    prestasiContainer.style.transform = "rotateY(0deg)";
+    prestasiContainer.style.opacity = "1";
+  }, 400);
+}
+
+// Klik tombol angka
+pageButtons.forEach(btn => {
+  btn.addEventListener("click", () => showPage(parseInt(btn.dataset.page)));
+});
+
+// Klik tombol kiri/kanan
+prevPage.addEventListener("click", () => showPage(currentPage - 1));
+nextPage.addEventListener("click", () => showPage(currentPage + 1));
+</script>
 </main>
   
 <!-- Footer -->

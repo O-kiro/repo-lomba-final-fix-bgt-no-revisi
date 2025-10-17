@@ -9,6 +9,42 @@
   rel="stylesheet"
   href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
   />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: "#1e3a8a",
+            accent: "#fbbf24",
+          },
+          fontFamily: {
+            sans: ["Inter", "system-ui", "sans-serif"],
+          },
+        },
+      },
+    };
+  </script>
+
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #1e3a8a;
+      background-image:
+        radial-gradient(circle at 15% 20%, rgba(255,255,255,0.05), transparent 20%),
+        radial-gradient(circle at 85% 80%, rgba(255,255,255,0.04), transparent 25%);
+      background-attachment: fixed;
+      color: #1e293b;
+    }
+
+    input:focus, textarea:focus, select:focus {
+      outline: none;
+      box-shadow: 0 0 0 3px rgba(30,58,138,0.2);
+      border-color: #1e3a8a;
+      transition: all .2s ease;
+    }
+  </style>
   </head>
   <body class="bg-gray-50 font-sans">
 
@@ -58,8 +94,6 @@
   </div>
 </header>
 
-  
-
   <!-- Judul -->
   <section class="bg-blue-800 text-center py-6 text-white">
     <h1 class="font-bold mt-4 text-4xl text-bold">
@@ -70,28 +104,129 @@
     </p>
   </section>
 
-  <!-- Form Buku Tamu -->
-  <div class="container mx-auto mt-6 px-4">
-    <div class="bg-white shadow-lg rounded-lg p-6">
-      <!-- Box Judul -->
-      <div class="bg-blue-900 text-white font-bold px-6 py-8 text-4xl gap-4 rounded-t-md flex items-center justify-center">
-        <i class="fa-solid fa-clipboard-list text-3xl flex justify-center text-yellow-400"></i>
-        <h2 class="font-bold text-3xl">Data Diri Anda</h2> 
+    <!-- Form -->
+    <div class="flex justify-center mt-5 mb-5">
+    <body class="min-h-screen flex items-center justify-center bg-slate-100 py-10 px-4">
+    <main class="w-full max-w-3xl bg-white rounded-xl shadow-card p-8 md:p-10 relative overflow-hidden">
+    <h2 class="text-2xl font-bold text-blue-900 mb-6 text-center">Isi Data Diri</h2>
+
+    <form id="guestForm" class="space-y-6">
+      <!-- Tujuan Kunjungan / Layanan -->
+      <div>
+        <label class="block font-semibold text-slate-700 mb-2">Tujuan Kunjungan / Layanan <span class="text-red-500">*</span></label>
+        <div class="flex items-center gap-6">
+          <label class="flex items-center gap-2">
+            <input type="radio" name="tujuan" value="Kunjungan" required class="text-blue-600 focus:ring-blue-600">
+            <span>Kunjungan</span>
+          </label>
+          <label class="flex items-center gap-2">
+            <input type="radio" name="tujuan" value="Layanan" required class="text-blue-600 focus:ring-blue-600">
+            <span>Layanan</span>
+          </label>
+        </div>
       </div>
-      <div class="border border-blue-900 rounded-b-md p-4 space-y-4 bg-blue-700">
-        <input type="text" placeholder="Nama Lengkap Anda" class="w-full border p-2 rounded">
-        <input type="text" placeholder="No Registrasi" class="w-full border p-2 rounded">
-        <input type="text" placeholder="No Whatsapp" class="w-full border p-2 rounded">
-        <input type="text" placeholder="Jenis Kelamin" class="w-full border p-2 rounded">
-        <input type="text" placeholder="Pekerjaan" class="w-full border p-2 rounded">
-        <input type="text" placeholder="Asal Instansi" class="w-full border p-2 rounded">
-        <input type="text" placeholder="Tujuan Layanan" class="w-full border p-2 rounded">
-        <button class="bg-yellow-400 hover:bg-yellow-500 text-blue-800 font-bold px-6 py-2 rounded">
+
+      <!-- Maksud Kunjungan -->
+      <div>
+        <label class="block font-semibold text-slate-700 mb-2">Maksud Kunjungan <span class="text-red-500">*</span></label>
+        <select required class="w-full border border-slate-300 rounded-lg px-4 py-2.5 bg-white text-slate-800">
+          <option disabled selected>-- Pilih Maksud Kunjungan --</option>
+          <option>Keperluan Administrasi</option>
+          <option>Pelayanan Informasi</option>
+          <option>Silaturahmi / Kunjungan</option>
+        </select>
+      </div>
+
+      <!-- Nama dan Nomor Registrasi -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <div>
+          <label class="block font-semibold text-slate-700 mb-2">Nama Lengkap <span class="text-red-500">*</span></label>
+          <input type="text" required placeholder="Nama lengkap Anda"
+            class="w-full border border-slate-300 rounded-lg px-4 py-2.5 bg-white text-slate-800">
+        </div>
+        <div>
+          <label class="block font-semibold text-slate-700 mb-2">Nomor Registrasi</label>
+          <input type="text" placeholder="No. Reg: 0042"
+            class="w-full border border-slate-300 rounded-lg px-4 py-2.5 bg-white text-slate-800">
+        </div>
+      </div>
+
+      <!-- Nomor WhatsApp -->
+      <div>
+        <label class="block font-semibold text-slate-700 mb-2">Nomor WhatsApp <span class="text-red-500">*</span></label>
+        <div class="flex gap-2">
+          <input type="tel" required placeholder="+62 812-xxxx-xxxx"
+            class="w-full border border-slate-300 rounded-lg px-4 py-2.5 bg-white text-slate-800">
+        </div>
+      </div>
+
+      <!-- Jenis Kelamin dan Pekerjaan -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <div>
+          <label class="block font-semibold text-slate-700 mb-2">Jenis Kelamin <span class="text-red-500">*</span></label>
+          <select required class="w-full border border-slate-300 rounded-lg px-4 py-2.5 bg-white text-slate-800">
+            <option disabled selected>-- Pilih Gender --</option>
+            <option>Laki-laki</option>
+            <option>Perempuan</option>
+          </select>
+        </div>
+        <div>
+          <label class="block font-semibold text-slate-700 mb-2">Pekerjaan</label>
+          <input type="text" placeholder="Guru / Siswa / Umum"
+            class="w-full border border-slate-300 rounded-lg px-4 py-2.5 bg-white text-slate-800">
+        </div>
+      </div>
+
+      <!-- Asal Instansi -->
+      <div>
+        <label class="block font-semibold text-slate-700 mb-2">Asal Instansi</label>
+        <input type="text" placeholder="Contoh: MAN Kota Batu"
+          class="w-full border border-slate-300 rounded-lg px-4 py-2.5 bg-white text-slate-800">
+      </div>
+
+      <!-- Tombol -->
+      <div class="pt-4 flex items-center justify-end gap-3 flex-wrap">
+        <button type="reset"
+          class="bg-slate-200 text-slate-700 font-semibold px-6 py-2.5 rounded-lg shadow hover:shadow-md hover:-translate-y-0.5 transition-all duration-200">
+          Reset
+        </button>
+        <button type="submit"
+          class="bg-blue-600 text-white font-semibold px-6 py-2.5 rounded-lg shadow hover:bg-blue-700 hover:shadow-md hover:-translate-y-0.5 transition-all duration-200">
           Kirim
         </button>
       </div>
-    </div>
-  </div>
+
+  <!-- Notifikasi -->
+  <div id="notif"
+    class="fixed bottom-6 left-1/2 -translate-x-1/2 px-4 py-2 rounded-lg text-sm font-semibold hidden transition-opacity duration-500"></div>
+</div>  
+  <script>
+    const form = document.getElementById("guestForm");
+    const notif = document.getElementById("notif");
+
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+
+      notif.textContent = "Data berhasil dikirim!";
+      notif.style.background = "linear-gradient(90deg, #fef9c3, #fde68a)";
+      notif.style.color = "#1e3a8a";
+      notif.classList.remove("hidden");
+      notif.classList.add("shadow-md");
+
+      // hilang pelan
+      setTimeout(() => {
+        notif.classList.add("opacity-0");
+      }, 2000);
+
+      // redirect ke halaman utama
+      setTimeout(() => {
+        notif.classList.add("hidden");
+        notif.classList.remove("opacity-0");
+        form.reset();
+        window.location.href = "home.html";
+      }, 2500);
+    });
+  </script>
 
 <!-- Footer -->
 <footer class="bg-blue-900 text-white">

@@ -116,12 +116,12 @@
       <div class="flex gap-4 justify-center">
         <!-- Ya -->
         <div class="bg-blue-900 text-white py-6 rounded-lg w-1/2 flex flex-col justify-center">
-          <p class="text-3xl font-bold text-red-400">Ya</p>
+          <p class="text-3xl font-bold text-green-300">Ya</p>
           <p class="text-sm">(3 responden)</p>
         </div>
         <!-- Tidak -->
         <div class="bg-blue-900 text-white py-6 rounded-lg w-1/2 flex flex-col justify-center">
-          <p class="text-3xl font-bold text-green-300">Tidak</p>
+          <p class="text-3xl font-bold text-red-400">Tidak</p>
           <p class="text-sm">(3 responden)</p>
         </div>
       </div>
@@ -302,7 +302,7 @@
       ratingEls.forEach((el, i) => {
         const c = counts[i] || 0;
         const avg = c ? totals[i] / c : 0;
-        el.textContent = `${formatAvg(avg)}/10`;
+        el.textContent = `${formatAvg(avg)}/5`;
       });
     }
 
@@ -534,5 +534,6 @@ tailwind.config = {
 };
 </script>
 </html>
+
 
 
